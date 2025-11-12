@@ -10,9 +10,21 @@ import dynamic from 'next/dynamic'
 // Import ReactQuill dynamically to avoid SSR issues and reduce initial bundle
 const ReactQuill = dynamic(
   async () => {
+    // Import ReactQuill first
     const { default: RQ } = await import('react-quill')
-    // Import styles dynamically too
-    await import('react-quill/dist/quill.snow.css')
+    // Then import the CSS using a try-catch to handle any potential errors
+    try {
+      // Try both possible paths for the CSS file
+      try {
+        await import('react-quill/dist/quill.snow.css')
+      } catch (e) {
+        // Try alternative path
+        await import('react-quill/dist/quill.snow.min.css')
+      }
+    } catch (cssError) {
+      console.warn('Failed to load Quill CSS:', cssError)
+      // Continue even if CSS fails to load
+    }
     return RQ
   },
   { 
