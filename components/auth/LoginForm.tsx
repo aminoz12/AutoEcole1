@@ -21,12 +21,12 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
     setError(null)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const result = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
-      if (error) throw error
+      if (result.error) throw result.error
 
       onSuccess()
       window.location.href = '/dashboard' // Redirect to dashboard

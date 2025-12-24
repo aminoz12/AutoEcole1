@@ -23,20 +23,20 @@ export default function AdminLoginForm() {
     try {
       console.log('🔐 Login attempt with email:', email)
 
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const result = await supabase.auth.signInWithPassword({
         email,
         password,
       })
 
-      console.log('📡 Login response:', { error: error?.message, user: data?.user?.email })
+      console.log('📡 Login response:', { error: result.error?.message, user: result.data?.user?.email })
 
-      if (error) {
-        console.error('❌ Login error:', error)
-        setError(`Erreur: ${error.message}`)
+      if (result.error) {
+        console.error('❌ Login error:', result.error)
+        setError(`Erreur: ${result.error.message}`)
         return
       }
 
-      if (data.user) {
+      if (result.data.user) {
         console.log('✅ Login successful')
         router.push('/admin')
         router.refresh()

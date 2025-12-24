@@ -193,7 +193,8 @@ export default function ArticleEditor({ post, onClose }: ArticleEditorProps) {
   const handleSave = async () => {
     setSaving(true)
     try {
-      const { data: { user } } = await supabase.auth.getUser()
+      const result = await supabase.auth.getUser()
+      const user = result.data?.user
       
       if (post?.id) {
         // Update existing

@@ -38,7 +38,7 @@ export default function SignupForm({ onSuccess }: SignupFormProps) {
     }
 
     try {
-      const { error } = await supabase.auth.signUp({
+      const result = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -49,7 +49,7 @@ export default function SignupForm({ onSuccess }: SignupFormProps) {
         },
       })
 
-      if (error) throw error
+      if (result.error) throw result.error
 
       // Show success message
       alert('Inscription réussie ! Vérifiez votre email pour confirmer votre compte.')
