@@ -1,8 +1,21 @@
 'use client'
 
+import { LucideIcon } from 'lucide-react';
 import { motion } from 'framer-motion'
 import { Check, Star, Clock, Car, GraduationCap, Zap } from 'lucide-react'
 import { useMemo } from 'react'
+
+interface PricingPlan {
+  name: string;
+  price: string;
+  icon: LucideIcon;
+  color: string;
+  borderColor: string;
+  bgGradient: string;
+  popular: boolean;
+  features: string[];
+  subtitle?: string; // Optional subtitle property
+}
 
 interface PricingWithoutCodeSectionProps {
   transmissionType: 'manuelle' | 'auto'
@@ -11,7 +24,7 @@ interface PricingWithoutCodeSectionProps {
 
 export default function PricingWithoutCodeSection({ transmissionType, setTransmissionType }: PricingWithoutCodeSectionProps) {
   // Manual transmission plans
-  const manualPlans = [
+  const manualPlans: PricingPlan[] = [
     {
       name: 'Permis B 20h',
       price: '899',
@@ -68,7 +81,7 @@ export default function PricingWithoutCodeSection({ transmissionType, setTransmi
   ]
 
   // Automatic transmission plans (BEA)
-  const autoPlans = [
+  const autoPlans: PricingPlan[] = [
     {
       name: 'Permis BEA 13h',
       price: '799',

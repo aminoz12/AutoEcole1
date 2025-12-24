@@ -6,6 +6,7 @@ import { X, Save, Upload, Image as ImageIcon } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import { Article } from '@/lib/types'
 
 // Import ReactQuill dynamically to avoid SSR issues and reduce initial bundle
 const ReactQuill = dynamic(
@@ -21,21 +22,7 @@ const ReactQuill = dynamic(
   }
 )
 
-interface Article {
-  id?: string
-  title: string
-  slug: string
-  excerpt: string
-  content: string
-  featured_image: string | null
-  category: string
-  tags: string[]
-  is_published: boolean
-  is_featured: boolean
-  seo_title: string
-  seo_description: string
-  author_name: string
-}
+// Article interface is now imported from shared types
 
 interface ArticleEditorProps {
   post: Article | null

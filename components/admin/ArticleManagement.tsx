@@ -5,31 +5,18 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Plus, Edit, Trash2, Eye, EyeOff, Star, StarOff, Search } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { ArticleForManagement, Article, PartialArticle } from '@/lib/types'
 import ArticleEditor from './ArticleEditor'
 
-interface Article {
-  id: string
-  title: string
-  slug: string
-  excerpt: string
-  category: string
-  is_published: boolean
-  is_featured: boolean
-  views_count: number
-  published_at: string
-  created_at: string
-  featured_image: string | null
-}
-
 interface ArticleManagementProps {
-  blogPosts: Article[]
+  blogPosts: ArticleForManagement[]
 }
 
 export default function ArticleManagement({ blogPosts: initialPosts }: ArticleManagementProps) {
-  const [posts, setPosts] = useState<Article[]>(initialPosts)
+  const [posts, setPosts] = useState<ArticleForManagement[]>(initialPosts)
   const [searchQuery, setSearchQuery] = useState('')
   const [filter, setFilter] = useState<'all' | 'published' | 'draft'>('all')
-  const [editingPost, setEditingPost] = useState<Article | null>(null)
+  const [editingPost, setEditingPost] = useState<ArticleForManagement | null>(null)
   const [showEditor, setShowEditor] = useState(false)
   const supabase = createClient()
 
@@ -56,7 +43,7 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
     }
   }
 
-  const handleTogglePublish = async (post: Article) => {
+  const handleTogglePublish = async (post: ArticleForManagement) => {
     const { error } = await supabase
       .from('blog_posts')
       .update({ is_published: !post.is_published })
@@ -69,7 +56,7 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
     }
   }
 
-  const handleToggleFeatured = async (post: Article) => {
+  const handleToggleFeatured = async (post: ArticleForManagement) => {
     const { error } = await supabase
       .from('blog_posts')
       .update({ is_featured: !post.is_featured })
@@ -91,9 +78,28 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
   }
 
   if (showEditor) {
+    // Convert ArticleForManagement to Article for the editor
+    const articleForEditor: Article | null = editingPost ? {
+      id: editingPost.id,
+      title: editingPost.title,
+      slug: editingPost.slug,
+      excerpt: editingPost.excerpt,
+      content: '', // content is not available in management view
+      featured_image: editingPost.featured_image,
+      category: editingPost.category,
+      tags: [], // tags are not available in management view
+      is_published: editingPost.is_published,
+      is_featured: editingPost.is_featured,
+      seo_title: editingPost.title, // Use title as default SEO title
+      seo_description: editingPost.excerpt, // Use excerpt as default SEO description
+      author_name: 'AutoEcole Pro', // Default author name
+      published_at: editingPost.published_at,
+      created_at: editingPost.created_at,
+    } : null;
+    
     return (
       <ArticleEditor
-        post={editingPost}
+        post={articleForEditor}
         onClose={() => {
           setShowEditor(false)
           setEditingPost(null)
@@ -230,7 +236,7 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
                       {post.views_count || 0}
                     </td>
                     <td className="px-6 py-4 text-sm text-gray-600">
-                      {formatDate(post.created_at)}
+                      {formatDate(post.created_at || new Date().toISOString())}
                     </td>
                     <td className="px-6 py-4">
                       <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
@@ -282,7 +288,7 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
 
                         {/* Delete */}
                         <button
-                          onClick={() => handleDelete(post.id)}
+                          onClick={() => post.id && handleDelete(post.id)}
                           className="p-2 text-gray-600 hover:text-red-600 rounded-lg hover:bg-gray-100 transition-colors"
                         >
                           <Trash2 className="w-4 h-4" />
