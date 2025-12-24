@@ -11,8 +11,8 @@ import dynamic from 'next/dynamic'
 const ReactQuill = dynamic(
   async () => {
     const { default: RQ } = await import('react-quill')
-    // Import styles dynamically too
-    await import('react-quill/dist/quill.snow.css')
+    // CSS is handled via global styles, so we just import the module
+    return RQ
     return RQ
   },
   { 
