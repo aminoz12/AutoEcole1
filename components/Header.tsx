@@ -95,11 +95,11 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-6">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone className="h-4 w-4" />
-              <span>01 23 45 67 89</span>
+              <span>01 80 83 49 96</span>
             </div>
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <MapPin className="h-4 w-4" />
-              <span>Paris & Banlieue</span>
+              <span>Nanterre & Sartrouville</span>
             </div>
             {user ? (
               <motion.a
@@ -118,7 +118,7 @@ export default function Header() {
                 onClick={() => setIsAuthModalOpen(true)}
                 className="btn-primary"
               >
-                Réserver une leçon
+                Réserver un Rendez-Vous
               </motion.button>
             )}
           </div>
@@ -161,7 +161,7 @@ export default function Header() {
             <div className="px-4 pt-4 border-t border-gray-200">
               <div className="flex items-center space-x-2 text-sm text-gray-600 mb-3">
                 <Phone className="h-4 w-4" />
-                <span>01 23 45 67 89</span>
+                <span>01 80 83 49 96</span>
               </div>
               {user ? (
                 <a href="/dashboard" className="btn-primary w-full block text-center">
@@ -175,7 +175,7 @@ export default function Header() {
                   }}
                   className="btn-primary w-full"
                 >
-                  Réserver une leçon
+                  Réserver un Rendez-Vous
                 </button>
               )}
             </div>

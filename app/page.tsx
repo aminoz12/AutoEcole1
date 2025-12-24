@@ -5,9 +5,7 @@ import FeaturesSection from '@/components/FeaturesSection'
 import MissionSection from '@/components/MissionSection'
 import CodeTrainingSection from '@/components/CodeTrainingSection'
 import DrivingSchoolSection from '@/components/DrivingSchoolSection'
-import InsuranceSection from '@/components/InsuranceSection'
-import PointsRecoverySection from '@/components/PointsRecoverySection'
-import PricingSection from '@/components/PricingSection'
+import PricingWrapper from '@/components/PricingWrapper'
 import CPFFinancingSection from '@/components/CPFFinancingSection'
 import InstructorsPreview from '@/components/InstructorsPreview'
 import BlogPreview from '@/components/BlogPreview'
@@ -21,14 +19,26 @@ import { createClient } from '@/lib/supabase/server'
 export default async function Home() {
   const supabase = await createClient()
 
-  // Fetch featured blog posts
-  const { data: featuredPosts } = await supabase
+  // Fetch featured blog posts, fallback to latest published posts
+  const { data: featuredPostsData } = await supabase
     .from('blog_posts')
     .select('*')
     .eq('is_published', true)
     .eq('is_featured', true)
     .order('published_at', { ascending: false })
     .limit(5)
+
+  // If no featured posts, get latest published posts
+  let featuredPosts = featuredPostsData
+  if (!featuredPostsData || featuredPostsData.length === 0) {
+    const { data: latestPosts } = await supabase
+      .from('blog_posts')
+      .select('*')
+      .eq('is_published', true)
+      .order('published_at', { ascending: false })
+      .limit(5)
+    featuredPosts = latestPosts
+  }
 
   // Fetch featured testimonials
   const { data: testimonials } = await supabase
@@ -62,14 +72,8 @@ export default async function Home() {
       {/* Driving School Section - Driving school services */}
       <DrivingSchoolSection />
       
-      {/* Insurance Section - Car insurance */}
-      <InsuranceSection />
-      
-      {/* Points Recovery Section - Points recovery training */}
-      <PointsRecoverySection />
-      
-      {/* Pricing Section - Transparent pricing */}
-      <PricingSection />
+      {/* Pricing Sections - Nos leçons de conduite avec/sans code */}
+      <PricingWrapper />
       
       {/* CPF Financing Section - CPF financing promotion */}
       <CPFFinancingSection />

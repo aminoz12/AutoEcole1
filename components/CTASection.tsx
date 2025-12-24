@@ -93,7 +93,7 @@ export default function CTASection() {
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 flex items-center space-x-3"
             >
               <Phone className="h-6 w-6" />
-              <span>01 23 45 67 89</span>
+              <span>01 80 83 49 96</span>
             </motion.button>
           </motion.div>
 

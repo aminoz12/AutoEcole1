@@ -1,15 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Check, Star, Clock, Car, GraduationCap } from 'lucide-react'
+import { Check, Star, Clock, Car, GraduationCap, Zap } from 'lucide-react'
 import { useMemo } from 'react'
 
-interface PricingSectionProps {
+interface PricingWithoutCodeSectionProps {
   transmissionType: 'manuelle' | 'auto'
   setTransmissionType: (type: 'manuelle' | 'auto') => void
 }
 
-export default function PricingSection({ transmissionType, setTransmissionType }: PricingSectionProps) {
+export default function PricingWithoutCodeSection({ transmissionType, setTransmissionType }: PricingWithoutCodeSectionProps) {
   // Manual transmission plans
   const manualPlans = [
     {
@@ -21,57 +21,48 @@ export default function PricingSection({ transmissionType, setTransmissionType }
       bgGradient: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
       popular: false,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
         'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
-      name: 'Permis B accéléré (intensif) 20h',
-      price: '1 559',
-      icon: Clock,
-      color: 'from-purple-500 to-purple-600',
-      borderColor: 'border-purple-200',
-      bgGradient: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
+      name: 'PERMIS B 40H',
+      price: '1 699',
+      icon: GraduationCap,
+      color: 'from-indigo-500 to-indigo-600',
+      borderColor: 'border-indigo-200',
+      bgGradient: 'bg-gradient-to-br from-indigo-50 to-indigo-100/50',
+      popular: false,
+      features: [
+        'Leçons de conduite 40h',
+        'Fourniture pédagogique (livret apprentissage)',
+      ],
+    },
+    {
+      name: 'Permis B accéléré 20h',
+      subtitle: '(intense)',
+      price: '1 499',
+      icon: Zap,
+      color: 'from-amber-500 to-amber-600',
+      borderColor: 'border-amber-200',
+      bgGradient: 'bg-gradient-to-br from-amber-50 to-amber-100/50',
       popular: true,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Séances de code intensif',
         'Formation pratique en accéléré minimum 20H',
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
       name: 'Permis B 30h',
-      price: '1 449',
-      icon: GraduationCap,
-      color: 'from-orange-500 to-orange-600',
-      borderColor: 'border-orange-200',
-      bgGradient: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
+      price: '1 399',
+      icon: Clock,
+      color: 'from-teal-500 to-teal-600',
+      borderColor: 'border-teal-200',
+      bgGradient: 'bg-gradient-to-br from-teal-50 to-teal-100/50',
       popular: false,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
         'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
-      ],
-    },
-    {
-      name: 'Permis conduite accompagnée',
-      price: '1 100',
-      icon: Star,
-      color: 'from-green-500 to-green-600',
-      borderColor: 'border-green-200',
-      bgGradient: 'bg-gradient-to-br from-green-50 to-green-100/50',
-      popular: false,
-      features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
-        'Leçons de conduite 20h',
-        'Fourniture pédagogique (livret apprentissage)',
-        'Hors RDV préalable 1h - 60€',
-        'Hors RDV pédagogiques (1er RDV 2h- 120€ / 2ème RDV 2h - 120€)',
       ],
     },
   ]
@@ -79,32 +70,28 @@ export default function PricingSection({ transmissionType, setTransmissionType }
   // Automatic transmission plans (BEA)
   const autoPlans = [
     {
-      name: 'Permis BEA 20h accéléré',
-      price: '1 749',
-      icon: Clock,
-      color: 'from-purple-500 to-purple-600',
-      borderColor: 'border-purple-200',
-      bgGradient: 'bg-gradient-to-br from-purple-50 to-purple-100/50',
-      popular: true,
+      name: 'Permis BEA 13h',
+      price: '799',
+      icon: Car,
+      color: 'from-blue-500 to-blue-600',
+      borderColor: 'border-blue-200',
+      bgGradient: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
+      popular: false,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Séances de code intensif',
-        'Leçons de conduite minimum 20h',
+        'Leçons de conduite 13h',
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
-      name: 'Permis BEA 30h',
-      price: '1 749',
-      icon: GraduationCap,
-      color: 'from-orange-500 to-orange-600',
-      borderColor: 'border-orange-200',
-      bgGradient: 'bg-gradient-to-br from-orange-50 to-orange-100/50',
-      popular: false,
+      name: 'Permis BEA 20h accéléré',
+      price: '1 699',
+      icon: Zap,
+      color: 'from-amber-500 to-amber-600',
+      borderColor: 'border-amber-200',
+      bgGradient: 'bg-gradient-to-br from-amber-50 to-amber-100/50',
+      popular: true,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
-        'Leçons de conduite 30h',
+        'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
@@ -117,27 +104,21 @@ export default function PricingSection({ transmissionType, setTransmissionType }
       bgGradient: 'bg-gradient-to-br from-blue-50 to-blue-100/50',
       popular: false,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
         'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
-      name: 'Permis conduite accompagnée',
-      price: '1 250',
-      icon: Star,
-      color: 'from-green-500 to-green-600',
-      borderColor: 'border-green-200',
-      bgGradient: 'bg-gradient-to-br from-green-50 to-green-100/50',
+      name: 'Permis BEA 30h',
+      price: '1 699',
+      icon: Clock,
+      color: 'from-teal-500 to-teal-600',
+      borderColor: 'border-teal-200',
+      bgGradient: 'bg-gradient-to-br from-teal-50 to-teal-100/50',
       popular: false,
       features: [
-        'Frais de constitution de dossier + démarches préfecture',
-        'Cours de code collectif illimité (pendant 1 an)',
-        'Leçons de conduite 20h',
+        'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Hors RDV préalable 1h - 65€',
-        'Hors RDV pédagogiques (1er RDV 2h- 130€ / 2ème RDV 2h - 130€)',
       ],
     },
   ]
@@ -169,11 +150,11 @@ export default function PricingSection({ transmissionType, setTransmissionType }
   }
 
   return (
-    <section id="tarifs" className="section-padding bg-gradient-to-b from-neutral to-white relative overflow-hidden">
+    <section id="tarifs-sans-code" className="pt-8 pb-16 md:pt-12 md:pb-24 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
+        <div className="absolute top-20 right-10 w-72 h-72 bg-secondary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -185,10 +166,10 @@ export default function PricingSection({ transmissionType, setTransmissionType }
           className="text-center mb-8"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Nos leçons de conduite avec <span className="text-primary">code</span>
+            Nos leçons de conduite <span className="text-primary">sans code</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Choisissez la formule qui correspond le mieux à vos besoins et à votre budget
+            Pour ceux qui ont déjà obtenu leur code de la route
           </p>
           
           {/* Transmission Type Toggle Buttons */}
@@ -241,8 +222,8 @@ export default function PricingSection({ transmissionType, setTransmissionType }
                 variants={itemVariants}
                 whileHover={{ y: -10, scale: 1.02 }}
                 layout
-                className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 ${plan.borderColor} overflow-hidden flex flex-col ${
-                  plan.popular ? 'ring-4 ring-purple-200 ring-opacity-50 lg:scale-105' : ''
+                className={`relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 border-2 ${plan.borderColor} overflow-hidden ${
+                  plan.popular ? 'ring-4 ring-amber-200 ring-opacity-50 lg:scale-105' : ''
                 }`}
               >
                 {/* Popular badge */}
@@ -252,10 +233,10 @@ export default function PricingSection({ transmissionType, setTransmissionType }
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ delay: 0.1 + index * 0.05, duration: 0.2 }}
-                      className="bg-gradient-to-r from-purple-600 to-purple-500 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center space-x-1 shadow-lg"
+                      className="bg-gradient-to-r from-amber-600 to-amber-500 text-white px-4 py-2 rounded-full text-xs font-bold flex items-center space-x-1 shadow-lg"
                     >
-                      <Star className="h-3 w-3 fill-current" />
-                      <span>POPULAIRE</span>
+                      <Zap className="h-3 w-3 fill-current" />
+                      <span>INTENSE</span>
                     </motion.div>
                   </div>
                 )}
@@ -273,13 +254,18 @@ export default function PricingSection({ transmissionType, setTransmissionType }
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 leading-tight min-h-[56px]">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 leading-tight min-h-[56px]">
                       {plan.name}
+                      {plan.subtitle && (
+                        <span className="block text-sm font-normal text-gray-600 mt-1">
+                          {plan.subtitle}
+                        </span>
+                      )}
                     </h3>
                   </div>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6">
                   {/* Price */}
                   <div className="text-center mb-6 pb-6 border-b-2 border-gray-100">
                     <div className="flex items-baseline justify-center">
@@ -291,7 +277,7 @@ export default function PricingSection({ transmissionType, setTransmissionType }
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-3 mb-6 flex-grow">
+                  <ul className="space-y-3 mb-6 min-h-[140px]">
                     {plan.features.map((feature, featureIndex) => (
                       <motion.li
                         key={featureIndex}
@@ -313,7 +299,7 @@ export default function PricingSection({ transmissionType, setTransmissionType }
                     href="/auth"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`w-full py-4 rounded-xl font-bold text-base transition-all duration-300 block text-center text-white shadow-lg hover:shadow-xl whitespace-nowrap mt-auto ${
+                    className={`w-full py-4 rounded-xl font-bold text-base transition-all duration-300 block text-center text-white shadow-lg hover:shadow-xl whitespace-nowrap ${
                       plan.popular
                         ? `bg-gradient-to-r ${plan.color} hover:opacity-90`
                         : `bg-gradient-to-r ${plan.color} hover:opacity-90`
@@ -333,3 +319,4 @@ export default function PricingSection({ transmissionType, setTransmissionType }
     </section>
   )
 }
+

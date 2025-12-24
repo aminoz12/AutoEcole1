@@ -151,7 +151,7 @@ export default function InstructorsPreview() {
                     : 'bg-gray-200 text-gray-500 cursor-not-allowed'
                 }`}
               >
-                {instructor.available ? 'Réserver une leçon' : 'Indisponible'}
+                {instructor.available ? 'Réserver un Rendez-Vous' : 'Indisponible'}
               </motion.button>
             </motion.div>
           ))}

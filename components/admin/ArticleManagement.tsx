@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { Plus, Edit, Trash2, Eye, EyeOff, Star, StarOff, Search } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import ArticleEditor from './ArticleEditor'
@@ -17,6 +18,7 @@ interface Article {
   views_count: number
   published_at: string
   created_at: string
+  featured_image: string | null
 }
 
 interface ArticleManagementProps {
@@ -190,13 +192,34 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
                 {filteredPosts.map((post) => (
                   <tr key={post.id} className="hover:bg-gray-50">
                     <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        {post.is_featured && (
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                        )}
-                        <div>
-                          <p className="font-medium text-gray-900">{post.title}</p>
-                          <p className="text-sm text-gray-500 line-clamp-1">{post.excerpt}</p>
+                      <div className="flex items-center gap-4">
+                        {/* Article Image */}
+                        <div className="flex-shrink-0">
+                          {post.featured_image ? (
+                            <div className="relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100 border border-gray-200 shadow-sm">
+                              <Image
+                                src={post.featured_image}
+                                alt={post.title}
+                                fill
+                                className="object-cover"
+                                sizes="80px"
+                              />
+                            </div>
+                          ) : (
+                            <div className="w-20 h-20 rounded-lg bg-gray-200 border border-gray-300 flex items-center justify-center shadow-sm">
+                              <span className="text-gray-400 text-xs text-center px-1">No image</span>
+                            </div>
+                          )}
+                        </div>
+                        {/* Article Info */}
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2">
+                            {post.is_featured && (
+                              <Star className="w-4 h-4 text-yellow-500 fill-yellow-500 flex-shrink-0" />
+                            )}
+                            <p className="font-medium text-gray-900 truncate">{post.title}</p>
+                          </div>
+                          <p className="text-sm text-gray-500 line-clamp-1 mt-1">{post.excerpt}</p>
                         </div>
                       </div>
                     </td>

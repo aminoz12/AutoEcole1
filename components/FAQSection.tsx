@@ -1,31 +1,38 @@
 'use client'
 
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown, HelpCircle, MapPin, Navigation, ExternalLink } from 'lucide-react'
+import { ChevronDown, MapPin, Navigation, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const [selectedLocation, setSelectedLocation] = useState<'nanterre' | 'sartrouville'>('nanterre')
 
-  const location = {
-    address: "375 Av. de la République, 92000 Nanterre, France",
-    coordinates: {
-      lat: 48.9107144,
-      lng: 2.219769
+  const locations = {
+    nanterre: {
+      address: "375 Av. de la République, 92000 Nanterre, France",
+      coordinates: {
+        lat: 48.9107144,
+        lng: 2.219769
+      },
+      googleMapsLink: 'https://www.google.com/maps/dir//375+Av.+de+la+R%C3%A9publique,+92000+Nanterre,+France/@48.9106857,2.1373678,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47e664449db77411:0xe51488f1707793cd!2m2!1d2.219769!2d48.9107144?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+      embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.123456789!2d2.219769!3d48.9107144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664449db77411%3A0xe51488f1707793cd!2s375%20Av.%20de%20la%20R%C3%A9publique%2C%2092000%20Nanterre%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
+      title: "Localisation AutoEcole Pro - 375 Av. de la République, Nanterre",
+    },
+    sartrouville: {
+      address: "133 Av. du Général de Gaulle, 78500 Sartrouville, France",
+      coordinates: {
+        lat: 48.9431,
+        lng: 2.1875
+      },
+      googleMapsLink: 'https://www.google.com/maps?client=opera-gx&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=ma&sa=X&geocode=KcuC2A83YeZHMfnaY6zLgGfu&daddr=133+Av.+du+G%C3%A9n%C3%A9ral+de+Gaulle,+78500+Sartrouville,+France',
+      embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.456789012!2d2.1875!3d48.9431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6681234567890%3A0x1234567890abcdef!2s133%20Av.%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2C%2078500%20Sartrouville%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
+      title: "Localisation AutoEcole Pro - 133 Av. du Général de Gaulle, Sartrouville",
     }
   }
 
-  const handleGoogleMaps = () => {
-    window.open('https://www.google.com/maps/dir//375+Av.+de+la+R%C3%A9publique,+92000+Nanterre,+France/@48.9106857,2.1373678,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47e664449db77411:0xe51488f1707793cd!2m2!1d2.219769!2d48.9107144?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D', '_blank')
-  }
+  const location = locations[selectedLocation]
 
-  const handleWaze = () => {
-    window.open(`https://waze.com/ul?ll=${location.coordinates.lat},${location.coordinates.lng}&navigate=yes`, '_blank')
-  }
-
-  const handleAppleMaps = () => {
-    window.open(`https://maps.apple.com/?daddr=${location.coordinates.lat},${location.coordinates.lng}`, '_blank')
-  }
 
   const faqs = [
     {
@@ -69,45 +76,71 @@ export default function FAQSection() {
   return (
     <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <HelpCircle className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Questions <span className="text-primary">fréquentes</span>
-            </h2>
-          </div>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
-            Trouvez les réponses aux questions les plus courantes sur notre formation à la conduite.
-          </p>
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-          {/* Left Column - Map Card */}
+          {/* Left Column - Location Section */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="order-2 lg:order-1"
           >
-            <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 shadow-lg">
+            <div className="mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                Nous <span className="text-primary">Visiter</span>
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Choisissez votre agence et trouvez-nous facilement.
+              </p>
+
+              {/* Location Toggle Buttons */}
+              <div className="flex gap-4 mb-6">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedLocation('nanterre')}
+                  className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 whitespace-nowrap ${
+                    selectedLocation === 'nanterre'
+                      ? 'bg-primary text-white shadow-lg'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Nanterre
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setSelectedLocation('sartrouville')}
+                  className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 whitespace-nowrap ${
+                    selectedLocation === 'sartrouville'
+                      ? 'bg-primary text-white shadow-lg'
+                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                  }`}
+                >
+                  Sartrouville
+                </motion.button>
+              </div>
+            </div>
+
+            {/* Map Card */}
+            <motion.div
+              key={selectedLocation}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 shadow-lg">
               {/* Live Google Maps */}
               <div className="aspect-video rounded-xl mb-4 overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.123456789!2d2.219769!3d48.9107144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664449db77411%3A0xe51488f1707793cd!2s375%20Av.%20de%20la%20R%C3%A9publique%2C%2092000%20Nanterre%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr"
+                  src={location.embedSrc}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localisation AutoEcole Pro - 375 Av. de la République, Nanterre"
+                  title={location.title}
                 ></iframe>
               </div>
               
@@ -124,13 +157,14 @@ export default function FAQSection() {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={handleGoogleMaps}
+                onClick={() => window.open(location.googleMapsLink, '_blank')}
                 className="w-full bg-primary hover:bg-primary/90 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold flex items-center justify-center space-x-2 sm:space-x-3 transition-colors duration-300 text-sm sm:text-base"
               >
                 <Navigation className="h-4 w-4 sm:h-5 sm:w-5" />
                 <span>Nous Localiser</span>
               </motion.button>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - FAQ */}
@@ -141,6 +175,16 @@ export default function FAQSection() {
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
+            {/* FAQ Header */}
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Questions <span className="text-primary">fréquentes</span>
+              </h2>
+              <p className="text-lg text-gray-600 mb-12">
+                Trouvez les réponses aux questions les plus courantes sur notre formation à la conduite.
+              </p>
+            </div>
+
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <motion.div

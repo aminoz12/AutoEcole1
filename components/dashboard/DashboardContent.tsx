@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, Car, User, LogOut, Plus, X, CheckCircle, PlayCircle, BookOpen, Award } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
@@ -12,6 +12,7 @@ import TestimonialForm from './TestimonialForm'
 import QuizLeaderboard from './QuizLeaderboard'
 import MockExamComponent from './MockExamComponent'
 import CalendarView from './CalendarView'
+import CustomYouTubePlayer, { type CustomYouTubePlayerRef } from './CustomYouTubePlayer'
 
 interface Reservation {
   id: string
@@ -56,6 +57,18 @@ export default function DashboardContent({ user, profile, reservations, quizResu
   const [activeQuiz, setActiveQuiz] = useState<{ title: string; id: string; questions: Question[] } | null>(null)
   const [quizResults, setQuizResults] = useState<QuizResult[]>(initialQuizResults)
   const [showMockExam, setShowMockExam] = useState(false)
+
+  // Create refs for each video player
+  const course1Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course2Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course3Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course4Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course5Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course6Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course7Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course8Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course9Ref = useRef<CustomYouTubePlayerRef>(null)
+  const course10Ref = useRef<CustomYouTubePlayerRef>(null)
 
   // Calculate quiz statistics
   const totalQuizzesTaken = quizResults.length
@@ -445,149 +458,259 @@ export default function DashboardContent({ user, profile, reservations, quizResu
 
           <div className="p-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Course 1 */}
+              {/* Course 1 - Règles de priorité */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-blue-500 to-blue-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    12:30
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course1Ref}
+                  videoId="KBTd5Vh-smw" // Règles de priorité et de priorité à droite
+                  title="Règles de priorité"
+                  duration="12:30"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Règles de priorité</h3>
                   <p className="text-sm text-gray-600 mb-4">Apprenez les règles essentielles de priorité sur la route</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course1Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>
                 </div>
               </motion.div>
 
-              {/* Course 2 */}
+              {/* Course 2 - Panneaux de signalisation */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-green-500 to-green-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    18:45
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course2Ref}
+                  videoId="xN-GGwtQk3o" // Panneaux de signalisation routière
+                  title="Panneaux de signalisation"
+                  duration="18:45"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Panneaux de signalisation</h3>
                   <p className="text-sm text-gray-600 mb-4">Maîtrisez tous les panneaux de signalisation routière</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course2Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>
                 </div>
               </motion.div>
 
-              {/* Course 3 */}
+              {/* Course 3 - Conduite en ville */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-purple-500 to-purple-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    22:15
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course3Ref}
+                  videoId="DJm-YbiyyUM" // Conduite en ville et agglomération
+                  title="Conduite en ville"
+                  duration="22:15"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Conduite en ville</h3>
                   <p className="text-sm text-gray-600 mb-4">Techniques et règles pour conduire en milieu urbain</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course3Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>
                 </div>
               </motion.div>
 
-              {/* Course 4 */}
+              {/* Course 4 - Autoroute et voie rapide */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-orange-500 to-orange-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    15:20
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course4Ref}
+                  videoId="O-GiYnZam_o" // Conduite sur autoroute
+                  title="Autoroute et voie rapide"
+                  duration="15:20"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Autoroute et voie rapide</h3>
                   <p className="text-sm text-gray-600 mb-4">Règles spécifiques pour la conduite sur autoroute</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course4Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>
                 </div>
               </motion.div>
 
-              {/* Course 5 */}
+              {/* Course 5 - Stationnement */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-red-500 to-red-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    10:30
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course5Ref}
+                  videoId="KrGq3j64EL8" // Techniques de stationnement
+                  title="Stationnement"
+                  duration="10:30"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Stationnement</h3>
                   <p className="text-sm text-gray-600 mb-4">Techniques de stationnement et réglementation</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course5Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>
                 </div>
               </motion.div>
 
-              {/* Course 6 */}
+              {/* Course 6 - Sécurité routière */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
                 className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="relative aspect-video bg-gradient-to-br from-teal-500 to-teal-600">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <PlayCircle className="w-16 h-16 text-white opacity-80" />
-                  </div>
-                  <div className="absolute top-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    14:00
-                  </div>
-                </div>
+                <CustomYouTubePlayer
+                  ref={course6Ref}
+                  videoId="auYfSsg-iXk" // Sécurité routière et distances de sécurité
+                  title="Sécurité routière"
+                  duration="14:00"
+                />
                 <div className="p-4">
                   <h3 className="font-semibold text-gray-900 mb-2">Sécurité routière</h3>
                   <p className="text-sm text-gray-600 mb-4">Distance de sécurité et comportements préventifs</p>
-                  <button className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                  <button 
+                    onClick={() => course6Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Regarder
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Course 7 - Additional video */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <CustomYouTubePlayer
+                  ref={course7Ref}
+                  videoId="6ORtgRaKths" // Additional course video
+                  title="Manœuvres pratiques"
+                  duration="16:45"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900 mb-2">Manœuvres pratiques</h3>
+                  <p className="text-sm text-gray-600 mb-4">Techniques de manœuvres en pratique</p>
+                  <button 
+                    onClick={() => course7Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Regarder
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Course 8 - Additional video */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.7 }}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <CustomYouTubePlayer
+                  ref={course8Ref}
+                  videoId="VmwXQ_zIU-c" // Additional course video
+                  title="Conduite hivernale"
+                  duration="20:30"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900 mb-2">Conduite hivernale</h3>
+                  <p className="text-sm text-gray-600 mb-4">Conseils pour conduire en hiver</p>
+                  <button 
+                    onClick={() => course8Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Regarder
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Course 9 - Additional video */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <CustomYouTubePlayer
+                  ref={course9Ref}
+                  videoId="xO8tOrfGGAo" // Additional course video
+                  title="Éco-conduite"
+                  duration="14:20"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900 mb-2">Éco-conduite</h3>
+                  <p className="text-sm text-gray-600 mb-4">Techniques d'économie de carburant</p>
+                  <button 
+                    onClick={() => course9Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <PlayCircle className="w-4 h-4" />
+                    Regarder
+                  </button>
+                </div>
+              </motion.div>
+
+              {/* Course 10 - Additional video */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.9 }}
+                className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              >
+                <CustomYouTubePlayer
+                  ref={course10Ref}
+                  videoId="r-8eHi1IGA8" // Additional course video
+                  title="Premiers secours"
+                  duration="18:15"
+                />
+                <div className="p-4">
+                  <h3 className="font-semibold text-gray-900 mb-2">Premiers secours</h3>
+                  <p className="text-sm text-gray-600 mb-4">Conduite et premiers secours</p>
+                  <button 
+                    onClick={() => course10Ref.current?.playVideo()}
+                    className="w-full bg-primary text-white py-2 rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
                     <PlayCircle className="w-4 h-4" />
                     Regarder
                   </button>

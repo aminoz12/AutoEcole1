@@ -67,8 +67,9 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
         </div>
 
         {/* Posts Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {posts.slice(0, 5).map((post, index) => (
+        {posts && posts.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {posts.slice(0, 5).map((post, index) => (
             <motion.article
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
@@ -121,8 +122,13 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
                 </div>
               </Link>
             </motion.article>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 mb-12">
+            <p className="text-gray-600 text-lg">Aucun article disponible pour le moment.</p>
+          </div>
+        )}
 
         {/* View All Button */}
         <motion.div
