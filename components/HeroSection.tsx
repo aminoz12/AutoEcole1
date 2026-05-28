@@ -2,156 +2,152 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, Star, Users, Award } from 'lucide-react'
+import { ArrowRight, Star, Clock, FastForward, BarChart3, CreditCard } from 'lucide-react'
 
 export default function HeroSection() {
-  const stats = [
-    { icon: Users, value: '2,500+', label: 'Élèves formés' },
-    { icon: Star, value: '4.9/5', label: 'Note moyenne' },
-    { icon: Award, value: '95%', label: 'Taux de réussite' },
+  const features = [
+    {
+      icon: Clock,
+      title: "Jusqu'à 4 heures de formation par jour",
+      description: 'Planifiez vos leçons selon vos disponibilités',
+    },
+    {
+      icon: FastForward,
+      title: 'Terminez votre formation en 10 jours',
+      description: 'Obtenez votre permis rapidement',
+    },
+    {
+      icon: BarChart3,
+      title: 'Suivi de formation en temps réel',
+      description: "Suivez votre progression via l'app mobile",
+    },
+    {
+      icon: CreditCard,
+      title: 'Paiement en 4 ou 10 fois',
+      description: 'Financez votre permis en plusieurs fois',
+    },
   ]
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 relative overflow-hidden pt-32 md:pt-40 lg:pt-48">
-      {/* Clean White Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-white"></div>
-      <div 
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23${encodeURIComponent('8B5CF6')}' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}
-      ></div>
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-secondary/5 to-transparent rounded-full blur-3xl"></div>
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
+    <section className="relative min-h-screen flex flex-col overflow-hidden pt-32 md:pt-36 bg-[#0B0F19]">
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="/hero.png"
+          alt="Intérieur d'une voiture"
+          fill
+          className="object-cover scale-110 brightness-[0.25]"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/80 via-[#0B0F19]/60 to-[#0B0F19]" />
+      </div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10 flex-1 flex flex-col">
+        {/* Main content - centered */}
+        <div className="flex-1 flex flex-col justify-center items-center text-center">
+          {/* Eyebrow */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8"
+            transition={{ delay: 0.2 }}
+            className="text-gray-400 text-sm md:text-base mb-6"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="space-y-4"
-            >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                Apprenez à{' '}
-                <span className="text-primary">conduire</span>{' '}
-                avec les meilleurs
-              </h1>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-                AutoEcole Pro vous accompagne dans votre apprentissage avec des moniteurs 
-                expérimentés, des véhicules modernes et des tarifs compétitifs.
-              </p>
-            </motion.div>
+            Votre permis accéléré Auto-Moto École à Paris
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary flex items-center justify-center space-x-2 text-base sm:text-lg w-full sm:w-auto"
-              >
-                <span>Commencer maintenant</span>
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary text-base sm:text-lg w-full sm:w-auto"
-              >
-                Voir nos tarifs
-              </motion.button>
-            </motion.div>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6 max-w-4xl uppercase"
+          >
+            Ton permis dès 110€ / par mois
+            <br />
+            Prêt pour{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
+              l'examen en 14 jours.
+            </span>
+          </motion.h1>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 pt-6 sm:pt-8"
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="text-gray-400 text-base md:text-lg mb-8 max-w-xl"
+          >
+            Paiement 10X sans frais, Inscription immédiate.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-4 mb-10"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.8 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="flex justify-center mb-2">
-                    <stat.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
-                </motion.div>
-              ))}
-            </motion.div>
+              S'inscrire
+            </motion.button>
+            <motion.a
+              href="#tarifs"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2"
+            >
+              Voir Les Packs
+              <ArrowRight className="h-4 w-4" />
+            </motion.a>
           </motion.div>
 
-          {/* Right Content - Image */}
+          {/* Rating */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex items-center gap-2"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/hero.png"
-                alt="Élève en cours de conduite avec moniteur"
-                width={600}
-                height={400}
-                className="w-full h-auto scale-110 sm:scale-125"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+            <span className="text-white font-bold text-lg">4.9</span>
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
+              ))}
             </div>
-
-            {/* Floating Cards */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 }}
-              className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-white rounded-xl shadow-lg p-3 sm:p-4 max-w-xs"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Star className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900 text-sm sm:text-base">Excellent service</div>
-                  <div className="text-xs sm:text-sm text-gray-600">Moniteur très patient</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 }}
-              className="absolute -top-16 -right-4 sm:-top-20 sm:-right-6 bg-white rounded-xl shadow-lg p-3 sm:p-4 max-w-xs"
-            >
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
-                  <Award className="h-6 w-6 text-secondary" />
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-900 text-sm sm:text-base">Permis obtenu</div>
-                  <div className="text-xs sm:text-sm text-gray-600">Du premier coup !</div>
-                </div>
-              </div>
-            </motion.div>
+            <span className="text-gray-400 text-sm">+ de 1000 avis</span>
           </motion.div>
         </div>
+
+        {/* Bottom Feature Cards */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto pb-8 mt-8"
+        >
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 + index * 0.1 }}
+              className="flex flex-col items-center text-center px-2"
+            >
+              <feature.icon className="h-5 w-5 text-gray-300 mb-3" />
+              <h3 className="text-white text-sm font-semibold mb-1.5">
+                {feature.title}
+              </h3>
+              <p className="text-gray-400 text-xs leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )
