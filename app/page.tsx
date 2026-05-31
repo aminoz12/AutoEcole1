@@ -1,13 +1,8 @@
 import Header from '@/components/Header'
 import PromoBanner from '@/components/PromoBanner'
 import HeroSection from '@/components/HeroSection'
-import FeaturesSection from '@/components/FeaturesSection'
-import MissionSection from '@/components/MissionSection'
-import CodeTrainingSection from '@/components/CodeTrainingSection'
-import DrivingSchoolSection from '@/components/DrivingSchoolSection'
 import PricingWrapper from '@/components/PricingWrapper'
 import CPFFinancingSection from '@/components/CPFFinancingSection'
-import InstructorsPreview from '@/components/InstructorsPreview'
 import BlogPreview from '@/components/BlogPreview'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQSection from '@/components/FAQSection'
@@ -60,26 +55,11 @@ export default async function Home() {
       {/* Hero Section - Main landing area */}
       <HeroSection />
       
-      {/* Features Section - Why choose us */}
-      <FeaturesSection />
-      
-      {/* Mission Section - Our mission and values */}
-      <MissionSection />
-      
-      {/* Code Training Section - Code training app */}
-      <CodeTrainingSection />
-      
-      {/* Driving School Section - Driving school services */}
-      <DrivingSchoolSection />
-      
       {/* Pricing Sections - Nos leçons de conduite avec/sans code */}
       <PricingWrapper />
       
       {/* CPF Financing Section - CPF financing promotion */}
       <CPFFinancingSection />
-      
-      {/* Instructors Preview - Meet our team */}
-      <InstructorsPreview />
       
       {/* Blog Preview - Latest articles */}
       <BlogPreview posts={featuredPosts || []} />

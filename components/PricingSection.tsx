@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Check, ArrowRight } from 'lucide-react'
+import { Check, ArrowRight, Map, Users, CalendarCheck } from 'lucide-react'
 
 type PackKey = 'manuelle' | 'auto' | 'manuelle-code' | 'auto-code'
 
@@ -362,6 +362,80 @@ export default function PricingSection(_props: PricingSectionProps) {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Final Stretch Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mt-24 mb-10"
+        >
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
+            Le Sprint Final :
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
+              Votre Succès au Permis de Conduire
+            </span>
+          </h2>
+          <p className="text-gray-400 text-sm md:text-base max-w-3xl mx-auto">
+            Après vos heures de base, nous passons en mode{' '}
+            <span className="text-blue-400 font-semibold">Réussite Garantie</span> avec un{' '}
+            <span className="text-blue-400 font-semibold">accompagnement sur-mesure</span>.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+        >
+          {[
+            {
+              num: 1,
+              title: 'Immersion Examen',
+              desc: 'Vos dernières heures se déroulent sur les parcours officiels et exacts de votre centre d\'examen, virage par virage.',
+              icon: Map,
+            },
+            {
+              num: 2,
+              title: 'Coaching Mentoring',
+              desc: 'Un examen blanc complet en conditions réelles avec votre moniteur pour arriver le jour J sans stress et en totale confiance.',
+              icon: Users,
+            },
+            {
+              num: 3,
+              title: 'Date de Permis Prioritaire',
+              desc: 'Dès que vous êtes prêt, nous validons votre date de passage. Pas d\'attente inutile, vous passez l\'examen lancé sur votre lancée.',
+              icon: CalendarCheck,
+            },
+          ].map((card) => {
+            const Icon = card.icon
+            return (
+              <div
+                key={card.num}
+                className="bg-[#151b2e]/80 border border-white/10 rounded-2xl p-7 flex flex-col relative overflow-hidden"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 text-purple-300 text-sm font-bold">
+                    {card.num}
+                  </div>
+                  <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center">
+                    <Icon className="h-6 w-6 text-gray-300" />
+                  </div>
+                </div>
+                <h3 className="text-base font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
+                  {card.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {card.desc}
+                </p>
+              </div>
+            )
+          })}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
