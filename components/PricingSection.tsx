@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { Fragment, useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, ArrowRight, Map, Users, CalendarCheck } from 'lucide-react'
 
@@ -285,23 +285,25 @@ export default function PricingSection(_props: PricingSectionProps) {
           className="flex justify-center mb-12"
         >
           <div className="inline-flex bg-[#151b2e] border border-white/10 rounded-full p-1.5 whitespace-nowrap">
-            {tabs.map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`relative px-3 sm:px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider transition-colors whitespace-nowrap ${
-                  activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                {activeTab === tab.key && (
-                  <motion.span
-                    layoutId="pack-tab-pill"
-                    className="absolute inset-0 bg-white rounded-full"
-                    transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                  />
-                )}
-                <span className="relative z-10">{tab.label}</span>
-              </button>
+            {tabs.map((tab, index) => (
+              <Fragment key={tab.key}>
+                {index > 0 && <span aria-hidden="true" className="h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
+                <button
+                  onClick={() => setActiveTab(tab.key)}
+                  className={`relative px-3 sm:px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider transition-colors whitespace-nowrap ${
+                    activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white'
+                  }`}
+                >
+                  {activeTab === tab.key && (
+                    <motion.span
+                      layoutId="pack-tab-pill"
+                      className="absolute inset-0 bg-white rounded-full"
+                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{tab.label}</span>
+                </button>
+              </Fragment>
             ))}
           </div>
         </motion.div>

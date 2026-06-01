@@ -53,7 +53,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Nos derniers <span className="text-primary">articles</span>
+            Conseils de nos <span className="text-primary">experts</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

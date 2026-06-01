@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
-  const [selectedLocation, setSelectedLocation] = useState<'nanterre' | 'sartrouville'>('nanterre')
+  const [selectedLocation, setSelectedLocation] = useState<'nanterre'>('nanterre')
 
   const locations = {
     nanterre: {
@@ -18,16 +18,6 @@ export default function FAQSection() {
       googleMapsLink: 'https://www.google.com/maps/dir//375+Av.+de+la+R%C3%A9publique,+92000+Nanterre,+France/@48.9106857,2.1373678,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47e664449db77411:0xe51488f1707793cd!2m2!1d2.219769!2d48.9107144?entry=ttu&g_ep=EgoyMDI1MTAwNy4wIKXMDSoASAFQAw%3D%3D',
       embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.123456789!2d2.219769!3d48.9107144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664449db77411%3A0xe51488f1707793cd!2s375%20Av.%20de%20la%20R%C3%A9publique%2C%2092000%20Nanterre%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
       title: "Localisation AutoEcole Pro - 375 Av. de la République, Nanterre",
-    },
-    sartrouville: {
-      address: "133 Av. du Général de Gaulle, 78500 Sartrouville, France",
-      coordinates: {
-        lat: 48.9431,
-        lng: 2.1875
-      },
-      googleMapsLink: 'https://www.google.com/maps?client=opera-gx&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=ma&sa=X&geocode=KcuC2A83YeZHMfnaY6zLgGfu&daddr=133+Av.+du+G%C3%A9n%C3%A9ral+de+Gaulle,+78500+Sartrouville,+France',
-      embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.456789012!2d2.1875!3d48.9431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6681234567890%3A0x1234567890abcdef!2s133%20Av.%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2C%2078500%20Sartrouville%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
-      title: "Localisation AutoEcole Pro - 133 Av. du Général de Gaulle, Sartrouville",
     }
   }
 
@@ -59,14 +49,6 @@ export default function FAQSection() {
       question: 'Que se passe-t-il si je rate mon examen ?',
       answer: 'Si vous échouez à l\'examen pratique, nous continuons à vous accompagner avec des leçons supplémentaires. Avec notre formation complète, vous bénéficiez d\'une garantie de réussite et nous vous préparons jusqu\'à l\'obtention du permis.',
     },
-    {
-      question: 'Puis-je changer de moniteur ?',
-      answer: 'Absolument ! Si vous souhaitez changer de moniteur pour des raisons de compatibilité ou d\'emploi du temps, nous ferons notre maximum pour vous proposer un autre instructeur qui vous convient mieux.',
-    },
-    {
-      question: 'Vos véhicules sont-ils assurés ?',
-      answer: 'Oui, tous nos véhicules sont parfaitement assurés pour la formation à la conduite. Vous conduisez en toute sécurité et n\'avez aucune responsabilité en cas d\'accident pendant vos leçons.',
-    },
   ]
 
   const toggleFAQ = (index: number) => {
@@ -83,43 +65,13 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="order-2 lg:order-1"
+            className="order-2 lg:order-2"
           >
             <div className="mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
                 Nous <span className="text-primary">Visiter</span>
               </h2>
-              <p className="text-gray-600 mb-6">
-                Choisissez votre agence et trouvez-nous facilement.
-              </p>
 
-              {/* Location Toggle Buttons */}
-              <div className="flex gap-4 mb-6">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedLocation('nanterre')}
-                  className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 whitespace-nowrap ${
-                    selectedLocation === 'nanterre'
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                >
-                  Nanterre
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setSelectedLocation('sartrouville')}
-                  className={`px-6 py-3 rounded-xl font-semibold text-base transition-all duration-300 whitespace-nowrap ${
-                    selectedLocation === 'sartrouville'
-                      ? 'bg-primary text-white shadow-lg'
-                      : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                  }`}
-                >
-                  Sartrouville
-                </motion.button>
-              </div>
             </div>
 
             {/* Map Card */}
@@ -173,16 +125,13 @@ export default function FAQSection() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="order-1 lg:order-2"
+            className="order-1 lg:order-1"
           >
             {/* FAQ Header */}
             <div className="mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Questions <span className="text-primary">fréquentes</span>
+                <span className="text-primary">FAQ</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-12">
-                Trouvez les réponses aux questions les plus courantes sur notre formation à la conduite.
-              </p>
             </div>
 
             <div className="space-y-4">
@@ -235,7 +184,7 @@ export default function FAQSection() {
           </motion.div>
         </div>
 
-        {/* Contact CTA */}
+        {/* Contact CTA - No Background */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -243,17 +192,17 @@ export default function FAQSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-primary to-orange-600 rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-4">
+          <div className="p-8">
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">
               Vous avez d'autres questions ?
             </h3>
-            <p className="text-lg mb-6 opacity-90">
+            <p className="text-lg mb-6 text-gray-600">
               Notre équipe est là pour vous accompagner et répondre à toutes vos interrogations.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Nous contacter
             </motion.button>

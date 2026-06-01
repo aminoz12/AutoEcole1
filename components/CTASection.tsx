@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Phone, Calendar, Car } from 'lucide-react'
+import { Phone, Calendar, Car } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 export default function CTASection() {
@@ -73,18 +73,13 @@ export default function CTASection() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
           >
             <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={handleReservationClick}
-              className="bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group"
+              className="flex items-center gap-2 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg"
+              style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #ec4899 100%)', boxShadow: '0 10px 25px rgba(236, 72, 153, 0.5)' }}
             >
               <span>Réserver ma leçon d'essai</span>
-              <motion.div
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                <ArrowRight className="h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-              </motion.div>
             </motion.button>
 
             <motion.button

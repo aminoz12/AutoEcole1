@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, User, ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import AuthModal from './auth/AuthModal'
 
@@ -71,10 +72,15 @@ export default function Header() {
           <motion.a
             href="/"
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col leading-none"
+            className="flex flex-col leading-none mt-6"
           >
-            <span className="text-white font-bold text-xl tracking-tight">AutoEcole</span>
-            <span className="text-gray-400 text-[10px] uppercase tracking-widest">Pro</span>
+            <Image 
+              src="/logoautoecol.png" 
+              alt="AutoEcole Pro Logo"
+              width={150}
+              height={50}
+              priority
+            />
           </motion.a>
 
           {/* Desktop Navigation */}

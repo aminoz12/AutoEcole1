@@ -61,9 +61,6 @@ export default async function Home() {
       {/* CPF Financing Section - CPF financing promotion */}
       <CPFFinancingSection />
       
-      {/* Blog Preview - Latest articles */}
-      <BlogPreview posts={featuredPosts || []} />
-      
       {/* Testimonials Section - Customer reviews */}
       <TestimonialsSection testimonials={testimonials || []} />
       
@@ -72,6 +69,9 @@ export default async function Home() {
       
       {/* CTA Section - Final call to action */}
       <CTASection />
+      
+      {/* Blog Preview - Latest articles */}
+      <BlogPreview posts={featuredPosts || []} />
       
       {/* Footer - Links and contact info */}
       <Footer />
