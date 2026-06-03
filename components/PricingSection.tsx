@@ -343,7 +343,7 @@ export default function PricingSection(_props: PricingSectionProps) {
                 </div>
 
                 <motion.a
-                  href="/auth"
+                  href="/s-inscrire"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
                   className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"

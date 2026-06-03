@@ -113,7 +113,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
             Rejoignez des centaines d'élèves satisfaits !
           </p>
           <a
-            href="/auth"
+            href="/s-inscrire"
             className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
             Commencer ma formation

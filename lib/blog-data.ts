@@ -9,6 +9,7 @@ export interface BlogPost {
   category: string
   tags: string[]
   published_at: string
+  views_count: number
 }
 
 export const blogPosts: BlogPost[] = [
@@ -57,7 +58,8 @@ Avec une préparation sérieuse et ces astuces en tête, vous mettez toutes les 
     author_name: 'Équipe AutoEcole Pro',
     category: 'Code',
     tags: ['code de la route', 'examen', 'conseils', 'réussite'],
-    published_at: '2024-01-15'
+    published_at: '2024-01-15',
+    views_count: 0
   },
   {
     id: '2',
@@ -109,11 +111,12 @@ Une bonne auto-école dispose de :
 ## Conclusion
 
 Prenez le temps de visiter plusieurs auto-écoles, de rencontrer les moniteurs et de comparer les offres. Votre choix aura un impact direct sur votre apprentissage et votre réussite.`,
-    featured_image: null,
+    featured_image: '/blog2.jpeg',
     author_name: 'Équipe AutoEcole Pro',
     category: 'Conseils',
     tags: ['auto-école', 'choix', 'critères', 'permis'],
-    published_at: '2024-01-10'
+    published_at: '2024-01-10',
+    views_count: 0
   },
   {
     id: '3',
@@ -164,11 +167,12 @@ La formation accélérée convient particulièrement si :
 ## Conclusion
 
 La formation en 10 jours est une excellente option pour les candidats qui peuvent supporter l'intensité. Évaluez votre profil et vos disponibilités avant de vous engager.`,
-    featured_image: null,
+    featured_image: '/blog3.jpeg',
     author_name: 'Équipe AutoEcole Pro',
     category: 'Permis',
     tags: ['permis accéléré', 'formation', '10 jours', 'intensif'],
-    published_at: '2024-01-05'
+    published_at: '2024-01-05',
+    views_count: 0
   },
   {
     id: '4',
@@ -233,7 +237,8 @@ La clé est de rester concentré et de conduire comme vous l'avez appris. Avec u
     author_name: 'Équipe AutoEcole Pro',
     category: 'Conduite',
     tags: ['examen', 'conduite', 'erreurs', 'conseils'],
-    published_at: '2024-01-01'
+    published_at: '2024-01-01',
+    views_count: 0
   },
   {
     id: '5',
@@ -294,7 +299,8 @@ Le CPF est une excellente opportunité pour financer votre permis. Renseignez-vo
     author_name: 'Équipe AutoEcole Pro',
     category: 'Conseils',
     tags: ['CPF', 'financement', 'permis', 'formation'],
-    published_at: '2023-12-20'
+    published_at: '2023-12-20',
+    views_count: 0
   },
   {
     id: '6',
@@ -363,7 +369,8 @@ La conduite de nuit demande plus de vigilance et d'anticipation. En suivant ces 
     author_name: 'Équipe AutoEcole Pro',
     category: 'Sécurité',
     tags: ['conduite de nuit', 'sécurité', 'phares', 'précautions'],
-    published_at: '2023-12-15'
+    published_at: '2023-12-15',
+    views_count: 0
   },
   {
     id: '7',
@@ -450,7 +457,8 @@ Prenez votre temps pour choisir. Essayez plusieurs modèles, comparez les offres
     author_name: 'Équipe AutoEcole Pro',
     category: 'Conseils',
     tags: ['première voiture', 'achat', 'choix', 'critères'],
-    published_at: '2023-12-10'
+    published_at: '2023-12-10',
+    views_count: 0
   },
   {
     id: '8',
@@ -517,7 +525,8 @@ Restez informé des évolutions du code de la route. Consultez régulièrement l
     author_name: 'Équipe AutoEcole Pro',
     category: 'Actualités',
     tags: ['code de la route', 'nouvelles règles', '2024', 'sécurité'],
-    published_at: '2023-12-05'
+    published_at: '2023-12-05',
+    views_count: 0
   },
   {
     id: '9',
@@ -619,7 +628,8 @@ L'assurance auto est un investissement important. Prenez le temps de comparer et
     author_name: 'Équipe AutoEcole Pro',
     category: 'Assurance',
     tags: ['assurance', 'contrats', 'tiers', 'tous risques'],
-    published_at: '2023-11-28'
+    published_at: '2023-11-28',
+    views_count: 0
   },
   {
     id: '10',
@@ -716,7 +726,8 @@ La conduite sur autoroute demande vigilance et anticipation. En respectant ces r
     author_name: 'Équipe AutoEcole Pro',
     category: 'Conduite',
     tags: ['autoroute', 'sécurité', 'règles', 'circulation'],
-    published_at: '2023-11-20'
+    published_at: '2023-11-20',
+    views_count: 0
   }
 ]
 

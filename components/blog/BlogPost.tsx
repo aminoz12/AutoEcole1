@@ -244,7 +244,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                 Inscrivez-vous dès maintenant et commencez votre formation
               </p>
               <Link
-                href="/auth"
+                href="/s-inscrire"
                 className="block w-full bg-white text-primary text-center font-semibold py-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 S'inscrire

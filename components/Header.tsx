@@ -2,13 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, ChevronDown } from 'lucide-react'
+import { Menu, X, Phone } from 'lucide-react'
 import Image from 'next/image'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAgencesOpen, setIsAgencesOpen] = useState(false)
 
 
   useEffect(() => {
@@ -24,13 +23,7 @@ export default function Header() {
     { name: 'Formations', href: '#formations' },
     { name: 'Tarifs', href: '#tarifs' },
     { name: 'Financement CPF', href: '#cpf' },
-    { name: 'Nos Agences', href: '#agences', hasDropdown: true },
     { name: 'Nos Conseils', href: '#blog' },
-  ]
-
-  const agencesItems = [
-    { name: 'Nanterre', href: '#nanterre' },
-    { name: 'Sartrouville', href: '#sartrouville' },
   ]
 
   return (
@@ -69,43 +62,28 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
-                className="relative"
-                onMouseEnter={() => item.hasDropdown && setIsAgencesOpen(true)}
-                onMouseLeave={() => item.hasDropdown && setIsAgencesOpen(false)}
               >
                 <motion.a
                   href={item.href}
-                  className="transition-colors duration-300 font-medium text-sm flex items-center gap-1 text-gray-300 hover:text-white"
+                  className="transition-colors duration-300 font-medium text-sm text-gray-300 hover:text-white"
                   whileHover={{ y: -2 }}
                 >
                   {item.name}
-                  {item.hasDropdown && <ChevronDown className="h-3 w-3" />}
                 </motion.a>
-
-                {/* Dropdown */}
-                <AnimatePresence>
-                  {item.hasDropdown && isAgencesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-48 bg-[#151b2e] rounded-xl shadow-xl border border-white/10 overflow-hidden"
-                    >
-                      {agencesItems.map((sub) => (
-                        <a
-                          key={sub.name}
-                          href={sub.href}
-                          className="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
-                        >
-                          {sub.name}
-                        </a>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
               </motion.div>
             ))}
+            {/* S'inscrire Button */}
+            <motion.a
+              href="/s-inscrire"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: navItems.length * 0.1 + 0.3 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25"
+            >
+              S'inscrire
+            </motion.a>
           </nav>
 
           {/* Right Side - Phone CTA */}
@@ -157,6 +135,13 @@ export default function Header() {
               </a>
             ))}
             <div className="px-4 pt-4 border-t border-white/10 space-y-3">
+              <a
+                href="/s-inscrire"
+                className="block w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm text-center hover:opacity-90 transition-all duration-300"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                S'inscrire
+              </a>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="h-4 w-4" />
                 <span>01 80 83 49 96</span>

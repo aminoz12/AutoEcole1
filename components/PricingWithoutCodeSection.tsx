@@ -309,7 +309,7 @@ export default function PricingWithoutCodeSection({ transmissionType, setTransmi
 
                   {/* CTA Button */}
                   <motion.a
-                    href="/auth"
+                    href="/s-inscrire"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className={`w-full py-4 rounded-xl font-bold text-base transition-all duration-300 block text-center text-white shadow-lg hover:shadow-xl whitespace-nowrap ${

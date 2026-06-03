@@ -6,24 +6,30 @@ import Image from 'next/image'
 
 export default function Footer() {
   const footerLinks = {
-    formations: [
-      { name: 'Conduite accompagnée', href: '#' },
-      { name: 'Formation traditionnelle', href: '#' },
-      { name: 'Code de la route', href: '#' },
-      { name: 'Perfectionnement', href: '#' },
-    ],
-    entreprise: [
-      { name: 'À propos', href: '#' },
-      { name: 'Nos moniteurs', href: '#' },
-      { name: 'Nos agences', href: '#' },
-      { name: 'Recrutement', href: '#' },
-    ],
     support: [
       { name: 'FAQ', href: '#faq' },
       { name: 'Contact', href: '#contact' },
       { name: 'Mentions légales', href: '#' },
       { name: 'CGV', href: '#' },
     ],
+  }
+
+  const horairesData = {
+    bureau: {
+      title: 'Nos horaires - Bureau',
+      schedule: [
+        { day: 'Lundi à Jeudi', time: '10h à 14h - 15h30 à 19h' },
+        { day: 'Vendredi', time: '10h à 13h - 15h30 à 19h' },
+        { day: 'Samedi', time: '10h à 14h' },
+      ],
+    },
+    conduite: {
+      title: 'Nos horaires - Conduite',
+      schedule: [
+        { day: 'Lundi à Vendredi', time: '10h à 20h' },
+        { day: 'Samedi', time: '9h à 15h' },
+      ],
+    },
   }
 
   const socialLinks = [
@@ -81,57 +87,51 @@ export default function Footer() {
               </div>
             </motion.div>
 
-            {/* Formations */}
+            {/* Nos horaires - Bureau */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">Formations</h3>
+              <h3 className="text-xl font-bold mb-6">{horairesData.bureau.title}</h3>
               <ul className="space-y-3">
-                {footerLinks.formations.map((link, index) => (
+                {horairesData.bureau.schedule.map((item, index) => (
                   <motion.li
-                    key={link.name}
+                    key={item.day}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.2 + index * 0.1 }}
                     viewport={{ once: true }}
+                    className="text-gray-400"
                   >
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-primary transition-colors duration-300"
-                    >
-                      {link.name}
-                    </a>
+                    <div className="font-semibold text-gray-300">{item.day}</div>
+                    <div className="text-sm">{item.time}</div>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Entreprise */}
+            {/* Nos horaires - Conduite */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">Entreprise</h3>
+              <h3 className="text-xl font-bold mb-6">{horairesData.conduite.title}</h3>
               <ul className="space-y-3">
-                {footerLinks.entreprise.map((link, index) => (
+                {horairesData.conduite.schedule.map((item, index) => (
                   <motion.li
-                    key={link.name}
+                    key={item.day}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
                     viewport={{ once: true }}
+                    className="text-gray-400"
                   >
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-primary transition-colors duration-300"
-                    >
-                      {link.name}
-                    </a>
+                    <div className="font-semibold text-gray-300">{item.day}</div>
+                    <div className="text-sm">{item.time}</div>
                   </motion.li>
                 ))}
               </ul>

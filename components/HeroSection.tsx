@@ -1,10 +1,14 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight, Star, Clock, FastForward, BarChart3, CreditCard } from 'lucide-react'
+import AuthModal from './auth/AuthModal'
 
 export default function HeroSection() {
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const features = [
     {
       icon: Clock,
@@ -97,6 +101,15 @@ export default function HeroSection() {
               Voir Les Packs
               <ArrowRight className="h-4 w-4" />
             </motion.a>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/s-inscrire"
+                className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/25 flex items-center justify-center gap-2 inline-flex"
+              >
+                S'inscrire
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
           </motion.div>
 
           {/* Rating */}
@@ -142,6 +155,9 @@ export default function HeroSection() {
           ))}
         </motion.div>
       </div>
+
+      {/* Auth Modal */}
+      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </section>
   )
 }

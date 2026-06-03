@@ -3,6 +3,7 @@ import PromoBanner from '@/components/PromoBanner'
 import HeroSection from '@/components/HeroSection'
 import PricingWrapper from '@/components/PricingWrapper'
 import CPFFinancingSection from '@/components/CPFFinancingSection'
+import WebPackSection from '@/components/WebPackSection'
 import BlogPreview from '@/components/BlogPreview'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQSection from '@/components/FAQSection'
@@ -31,6 +32,9 @@ export default function Home() {
       
       {/* CPF Financing Section - CPF financing promotion */}
       <CPFFinancingSection />
+      
+      {/* Web Pack Section - Online code training */}
+      <WebPackSection />
       
       {/* Testimonials Section - Customer reviews */}
       <TestimonialsSection testimonials={[]} />
