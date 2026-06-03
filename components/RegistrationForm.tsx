@@ -118,7 +118,7 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
         city: '',
         dateOfBirth: '',
         licenseType: 'B',
-      })
+      });
 
       // Store the mailto link for later use
       (window as any).__registrationMailto = mailtoLink
