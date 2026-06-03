@@ -36,7 +36,7 @@ export default function HeroSection() {
           src="/hero.png"
           alt="Intérieur d'une voiture"
           fill
-          className="object-cover scale-110 brightness-[0.25]"
+          className="object-cover scale-110 brightness-[0.25] translate-y-16"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/80 via-[#0B0F19]/60 to-[#0B0F19]" />
@@ -53,7 +53,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-sm md:text-base mb-6"
           >
-            Votre permis accéléré Auto-Moto École à Paris
+            Votre Permis Accéléré En 10 Jours
           </motion.p>
 
           {/* Headline */}
@@ -88,13 +88,6 @@ export default function HeroSection() {
             transition={{ delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 mb-10"
           >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              S'inscrire
-            </motion.button>
             <motion.a
               href="#tarifs"
               whileHover={{ scale: 1.05 }}

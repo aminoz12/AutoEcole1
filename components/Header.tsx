@@ -2,36 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone, User, ChevronDown } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
-import { createClient } from '@/lib/supabase/client'
-import AuthModal from './auth/AuthModal'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
-  const [user, setUser] = useState<any>(null)
   const [isAgencesOpen, setIsAgencesOpen] = useState(false)
-  const supabase = createClient()
 
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user)
-    })
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null)
-    })
-
-    return () => {
-      if (subscription) {
-        subscription.unsubscribe()
-      }
-    }
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +25,7 @@ export default function Header() {
     { name: 'Tarifs', href: '#tarifs' },
     { name: 'Financement CPF', href: '#cpf' },
     { name: 'Nos Agences', href: '#agences', hasDropdown: true },
-    { name: "S'inscrire", href: '#contact' },
+    { name: 'Nos Conseils', href: '#blog' },
   ]
 
   const agencesItems = [
@@ -97,11 +75,7 @@ export default function Header() {
               >
                 <motion.a
                   href={item.href}
-                  className={`transition-colors duration-300 font-medium text-sm flex items-center gap-1 ${
-                    item.name === "S'inscrire"
-                      ? 'text-sky-400 hover:text-sky-300'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
+                  className="transition-colors duration-300 font-medium text-sm flex items-center gap-1 text-gray-300 hover:text-white"
                   whileHover={{ y: -2 }}
                 >
                   {item.name}
@@ -134,7 +108,7 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Right Side - Phone CTA + User */}
+          {/* Right Side - Phone CTA */}
           <div className="hidden lg:flex items-center space-x-3">
             <motion.a
               href="tel:0180834996"
@@ -145,28 +119,6 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               <span>01 80 83 49 96</span>
             </motion.a>
-
-            {user ? (
-              <motion.a
-                href="/dashboard"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-10 h-10 rounded-full flex items-center justify-center ring-2 ring-white/20 hover:ring-white/40 transition-all"
-                style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 100%)' }}
-              >
-                <User className="h-4 w-4 text-white" />
-              </motion.a>
-            ) : (
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsAuthModalOpen(true)}
-                className="w-10 h-10 rounded-full flex items-center justify-center ring-2 ring-white/20 hover:ring-white/40 transition-all"
-                style={{ background: 'linear-gradient(135deg, #ec4899 0%, #a855f7 100%)' }}
-              >
-                <User className="h-4 w-4 text-white" />
-              </motion.button>
-            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -209,31 +161,11 @@ export default function Header() {
                 <Phone className="h-4 w-4" />
                 <span>01 80 83 49 96</span>
               </div>
-              {user ? (
-                <a
-                  href="/dashboard"
-                  className="block w-full text-center bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Mon Espace
-                </a>
-              ) : (
-                <button
-                  onClick={() => {
-                    setIsAuthModalOpen(true)
-                    setIsMobileMenuOpen(false)
-                  }}
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity"
-                >
-                  Réserver un Rendez-Vous
-                </button>
-              )}
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Auth Modal */}
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </motion.header>
   )
 }

@@ -9,40 +9,11 @@ import FAQSection from '@/components/FAQSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
-import { createClient } from '@/lib/supabase/server'
+import { blogPosts } from '@/lib/blog-data'
 
-export default async function Home() {
-  const supabase = await createClient()
-
-  // Fetch featured blog posts, fallback to latest published posts
-  const { data: featuredPostsData } = await supabase
-    .from('blog_posts')
-    .select('*')
-    .eq('is_published', true)
-    .eq('is_featured', true)
-    .order('published_at', { ascending: false })
-    .limit(5)
-
-  // If no featured posts, get latest published posts
-  let featuredPosts = featuredPostsData
-  if (!featuredPostsData || featuredPostsData.length === 0) {
-    const { data: latestPosts } = await supabase
-      .from('blog_posts')
-      .select('*')
-      .eq('is_published', true)
-      .order('published_at', { ascending: false })
-      .limit(5)
-    featuredPosts = latestPosts
-  }
-
-  // Fetch featured testimonials
-  const { data: testimonials } = await supabase
-    .from('testimonials')
-    .select('*')
-    .eq('is_approved', true)
-    .eq('is_featured', true)
-    .order('created_at', { ascending: false })
-    .limit(6)
+export default function Home() {
+  // Get first 5 blog posts for preview
+  const featuredPosts = blogPosts.slice(0, 5)
 
   return (
     <main className="min-h-screen">
@@ -62,7 +33,7 @@ export default async function Home() {
       <CPFFinancingSection />
       
       {/* Testimonials Section - Customer reviews */}
-      <TestimonialsSection testimonials={testimonials || []} />
+      <TestimonialsSection testimonials={[]} />
       
       {/* FAQ Section - Common questions */}
       <FAQSection />
@@ -71,7 +42,7 @@ export default async function Home() {
       <CTASection />
       
       {/* Blog Preview - Latest articles */}
-      <BlogPreview posts={featuredPosts || []} />
+      <BlogPreview posts={featuredPosts} />
       
       {/* Footer - Links and contact info */}
       <Footer />
