@@ -1,6 +1,14 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import DashboardContent from '@/components/dashboard/DashboardContent'
+import { createPageMetadata } from '@/lib/seo/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Espace élève',
+  description: 'Tableau de bord élève Auto Ecole Des Paquerettes.',
+  path: '/dashboard',
+  noIndex: true,
+})
 
 export default async function DashboardPage() {
   const supabase = await createClient()

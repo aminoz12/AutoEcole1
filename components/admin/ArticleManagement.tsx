@@ -92,7 +92,7 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
       is_featured: editingPost.is_featured,
       seo_title: editingPost.title, // Use title as default SEO title
       seo_description: editingPost.excerpt, // Use excerpt as default SEO description
-      author_name: 'AutoEcole Pro', // Default author name
+      author_name: 'Auto Ecole Des Paquerettes', // Default author name
       published_at: editingPost.published_at,
       created_at: editingPost.created_at,
     } : null;

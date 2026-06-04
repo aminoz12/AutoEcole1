@@ -42,7 +42,7 @@ export default function ArticleEditor({ post, onClose }: ArticleEditorProps) {
     is_featured: false,
     seo_title: '',
     seo_description: '',
-    author_name: 'AutoEcole Pro'
+    author_name: 'Auto Ecole Des Paquerettes'
   })
   const [tagInput, setTagInput] = useState('')
   const [saving, setSaving] = useState(false)

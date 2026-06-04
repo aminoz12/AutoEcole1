@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import Image from 'next/image'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export default function Footer() {
   const footerLinks = {
@@ -56,15 +57,16 @@ export default function Footer() {
               <div className="mb-6">
                 <Image
                   src="/logoautoecol.png"
-                  alt="AutoEcole Logo"
+                  alt={`${siteConfig.name} — logo`}
                   width={120}
                   height={40}
                   className="h-10 w-auto object-contain"
                 />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Votre partenaire de confiance pour l'apprentissage de la conduite. 
-                Plus de 15 ans d'expérience et plus de 2,500 élèves formés avec succès.
+                Votre auto-école de confiance à Nanterre et Sartrouville. Plus de 15 ans
+                d'expérience et plus de 2 500 permis délivrés avec un taux de réussite
+                parmi les meilleurs du secteur.
               </p>
               
               {/* Contact Info */}
@@ -82,7 +84,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>Nanterre & Sartrouville</span>
+                  <span>375 Av. de la République, 92000 Nanterre</span>
                 </div>
               </div>
             </motion.div>
@@ -177,9 +179,9 @@ export default function Footer() {
         >
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-xl font-bold mb-2">Restez informé</h3>
+              <h3 className="text-xl font-bold mb-2">Restez informé(e)</h3>
               <p className="text-gray-400">
-                Recevez nos conseils et offres spéciales par email
+                Recevez nos conseils permis, offres exclusives et actualités par e-mail
               </p>
             </div>
             <div className="flex w-full lg:w-auto">
@@ -209,7 +211,7 @@ export default function Footer() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-gray-400 text-sm">
-              © 2024 AutoEcole Pro. Tous droits réservés.
+              © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
             </div>
             
             {/* Social Links */}

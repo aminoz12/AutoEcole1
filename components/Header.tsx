@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone } from 'lucide-react'
 import Image from 'next/image'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -22,8 +23,8 @@ export default function Header() {
   const navItems = [
     { name: 'Formations', href: '#formations' },
     { name: 'Tarifs', href: '#tarifs' },
-    { name: 'Financement CPF', href: '#cpf' },
-    { name: 'Nos Conseils', href: '#blog' },
+    { name: 'CPF', href: '#cpf' },
+    { name: 'Blog', href: '#blog' },
   ]
 
   return (
@@ -47,7 +48,7 @@ export default function Header() {
           >
             <Image 
               src="/logoautoecol.png" 
-              alt="AutoEcole Pro Logo"
+              alt={`${siteConfig.name} — logo`}
               width={150}
               height={50}
               priority
@@ -82,7 +83,7 @@ export default function Header() {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25"
             >
-              S'inscrire
+              Je m'inscris
             </motion.a>
           </nav>
 
@@ -140,7 +141,7 @@ export default function Header() {
                 className="block w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white px-4 py-2.5 rounded-full font-semibold text-sm text-center hover:opacity-90 transition-all duration-300"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                S'inscrire
+                Je m'inscris
               </a>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="h-4 w-4" />

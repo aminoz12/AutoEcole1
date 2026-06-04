@@ -87,7 +87,7 @@ export default function RegistrationForm() {
       localStorage.setItem('registrations', JSON.stringify(registrations))
 
       // Create email link
-      const emailSubject = 'Nouvelle demande d\'inscription AutoEcole Pro'
+      const emailSubject = 'Nouvelle demande d\'inscription — Auto Ecole Des Paquerettes'
       const emailBody = `
 Nouvelle inscription reçue:
 
@@ -106,7 +106,7 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
       
       // Also show success message
       setSuccessMessage(
-        `Inscription enregistrée! Cliquez sur "Envoyer par email" pour envoyer les détails à votre email.`
+        'Demande enregistrée ! Cliquez sur « Envoyer par e-mail » pour transmettre vos informations à notre équipe.'
       )
 
       // Reset form
@@ -159,9 +159,11 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
               transition={{ delay: 0.2 }}
               className="text-3xl md:text-4xl font-bold mb-2"
             >
-              Inscription
+              Inscrivez-vous en ligne
             </motion.h1>
-            <p className="text-white/90">Commencez votre parcours vers le permis dès aujourd'hui</p>
+            <p className="text-white/90">
+              Remplissez le formulaire — notre équipe vous recontacte sous 24 h pour finaliser votre dossier.
+            </p>
           </div>
 
           {/* Form Content */}
@@ -338,7 +340,7 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
                   </>
                 ) : (
                   <>
-                    Envoyer ma demande
+                    Envoyer ma demande d'inscription
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
@@ -346,7 +348,7 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
 
               {/* Info text */}
               <p className="text-center text-gray-600 text-sm mt-6">
-                Nous vous contacterons par email pour finaliser votre inscription.
+                Un conseiller vous contactera sous 24 h pour confirmer votre inscription et présenter nos formules.
               </p>
             </form>
           </div>
@@ -361,15 +363,15 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
             <div className="text-3xl font-bold text-pink-500 mb-2">100%</div>
-            <p className="text-sm text-gray-300">Inscription rapide et sécurisée</p>
+            <p className="text-sm text-gray-300">Formulaire sécurisé, réponse sous 24 h</p>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
-            <div className="text-3xl font-bold text-pink-500 mb-2">24/7</div>
-            <p className="text-sm text-gray-300">Support client disponible</p>
+            <div className="text-3xl font-bold text-pink-500 mb-2">CPF</div>
+            <p className="text-sm text-gray-300">Financement possible dès 100 €</p>
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
-            <div className="text-3xl font-bold text-pink-500 mb-2">✓</div>
-            <p className="text-sm text-gray-300">Commencez immédiatement</p>
+            <div className="text-3xl font-bold text-pink-500 mb-2">4,9/5</div>
+            <p className="text-sm text-gray-300">Note moyenne de nos élèves</p>
           </div>
         </motion.div>
       </div>

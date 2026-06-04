@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
           body: JSON.stringify({
             from: 'noreply@autoecole.com',
             to: data.email,
-            subject: 'Votre demande d\'inscription - AutoEcole Pro',
+            subject: 'Votre demande d\'inscription — Auto Ecole Des Paquerettes',
             html: `
               <h2>Merci pour votre inscription!</h2>
               <p>Bonjour ${data.fullName},</p>
@@ -90,7 +90,7 @@ export async function POST(request: NextRequest) {
               </ul>
               <hr />
               <p>Si vous avez des questions, n'hésitez pas à nous appeler au <strong>01 80 83 49 96</strong>.</p>
-              <p>Cordialement,<br/>L'équipe AutoEcole Pro</p>
+              <p>Cordialement,<br/>L'équipe Auto Ecole Des Paquerettes</p>
             `,
           }),
         })

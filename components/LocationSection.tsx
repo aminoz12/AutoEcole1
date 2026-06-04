@@ -17,7 +17,7 @@ export default function LocationSection() {
       },
       googleMapsLink: 'https://www.google.com/maps/place//data=!4m2!3m1!1s0x47e661370fd882cb:0xee6780cbac63daf9?sa=X&ved=1t:8290&ictx=111',
       embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2622.123456789!2d2.219769!3d48.9107144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e664449db77411%3A0xe51488f1707793cd!2s375%20Av.%20de%20la%20R%C3%A9publique%2C%2092000%20Nanterre%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
-      title: "Localisation AutoEcole Pro - 375 Av. de la République, Nanterre",
+      title: "Localisation Auto Ecole Des Paquerettes — 375 Av. de la République, Nanterre",
       description: "Trouvez-nous facilement à Nanterre. Choisissez votre application de navigation préférée pour obtenir l'itinéraire le plus optimal."
     },
     sartrouville: {
@@ -29,7 +29,7 @@ export default function LocationSection() {
       },
       googleMapsLink: 'https://www.google.com/maps?client=opera-gx&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=ma&sa=X&geocode=KcuC2A83YeZHMfnaY6zLgGfu&daddr=133+Av.+du+G%C3%A9n%C3%A9ral+de+Gaulle,+78500+Sartrouville,+France',
       embedSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.456789012!2d2.1875!3d48.9431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6681234567890%3A0x1234567890abcdef!2s133%20Av.%20du%20G%C3%A9n%C3%A9ral%20de%20Gaulle%2C%2078500%20Sartrouville%2C%20France!5e0!3m2!1sen!2sfr!4v1234567890123!5m2!1sen!2sfr",
-      title: "Localisation AutoEcole Pro - 133 Av. du Général de Gaulle, Sartrouville",
+      title: "Localisation Auto Ecole Des Paquerettes — 133 Av. du Général de Gaulle, Sartrouville",
       description: "Trouvez-nous facilement à Sartrouville. Choisissez votre application de navigation préférée pour obtenir l'itinéraire le plus optimal."
     }
   }

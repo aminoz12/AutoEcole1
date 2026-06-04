@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Flame, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function PromoBanner() {
   return (
@@ -21,19 +22,21 @@ export default function PromoBanner() {
         >
           <span className="inline-flex items-center gap-1.5 font-bold uppercase tracking-wider">
             <Flame className="h-3.5 w-3.5 text-amber-300" fill="currentColor" />
-            OFFRE LIMITÉE
+            Offre limitée
             <Flame className="h-3.5 w-3.5 text-amber-300" fill="currentColor" />
           </span>
           <span className="hidden sm:inline text-white/95 font-semibold uppercase tracking-wide">
-            1H DE CONDUITE OFFERTE À PARIS 15
+            1 h de conduite offerte à Nanterre
           </span>
-          <span className="inline-flex items-center gap-1 bg-black/30 backdrop-blur-sm hover:bg-black/40 transition-colors cursor-pointer font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full">
-            3 CRÉNEAUX RESTANTS CETTE SEMAINE
+          <Link
+            href="/s-inscrire"
+            className="inline-flex items-center gap-1 bg-black/30 backdrop-blur-sm hover:bg-black/40 transition-colors font-semibold uppercase tracking-wide px-2.5 py-1 rounded-full"
+          >
+            Plus que 3 places cette semaine
             <ChevronRight className="h-3 w-3" />
-          </span>
+          </Link>
         </motion.div>
       </div>
     </div>
   )
 }
-

@@ -55,7 +55,7 @@ Prenez le temps de lire attentivement chaque question et chaque réponse. Élimi
 
 Avec une préparation sérieuse et ces astuces en tête, vous mettez toutes les chances de votre côté pour réussir votre code du premier coup. Bonne chance !`,
     featured_image: '/blog1.jpeg',
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Code',
     tags: ['code de la route', 'examen', 'conseils', 'réussite'],
     published_at: '2024-01-15',
@@ -112,7 +112,7 @@ Une bonne auto-école dispose de :
 
 Prenez le temps de visiter plusieurs auto-écoles, de rencontrer les moniteurs et de comparer les offres. Votre choix aura un impact direct sur votre apprentissage et votre réussite.`,
     featured_image: '/blog2.jpeg',
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conseils',
     tags: ['auto-école', 'choix', 'critères', 'permis'],
     published_at: '2024-01-10',
@@ -168,7 +168,7 @@ La formation accélérée convient particulièrement si :
 
 La formation en 10 jours est une excellente option pour les candidats qui peuvent supporter l'intensité. Évaluez votre profil et vos disponibilités avant de vous engager.`,
     featured_image: '/blog3.jpeg',
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Permis',
     tags: ['permis accéléré', 'formation', '10 jours', 'intensif'],
     published_at: '2024-01-05',
@@ -234,7 +234,7 @@ Si vous commettez une erreur, ne paniquez pas. Continuez à conduire normalement
 
 La clé est de rester concentré et de conduire comme vous l'avez appris. Avec une bonne préparation et ces conseils en tête, vous mettez toutes les chances de votre côté.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conduite',
     tags: ['examen', 'conduite', 'erreurs', 'conseils'],
     published_at: '2024-01-01',
@@ -296,7 +296,7 @@ Le CPF peut couvrir :
 
 Le CPF est une excellente opportunité pour financer votre permis. Renseignez-vous dès maintenant sur vos droits et les démarches à suivre.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conseils',
     tags: ['CPF', 'financement', 'permis', 'formation'],
     published_at: '2023-12-20',
@@ -366,7 +366,7 @@ Si vous êtes ébloui par un véhicule en face :
 
 La conduite de nuit demande plus de vigilance et d'anticipation. En suivant ces règles, vous roulez en toute sécurité.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Sécurité',
     tags: ['conduite de nuit', 'sécurité', 'phares', 'précautions'],
     published_at: '2023-12-15',
@@ -454,7 +454,7 @@ Pour un véhicule d'occasion :
 
 Prenez votre temps pour choisir. Essayez plusieurs modèles, comparez les offres et n'hésitez pas à demander conseil. Votre première voiture doit vous apporter sécurité et plaisir de conduire.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conseils',
     tags: ['première voiture', 'achat', 'choix', 'critères'],
     published_at: '2023-12-10',
@@ -522,7 +522,7 @@ Certaines catégories de conducteurs doivent suivre une formation continue pour 
 
 Restez informé des évolutions du code de la route. Consultez régulièrement les sources officielles et adaptez votre conduite en conséquence.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Actualités',
     tags: ['code de la route', 'nouvelles règles', '2024', 'sécurité'],
     published_at: '2023-12-05',
@@ -625,7 +625,7 @@ Choisissez selon la valeur de votre véhicule et votre utilisation.
 
 L'assurance auto est un investissement important. Prenez le temps de comparer et de choisir le contrat adapté à votre situation.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Assurance',
     tags: ['assurance', 'contrats', 'tiers', 'tous risques'],
     published_at: '2023-11-28',
@@ -723,7 +723,7 @@ Doublez cette distance (4 secondes minimum).
 
 La conduite sur autoroute demande vigilance et anticipation. En respectant ces règles, vous contribuez à la sécurité de tous.`,
     featured_image: null,
-    author_name: 'Équipe AutoEcole Pro',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conduite',
     tags: ['autoroute', 'sécurité', 'règles', 'circulation'],
     published_at: '2023-11-20',

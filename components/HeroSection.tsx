@@ -12,23 +12,23 @@ export default function HeroSection() {
   const features = [
     {
       icon: Clock,
-      title: "Jusqu'à 4 heures de formation par jour",
-      description: 'Planifiez vos leçons selon vos disponibilités',
+      title: "Jusqu'à 4 h de conduite par jour",
+      description: 'Des créneaux flexibles, adaptés à votre emploi du temps',
     },
     {
       icon: FastForward,
-      title: 'Terminez votre formation en 10 jours',
-      description: 'Obtenez votre permis rapidement',
+      title: 'Objectif permis en 10 à 14 jours',
+      description: 'Formules accélérées pour avancer vite et bien',
     },
     {
       icon: BarChart3,
-      title: 'Suivi de formation en temps réel',
-      description: "Suivez votre progression via l'app mobile",
+      title: 'Suivi pédagogique en direct',
+      description: 'Visualisez votre progression depuis votre espace élève',
     },
     {
       icon: CreditCard,
       title: 'Paiement en 4 ou 10 fois',
-      description: 'Financez votre permis en plusieurs fois',
+      description: 'Étalez le coût de votre permis sans frais supplémentaires',
     },
   ]
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-sm md:text-base mb-6"
           >
-            Votre Permis Accéléré En 10 Jours
+            Auto-école agréée — Nanterre & Sartrouville
           </motion.p>
 
           {/* Headline */}
@@ -67,11 +67,11 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6 max-w-4xl uppercase"
           >
-            Ton permis dès 110€ / par mois
+            Votre permis dès 110 €/mois
             <br />
             Prêt pour{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
-              l'examen en 14 jours.
+              l'examen en 14 jours
             </span>
           </motion.h1>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5 }}
             className="text-gray-400 text-base md:text-lg mb-8 max-w-xl"
           >
-            Paiement 10X sans frais, Inscription immédiate.
+            Paiement en 10 fois sans frais · Inscription en ligne immédiate · Financement CPF accepté
           </motion.p>
 
           {/* CTA Buttons */}
@@ -98,7 +98,7 @@ export default function HeroSection() {
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2"
             >
-              Voir Les Packs
+              Découvrir nos formules
               <ArrowRight className="h-4 w-4" />
             </motion.a>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -106,7 +106,7 @@ export default function HeroSection() {
                 href="/s-inscrire"
                 className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/25 flex items-center justify-center gap-2 inline-flex"
               >
-                S'inscrire
+                Je m'inscris
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
@@ -125,7 +125,7 @@ export default function HeroSection() {
                 <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
               ))}
             </div>
-            <span className="text-gray-400 text-sm">+ de 1000 avis</span>
+            <span className="text-gray-400 text-sm">+ de 1 000 avis vérifiés</span>
           </motion.div>
         </div>
 

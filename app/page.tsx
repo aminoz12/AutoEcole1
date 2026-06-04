@@ -10,50 +10,31 @@ import FAQSection from '@/components/FAQSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { OrganizationJsonLd, WebSiteJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
+import { homepageFaqs } from '@/lib/content/faq-data'
 
 export default function Home() {
-  // Get first 5 blog posts for preview
   const featuredPosts = blogPosts.slice(0, 5)
 
   return (
     <main className="min-h-screen">
-      {/* Header - Sticky navigation */}
+      <OrganizationJsonLd />
+      <WebSiteJsonLd />
+      <FAQPageJsonLd faqs={homepageFaqs} />
+
       <Header />
-      
-      {/* Promo Banner - Limited time offer */}
       <PromoBanner />
-      
-      {/* Hero Section - Main landing area */}
       <HeroSection />
-      
-      {/* Pricing Sections - Nos leçons de conduite avec/sans code */}
       <PricingWrapper />
-      
-      {/* CPF Financing Section - CPF financing promotion */}
       <CPFFinancingSection />
-      
-      {/* Web Pack Section - Online code training */}
       <WebPackSection />
-      
-      {/* Testimonials Section - Customer reviews */}
       <TestimonialsSection testimonials={[]} />
-      
-      {/* FAQ Section - Common questions */}
       <FAQSection />
-      
-      {/* CTA Section - Final call to action */}
       <CTASection />
-      
-      {/* Blog Preview - Latest articles */}
       <BlogPreview posts={featuredPosts} />
-      
-      {/* Footer - Links and contact info */}
       <Footer />
-      
-      {/* WhatsApp Floating Button */}
       <WhatsAppButton />
     </main>
   )
 }
-

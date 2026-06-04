@@ -53,7 +53,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Conseils de nos <span className="text-primary">experts</span>
+            Le blog <span className="text-primary">des Paquerettes</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             viewport={{ once: true }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Conseils, astuces et actualités pour réussir votre permis
+            Guides pratiques, astuces d'experts et actualités pour réussir votre code et votre permis
           </motion.p>
         </div>
 
@@ -142,7 +142,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
             href="/blog"
             className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
           >
-            Voir tous les articles
+            Tous nos articles
             <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>

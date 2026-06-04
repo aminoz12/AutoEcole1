@@ -5,6 +5,7 @@
 [build.environment]
   NODE_VERSION = "18"
   NODE_OPTIONS = "--max-old-space-size=8192"
+  # Set NEXT_PUBLIC_SITE_URL in Netlify UI (e.g. https://autoecolepro.fr)
 
 # Next.js plugin for Netlify
 [[plugins]]

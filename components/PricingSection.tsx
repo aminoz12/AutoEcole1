@@ -24,8 +24,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -36,8 +36,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -49,8 +49,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -61,8 +61,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
   ],
@@ -75,8 +75,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -88,8 +88,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -100,8 +100,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -112,8 +112,8 @@ const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
   ],
@@ -127,8 +127,8 @@ const packsData: Record<PackKey, Pack[]> = {
         '13h de leçons de conduite',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -141,8 +141,8 @@ const packsData: Record<PackKey, Pack[]> = {
         '20h de leçons de conduite',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -154,8 +154,8 @@ const packsData: Record<PackKey, Pack[]> = {
         '30h de leçons de conduite',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
-        "Date d'examen garantie",
+        'Éligible au financement CPF',
+        "Date d'examen prioritaire",
       ],
     },
     {
@@ -163,11 +163,11 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 121,
       total: 1210,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
     {
@@ -176,11 +176,11 @@ const packsData: Record<PackKey, Pack[]> = {
       total: 1500,
       popular: true,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
     {
@@ -188,11 +188,11 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 205,
       total: 2050,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
   ],
@@ -202,11 +202,11 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 121,
       total: 1210,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
     {
@@ -215,11 +215,11 @@ const packsData: Record<PackKey, Pack[]> = {
       total: 1500,
       popular: true,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
     {
@@ -227,11 +227,11 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 205,
       total: 2050,
       features: [
-        "Date d'examen garantie",
+        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
         'Paiement en 4 fois sans frais',
         'Suivi pédagogique',
-        'Finance avec ton CPF',
+        'Éligible au financement CPF',
       ],
     },
   ],
@@ -266,14 +266,14 @@ export default function PricingSection(_props: PricingSectionProps) {
           className="text-center mb-10"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
-            Choisis ta formule,
+            Nos formules permis,
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
-              au meilleur prix.
+              transparentes et sans surprise.
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base">
-            Des offres flexibles et adaptées à tes besoins
+            Boîte manuelle, automatique ou avec code — choisissez la formule adaptée à votre profil
           </p>
         </motion.div>
 
@@ -328,7 +328,7 @@ export default function PricingSection(_props: PricingSectionProps) {
               >
                 {pack.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
-                    Formule recommandée par 80% de nos élèves
+                    Formule la plus choisie — 80 % de nos élèves
                   </div>
                 )}
 
@@ -374,16 +374,16 @@ export default function PricingSection(_props: PricingSectionProps) {
           className="text-center mt-24 mb-10"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3">
-            Le Sprint Final :
+            La dernière ligne droite :
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
-              Votre Succès au Permis de Conduire
+              réussir votre examen du permis
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-3xl mx-auto">
-            Après vos heures de base, nous passons en mode{' '}
-            <span className="text-blue-400 font-semibold">Réussite Garantie</span> avec un{' '}
-            <span className="text-blue-400 font-semibold">accompagnement sur-mesure</span>.
+            Une fois vos heures de base validées, nous basculons en mode{' '}
+            <span className="text-blue-400 font-semibold">préparation intensive</span> avec un{' '}
+            <span className="text-blue-400 font-semibold">coaching personnalisé</span> jusqu'au jour J.
           </p>
         </motion.div>
 
@@ -397,20 +397,20 @@ export default function PricingSection(_props: PricingSectionProps) {
           {[
             {
               num: 1,
-              title: 'Immersion Examen',
-              desc: 'Vos dernières heures se déroulent sur les parcours officiels et exacts de votre centre d\'examen, virage par virage.',
+              title: 'Immersion sur parcours d\'examen',
+              desc: 'Vos dernières heures se déroulent sur les circuits officiels de votre centre d\'examen, virage par virage, dans des conditions réelles.',
               icon: Map,
             },
             {
               num: 2,
-              title: 'Coaching Mentoring',
-              desc: 'Un examen blanc complet en conditions réelles avec votre moniteur pour arriver le jour J sans stress et en totale confiance.',
+              title: 'Examen blanc avec moniteur',
+              desc: 'Un test complet en conditions réelles pour arriver serein le jour de l\'examen, sans stress ni mauvaise surprise.',
               icon: Users,
             },
             {
               num: 3,
-              title: 'Date de Permis Prioritaire',
-              desc: 'Dès que vous êtes prêt, nous validons votre date de passage. Pas d\'attente inutile, vous passez l\'examen lancé sur votre lancée.',
+              title: 'Date d\'examen prioritaire',
+              desc: 'Dès que vous êtes prêt(e), nous réservons votre créneau d\'examen. Pas d\'attente inutile — vous passez au bon moment.',
               icon: CalendarCheck,
             },
           ].map((card) => {
@@ -449,7 +449,7 @@ export default function PricingSection(_props: PricingSectionProps) {
             href="#cpf"
             className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
           >
-            Je finance mon permis avec le CPF
+            Financer mon permis avec le CPF
             <ArrowRight className="h-4 w-4" />
           </a>
         </motion.div>

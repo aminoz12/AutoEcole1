@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
+import { createPageMetadata } from '@/lib/seo/metadata'
+import { siteConfig } from '@/lib/seo/site-config'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -15,10 +17,12 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-export const metadata: Metadata = {
-  title: 'AutoEcole Pro - Apprenez à conduire avec les meilleurs moniteurs',
-  description: 'AutoEcole Pro vous accompagne dans votre apprentissage de la conduite avec des moniteurs expérimentés et des tarifs compétitifs.',
-}
+export const metadata: Metadata = createPageMetadata({
+  title: `${siteConfig.name} — Permis de conduire à Nanterre & Sartrouville`,
+  description: siteConfig.description,
+  path: '/',
+  keywords: ['permis accéléré 10 jours', 'auto-école CPF Nanterre'],
+})
 
 export default function RootLayout({
   children,
@@ -29,7 +33,7 @@ export default function RootLayout({
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
       <body className="antialiased">
         {children}
-        <Toaster 
+        <Toaster
           position="top-right"
           toastOptions={{
             duration: 4000,
@@ -58,4 +62,3 @@ export default function RootLayout({
     </html>
   )
 }
-

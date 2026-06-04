@@ -68,10 +68,10 @@ export default function BlogList({ posts, categories }: BlogListProps) {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Notre <span className="text-primary">Blog</span>
+          Blog <span className="text-primary">permis & code</span>
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Conseils, astuces et actualités pour réussir votre permis de conduire
+          Conseils d'experts, guides pratiques et actualités pour réussir votre permis de conduire
         </p>
       </div>
 

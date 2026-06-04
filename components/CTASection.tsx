@@ -50,8 +50,8 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="text-4xl lg:text-6xl font-bold mb-6"
           >
-            Prêt à commencer votre{' '}
-            <span className="text-yellow-300">aventure</span> ?
+            Prêt à obtenir votre{' '}
+            <span className="text-yellow-300">permis</span> ?
           </motion.h2>
 
           <motion.p
@@ -61,8 +61,8 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto opacity-90"
           >
-            Rejoignez plus de 2,500 élèves qui nous font confiance pour obtenir leur permis de conduire.
-            Commencez dès aujourd'hui avec une leçon d'essai gratuite !
+            Rejoignez les 2 500+ élèves qui nous ont fait confiance. Réservez votre
+            première leçon d'essai gratuite et démarrez votre formation dès aujourd'hui.
           </motion.p>
 
           <motion.div
@@ -79,7 +79,7 @@ export default function CTASection() {
               className="flex items-center gap-2 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg"
               style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #ec4899 100%)', boxShadow: '0 10px 25px rgba(236, 72, 153, 0.5)' }}
             >
-              <span>Réserver ma leçon d'essai</span>
+              <span>Réserver ma leçon d'essai gratuite</span>
             </motion.button>
 
             <motion.button
@@ -107,8 +107,8 @@ export default function CTASection() {
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Car className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Leçon d'essai gratuite</h3>
-              <p className="opacity-90">Découvrez notre méthode sans engagement</p>
+              <h3 className="text-xl font-bold mb-2">Leçon d'essai offerte</h3>
+              <p className="opacity-90">Testez notre pédagogie sans engagement</p>
             </motion.div>
 
             <motion.div
@@ -118,8 +118,8 @@ export default function CTASection() {
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Calendar className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Réservation en ligne</h3>
-              <p className="opacity-90">Planifiez vos cours 24h/24, 7j/7</p>
+              <h3 className="text-xl font-bold mb-2">Réservation 24h/24</h3>
+              <p className="opacity-90">Planifiez vos leçons en ligne, quand vous voulez</p>
             </motion.div>
 
             <motion.div
@@ -129,8 +129,8 @@ export default function CTASection() {
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Phone className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Support client</h3>
-              <p className="opacity-90">Une équipe dédiée à votre service</p>
+              <h3 className="text-xl font-bold mb-2">Accompagnement dédié</h3>
+              <p className="opacity-90">Une équipe disponible à chaque étape de votre parcours</p>
             </motion.div>
           </motion.div>
 
@@ -148,10 +148,10 @@ export default function CTASection() {
               className="text-center"
             >
               <h4 className="text-lg font-bold mb-2">
-                ⚡ Offre limitée : -20% sur votre première leçon
+                Offre de lancement : -20 % sur votre première leçon
               </h4>
               <p className="opacity-90">
-                Utilisez le code <span className="font-bold">AUTO2024</span> lors de votre réservation
+                Mentionnez le code <span className="font-bold">AUTO2026</span> lors de votre inscription
               </p>
             </motion.div>
           </motion.div>

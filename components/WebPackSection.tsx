@@ -25,7 +25,7 @@ export default function WebPackSection() {
     },
   ]
   return (
-    <section className="py-16 bg-white">
+    <section id="formations" className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -43,11 +43,14 @@ export default function WebPackSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Grâce à notre <span className="text-primary">pack web</span>, révisez le code de la route où vous voulez et n'importe quand !
+                Révisez le code partout avec notre{' '}
+                <span className="text-primary">pack web</span>
               </h2>
 
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Accessible via votre smartphone, tablette et ordinateur. Entraînez-vous facilement. Vos résultats sont directement reliés à notre auto-école afin de suivre au plus près votre évolution.
+                Accédez à la plateforme depuis votre smartphone, tablette ou ordinateur.
+                Entraînez-vous à votre rythme : vos résultats sont synchronisés avec
+                votre moniteur pour un suivi personnalisé et efficace.
               </p>
 
               {/* CTA Button */}
@@ -56,7 +59,7 @@ export default function WebPackSection() {
                 whileTap={{ scale: 0.95 }}
                 className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
               >
-                En savoir plus
+                Découvrir le pack web
               </motion.button>
             </motion.div>
 

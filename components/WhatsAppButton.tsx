@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function WhatsAppButton() {
   const phoneNumber = '+33761274422' // Replace with actual phone number
-  const message = encodeURIComponent('Bonjour! Je souhaite obtenir plus d\'informations sur vos formations.')
+  const message = encodeURIComponent('Bonjour, je souhaite des informations sur vos formations permis à Nanterre.')
 
   const handleWhatsAppClick = () => {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
       
       {/* Tooltip */}
       <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        Contactez-nous sur WhatsApp
+        Écrivez-nous sur WhatsApp
       </span>
 
       {/* Pulse animation */}

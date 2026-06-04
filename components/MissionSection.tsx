@@ -51,7 +51,7 @@ export default function MissionSection() {
 
             {/* Description */}
             <p className="text-lg text-gray-700 leading-relaxed">
-              Avec AutoEcole Pro, tout devient plus simple. Du code à l'assurance, en passant par le permis ou votre premier logement, nous sommes à vos côtés pour faciliter vos démarches et vous aider à gagner en autonomie.
+              Avec Auto Ecole Des Paquerettes, tout devient plus simple. Du code à l'assurance, en passant par le permis ou votre premier logement, nous sommes à vos côtés pour faciliter vos démarches et vous aider à gagner en autonomie.
             </p>
           </motion.div>
 
