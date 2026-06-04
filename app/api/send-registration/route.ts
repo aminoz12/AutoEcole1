@@ -11,11 +11,17 @@ interface RegistrationData {
   licenseType: string
 }
 
-// Initialize Supabase client
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || ''
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+function getSupabaseClient() {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey =
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-const supabase = createClient(supabaseUrl, supabaseServiceKey)
+  if (!supabaseUrl || !supabaseKey) {
+    return null
+  }
+
+  return createClient(supabaseUrl, supabaseKey)
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -30,25 +36,28 @@ export async function POST(request: NextRequest) {
     }
 
     // Save registration to Supabase database
-    const { error: dbError } = await supabase
-      .from('registrations')
-      .insert([
-        {
-          full_name: data.fullName,
-          email: data.email,
-          phone: data.phone,
-          address: data.address,
-          city: data.city,
-          date_of_birth: data.dateOfBirth,
-          license_type: data.licenseType,
-          created_at: new Date().toISOString(),
-          status: 'pending',
-        },
-      ])
+    const supabase = getSupabaseClient()
+    if (supabase) {
+      const { error: dbError } = await supabase
+        .from('registrations')
+        .insert([
+          {
+            full_name: data.fullName,
+            email: data.email,
+            phone: data.phone,
+            address: data.address,
+            city: data.city,
+            date_of_birth: data.dateOfBirth,
+            license_type: data.licenseType,
+            created_at: new Date().toISOString(),
+            status: 'pending',
+          },
+        ])
 
-    if (dbError) {
-      console.error('Database error:', dbError)
-      // Continue even if database save fails - still send emails
+      if (dbError) {
+        console.error('Database error:', dbError)
+        // Continue even if database save fails - still send emails
+      }
     }
 
     // Send confirmation email via Supabase's email service or external API
