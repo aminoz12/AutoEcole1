@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, MapPin, Navigation } from 'lucide-react'
 import { useState } from 'react'
 import { homepageFaqs } from '@/lib/content/faq-data'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -178,12 +179,12 @@ export default function FAQSection() {
               le CPF et les démarches d'inscription.
             </p>
             <motion.a
-              href="tel:0180834996"
+              href={`tel:${siteConfig.phoneTel}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
-              Appeler le 01 80 83 49 96
+              Appeler le {siteConfig.phone}
             </motion.a>
           </div>
         </motion.div>

@@ -233,7 +233,7 @@ Si vous commettez une erreur, ne paniquez pas. Continuez à conduire normalement
 ## Conclusion
 
 La clé est de rester concentré et de conduire comme vous l'avez appris. Avec une bonne préparation et ces conseils en tête, vous mettez toutes les chances de votre côté.`,
-    featured_image: null,
+    featured_image: '/blog4.jpeg',
     author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conduite',
     tags: ['examen', 'conduite', 'erreurs', 'conseils'],
@@ -295,7 +295,7 @@ Le CPF peut couvrir :
 ## Conclusion
 
 Le CPF est une excellente opportunité pour financer votre permis. Renseignez-vous dès maintenant sur vos droits et les démarches à suivre.`,
-    featured_image: null,
+    featured_image: '/blog5.jpeg',
     author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conseils',
     tags: ['CPF', 'financement', 'permis', 'formation'],
@@ -624,7 +624,7 @@ Choisissez selon la valeur de votre véhicule et votre utilisation.
 ## Conclusion
 
 L'assurance auto est un investissement important. Prenez le temps de comparer et de choisir le contrat adapté à votre situation.`,
-    featured_image: null,
+    featured_image: '/blog4.jpeg',
     author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Assurance',
     tags: ['assurance', 'contrats', 'tiers', 'tous risques'],
@@ -722,7 +722,7 @@ Doublez cette distance (4 secondes minimum).
 ## Conclusion
 
 La conduite sur autoroute demande vigilance et anticipation. En respectant ces règles, vous contribuez à la sécurité de tous.`,
-    featured_image: null,
+    featured_image: '/blog5.jpeg',
     author_name: 'Équipe Auto Ecole Des Paquerettes',
     category: 'Conduite',
     tags: ['autoroute', 'sécurité', 'règles', 'circulation'],

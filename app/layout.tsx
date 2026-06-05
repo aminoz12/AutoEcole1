@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = createPageMetadata({
-  title: `${siteConfig.name} — Permis de conduire à Nanterre & Sartrouville`,
+  title: `${siteConfig.name} — Permis de conduire à Nanterre`,
   description: siteConfig.description,
   path: '/',
   keywords: ['permis accéléré 10 jours', 'auto-école CPF Nanterre'],

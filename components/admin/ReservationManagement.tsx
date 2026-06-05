@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, User, Car, Phone, Mail, CheckCircle, XCircle, Search } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 
 interface Reservation {
   id: string
@@ -39,7 +38,6 @@ export default function ReservationManagement({ reservations: initialReservation
   const [reservations, setReservations] = useState<Reservation[]>(initialReservations)
   const [searchQuery, setSearchQuery] = useState('')
   const [filter, setFilter] = useState<'all' | 'pending' | 'confirmed' | 'completed' | 'cancelled'>('all')
-  const supabase = createClient()
 
   // Filter reservations
   const filteredReservations = reservations.filter(reservation => {
@@ -53,16 +51,8 @@ export default function ReservationManagement({ reservations: initialReservation
   })
 
   const handleStatusChange = async (id: string, newStatus: string) => {
-    const { error } = await supabase
-      .from('reservations')
-      .update({ status: newStatus })
-      .eq('id', id)
-
-    if (!error) {
-      setReservations(reservations.map(r => 
-        r.id === id ? { ...r, status: newStatus } : r
-      ))
-    }
+    // Status change disabled - Supabase integration removed
+    console.log('Status change disabled:', id, newStatus)
   }
 
   const formatDate = (date: string) => {

@@ -9,9 +9,9 @@ export default function Footer() {
   const footerLinks = {
     support: [
       { name: 'FAQ', href: '#faq' },
-      { name: 'Contact', href: '#contact' },
-      { name: 'Mentions légales', href: '#' },
-      { name: 'CGV', href: '#' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Mentions légales', href: '/mentions-legales' },
+      { name: 'CGV', href: '/cgv' },
     ],
   }
 
@@ -64,7 +64,7 @@ export default function Footer() {
                 />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Votre auto-école de confiance à Nanterre et Sartrouville. Plus de 15 ans
+                Votre auto-école de confiance à Nanterre. Plus de 15 ans
                 d'expérience et plus de 2 500 permis délivrés avec un taux de réussite
                 parmi les meilleurs du secteur.
               </p>
@@ -73,10 +73,9 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Phone className="h-5 w-5 text-primary" />
-                  <div className="flex flex-col">
-                    <span>01 46 49 38 90</span>
-                    <span>01 80 83 49 96</span>
-                  </div>
+                  <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-white transition-colors">
+                    {siteConfig.phone}
+                  </a>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Mail className="h-5 w-5 text-primary" />
@@ -84,9 +83,26 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>375 Av. de la République, 92000 Nanterre</span>
+                  <span>{siteConfig.address.full}</span>
                 </div>
               </div>
+
+              <a
+                href="/CQP.pdf"
+                download="Certificat-Qualiopi.pdf"
+                className="mt-6 inline-flex items-center gap-3 rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-3 text-gray-300 hover:border-primary hover:text-white transition-colors duration-300"
+              >
+                <Image
+                  src="/qualiopi-logo-png.png"
+                  alt="Logo Qualiopi"
+                  width={48}
+                  height={48}
+                  className="h-10 w-auto object-contain"
+                />
+                <span className="text-sm font-medium leading-snug">
+                  Télécharger Certificat Qualiopi
+                </span>
+              </a>
             </motion.div>
 
             {/* Nos horaires - Bureau */}

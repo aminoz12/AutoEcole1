@@ -17,7 +17,7 @@ export const homepageFaqs = [
   {
     question: 'Combien de temps faut-il pour obtenir le permis ?',
     answer:
-      'La durée dépend de votre rythme et de vos disponibilités. En moyenne, avec 2 à 3 leçons par semaine, nos élèves obtiennent le permis en 3 à 6 mois. Nos formules accélérées permettent une préparation intensive en 10 à 14 jours.',
+      'La durée dépend de votre rythme et de vos disponibilités. En moyenne, avec 2 à 3 leçons par semaine, nos élèves obtiennent le permis en 3 à 6 mois. Nos formules accélérées permettent une préparation intensive en quelques semaines.',
   },
   {
     question: 'Proposez-vous des cours de code de la route ?',

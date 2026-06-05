@@ -23,16 +23,12 @@ export default function Header() {
   const navItems = [
     { name: 'Formations', href: '#formations' },
     { name: 'Tarifs', href: '#tarifs' },
-    { name: 'CPF', href: '#cpf' },
     { name: 'Blog', href: '#blog' },
   ]
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
           ? 'bg-[#0B0F19]/95 backdrop-blur-md shadow-lg shadow-black/20'
           : 'bg-[#0B0F19]/95 backdrop-blur-sm'
@@ -44,7 +40,7 @@ export default function Header() {
           <motion.a
             href="/"
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col leading-none mt-6"
+            className="flex flex-col leading-none"
           >
             <Image 
               src="/logoautoecol.png" 
@@ -90,13 +86,13 @@ export default function Header() {
           {/* Right Side - Phone CTA */}
           <div className="hidden lg:flex items-center space-x-3">
             <motion.a
-              href="tel:0180834996"
+              href={`tel:${siteConfig.phoneTel}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-pink-500/25"
             >
               <Phone className="h-4 w-4" />
-              <span>01 80 83 49 96</span>
+              <span>{siteConfig.phone}</span>
             </motion.a>
           </div>
 
@@ -145,13 +141,13 @@ export default function Header() {
               </a>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="h-4 w-4" />
-                <span>01 80 83 49 96</span>
+                <span>{siteConfig.phone}</span>
               </div>
             </div>
           </div>
         </motion.div>
       </div>
 
-    </motion.header>
+    </header>
   )
 }

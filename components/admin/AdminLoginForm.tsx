@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Lock, Mail, LogIn, Shield } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
@@ -13,40 +12,10 @@ export default function AdminLoginForm() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const router = useRouter()
-  const supabase = createClient()
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError('')
-    setLoading(true)
-
-    try {
-      console.log('🔐 Login attempt with email:', email)
-
-      const result = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
-
-      console.log('📡 Login response:', { error: result.error?.message, user: result.data?.user?.email })
-
-      if (result.error) {
-        console.error('❌ Login error:', result.error)
-        setError(`Erreur: ${result.error.message}`)
-        return
-      }
-
-      if (result.data.user) {
-        console.log('✅ Login successful')
-        router.push('/admin')
-        router.refresh()
-      }
-    } catch (error) {
-      console.error('💥 Unexpected error:', error)
-      setError('Une erreur est survenue')
-    } finally {
-      setLoading(false)
-    }
+    setError('Login disabled - Supabase integration removed')
   }
 
   return (

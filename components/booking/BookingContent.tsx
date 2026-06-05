@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, Car, User, Filter, ArrowLeft, CheckCircle, List, CalendarDays } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 
 interface Lesson {
@@ -37,7 +36,6 @@ interface BookingContentProps {
 }
 
 export default function BookingContent({ user, lessons, instructors }: BookingContentProps) {
-  const supabase = createClient()
   const [selectedInstructor, setSelectedInstructor] = useState<string>('all')
   const [selectedType, setSelectedType] = useState<string>('all')
   const [booking, setBooking] = useState<string | null>(null)
@@ -51,26 +49,8 @@ export default function BookingContent({ user, lessons, instructors }: BookingCo
   })
 
   const handleBookLesson = async (lessonId: string) => {
-    if (!confirm('Confirmer la réservation de cette leçon ?')) return
-
-    setBooking(lessonId)
-    try {
-      const { error } = await supabase.from('reservations').insert({
-        user_id: user.id,
-        lesson_id: lessonId,
-        status: 'pending',
-      })
-
-      if (error) throw error
-
-      alert('Réservation effectuée avec succès !')
-      window.location.href = '/dashboard'
-    } catch (error: any) {
-      console.error('Error booking lesson:', error)
-      alert(error.message || 'Erreur lors de la réservation')
-    } finally {
-      setBooking(null)
-    }
+    // Booking disabled - Supabase integration removed
+    alert('Booking disabled - Supabase integration removed')
   }
 
   const getLessonTypeText = (type: string) => {

@@ -2,7 +2,8 @@
 
 import { Fragment, useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Check, ArrowRight, Map, Users, CalendarCheck } from 'lucide-react'
+import { Check, Map, Users, CalendarCheck, Phone } from 'lucide-react'
+import { siteConfig } from '@/lib/seo/site-config'
 
 type PackKey = 'manuelle' | 'auto' | 'manuelle-code' | 'auto-code'
 
@@ -22,10 +23,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -34,10 +33,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 40h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -47,10 +44,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Formation pratique en accéléré minimum 20H',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -59,10 +54,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
   ],
@@ -73,10 +66,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 13h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -86,10 +77,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -98,10 +87,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -110,10 +97,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
   ],
@@ -125,10 +110,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Cours de code illimité (1 an)',
         '13h de leçons de conduite',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -139,10 +122,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Cours de code illimité (1 an)',
         '20h de leçons de conduite',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -152,10 +133,8 @@ const packsData: Record<PackKey, Pack[]> = {
       features: [
         'Cours de code illimité (1 an)',
         '30h de leçons de conduite',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
-        "Date d'examen prioritaire",
       ],
     },
     {
@@ -163,11 +142,9 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 121,
       total: 1210,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
     {
@@ -176,11 +153,9 @@ const packsData: Record<PackKey, Pack[]> = {
       total: 1500,
       popular: true,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
     {
@@ -188,11 +163,9 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 205,
       total: 2050,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
   ],
@@ -202,11 +175,9 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 121,
       total: 1210,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
     {
@@ -215,11 +186,9 @@ const packsData: Record<PackKey, Pack[]> = {
       total: 1500,
       popular: true,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
     {
@@ -227,11 +196,9 @@ const packsData: Record<PackKey, Pack[]> = {
       monthly: 205,
       total: 2050,
       features: [
-        "Date d'examen prioritaire",
         'Terminez votre formation en 10 jours',
-        'Paiement en 4 fois sans frais',
+        ' Paiement en 2 fois sans frais',
         'Suivi pédagogique',
-        'Éligible au financement CPF',
       ],
     },
   ],
@@ -243,8 +210,8 @@ interface PricingSectionProps {
 }
 
 const tabs: { key: PackKey; label: string }[] = [
-  { key: 'manuelle', label: 'Boîte Manuelle' },
-  { key: 'auto', label: 'Boîte Auto' },
+  { key: 'manuelle', label: 'Boîte Manuelle - SANS CODE' },
+  { key: 'auto', label: 'Boîte Auto - SANS CODE' },
   { key: 'manuelle-code', label: 'Boîte Manuelle + CODE' },
   { key: 'auto-code', label: 'Boîte Auto + CODE' },
 ]
@@ -284,20 +251,20 @@ export default function PricingSection(_props: PricingSectionProps) {
           viewport={{ once: true }}
           className="flex justify-center mb-12"
         >
-          <div className="inline-flex bg-[#151b2e] border border-white/10 rounded-full p-1.5 whitespace-nowrap">
+          <div className="inline-flex bg-[#151b2e] border border-white/20 rounded-full p-2 whitespace-nowrap shadow-lg">
             {tabs.map((tab, index) => (
               <Fragment key={tab.key}>
                 {index > 0 && <span aria-hidden="true" className="h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
                 <button
                   onClick={() => setActiveTab(tab.key)}
-                  className={`relative px-3 sm:px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold tracking-wider transition-colors whitespace-nowrap ${
-                    activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white'
+                  className={`relative px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider transition-all whitespace-nowrap ${
+                    activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                 >
                   {activeTab === tab.key && (
                     <motion.span
                       layoutId="pack-tab-pill"
-                      className="absolute inset-0 bg-white rounded-full"
+                      className="absolute inset-0 bg-white rounded-full shadow-lg"
                       transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                     />
                   )}
@@ -346,11 +313,23 @@ export default function PricingSection(_props: PricingSectionProps) {
                   href="/s-inscrire"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"
+                  className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-4 flex items-center justify-center gap-2 w-max mx-auto"
                 >
                   <Check className="h-4 w-4" />
                   Je m'inscris
                 </motion.a>
+
+                {(activeTab === 'manuelle-code' || activeTab === 'auto-code') && (
+                  <motion.a
+                    href="/Pieces_a_fournir.pdf"
+                    download
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
+                  >
+                    📄 Piéces à fournir
+                  </motion.a>
+                )}
 
                 <ul className="space-y-2.5 border-t border-white/10 pt-5">
                   {pack.features.map((feature, i) => (
@@ -381,9 +360,7 @@ export default function PricingSection(_props: PricingSectionProps) {
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-3xl mx-auto">
-            Une fois vos heures de base validées, nous basculons en mode{' '}
-            <span className="text-blue-400 font-semibold">préparation intensive</span> avec un{' '}
-            <span className="text-blue-400 font-semibold">coaching personnalisé</span> jusqu'au jour J.
+            Une fois vos compétences validées, nous basculons en préparation à l'examen avec un coaching personnalisé jusqu'au jour J.
           </p>
         </motion.div>
 
@@ -440,18 +417,31 @@ export default function PricingSection(_props: PricingSectionProps) {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mt-10"
+          className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
         >
-          <a
-            href="#cpf"
-            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 text-sm font-semibold transition-colors"
+          <motion.a
+            href="/s-inscrire"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2"
           >
-            Financer mon permis avec le CPF
-            <ArrowRight className="h-4 w-4" />
-          </a>
+            <Check className="h-4 w-4" />
+            Je m'inscris
+          </motion.a>
+
+          <motion.a
+            href={`tel:${siteConfig.phoneTel}`}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-3 px-8 rounded-full border border-white/20 flex items-center justify-center gap-2 transition-all"
+          >
+            <Phone className="h-4 w-4" />
+            Nous appeler
+          </motion.a>
         </motion.div>
       </div>
     </section>

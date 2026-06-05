@@ -1,26 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Phone, Calendar, Car } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export default function CTASection() {
-  const [user, setUser] = useState<any>(null)
-  const supabase = createClient()
-
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      setUser(user)
-    })
-  }, [])
-
   const handleReservationClick = () => {
-    if (user) {
-      window.location.href = '/reserver'
-    } else {
-      window.location.href = '/auth'
-    }
+    window.location.href = '/s-inscrire'
   }
 
   return (
@@ -82,14 +68,15 @@ export default function CTASection() {
               <span>Réserver ma leçon d'essai gratuite</span>
             </motion.button>
 
-            <motion.button
+            <motion.a
+              href={`tel:${siteConfig.phoneTel}`}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 flex items-center space-x-3"
             >
               <Phone className="h-6 w-6" />
-              <span>01 80 83 49 96</span>
-            </motion.button>
+              <span>{siteConfig.phone}</span>
+            </motion.a>
           </motion.div>
 
           {/* Features */}

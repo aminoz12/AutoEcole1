@@ -1,36 +1,48 @@
 'use client'
 
-import { MessageCircle } from 'lucide-react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function WhatsAppButton() {
-  const phoneNumber = '+33761274422' // Replace with actual phone number
-  const message = encodeURIComponent('Bonjour, je souhaite des informations sur vos formations permis à Nanterre.')
+  const phoneNumber = '33780950041'
+  const message = encodeURIComponent(
+    'Bonjour, je souhaite parler à un agent concernant vos formations permis.'
+  )
 
   const handleWhatsAppClick = () => {
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
 
   return (
-    <motion.button
-      onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 1 }}
-    >
-      <MessageCircle className="w-6 h-6" />
-      
-      {/* Tooltip */}
-      <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        Écrivez-nous sur WhatsApp
-      </span>
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.2 }}
+        className="relative bg-white text-gray-900 px-4 py-2.5 rounded-xl shadow-lg text-sm font-semibold whitespace-nowrap border border-gray-200"
+      >
+        Parlez à un agent ?
+      </motion.div>
 
-      {/* Pulse animation */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75"></span>
-    </motion.button>
+      <motion.button
+        onClick={handleWhatsAppClick}
+        aria-label="Contacter un agent sur WhatsApp"
+        className="relative bg-[#25D366] p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        <Image
+          src="/whatsapp.png"
+          alt="WhatsApp"
+          width={40}
+          height={40}
+          className="w-10 h-10 object-contain"
+        />
+        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75 pointer-events-none" />
+      </motion.button>
+    </div>
   )
 }
-

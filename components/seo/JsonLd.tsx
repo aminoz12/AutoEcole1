@@ -41,7 +41,6 @@ export function OrganizationJsonLd() {
         },
         areaServed: [
           { '@type': 'City', name: 'Nanterre' },
-          { '@type': 'City', name: 'Sartrouville' },
           { '@type': 'AdministrativeArea', name: 'Hauts-de-Seine' },
         ],
         priceRange: '€€',

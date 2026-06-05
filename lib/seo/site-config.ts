@@ -1,13 +1,15 @@
 export const siteConfig = {
   name: 'Auto Ecole Des Paquerettes',
-  tagline: 'Auto-école à Nanterre & Sartrouville — permis accéléré, code et CPF',
+  tagline: 'Auto-école à Nanterre — permis accéléré, code et CPF',
   description:
-    'Auto Ecole Des Paquerettes vous accompagne à Nanterre et Sartrouville pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
+    'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autoecolepro.fr',
   locale: 'fr_FR',
   email: 'contact@autoecolepro.fr',
-  phones: ['01 80 83 49 96', '01 46 49 38 90'],
-  whatsapp: '+33761274422',
+  phone: '01 46 49 38 90',
+  phoneTel: '0146493890',
+  phones: ['01 46 49 38 90'],
+  whatsapp: '+33780950041',
   address: {
     street: '375 Avenue de la République',
     city: 'Nanterre',
@@ -15,8 +17,8 @@ export const siteConfig = {
     region: 'Île-de-France',
     country: 'FR',
     geo: { lat: 48.9107144, lng: 2.219769 },
+    full: '375 Av. de la République, 92000 Nanterre',
   },
-  secondaryLocation: 'Sartrouville',
   openingHours: [
     { days: 'Lundi–Jeudi', hours: '10:00–14:00, 15:30–19:00' },
     { days: 'Vendredi', hours: '10:00–13:00, 15:30–19:00' },
@@ -35,7 +37,6 @@ export const siteConfig = {
     'permis boîte automatique',
     'code de la route',
     'financement CPF permis',
-    'auto-école Sartrouville',
     'leçon de conduite',
   ],
   social: {

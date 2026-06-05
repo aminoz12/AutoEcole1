@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
                 <li><strong>Catégorie de permis:</strong> ${data.licenseType}</li>
               </ul>
               <hr />
-              <p>Si vous avez des questions, n'hésitez pas à nous appeler au <strong>01 80 83 49 96</strong>.</p>
+              <p>Si vous avez des questions, n'hésitez pas à nous appeler au <strong>01 46 49 38 90</strong>.</p>
               <p>Cordialement,<br/>L'équipe Auto Ecole Des Paquerettes</p>
             `,
           }),

@@ -476,6 +476,164 @@ function LoadingFallback() {
 }
 
 // ============================================================================
+// WebGL Error Boundary
+// ============================================================================
+
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback: React.ReactNode;
+}
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+class WebGLErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error: any, errorInfo: any) {
+    console.error("WebGL Error caught by Boundary:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
+
+// ============================================================================
+// Interactive 2D Fallback Globe
+// ============================================================================
+
+interface GlobeFallbackProps {
+  markers?: GlobeMarker[];
+  className?: string;
+  onMarkerClick?: (marker: GlobeMarker) => void;
+}
+
+function GlobeFallback({
+  markers = [],
+  className,
+  onMarkerClick,
+}: GlobeFallbackProps) {
+  return (
+    <div
+      className={cn(
+        "relative h-[500px] w-full flex flex-col items-center justify-center bg-[#0B0F19] rounded-2xl overflow-hidden border border-slate-800 shadow-2xl",
+        className
+      )}
+    >
+      {/* Ambient Glows */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/3 w-60 h-60 bg-indigo-500/10 rounded-full blur-3xl" />
+
+      {/* Cyber Grid Pattern */}
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage: "radial-gradient(#38bdf8 1px, transparent 1px)",
+          backgroundSize: "20px 20px",
+        }}
+      />
+
+      {/* Stylized 2D Globe SVG */}
+      <div className="relative z-10 flex items-center justify-center w-72 h-72">
+        <svg
+          className="w-full h-full text-blue-500/20 animate-[spin_120s_linear_infinite]"
+          viewBox="0 0 200 200"
+          fill="none"
+        >
+          {/* Outer Ring */}
+          <circle cx="100" cy="100" r="95" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+          {/* Latitude Lines */}
+          <line x1="5" y1="100" x2="195" y2="100" stroke="currentColor" strokeWidth="0.5" />
+          <ellipse cx="100" cy="100" rx="95" ry="35" stroke="currentColor" strokeWidth="0.5" />
+          <ellipse cx="100" cy="100" rx="95" ry="65" stroke="currentColor" strokeWidth="0.5" />
+          {/* Longitude Lines */}
+          <line x1="100" y1="5" x2="100" y2="195" stroke="currentColor" strokeWidth="0.5" />
+          <ellipse cx="100" cy="100" rx="35" ry="95" stroke="currentColor" strokeWidth="0.5" />
+          <ellipse cx="100" cy="100" rx="65" ry="95" stroke="currentColor" strokeWidth="0.5" />
+        </svg>
+
+        {/* Connection Arcs (static decorative lines) */}
+        <svg
+          className="absolute inset-0 w-full h-full text-indigo-400/40 pointer-events-none"
+          viewBox="0 0 200 200"
+          fill="none"
+        >
+          <path d="M 55,95 Q 100,35 145,100" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
+          <path d="M 65,115 Q 100,165 135,115" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
+        </svg>
+
+        {/* Interactive pulsing markers positioned relatively on the styled sphere */}
+        <div className="absolute inset-0 pointer-events-auto">
+          {/* New York Marker */}
+          <div
+            className="absolute top-[48%] left-[28%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+            onClick={() => {
+              const ny = markers.find((m) => m.label?.toLowerCase().includes("york"));
+              if (ny && onMarkerClick) onMarkerClick(ny);
+            }}
+          >
+            <div className="w-4 h-4 bg-orange-500 rounded-full animate-ping absolute inset-0 opacity-75" />
+            <div className="w-3 h-3 bg-orange-500 rounded-full relative border-2 border-white shadow-md flex items-center justify-center transition-transform group-hover:scale-125" />
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700 pointer-events-none shadow-lg">
+              New York
+            </div>
+          </div>
+
+          {/* London Marker */}
+          <div
+            className="absolute top-[38%] left-[48%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+            onClick={() => {
+              const ld = markers.find((m) => m.label?.toLowerCase().includes("lond"));
+              if (ld && onMarkerClick) onMarkerClick(ld);
+            }}
+          >
+            <div className="w-4 h-4 bg-blue-500 rounded-full animate-ping absolute inset-0 opacity-75" />
+            <div className="w-3 h-3 bg-blue-500 rounded-full relative border-2 border-white shadow-md flex items-center justify-center transition-transform group-hover:scale-125" />
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700 pointer-events-none shadow-lg">
+              Londres
+            </div>
+          </div>
+
+          {/* France Marker */}
+          <div
+            className="absolute top-[42%] left-[53%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+            onClick={() => {
+              const fr = markers.find((m) => m.label?.toLowerCase().includes("fran"));
+              if (fr && onMarkerClick) onMarkerClick(fr);
+            }}
+          >
+            <div className="w-4 h-4 bg-emerald-500 rounded-full animate-ping absolute inset-0 opacity-75" />
+            <div className="w-3 h-3 bg-emerald-500 rounded-full relative border-2 border-white shadow-md flex items-center justify-center transition-transform group-hover:scale-125" />
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white text-[10px] px-2 py-0.5 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity border border-slate-700 pointer-events-none shadow-lg">
+              France
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Info message */}
+      <div className="absolute bottom-6 left-0 right-0 text-center px-4 z-20">
+        <p className="text-sm font-semibold text-slate-300">
+          Révisez où vous voulez, quand vous voulez !
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
 // Main Globe3D Component
 // ============================================================================
 
@@ -510,39 +668,94 @@ export function Globe3D({
   onMarkerClick,
   onMarkerHover,
 }: Globe3DProps) {
+  const [webGLError, setWebGLError] = useState(false);
+  const [isWebGLSupported, setIsWebGLSupported] = useState<boolean | null>(null);
+
   const mergedConfig = useMemo(
     () => ({ ...defaultConfig, ...config }),
     [config],
   );
 
+  React.useEffect(() => {
+    try {
+      const canvas = document.createElement("canvas");
+      const supported = !!(
+        window.WebGLRenderingContext &&
+        (canvas.getContext("webgl") || canvas.getContext("experimental-webgl"))
+      );
+      setIsWebGLSupported(supported);
+    } catch (e) {
+      console.error("Error checking WebGL support:", e);
+      setIsWebGLSupported(false);
+    }
+  }, []);
+
+  // If WebGL is not supported, show the fallback UI
+  if (isWebGLSupported === false || webGLError) {
+    return (
+      <GlobeFallback
+        markers={markers}
+        className={className}
+        onMarkerClick={onMarkerClick}
+      />
+    );
+  }
+
+  // During SSR or checking, render loading/skeleton to avoid hydration mismatch
+  if (isWebGLSupported === null) {
+    return (
+      <div className={cn("relative h-[500px] w-full flex items-center justify-center bg-[#0B0F19] rounded-2xl border border-slate-800 shadow-2xl", className)}>
+        <div className="text-center p-8">
+          <span className="inline-block text-sm text-neutral-400">
+            Initialisation du globe...
+          </span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={cn("relative h-[500px] w-full", className)}>
-      <Canvas
-        gl={{
-          antialias: true,
-          alpha: true,
-          powerPreference: "high-performance",
-        }}
-        dpr={[1, 2]}
-        camera={{
-          fov: 45,
-          near: 0.1,
-          far: 1000,
-          position: [0, 0, mergedConfig.radius * 3.5],
-        }}
-        style={{
-          background: mergedConfig.backgroundColor || "transparent",
-        }}
-      >
-        <Suspense fallback={<LoadingFallback />}>
-          <Scene
+      <WebGLErrorBoundary
+        fallback={
+          <GlobeFallback
             markers={markers}
-            config={mergedConfig}
+            className={className}
             onMarkerClick={onMarkerClick}
-            onMarkerHover={onMarkerHover}
           />
-        </Suspense>
-      </Canvas>
+        }
+      >
+        <Canvas
+          gl={{
+            antialias: true,
+            alpha: true,
+            powerPreference: "high-performance",
+          }}
+          dpr={[1, 2]}
+          camera={{
+            fov: 45,
+            near: 0.1,
+            far: 1000,
+            position: [0, 0, mergedConfig.radius * 3.5],
+          }}
+          style={{
+            background: mergedConfig.backgroundColor || "transparent",
+          }}
+          onError={(error) => {
+            console.error('WebGL context creation error inside Canvas:', error);
+            setWebGLError(true);
+          }}
+        >
+          <Suspense fallback={<LoadingFallback />}>
+            <Scene
+              markers={markers}
+              config={mergedConfig}
+              onMarkerClick={onMarkerClick}
+              onMarkerHover={onMarkerHover}
+            />
+          </Suspense>
+        </Canvas>
+      </WebGLErrorBoundary>
     </div>
   );
 }

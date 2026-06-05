@@ -4,7 +4,6 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Plus, Edit, Trash2, Eye, EyeOff, Star, StarOff, Search } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import { ArticleForManagement, Article, PartialArticle } from '@/lib/types'
 import ArticleEditor from './ArticleEditor'
 
@@ -18,7 +17,6 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
   const [filter, setFilter] = useState<'all' | 'published' | 'draft'>('all')
   const [editingPost, setEditingPost] = useState<ArticleForManagement | null>(null)
   const [showEditor, setShowEditor] = useState(false)
-  const supabase = createClient()
 
   // Filter posts
   const filteredPosts = posts.filter(post => {
@@ -31,42 +29,18 @@ export default function ArticleManagement({ blogPosts: initialPosts }: ArticleMa
   })
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Êtes-vous sûr de vouloir supprimer cet article ?')) return
-
-    const { error } = await supabase
-      .from('blog_posts')
-      .delete()
-      .eq('id', id)
-
-    if (!error) {
-      setPosts(posts.filter(p => p.id !== id))
-    }
+    // Delete disabled - Supabase integration removed
+    console.log('Delete disabled:', id)
   }
 
   const handleTogglePublish = async (post: ArticleForManagement) => {
-    const { error } = await supabase
-      .from('blog_posts')
-      .update({ is_published: !post.is_published })
-      .eq('id', post.id)
-
-    if (!error) {
-      setPosts(posts.map(p => 
-        p.id === post.id ? { ...p, is_published: !p.is_published } : p
-      ))
-    }
+    // Toggle publish disabled - Supabase integration removed
+    console.log('Toggle publish disabled:', post.id)
   }
 
   const handleToggleFeatured = async (post: ArticleForManagement) => {
-    const { error } = await supabase
-      .from('blog_posts')
-      .update({ is_featured: !post.is_featured })
-      .eq('id', post.id)
-
-    if (!error) {
-      setPosts(posts.map(p => 
-        p.id === post.id ? { ...p, is_featured: !p.is_featured } : p
-      ))
-    }
+    // Toggle featured disabled - Supabase integration removed
+    console.log('Toggle featured disabled:', post.id)
   }
 
   const formatDate = (date: string) => {

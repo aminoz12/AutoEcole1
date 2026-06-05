@@ -13,7 +13,6 @@ import {
   Menu,
   X
 } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import AdminStats from './AdminStats'
 import ArticleManagement from './ArticleManagement'
 import ReservationManagement from './ReservationManagement'
@@ -39,10 +38,8 @@ export default function AdminDashboard({
 }: AdminDashboardProps) {
   const [activeTab, setActiveTab] = useState<TabType>('dashboard')
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  const supabase = createClient()
 
   const handleLogout = async () => {
-    await supabase.auth.signOut()
     window.location.href = '/'
   }
 

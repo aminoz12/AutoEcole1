@@ -78,35 +78,24 @@ export default function RegistrationForm() {
     setError('')
 
     try {
-      // Save data to localStorage
-      const registrations = JSON.parse(localStorage.getItem('registrations') || '[]')
-      registrations.push({
-        ...formData,
-        submittedAt: new Date().toISOString(),
+      // Send data to API route
+      const response = await fetch('/api/submit-registration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-      localStorage.setItem('registrations', JSON.stringify(registrations))
 
-      // Create email link
-      const emailSubject = 'Nouvelle demande d\'inscription — Auto Ecole Des Paquerettes'
-      const emailBody = `
-Nouvelle inscription reçue:
+      const data = await response.json()
 
-Nom: ${formData.fullName}
-Email: ${formData.email}
-Téléphone: ${formData.phone}
-Adresse: ${formData.address}, ${formData.city}
-Date de naissance: ${new Date(formData.dateOfBirth).toLocaleDateString('fr-FR')}
-Catégorie de permis: ${formData.licenseType}
+      if (!response.ok) {
+        throw new Error(data.error || 'Erreur lors de l\'envoi')
+      }
 
-Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR')}
-      `.trim()
-
-      // Open default email client (mailto link)
-      const mailtoLink = `mailto:client@example.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`
-      
-      // Also show success message
+      // Show success message
       setSuccessMessage(
-        'Demande enregistrée ! Cliquez sur « Envoyer par e-mail » pour transmettre vos informations à notre équipe.'
+        'Demande envoyée avec succès ! Notre équipe vous recontactera sous 24h.'
       )
 
       // Reset form
@@ -118,28 +107,17 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
         city: '',
         dateOfBirth: '',
         licenseType: 'B',
-      });
-
-      // Store the mailto link for later use
-      (window as any).__registrationMailto = mailtoLink
+      })
 
       setTimeout(() => {
         setSuccessMessage('')
       }, 5000)
     } catch (error) {
       console.error('Registration error:', error)
-      setError('Une erreur est survenue lors de l\'enregistrement')
-      setLoading(false)
+      setError(error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi')
     }
 
     setLoading(false)
-  }
-
-  const sendEmail = () => {
-    const mailto = (window as any).__registrationMailto
-    if (mailto) {
-      window.location.href = mailto
-    }
   }
 
   return (
@@ -176,18 +154,7 @@ Date d'inscription: ${new Date().toLocaleDateString('fr-FR')} à ${new Date().to
                 className="mb-6 p-4 bg-green-50 border border-green-200 text-green-600 rounded-lg flex items-start gap-3"
               >
                 <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <div className="flex-1">
-                  <p className="font-semibold mb-2">{successMessage}</p>
-                  <motion.button
-                    type="button"
-                    onClick={sendEmail}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-green-700 transition-all"
-                  >
-                    📧 Envoyer par email
-                  </motion.button>
-                </div>
+                <p className="flex-1">{successMessage}</p>
               </motion.div>
             )}
 

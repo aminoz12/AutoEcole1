@@ -3,7 +3,6 @@
 import { useState, useRef, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { X, Save, Upload, Image as ImageIcon } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { Article } from '@/lib/types'
@@ -49,7 +48,6 @@ export default function ArticleEditor({ post, onClose }: ArticleEditorProps) {
   const [uploading, setUploading] = useState(false)
   const [imagePreview, setImagePreview] = useState<string | null>(formData.featured_image || null)
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const supabase = createClient()
 
   // Quill editor configuration with comprehensive toolbar
   const quillModules = useMemo(() => ({
@@ -125,58 +123,8 @@ export default function ArticleEditor({ post, onClose }: ArticleEditorProps) {
   }
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (!file) return
-
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
-      alert('Veuillez sélectionner une image')
-      return
-    }
-
-    // Validate file size (max 20MB for high quality images)
-    if (file.size > 20 * 1024 * 1024) {
-      alert('L\'image ne doit pas dépasser 20 MB')
-      return
-    }
-
-    setUploading(true)
-    try {
-      // Generate unique filename
-      const fileExt = file.name.split('.').pop()
-      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`
-      const filePath = `${fileName}`
-
-      // Upload to Supabase Storage
-      const { data, error } = await supabase.storage
-        .from('blog-images')
-        .upload(filePath, file, {
-          cacheControl: '3600',
-          upsert: false
-        })
-
-      if (error) {
-        console.error('Upload error:', error)
-        alert('Erreur lors du téléchargement de l\'image')
-        return
-      }
-
-      // Get public URL
-      const { data: { publicUrl } } = supabase.storage
-        .from('blog-images')
-        .getPublicUrl(filePath)
-
-      setFormData({
-        ...formData,
-        featured_image: publicUrl
-      })
-      setImagePreview(publicUrl)
-    } catch (error) {
-      console.error('Error uploading image:', error)
-      alert('Erreur lors du téléchargement')
-    } finally {
-      setUploading(false)
-    }
+    // Image upload disabled - Supabase integration removed
+    alert('Image upload disabled - Supabase integration removed')
   }
 
   const handleRemoveImage = () => {
@@ -191,38 +139,8 @@ export default function ArticleEditor({ post, onClose }: ArticleEditorProps) {
   }
 
   const handleSave = async () => {
-    setSaving(true)
-    try {
-      const result = await supabase.auth.getUser()
-      const user = result.data?.user
-      
-      if (post?.id) {
-        // Update existing
-        await supabase
-          .from('blog_posts')
-          .update({
-            ...formData,
-            updated_at: new Date().toISOString()
-          })
-          .eq('id', post.id)
-      } else {
-        // Create new
-        await supabase
-          .from('blog_posts')
-          .insert({
-            ...formData,
-            author_id: user?.id,
-            published_at: formData.is_published ? new Date().toISOString() : null
-          })
-      }
-
-      onClose()
-    } catch (error) {
-      console.error('Error saving article:', error)
-      alert('Erreur lors de la sauvegarde')
-    } finally {
-      setSaving(false)
-    }
+    // Save disabled - Supabase integration removed
+    alert('Save disabled - Supabase integration removed')
   }
 
   return (

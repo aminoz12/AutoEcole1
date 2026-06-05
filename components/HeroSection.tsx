@@ -12,23 +12,23 @@ export default function HeroSection() {
   const features = [
     {
       icon: Clock,
-      title: "Jusqu'à 4 h de conduite par jour",
+      title: "On s'adapte a votre planning",
       description: 'Des créneaux flexibles, adaptés à votre emploi du temps',
     },
     {
       icon: FastForward,
-      title: 'Objectif permis en 10 à 14 jours',
-      description: 'Formules accélérées pour avancer vite et bien',
+      title: 'Votre permis dans les meilleures conditions',
+      description: 'Des formules adaptées à votre rythme',
     },
     {
       icon: BarChart3,
-      title: 'Suivi pédagogique en direct',
-      description: 'Visualisez votre progression depuis votre espace élève',
+      title: 'Suivi pédagogique',
+      description: 'Un suivi clair de votre progression à chaque cours',
     },
     {
       icon: CreditCard,
-      title: 'Paiement en 4 ou 10 fois',
-      description: 'Étalez le coût de votre permis sans frais supplémentaires',
+      title: 'Paiement en 2 fois',
+      description: 'Facilitez le financement de votre permis',
     },
   ]
 
@@ -57,7 +57,7 @@ export default function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-gray-400 text-sm md:text-base mb-6"
           >
-            Auto-école agréée — Nanterre & Sartrouville
+            Auto-école agréée — Nanterre
           </motion.p>
 
           {/* Headline */}
@@ -67,11 +67,11 @@ export default function HeroSection() {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6 max-w-4xl uppercase"
           >
-            Votre permis dès 110 €/mois
+            Votre permis dès 899€
             <br />
             Prêt pour{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
-              l'examen en 14 jours
+              l'examen en Quelques Semaines
             </span>
           </motion.h1>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5 }}
             className="text-gray-400 text-base md:text-lg mb-8 max-w-xl"
           >
-            Paiement en 10 fois sans frais · Inscription en ligne immédiate · Financement CPF accepté
+            Paiement en 2 fois sans frais · Renseignement en ligne immédiat · Boîte Manuelle ou Automatique
           </motion.p>
 
           {/* CTA Buttons */}
@@ -125,7 +125,7 @@ export default function HeroSection() {
                 <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
               ))}
             </div>
-            <span className="text-gray-400 text-sm">+ de 1 000 avis vérifiés</span>
+            <span className="text-gray-400 text-sm">+de 300 avis vérifiés</span>
           </motion.div>
         </div>
 
@@ -145,7 +145,13 @@ export default function HeroSection() {
               className="flex flex-col items-center text-center px-2"
             >
               <feature.icon className="h-5 w-5 text-gray-300 mb-3" />
-              <h3 className="text-white text-sm font-semibold mb-1.5">
+              <h3
+                className={`text-white font-semibold mb-1.5 ${
+                  index === 0
+                    ? 'text-xs sm:text-sm whitespace-nowrap'
+                    : 'text-sm'
+                }`}
+              >
                 {feature.title}
               </h3>
               <p className="text-gray-400 text-xs leading-relaxed">
