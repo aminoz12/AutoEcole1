@@ -28,12 +28,19 @@ const nextConfig = {
       ...config.optimization,
       moduleIds: 'deterministic',
     }
-    
+
+    // Disable gzip compression of the persistent cache. With large deps
+    // (three.js / @react-three) the cache pack can exceed Node's max buffer
+    // size, causing "Array buffer allocation failed" during dev/build.
+    if (config.cache && typeof config.cache === 'object') {
+      config.cache.compression = false
+    }
+
     // Don't bundle react-quill on server side
     if (isServer) {
       config.externals = [...(config.externals || []), 'react-quill']
     }
-    
+
     return config
   },
   

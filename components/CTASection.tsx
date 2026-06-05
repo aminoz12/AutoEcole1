@@ -65,7 +65,7 @@ export default function CTASection() {
               className="flex items-center gap-2 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg"
               style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #ec4899 100%)', boxShadow: '0 10px 25px rgba(236, 72, 153, 0.5)' }}
             >
-              <span>Réserver ma leçon d'essai gratuite</span>
+              <span>Réserver mon inscription</span>
             </motion.button>
 
             <motion.a

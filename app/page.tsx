@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import HeroSection from '@/components/HeroSection'
 import PricingWrapper from '@/components/PricingWrapper'
+import StudentReviewsSection from '@/components/StudentReviewsSection'
 import WebPackSection from '@/components/WebPackSection'
 import BlogPreview from '@/components/BlogPreview'
 import TestimonialsSection from '@/components/TestimonialsSection'
@@ -25,6 +26,7 @@ export default function Home() {
       <Header />
       <HeroSection />
       <PricingWrapper />
+      <StudentReviewsSection />
       <WebPackSection />
       <TestimonialsSection testimonials={[]} />
       <FAQSection />

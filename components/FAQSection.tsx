@@ -178,14 +178,24 @@ export default function FAQSection() {
               Notre équipe pédagogique répond à toutes vos questions sur les formules,
               le CPF et les démarches d'inscription.
             </p>
-            <motion.a
-              href={`tel:${siteConfig.phoneTel}`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Appeler le {siteConfig.phone}
-            </motion.a>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <motion.a
+                href={`tel:${siteConfig.phoneTel}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block bg-primary text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Appeler le {siteConfig.phone}
+              </motion.a>
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                Contactez-nous&nbsp;?
+              </motion.a>
+            </div>
           </div>
         </motion.div>
       </div>

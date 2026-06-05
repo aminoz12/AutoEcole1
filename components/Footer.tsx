@@ -90,7 +90,7 @@ export default function Footer() {
               <a
                 href="/CQP.pdf"
                 download="Certificat-Qualiopi.pdf"
-                className="mt-6 inline-flex items-center gap-3 rounded-lg border border-gray-700 bg-gray-800/50 px-4 py-3 text-gray-300 hover:border-primary hover:text-white transition-colors duration-300"
+                className="mt-6 inline-flex items-center gap-3 rounded-lg border border-gray-200 bg-white px-4 py-3 text-gray-900 shadow-sm hover:border-primary hover:shadow-md transition-all duration-300"
               >
                 <Image
                   src="/qualiopi-logo-png.png"
@@ -99,7 +99,7 @@ export default function Footer() {
                   height={48}
                   className="h-10 w-auto object-contain"
                 />
-                <span className="text-sm font-medium leading-snug">
+                <span className="font-poppins text-sm font-semibold leading-snug tracking-tight">
                   Télécharger Certificat Qualiopi
                 </span>
               </a>

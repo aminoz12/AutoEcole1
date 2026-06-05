@@ -21,9 +21,11 @@ export default function Header() {
   }, [])
 
   const navItems = [
+    { name: 'Pack Web', href: '/packweb' },
     { name: 'Formations', href: '#formations' },
-    { name: 'Tarifs', href: '#tarifs' },
+    { name: 'Tarifs', href: '/tarifs' },
     { name: 'Blog', href: '#blog' },
+    { name: 'Contact', href: '/contact' },
   ]
 
   return (

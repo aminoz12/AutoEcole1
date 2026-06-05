@@ -207,6 +207,69 @@ const packsData: Record<PackKey, Pack[]> = {
 interface PricingSectionProps {
   transmissionType?: 'manuelle' | 'auto'
   setTransmissionType?: (type: 'manuelle' | 'auto') => void
+  /** Show the "dernière ligne droite" exam-prep block + CTA (default true) */
+  showFinalStretch?: boolean
+  /** Show every category stacked (no tab buttons) — default false */
+  showAllCategories?: boolean
+}
+
+function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
+  return (
+    <div
+      className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col ${
+        pack.popular
+          ? 'border-purple-500/40 shadow-2xl shadow-purple-500/10'
+          : 'border-white/10'
+      } ${catKey === 'manuelle' || catKey === 'auto' ? 'min-h-[420px]' : ''}`}
+    >
+      {pack.popular && (
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
+          Formule la plus choisie — 80 % de nos élèves
+        </div>
+      )}
+
+      <h3 className="text-white text-center text-base font-bold tracking-wide mb-6 mt-2">
+        {pack.title}
+      </h3>
+
+      <div className="text-center mb-6">
+        <div className="flex items-baseline justify-center gap-1">
+          <span className="text-5xl font-extrabold text-white">{pack.total}€</span>
+        </div>
+      </div>
+
+      <motion.a
+        href="/s-inscrire"
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-4 flex items-center justify-center gap-2 w-max mx-auto"
+      >
+        <Check className="h-4 w-4" />
+        Je m&apos;inscris
+      </motion.a>
+
+      {(catKey === 'manuelle-code' || catKey === 'auto-code') && (
+        <motion.a
+          href="/Pieces_a_fournir.pdf"
+          download
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
+        >
+          📄 Piéces à fournir
+        </motion.a>
+      )}
+
+      <ul className="space-y-2.5 border-t border-white/10 pt-5">
+        {pack.features.map((feature, i) => (
+          <li key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
+            <Check className="h-4 w-4 text-purple-400 flex-shrink-0" strokeWidth={2.5} />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 const tabs: { key: PackKey; label: string }[] = [
@@ -216,7 +279,10 @@ const tabs: { key: PackKey; label: string }[] = [
   { key: 'auto-code', label: 'Boîte Auto + CODE' },
 ]
 
-export default function PricingSection(_props: PricingSectionProps) {
+export default function PricingSection({
+  showFinalStretch = true,
+  showAllCategories = false,
+}: PricingSectionProps) {
   const [activeTab, setActiveTab] = useState<PackKey>('manuelle')
   const packs = useMemo(() => packsData[activeTab], [activeTab])
 
@@ -244,107 +310,74 @@ export default function PricingSection(_props: PricingSectionProps) {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex justify-center mb-12"
-        >
-          <div className="inline-flex bg-[#151b2e] border border-white/20 rounded-full p-2 whitespace-nowrap shadow-lg">
-            {tabs.map((tab, index) => (
-              <Fragment key={tab.key}>
-                {index > 0 && <span aria-hidden="true" className="h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
-                <button
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`relative px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider transition-all whitespace-nowrap ${
-                    activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white hover:bg-white/5'
-                  }`}
-                >
-                  {activeTab === tab.key && (
-                    <motion.span
-                      layoutId="pack-tab-pill"
-                      className="absolute inset-0 bg-white rounded-full shadow-lg"
-                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                    />
-                  )}
-                  <span className="relative z-10">{tab.label}</span>
-                </button>
-              </Fragment>
-            ))}
-          </div>
-        </motion.div>
-
-        <AnimatePresence mode="wait">
+        {!showAllCategories && (
           <motion.div
-            key={activeTab}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.35 }}
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center mb-12"
           >
-            {packs.map((pack) => (
-              <div
-                key={pack.title}
-                className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col ${
-                  pack.popular
-                    ? 'border-purple-500/40 shadow-2xl shadow-purple-500/10'
-                    : 'border-white/10'
-                } ${activeTab === 'manuelle' || activeTab === 'auto' ? 'min-h-[420px]' : ''}`}
-              >
-                {pack.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
-                    Formule la plus choisie — 80 % de nos élèves
-                  </div>
-                )}
-
-                <h3 className="text-white text-center text-base font-bold tracking-wide mb-6 mt-2">
-                  {pack.title}
-                </h3>
-
-                <div className="text-center mb-6">
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-5xl font-extrabold text-white">{pack.total}€</span>
-                  </div>
-                </div>
-
-                <motion.a
-                  href="/s-inscrire"
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-4 flex items-center justify-center gap-2 w-max mx-auto"
-                >
-                  <Check className="h-4 w-4" />
-                  Je m'inscris
-                </motion.a>
-
-                {(activeTab === 'manuelle-code' || activeTab === 'auto-code') && (
-                  <motion.a
-                    href="/Pieces_a_fournir.pdf"
-                    download
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
+            <div className="inline-flex bg-[#151b2e] border border-white/20 rounded-full p-2 whitespace-nowrap shadow-lg">
+              {tabs.map((tab, index) => (
+                <Fragment key={tab.key}>
+                  {index > 0 && <span aria-hidden="true" className="h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
+                  <button
+                    onClick={() => setActiveTab(tab.key)}
+                    className={`relative px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider transition-all whitespace-nowrap ${
+                      activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white hover:bg-white/5'
+                    }`}
                   >
-                    📄 Piéces à fournir
-                  </motion.a>
-                )}
+                    {activeTab === tab.key && (
+                      <motion.span
+                        layoutId="pack-tab-pill"
+                        className="absolute inset-0 bg-white rounded-full shadow-lg"
+                        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                      />
+                    )}
+                    <span className="relative z-10">{tab.label}</span>
+                  </button>
+                </Fragment>
+              ))}
+            </div>
+          </motion.div>
+        )}
 
-                <ul className="space-y-2.5 border-t border-white/10 pt-5">
-                  {pack.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-                      <Check className="h-4 w-4 text-purple-400 flex-shrink-0" strokeWidth={2.5} />
-                      <span>{feature}</span>
-                    </li>
+        {showAllCategories ? (
+          <div className="max-w-7xl mx-auto space-y-16">
+            {tabs.map((tab) => (
+              <div key={tab.key}>
+                <h3 className="text-center text-xl sm:text-2xl font-bold text-white mb-8">
+                  {tab.label}
+                </h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                  {packsData[tab.key].map((pack) => (
+                    <PackCard key={pack.title} pack={pack} catKey={tab.key} />
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ) : (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.35 }}
+              className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"
+            >
+              {packs.map((pack) => (
+                <PackCard key={pack.title} pack={pack} catKey={activeTab} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        )}
 
         {/* Final Stretch Section */}
+        {showFinalStretch && (
+        <>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -443,6 +476,8 @@ export default function PricingSection(_props: PricingSectionProps) {
             Nous appeler
           </motion.a>
         </motion.div>
+        </>
+        )}
       </div>
     </section>
   )

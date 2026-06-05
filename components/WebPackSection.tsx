@@ -23,6 +23,48 @@ export default function WebPackSection() {
       src: "https://assets.aceternity.com/avatars/3.webp",
       label: "New York",
     },
+    {
+      lat: 45.764,
+      lng: 4.8357,
+      src: "https://assets.aceternity.com/avatars/4.webp",
+      label: "Lyon",
+    },
+    {
+      lat: 43.2965,
+      lng: 5.3698,
+      src: "https://assets.aceternity.com/avatars/5.webp",
+      label: "Marseille",
+    },
+    {
+      lat: 40.4168,
+      lng: -3.7038,
+      src: "https://assets.aceternity.com/avatars/6.webp",
+      label: "Madrid",
+    },
+    {
+      lat: 52.52,
+      lng: 13.405,
+      src: "https://assets.aceternity.com/avatars/7.webp",
+      label: "Berlin",
+    },
+    {
+      lat: 41.9028,
+      lng: 12.4964,
+      src: "https://assets.aceternity.com/avatars/8.webp",
+      label: "Rome",
+    },
+    {
+      lat: 50.8503,
+      lng: 4.3517,
+      src: "https://assets.aceternity.com/avatars/9.webp",
+      label: "Bruxelles",
+    },
+    {
+      lat: 45.5017,
+      lng: -73.5673,
+      src: "https://assets.aceternity.com/avatars/10.webp",
+      label: "Montréal",
+    },
   ]
   return (
     <section id="formations" className="py-16 bg-white">
@@ -43,24 +85,25 @@ export default function WebPackSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Révisez le code partout avec notre{' '}
-                <span className="text-primary">pack web</span>
+                Grâce à notre <span className="text-primary">pack web</span>,
+                révisez le code de la route où vous voulez et n&apos;importe quand !
               </h2>
 
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                Accédez à la plateforme depuis votre smartphone, tablette ou ordinateur.
-                Entraînez-vous à votre rythme : vos résultats sont synchronisés avec
-                votre moniteur pour un suivi personnalisé et efficace.
+                Accessible via votre smartphone, tablette et ordinateur.
+                Entraînez-vous facilement. Vos résultats sont directement reliés
+                à notre auto-école afin de suivre au plus près votre évolution.
               </p>
 
               {/* CTA Button */}
-              <motion.button
+              <motion.a
+                href="/packweb"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
               >
                 Découvrir le pack web
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Right Content - 3D Earth */}
@@ -74,11 +117,9 @@ export default function WebPackSection() {
               <Globe3D
                 markers={markers}
                 config={{
-                  atmosphereColor: "#4da6ff",
-                  atmosphereIntensity: 20,
                   bumpScale: 5,
-                  autoRotateSpeed: 0.3,
-                  showAtmosphere: true,
+                  autoRotateSpeed: 0.6,
+                  showAtmosphere: false,
                 }}
                 onMarkerClick={(marker) => {
                   console.log("Clicked marker:", marker.label);

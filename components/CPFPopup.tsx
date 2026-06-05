@@ -3,13 +3,14 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import Link from 'next/link'
 import { X } from 'lucide-react'
+import CPFRequestForm from './CPFRequestForm'
 
 const STORAGE_KEY = 'cpf-popup-dismissed'
 
 export default function CPFPopup() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return
@@ -26,7 +27,14 @@ export default function CPFPopup() {
     sessionStorage.setItem(STORAGE_KEY, 'true')
   }
 
+  const handleOpenForm = () => {
+    setIsOpen(false)
+    sessionStorage.setItem(STORAGE_KEY, 'true')
+    setShowForm(true)
+  }
+
   return (
+    <>
     <AnimatePresence>
       {isOpen && (
         <>
@@ -76,17 +84,20 @@ export default function CPFPopup() {
                 conduire. Nous vous accompagnons dans chaque étape de la demande.
               </p>
 
-              <Link
-                href="/s-inscrire"
-                onClick={handleClose}
+              <button
+                type="button"
+                onClick={handleOpenForm}
                 className="inline-block w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full font-semibold hover:opacity-90 transition-opacity shadow-lg"
               >
                 M&apos;inscrire et faire ma demande CPF
-              </Link>
+              </button>
             </div>
           </motion.div>
         </>
       )}
     </AnimatePresence>
+
+    <CPFRequestForm isOpen={showForm} onClose={() => setShowForm(false)} />
+    </>
   )
 }
