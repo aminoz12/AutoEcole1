@@ -287,7 +287,7 @@ export default function PricingSection({
   const packs = useMemo(() => packsData[activeTab], [activeTab])
 
   return (
-    <section id="tarifs" className="py-20 md:py-28 relative overflow-hidden bg-[#0B0F19]">
+    <section id="tarifs" className="py-12 md:py-16 relative overflow-hidden bg-[#0B0F19]">
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -316,7 +316,7 @@ export default function PricingSection({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="flex justify-center mb-12"
+            className="mb-12 flex justify-start overflow-x-auto px-4 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             <div className="inline-flex bg-[#151b2e] border border-white/20 rounded-full p-2 whitespace-nowrap shadow-lg">
               {tabs.map((tab, index) => (

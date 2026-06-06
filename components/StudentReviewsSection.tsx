@@ -34,7 +34,7 @@ export default function StudentReviewsSection() {
   const center = (reviews.length - 1) / 2
 
   return (
-    <section className="relative overflow-hidden bg-[#0B0F19] py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#0B0F19] py-12 md:py-16">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <motion.div
@@ -44,11 +44,10 @@ export default function StudentReviewsSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="leading-tight text-white">
-            <span className="block font-serif text-4xl font-normal lg:text-5xl">
-              Ils nous ont fait confiance,
-            </span>
-            <span className="mt-1 block font-poppins text-4xl font-extrabold lg:text-6xl">
+          <h2 className="font-poppins text-3xl font-extrabold leading-tight text-white sm:text-4xl md:text-5xl">
+            Ils nous ont fait confiance,
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
               ils ont réussi&nbsp;!
             </span>
           </h2>
@@ -56,18 +55,6 @@ export default function StudentReviewsSection() {
             Des centaines d’élèves formés et accompagnés jusqu’au jour J —
             voici quelques-uns de leurs visages.
           </p>
-
-          <motion.a
-            href="/s-inscrire"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 py-3 pl-6 pr-3 font-poppins font-semibold text-white shadow-lg shadow-pink-500/25 transition-opacity hover:opacity-90"
-          >
-            Rejoindre nos élèves
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
-              <ArrowRight className="h-4 w-4" />
-            </span>
-          </motion.a>
         </motion.div>
 
         {/* Fanned portraits */}
@@ -76,23 +63,21 @@ export default function StudentReviewsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
           viewport={{ once: true }}
-          className="mt-14 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8 [perspective:1800px]"
+          className="mt-14 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8"
         >
           {reviews.map((src, i) => {
             const offset = i - center
-            const rotateY = -offset * 9
-            const scale = 1 + Math.abs(offset) * 0.04
+            // Gentle vertical arc only — uniform size keeps the spacing even
+            const translateY = Math.pow(Math.abs(offset), 2) * 7
             return (
               <div
                 key={src}
-                className={`relative aspect-[9/16] w-32 shrink-0 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10 sm:w-40 lg:w-48 ${visibilityClass(
+                className={`relative aspect-[9/16] w-24 shrink-0 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10 sm:w-36 lg:w-44 ${visibilityClass(
                   i,
                   reviews.length
                 )}`}
                 style={{
-                  transform: `rotateY(${rotateY}deg) scale(${scale})`,
-                  transformStyle: 'preserve-3d',
-                  zIndex: Math.round(10 - Math.abs(offset)),
+                  transform: `translateY(${translateY}px)`,
                 }}
               >
                 <Image
@@ -126,6 +111,27 @@ export default function StudentReviewsSection() {
               </p>
             </div>
           ))}
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-14 flex justify-center"
+        >
+          <motion.a
+            href="/s-inscrire"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 py-3 pl-7 pr-3 font-poppins font-semibold text-white shadow-lg shadow-pink-500/25 transition-opacity hover:opacity-90"
+          >
+            Rejoignez-Nous
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
+              <ArrowRight className="h-4 w-4" />
+            </span>
+          </motion.a>
         </motion.div>
       </div>
     </section>

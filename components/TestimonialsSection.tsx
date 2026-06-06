@@ -30,7 +30,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
   }
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-white" id="testimonials">
+    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white" id="testimonials">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

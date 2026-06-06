@@ -7,16 +7,24 @@
     scroll-behavior: smooth;
   }
   
+  html, body {
+    overflow-x: hidden;
+  }
+
   body {
     font-family: var(--font-inter);
     line-height: 1.6;
     background-color: #0B0F19;
     color: #e5e7eb;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-poppins);
     font-weight: bold;
+    letter-spacing: -0.015em;
   }
 
   /* Smooth page transitions */
@@ -56,7 +64,7 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-12 md:py-16;
   }
 }
 

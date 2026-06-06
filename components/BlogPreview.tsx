@@ -42,7 +42,7 @@ export default function BlogPreview({ posts }: BlogPreviewProps) {
   }
 
   return (
-    <section className="py-16 bg-white" id="blog">
+    <section className="py-12 md:py-16 bg-white" id="blog">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
