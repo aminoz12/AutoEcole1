@@ -4,68 +4,38 @@ import { motion } from 'framer-motion'
 import { Globe3D, GlobeMarker } from '@/components/ui/3d-globe'
 
 export default function WebPackSection() {
-  const markers: GlobeMarker[] = [
-    {
-      lat: 48.8566,
-      lng: 2.3522,
-      src: "https://assets.aceternity.com/avatars/1.webp",
-      label: "France",
-    },
-    {
-      lat: 51.5074,
-      lng: -0.1278,
-      src: "https://assets.aceternity.com/avatars/2.webp",
-      label: "Londres",
-    },
-    {
-      lat: 40.7128,
-      lng: -74.006,
-      src: "https://assets.aceternity.com/avatars/3.webp",
-      label: "New York",
-    },
-    {
-      lat: 45.764,
-      lng: 4.8357,
-      src: "https://assets.aceternity.com/avatars/4.webp",
-      label: "Lyon",
-    },
-    {
-      lat: 43.2965,
-      lng: 5.3698,
-      src: "https://assets.aceternity.com/avatars/5.webp",
-      label: "Marseille",
-    },
-    {
-      lat: 40.4168,
-      lng: -3.7038,
-      src: "https://assets.aceternity.com/avatars/6.webp",
-      label: "Madrid",
-    },
-    {
-      lat: 52.52,
-      lng: 13.405,
-      src: "https://assets.aceternity.com/avatars/7.webp",
-      label: "Berlin",
-    },
-    {
-      lat: 41.9028,
-      lng: 12.4964,
-      src: "https://assets.aceternity.com/avatars/8.webp",
-      label: "Rome",
-    },
-    {
-      lat: 50.8503,
-      lng: 4.3517,
-      src: "https://assets.aceternity.com/avatars/9.webp",
-      label: "Bruxelles",
-    },
-    {
-      lat: 45.5017,
-      lng: -73.5673,
-      src: "https://assets.aceternity.com/avatars/10.webp",
-      label: "Montréal",
-    },
+  // Spread people all around the globe (every continent)
+  const cities: { lat: number; lng: number; label: string }[] = [
+    { lat: 48.8566, lng: 2.3522, label: 'Paris' },
+    { lat: 51.5074, lng: -0.1278, label: 'Londres' },
+    { lat: 40.7128, lng: -74.006, label: 'New York' },
+    { lat: 34.0522, lng: -118.2437, label: 'Los Angeles' },
+    { lat: 19.4326, lng: -99.1332, label: 'Mexico' },
+    { lat: -23.5505, lng: -46.6333, label: 'São Paulo' },
+    { lat: -34.6037, lng: -58.3816, label: 'Buenos Aires' },
+    { lat: -22.9068, lng: -43.1729, label: 'Rio de Janeiro' },
+    { lat: 40.4168, lng: -3.7038, label: 'Madrid' },
+    { lat: 52.52, lng: 13.405, label: 'Berlin' },
+    { lat: 41.9028, lng: 12.4964, label: 'Rome' },
+    { lat: 55.7558, lng: 37.6173, label: 'Moscou' },
+    { lat: 6.5244, lng: 3.3792, label: 'Lagos' },
+    { lat: -1.2921, lng: 36.8219, label: 'Nairobi' },
+    { lat: -33.9249, lng: 18.4241, label: 'Le Cap' },
+    { lat: 30.0444, lng: 31.2357, label: 'Le Caire' },
+    { lat: 25.2048, lng: 55.2708, label: 'Dubaï' },
+    { lat: 28.6139, lng: 77.209, label: 'New Delhi' },
+    { lat: 31.2304, lng: 121.4737, label: 'Shanghai' },
+    { lat: 35.6762, lng: 139.6503, label: 'Tokyo' },
+    { lat: 37.5665, lng: 126.978, label: 'Séoul' },
+    { lat: 1.3521, lng: 103.8198, label: 'Singapour' },
+    { lat: -33.8688, lng: 151.2093, label: 'Sydney' },
+    { lat: 43.6532, lng: -79.3832, label: 'Toronto' },
   ]
+
+  const markers: GlobeMarker[] = cities.map((city, i) => ({
+    ...city,
+    src: `https://assets.aceternity.com/avatars/${(i % 13) + 1}.webp`,
+  }))
   return (
     <section id="formations" className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -95,12 +65,12 @@ export default function WebPackSection() {
                 à notre auto-école afin de suivre au plus près votre évolution.
               </p>
 
-              {/* CTA Button */}
+              {/* CTA Button — desktop (under the text) */}
               <motion.a
                 href="/packweb"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
+                className="hidden lg:inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
               >
                 Découvrir le pack web
               </motion.a>
@@ -118,7 +88,7 @@ export default function WebPackSection() {
                 markers={markers}
                 config={{
                   bumpScale: 5,
-                  autoRotateSpeed: 0.6,
+                  autoRotateSpeed: 1.2,
                   showAtmosphere: false,
                 }}
                 onMarkerClick={(marker) => {
@@ -126,6 +96,16 @@ export default function WebPackSection() {
                 }}
               />
             </motion.div>
+
+            {/* CTA Button — mobile (under the 3D earth) */}
+            <div className="flex justify-center lg:hidden">
+              <a
+                href="/packweb"
+                className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
+              >
+                Découvrir le pack web
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

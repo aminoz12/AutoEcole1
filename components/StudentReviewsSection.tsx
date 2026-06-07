@@ -57,13 +57,13 @@ export default function StudentReviewsSection() {
           </p>
         </motion.div>
 
-        {/* Fanned portraits */}
+        {/* Fanned portraits — desktop / tablet */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
           viewport={{ once: true }}
-          className="mt-14 flex items-center justify-center gap-4 sm:gap-6 lg:gap-8"
+          className="mt-14 hidden items-center justify-center gap-4 sm:gap-6 md:flex lg:gap-8"
         >
           {reviews.map((src, i) => {
             const offset = i - center
@@ -91,6 +91,26 @@ export default function StudentReviewsSection() {
             )
           })}
         </motion.div>
+
+        {/* Continuous marquee — mobile only */}
+        <div className="mt-12 overflow-hidden md:hidden">
+          <div className="flex w-max animate-marquee-rtl gap-3">
+            {[...reviews, ...reviews].map((src, i) => (
+              <div
+                key={i}
+                className="relative aspect-[9/16] w-32 shrink-0 overflow-hidden rounded-2xl shadow-xl ring-1 ring-white/10"
+              >
+                <Image
+                  src={src}
+                  alt={`Avis élève ${(i % reviews.length) + 1}`}
+                  fill
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* Highlights */}
         <motion.div

@@ -248,17 +248,19 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
         Je m&apos;inscris
       </motion.a>
 
-      {(catKey === 'manuelle-code' || catKey === 'auto-code') && (
-        <motion.a
-          href="/Pieces_a_fournir.pdf"
-          download
-          whileHover={{ scale: 1.03 }}
-          whileTap={{ scale: 0.97 }}
-          className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
-        >
-          📄 Piéces à fournir
-        </motion.a>
-      )}
+      <motion.a
+        href={
+          catKey === 'manuelle' || catKey === 'auto'
+            ? '/Pieces_a_fournir_simple.pdf'
+            : '/Pieces_a_fournir.pdf'
+        }
+        download
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
+      >
+        📄 Piéces à fournir
+      </motion.a>
 
       <ul className="space-y-2.5 border-t border-white/10 pt-5">
         {pack.features.map((feature, i) => (
@@ -316,15 +318,15 @@ export default function PricingSection({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="mb-12 flex justify-start overflow-x-auto px-4 md:justify-center [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="mb-12 flex justify-center px-4"
           >
-            <div className="inline-flex bg-[#151b2e] border border-white/20 rounded-full p-2 whitespace-nowrap shadow-lg">
+            <div className="grid w-full max-w-md grid-cols-2 gap-2 rounded-2xl border border-white/20 bg-[#151b2e] p-2 shadow-lg md:inline-flex md:w-auto md:max-w-none md:gap-0 md:rounded-full">
               {tabs.map((tab, index) => (
                 <Fragment key={tab.key}>
-                  {index > 0 && <span aria-hidden="true" className="h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
+                  {index > 0 && <span aria-hidden="true" className="hidden md:block h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
                   <button
                     onClick={() => setActiveTab(tab.key)}
-                    className={`relative px-4 sm:px-6 py-3 rounded-full text-xs sm:text-sm font-bold tracking-wider transition-all whitespace-nowrap ${
+                    className={`relative w-full md:w-auto px-3 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-sm font-bold tracking-wide leading-tight transition-all whitespace-normal md:whitespace-nowrap ${
                       activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white hover:bg-white/5'
                     }`}
                   >
