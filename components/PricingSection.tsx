@@ -101,103 +101,105 @@ const packsData: Record<PackKey, Pack[]> = {
         'Suivi pédagogique',
       ],
     },
-  ],
-  'manuelle-code': [
     {
-      title: 'FORMULE 13H CLASSIQUE',
-      monthly: 99,
-      total: 990,
-      features: [
-        'Cours de code illimité (1 an)',
-        '13h de leçons de conduite',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 20H CLASSIQUE',
-      monthly: 130,
-      total: 1300,
-      popular: true,
-      features: [
-        'Cours de code illimité (1 an)',
-        '20h de leçons de conduite',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 30H CLASSIQUE',
-      monthly: 180,
-      total: 1800,
-      features: [
-        'Cours de code illimité (1 an)',
-        '30h de leçons de conduite',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 13H ACCÉLÉRÉ',
-      monthly: 121,
-      total: 1210,
+      title: 'FORMULE 20H ACCÉLÉRÉ',
+      monthly: 150,
+      total: 1500,
       features: [
         'Terminez votre formation en 10 jours',
         ' Paiement en 2 fois sans frais',
+        'Suivi pédagogique',
+      ],
+    },
+    {
+      title: 'Permis BEA 13h accéléré',
+      total: 1199,
+      features: [
+        'Leçons de conduite 13h',
+        'Fourniture pédagogique (livret apprentissage)',
+        'Paiement en 2 fois sans frais',
+        'Suivi pédagogique',
+      ],
+    },
+  ],
+  'manuelle-code': [
+    {
+      title: 'FORMULE 20H',
+      total: 899,
+      features: [
+        'Cours de code illimité (1 an)',
+        '20h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
+        'Suivi pédagogique',
+      ],
+    },
+    {
+      title: 'FORMULE 30H',
+      total: 1399,
+      features: [
+        'Cours de code illimité (1 an)',
+        '30h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
     {
       title: 'FORMULE 20H ACCÉLÉRÉ',
-      monthly: 150,
-      total: 1500,
-      popular: true,
+      total: 1490,
       features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
+        'Terminez votre formation rapidement',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
     {
-      title: 'FORMULE 30H ACCÉLÉRÉ',
-      monthly: 205,
-      total: 2050,
+      title: 'FORMULE 40H',
+      total: 1699,
       features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
+        'Cours de code illimité (1 an)',
+        '40h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
   ],
   'auto-code': [
     {
-      title: 'FORMULE 13H FR/AAC',
-      monthly: 121,
-      total: 1210,
+      title: 'FORMULE 13H',
+      total: 799,
       features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
+        'Cours de code illimité (1 an)',
+        '13h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
     {
-      title: 'FORMULE 20H FR/AAC',
-      monthly: 150,
-      total: 1500,
-      popular: true,
+      title: 'FORMULE 20H',
+      total: 1249,
       features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
+        'Cours de code illimité (1 an)',
+        '20h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
     {
-      title: 'FORMULE 30H FR/AAC',
-      monthly: 205,
-      total: 2050,
+      title: 'FORMULE 20H ACCÉLÉRÉ',
+      total: 1740,
       features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
+        'Terminez votre formation rapidement',
+        'Paiement en 2 fois sans frais',
+        'Suivi pédagogique',
+      ],
+    },
+    {
+      title: 'FORMULE 30H',
+      total: 1749,
+      features: [
+        'Cours de code illimité (1 an)',
+        '30h de leçons de conduite',
+        'Paiement en 2 fois sans frais',
         'Suivi pédagogique',
       ],
     },
@@ -348,7 +350,7 @@ export default function PricingSection({
         {showAllCategories ? (
           <div className="max-w-7xl mx-auto space-y-16">
             {tabs.map((tab) => (
-              <div key={tab.key}>
+              <div key={tab.key} id={tab.key} className="scroll-mt-28">
                 <h3 className="text-center text-xl sm:text-2xl font-bold text-white mb-8">
                   {tab.label}
                 </h3>

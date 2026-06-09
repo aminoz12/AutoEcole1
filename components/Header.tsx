@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Phone } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/seo/site-config'
 
@@ -20,10 +20,27 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
+  type NavItem = {
+    name: string
+    href: string
+    submenu?: { name: string; href: string }[]
+  }
+
+  const navItems: NavItem[] = [
     { name: 'Pack Web', href: '/packweb' },
     { name: 'Formations', href: '#formations' },
-    { name: 'Tarifs', href: '/tarifs' },
+    {
+      name: 'Tarifs',
+      href: '/tarifs',
+      submenu: [
+        { name: 'Boîte Manuelle - SANS CODE', href: '/tarifs#manuelle' },
+        { name: 'Boîte Auto - SANS CODE', href: '/tarifs#auto' },
+        { name: 'Boîte Manuelle + CODE', href: '/tarifs#manuelle-code' },
+        { name: 'Boîte Auto + CODE', href: '/tarifs#auto-code' },
+        { name: 'Pack Web', href: '/tarifs#pack-web' },
+        { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
+      ],
+    },
     { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -61,14 +78,33 @@ export default function Header() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 + 0.3 }}
+                className="relative group"
               >
-                <motion.a
+                <a
                   href={item.href}
-                  className="transition-colors duration-300 font-medium text-sm text-gray-300 hover:text-white"
-                  whileHover={{ y: -2 }}
+                  className="inline-flex items-center gap-1 transition-colors duration-300 font-medium text-sm text-gray-300 hover:text-white"
                 >
                   {item.name}
-                </motion.a>
+                  {item.submenu && (
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                  )}
+                </a>
+
+                {item.submenu && (
+                  <div className="absolute left-1/2 top-full hidden -translate-x-1/2 pt-3 group-hover:block">
+                    <div className="min-w-[260px] rounded-xl border border-white/10 bg-[#0B0F19] p-2 shadow-xl shadow-black/40">
+                      {item.submenu.map((sub) => (
+                        <a
+                          key={sub.name}
+                          href={sub.href}
+                          className="block rounded-lg px-3 py-2 text-sm text-gray-300 transition-colors hover:bg-white/5 hover:text-white"
+                        >
+                          {sub.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </motion.div>
             ))}
             {/* S'inscrire Button */}
@@ -124,14 +160,29 @@ export default function Header() {
         >
           <div className="py-4 space-y-2">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-white/5 transition-colors rounded-lg text-sm"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              <div key={item.name}>
+                <a
+                  href={item.href}
+                  className="block px-4 py-2.5 text-gray-300 hover:text-white hover:bg-white/5 transition-colors rounded-lg text-sm"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </a>
+                {item.submenu && (
+                  <div className="ml-4 mt-1 space-y-1 border-l border-white/10 pl-3">
+                    {item.submenu.map((sub) => (
+                      <a
+                        key={sub.name}
+                        href={sub.href}
+                        className="block rounded-lg px-3 py-2 text-xs text-gray-400 transition-colors hover:bg-white/5 hover:text-white"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {sub.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div className="px-4 pt-4 border-t border-white/10 space-y-3">
               <a

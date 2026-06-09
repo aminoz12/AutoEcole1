@@ -4,6 +4,7 @@ import { Check } from 'lucide-react'
 
 import Header from '@/components/Header'
 import PricingSection from '@/components/PricingSection'
+import PermisAccompagneSection from '@/components/PermisAccompagneSection'
 import ALaCarteSection from '@/components/ALaCarteSection'
 import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
@@ -49,11 +50,14 @@ export default function TarifsPage() {
       {/* Driving packs — all categories stacked, no tabs */}
       <PricingSection showFinalStretch={false} showAllCategories />
 
+      {/* Permis Accompagné (AAC) */}
+      <PermisAccompagneSection />
+
       {/* À la carte price list */}
       <ALaCarteSection />
 
       {/* Pack Web prices */}
-      <section className="bg-[#0B0F19] py-16 lg:py-20">
+      <section id="pack-web" className="scroll-mt-28 bg-[#0B0F19] py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-poppins text-3xl font-bold text-white lg:text-4xl">
