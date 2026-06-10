@@ -6,6 +6,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Anchor targets (#formations, /tarifs#manuelle, …) land below the fixed header */
+  :target {
+    scroll-margin-top: 6rem;
+  }
   
   /* Use clip (not hidden) so we prevent horizontal overflow WITHOUT turning
      the root into a scroll container — overflow:hidden here breaks/janks

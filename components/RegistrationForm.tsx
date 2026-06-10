@@ -137,7 +137,7 @@ export default function RegistrationForm() {
               transition={{ delay: 0.2 }}
               className="text-3xl md:text-4xl font-bold mb-2"
             >
-              Pré Inscrivez-vous en ligne            </motion.h1>
+              Pré-inscription en ligne            </motion.h1>
             <p className="text-white/90">
               Remplissez le formulaire — notre équipe vous recontacte sous 24 h pour finaliser votre dossier.
             </p>

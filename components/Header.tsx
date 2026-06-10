@@ -27,8 +27,9 @@ export default function Header() {
   }
 
   const navItems: NavItem[] = [
-    { name: 'Prestations à l’unité', href: '/prestations-a-l-unite' },
-    { name: 'Formations', href: '#formations' },
+    { name: 'Accueil', href: '/' },
+    { name: 'Pack Web', href: '/prestations-a-l-unite' },
+    { name: 'Formations', href: '/#formations' },
     {
       name: 'Tarifs',
       href: '/tarifs',
@@ -41,7 +42,7 @@ export default function Header() {
         { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
       ],
     },
-    { name: 'Blog', href: '#blog' },
+    { name: 'Blog', href: '/#blog' },
     { name: 'Contact', href: '/contact' },
   ]
 

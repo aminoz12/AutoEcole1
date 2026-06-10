@@ -5,7 +5,7 @@ export const siteConfig = {
     'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autoecolepro.fr',
   locale: 'fr_FR',
-  email: 'contact@autoecolepro.fr',
+  email: 'autoecoledespaquerettes@hotmail.com',
   phone: '01 46 49 38 90',
   phoneTel: '0146493890',
   phones: ['01 46 49 38 90'],

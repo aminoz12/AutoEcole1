@@ -12,14 +12,14 @@ import { createPageMetadata } from '@/lib/seo/metadata'
 export const metadata: Metadata = createPageMetadata({
   title: 'Nos Tarifs — Permis & Code',
   description:
-    'Découvrez tous les tarifs Auto Ecole Des Paquerettes : formules permis B (boîte manuelle et automatique), packs avec code et prestations à l’unité pour réviser le code en ligne.',
+    'Découvrez tous les tarifs Auto Ecole Des Paquerettes : formules permis B (boîte manuelle et automatique), packs avec code et Pack Web pour réviser le code en ligne.',
   path: '/tarifs',
   keywords: ['tarifs auto-école', 'prix permis de conduire', 'tarif code de la route Nanterre'],
 })
 
 const webPlans = [
   {
-    name: 'Prestations à l’unité — Accès illimité',
+    name: 'Pack Web — Accès illimité',
     price: '29',
     variant: 'primary' as const,
     perks: [
@@ -30,7 +30,7 @@ const webPlans = [
     ],
   },
   {
-    name: 'Prestations à l’unité — Accès 1 mois',
+    name: 'Pack Web — Accès 1 mois',
     price: '10',
     variant: 'secondary' as const,
     perks: [
@@ -61,7 +61,7 @@ export default function TarifsPage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-poppins text-3xl font-bold text-white lg:text-4xl">
-              Prestations à l&apos;unité — <span className="text-primary">Code en ligne</span>
+              Pack Web — <span className="text-primary">Code en ligne</span>
             </h2>
             <p className="mt-4 text-gray-400">
               Révisez le code de la route en ligne sur smartphone, tablette et ordinateur.
@@ -111,7 +111,7 @@ export default function TarifsPage() {
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm text-gray-500">
             Besoin d&apos;en savoir plus&nbsp;?{' '}
             <Link href="/prestations-a-l-unite" className="font-semibold text-primary hover:underline">
-              Découvrir nos prestations à l&apos;unité
+              Découvrir le Pack Web
             </Link>
           </p>
         </div>

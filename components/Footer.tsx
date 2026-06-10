@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/seo/site-config'
 export default function Footer() {
   const footerLinks = {
     support: [
-      { name: 'FAQ', href: '#faq' },
+      { name: 'FAQ', href: '/#faq' },
       { name: 'Contact', href: '/contact' },
       { name: 'Mentions légales', href: '/mentions-legales' },
       { name: 'CGV', href: '/cgv' },
@@ -79,7 +79,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>contact@autoecolepro.fr</span>
+                  <span>autoecoledespaquerettes@hotmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400">
                   <MapPin className="h-5 w-5 text-primary" />

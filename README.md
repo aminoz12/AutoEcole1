@@ -147,7 +147,7 @@ colors: {
 
 Update the contact details in the components:
 - Phone: 01 23 45 67 89
-- Email: contact@autoecolepro.fr
+- Email: autoecoledespaquerettes@hotmail.com
 - Location: Paris & Banlieue
 
 ## 🚀 Deployment
