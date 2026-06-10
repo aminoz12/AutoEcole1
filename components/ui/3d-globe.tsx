@@ -670,6 +670,7 @@ export function Globe3D({
 }: Globe3DProps) {
   const [webGLError, setWebGLError] = useState(false);
   const [isWebGLSupported, setIsWebGLSupported] = useState<boolean | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const [inView, setInView] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -704,6 +705,14 @@ export function Globe3D({
       console.error("Error checking WebGL support:", e);
       setIsWebGLSupported(false);
     }
+
+    // On phones the WebGL globe is too heavy and causes scroll jank — use the
+    // lightweight 2D fallback instead.
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+    const onChange = () => setIsMobile(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
   }, []);
 
   // If WebGL is not supported, show the fallback UI
@@ -727,6 +736,17 @@ export function Globe3D({
           </span>
         </div>
       </div>
+    );
+  }
+
+  // Mobile: skip the WebGL globe entirely (lightweight 2D fallback)
+  if (isMobile) {
+    return (
+      <GlobeFallback
+        markers={markers}
+        className={className}
+        onMarkerClick={onMarkerClick}
+      />
     );
   }
 
