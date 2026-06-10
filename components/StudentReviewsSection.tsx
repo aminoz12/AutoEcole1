@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
@@ -32,6 +33,22 @@ const highlights = [
 
 export default function StudentReviewsSection() {
   const center = (reviews.length - 1) / 2
+
+  // Pause the mobile marquee animation when it's off-screen so it doesn't keep
+  // the compositor busy and jank scrolling on the rest of the page.
+  const marqueeRef = useRef<HTMLDivElement>(null)
+  const [marqueeInView, setMarqueeInView] = useState(false)
+
+  useEffect(() => {
+    const el = marqueeRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const observer = new IntersectionObserver(
+      ([entry]) => setMarqueeInView(entry.isIntersecting),
+      { rootMargin: '100px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="relative overflow-hidden bg-[#0B0F19] py-12 md:py-16">
@@ -93,8 +110,11 @@ export default function StudentReviewsSection() {
         </motion.div>
 
         {/* Continuous marquee — mobile only */}
-        <div className="mt-12 overflow-hidden md:hidden">
-          <div className="flex w-max animate-marquee-rtl gap-3">
+        <div ref={marqueeRef} className="mt-12 overflow-hidden md:hidden">
+          <div
+            className="flex w-max animate-marquee-rtl gap-3"
+            style={{ animationPlayState: marqueeInView ? 'running' : 'paused' }}
+          >
             {[...reviews, ...reviews].map((src, i) => (
               <div
                 key={i}

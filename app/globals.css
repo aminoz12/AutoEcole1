@@ -7,8 +7,11 @@
     scroll-behavior: smooth;
   }
   
+  /* Use clip (not hidden) so we prevent horizontal overflow WITHOUT turning
+     the root into a scroll container — overflow:hidden here breaks/janks
+     hardware-accelerated momentum scrolling on mobile. */
   html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   body {

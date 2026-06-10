@@ -41,7 +41,6 @@ export default function WhatsAppButton() {
           height={40}
           className="w-10 h-10 object-contain"
         />
-        <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75 pointer-events-none" />
       </motion.button>
     </div>
   )
