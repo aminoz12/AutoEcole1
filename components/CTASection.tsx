@@ -127,7 +127,7 @@ export default function CTASection() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1, type: 'spring', stiffness: 200 }}
             viewport={{ once: true }}
-            className="mt-12 bg-white/10 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto"
+            className="mt-12 bg-white/10 rounded-2xl p-6 max-w-2xl mx-auto"
           >
             <motion.div
               animate={{ scale: [1, 1.05, 1] }}

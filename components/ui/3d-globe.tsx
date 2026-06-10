@@ -670,11 +670,27 @@ export function Globe3D({
 }: Globe3DProps) {
   const [webGLError, setWebGLError] = useState(false);
   const [isWebGLSupported, setIsWebGLSupported] = useState<boolean | null>(null);
+  const [inView, setInView] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const mergedConfig = useMemo(
     () => ({ ...defaultConfig, ...config }),
     [config],
   );
+
+  // Pause the render loop while the globe is off-screen so it doesn't
+  // consume the main thread / GPU and cause scroll jank on the rest of the page.
+  React.useEffect(() => {
+    if (isWebGLSupported !== true) return;
+    const el = containerRef.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "200px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [isWebGLSupported]);
 
   React.useEffect(() => {
     try {
@@ -715,7 +731,7 @@ export function Globe3D({
   }
 
   return (
-    <div className={cn("relative h-[500px] w-full", className)}>
+    <div ref={containerRef} className={cn("relative h-[500px] w-full", className)}>
       <WebGLErrorBoundary
         fallback={
           <GlobeFallback
@@ -726,12 +742,13 @@ export function Globe3D({
         }
       >
         <Canvas
+          frameloop={inView ? "always" : "never"}
           gl={{
             antialias: true,
             alpha: true,
             powerPreference: "high-performance",
           }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
           camera={{
             fov: 45,
             near: 0.1,
