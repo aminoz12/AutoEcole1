@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import CPFRequestForm from './CPFRequestForm'
+import { useScrollLock } from '@/lib/useScrollLock'
 
 const STORAGE_KEY = 'cpf-popup-dismissed'
 
@@ -22,15 +23,8 @@ export default function CPFPopup() {
     return () => clearTimeout(timer)
   }, [])
 
-  // Lock background scroll while the popup is open
-  useEffect(() => {
-    if (!isOpen) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = prev
-    }
-  }, [isOpen])
+  // Lock background scroll while the popup is open (shared, ref-counted)
+  useScrollLock(isOpen)
 
   const handleClose = () => {
     setIsOpen(false)
@@ -52,6 +46,7 @@ export default function CPFPopup() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[70] bg-black/60"
             onClick={handleClose}
           />

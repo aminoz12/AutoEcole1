@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import { useScrollLock } from '@/lib/useScrollLock'
 import {
   X,
   User,
@@ -34,15 +35,8 @@ export default function CPFRequestForm({ isOpen, onClose }: CPFRequestFormProps)
   const [error, setError] = useState('')
   const [successMessage, setSuccessMessage] = useState('')
 
-  // Lock background scroll while the modal is open
-  useEffect(() => {
-    if (!isOpen) return
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = prev
-    }
-  }, [isOpen])
+  // Lock background scroll while the modal is open (shared, ref-counted)
+  useScrollLock(isOpen)
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -120,6 +114,7 @@ export default function CPFRequestForm({ isOpen, onClose }: CPFRequestFormProps)
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             className="fixed inset-0 z-[80] bg-black/60"
             onClick={handleClose}
           />
