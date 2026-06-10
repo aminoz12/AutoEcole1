@@ -55,7 +55,7 @@ export default function WebPackSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Grâce à notre <span className="text-primary">pack web</span>,
+                Grâce à nos <span className="text-primary">prestations à l&apos;unité</span>,
                 révisez le code de la route où vous voulez et n&apos;importe quand !
               </h2>
 
@@ -67,12 +67,12 @@ export default function WebPackSection() {
 
               {/* CTA Button — desktop (under the text) */}
               <motion.a
-                href="/packweb"
+                href="/prestations-a-l-unite"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="hidden lg:inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
               >
-                Découvrir le pack web
+                Découvrir nos prestations à l&apos;unité
               </motion.a>
             </motion.div>
 
@@ -100,10 +100,10 @@ export default function WebPackSection() {
             {/* CTA Button — mobile (under the 3D earth) */}
             <div className="flex justify-center lg:hidden">
               <a
-                href="/packweb"
+                href="/prestations-a-l-unite"
                 className="inline-block bg-primary text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300"
               >
-                Découvrir le pack web
+                Découvrir nos prestations à l&apos;unité
               </a>
             </div>
           </div>

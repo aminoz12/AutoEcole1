@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 
 const intro = {
-  lead: 'Le PackWeb vous permet de vous préparer à l’examen du code de la route à distance.',
+  lead: 'Nos prestations à l’unité vous permettent de vous préparer à l’examen du code de la route à distance.',
   rest:
     ' Il regroupe l’ensemble des savoirs à maîtriser pour réussir le code de la route. Chaque sujet est validé par un exercice permettant la validation des acquis au fil de l’apprentissage.',
   middle:
@@ -13,7 +13,7 @@ const intro = {
 }
 
 const illimite = {
-  title: 'PACK WEB –\nACCÈS ILLIMITÉ',
+  title: 'PRESTATIONS À L’UNITÉ –\nACCÈS ILLIMITÉ',
   perks: [
     'Révisez le code de la route où vous voulez et quand vous voulez',
     'Accès illimité sans date limite',
@@ -24,7 +24,7 @@ const illimite = {
 }
 
 const unMois = {
-  title: 'PACK WEB –\nACCÈS 1 MOIS',
+  title: 'PRESTATIONS À L’UNITÉ –\nACCÈS 1 MOIS',
   perks: [
     'Révisez le code de la route où vous voulez et quand vous voulez',
     'Accès illimité pendant 1 mois',
@@ -162,7 +162,7 @@ export default function PackWebContent() {
             </span>
 
             <h1 className="mt-5 font-poppins text-4xl font-bold leading-tight text-white lg:text-5xl">
-              Pack Web, <span className="text-primary">c&apos;est quoi&nbsp;?</span>
+              Prestations à l&apos;unité, <span className="text-primary">c&apos;est quoi&nbsp;?</span>
             </h1>
             <span className="mx-auto mt-5 block h-1.5 w-24 rounded-full bg-gradient-to-r from-primary to-secondary" />
 

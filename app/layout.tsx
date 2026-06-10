@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
+import WhatsAppButton from '@/components/WhatsAppButton'
 import { createPageMetadata } from '@/lib/seo/metadata'
 import { siteConfig } from '@/lib/seo/site-config'
 
@@ -33,6 +34,7 @@ export default function RootLayout({
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
       <body className="antialiased">
         {children}
+        <WhatsAppButton />
         <Toaster
           position="top-right"
           toastOptions={{

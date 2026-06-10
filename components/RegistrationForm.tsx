@@ -12,7 +12,7 @@ export default function RegistrationForm() {
     address: '',
     city: '',
     dateOfBirth: '',
-    licenseType: 'B',
+    licenseType: 'Boîte Auto Avec Code',
   })
 
   const [loading, setLoading] = useState(false)
@@ -106,7 +106,7 @@ export default function RegistrationForm() {
         address: '',
         city: '',
         dateOfBirth: '',
-        licenseType: 'B',
+        licenseType: 'Boîte Auto Avec Code',
       })
 
       setTimeout(() => {
@@ -137,8 +137,7 @@ export default function RegistrationForm() {
               transition={{ delay: 0.2 }}
               className="text-3xl md:text-4xl font-bold mb-2"
             >
-              Inscrivez-vous en ligne
-            </motion.h1>
+              Pré Inscrivez-vous en ligne            </motion.h1>
             <p className="text-white/90">
               Remplissez le formulaire — notre équipe vous recontacte sous 24 h pour finaliser votre dossier.
             </p>
@@ -277,7 +276,7 @@ export default function RegistrationForm() {
               {/* License Type */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Catégorie de permis *
+                  Catégorie de permis B *
                 </label>
                 <select
                   name="licenseType"
@@ -285,10 +284,10 @@ export default function RegistrationForm() {
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
                 >
-                  <option value="B">Catégorie B (Voiture)</option>
-                  <option value="A1">Catégorie A1 (Scooter léger)</option>
-                  <option value="A2">Catégorie A2 (Scooter)</option>
-                  <option value="A">Catégorie A (Moto)</option>
+                  <option value="Boîte Auto Avec Code">Boîte Auto Avec Code</option>
+                  <option value="Boîte Auto Sans Code">Boîte Auto Sans Code</option>
+                  <option value="Boîte Manuelle Avec Code">Boîte Manuelle Avec Code</option>
+                  <option value="Boîte Manuelle Sans Code">Boîte Manuelle Sans Code</option>
                 </select>
               </div>
 
@@ -321,26 +320,6 @@ export default function RegistrationForm() {
           </div>
         </motion.div>
 
-        {/* Info Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-10 grid md:grid-cols-3 gap-6"
-        >
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
-            <div className="text-3xl font-bold text-pink-500 mb-2">100%</div>
-            <p className="text-sm text-gray-300">Formulaire sécurisé, réponse sous 24 h</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
-            <div className="text-3xl font-bold text-pink-500 mb-2">CPF</div>
-            <p className="text-sm text-gray-300">Financement possible dès 100 €</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-white text-center border border-white/20">
-            <div className="text-3xl font-bold text-pink-500 mb-2">4,9/5</div>
-            <p className="text-sm text-gray-300">Note moyenne de nos élèves</p>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

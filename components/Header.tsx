@@ -27,7 +27,7 @@ export default function Header() {
   }
 
   const navItems: NavItem[] = [
-    { name: 'Pack Web', href: '/packweb' },
+    { name: 'Prestations à l’unité', href: '/prestations-a-l-unite' },
     { name: 'Formations', href: '#formations' },
     {
       name: 'Tarifs',
@@ -37,7 +37,7 @@ export default function Header() {
         { name: 'Boîte Auto - SANS CODE', href: '/tarifs#auto' },
         { name: 'Boîte Manuelle + CODE', href: '/tarifs#manuelle-code' },
         { name: 'Boîte Auto + CODE', href: '/tarifs#auto-code' },
-        { name: 'Pack Web', href: '/tarifs#pack-web' },
+        { name: 'Prestations à l’unité', href: '/tarifs#pack-web' },
         { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
       ],
     },

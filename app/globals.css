@@ -27,8 +27,9 @@
     letter-spacing: -0.015em;
   }
 
-  /* Smooth page transitions */
-  * {
+  /* Smooth transitions for interactive elements only (a universal
+     transition on every element causes scroll jank on mobile). */
+  a, button, input, textarea, select, [role="button"] {
     transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
     transition-duration: 150ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);

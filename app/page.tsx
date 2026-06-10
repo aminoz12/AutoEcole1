@@ -8,7 +8,6 @@ import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQSection from '@/components/FAQSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
 import CPFPopup from '@/components/CPFPopup'
 import { OrganizationJsonLd, WebSiteJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
@@ -33,7 +32,6 @@ export default function Home() {
       <CTASection />
       <BlogPreview posts={featuredPosts} />
       <Footer />
-      <WhatsAppButton />
       <CPFPopup />
     </main>
   )

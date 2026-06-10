@@ -20,6 +20,16 @@ const nextConfig = {
   },
   trailingSlash: false,
   transpilePackages: ['@supabase/ssr', '@supabase/supabase-js'],
+
+  async redirects() {
+    return [
+      {
+        source: '/packweb',
+        destination: '/prestations-a-l-unite',
+        permanent: true,
+      },
+    ]
+  },
   
   // Optimize webpack for better memory usage
   webpack: (config, { isServer }) => {
