@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import WhatsAppButton from '@/components/WhatsAppButton'
@@ -32,6 +33,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4PRT0D2ZX6"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-4PRT0D2ZX6');
+          `}
+        </Script>
+      </head>
       <body className="antialiased">
         {children}
         <WhatsAppButton />
