@@ -2,7 +2,7 @@ export const homepageFaqs = [
   {
     question: 'Quel est le prix d\'une leçon de conduite chez Auto Ecole Des Paquerettes ?',
     answer:
-      'Nos tarifs dépendent de la formule choisie. Une leçon à l\'unité est à 45 €. Nos packs sont plus avantageux : 10 leçons à 420 € (42 €/h) ou une formation complète jusqu\'au permis à partir de 899 €. Assurance et carburant sont inclus.',
+      'Nos tarifs dépendent de la formule choisie. Une leçon à l\'unité est à partir de 60€. Nos packs sont plus avantageux : 10 leçons à partir 600 € ou une formation complète jusqu\'au permis à partir de 899 €.',
   },
   {
     question: 'Quels sont vos horaires de cours ?',

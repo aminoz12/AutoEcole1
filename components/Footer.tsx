@@ -85,6 +85,9 @@ export default function Footer() {
                   <MapPin className="h-5 w-5 text-primary" />
                   <span>{siteConfig.address.full}</span>
                 </div>
+                <div className="text-sm text-gray-500 pl-8">
+                  Agrément E 2209200030
+                </div>
               </div>
 
               <a

@@ -38,7 +38,7 @@ export default function Header() {
         { name: 'Boîte Auto - SANS CODE', href: '/tarifs#auto' },
         { name: 'Boîte Manuelle + CODE', href: '/tarifs#manuelle-code' },
         { name: 'Boîte Auto + CODE', href: '/tarifs#auto-code' },
-        { name: 'Prestations à l’unité', href: '/tarifs#pack-web' },
+        { name: 'Prestations à l’unité', href: '/tarifs#prestations-a-la-carte' },
         { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
       ],
     },

@@ -461,13 +461,13 @@ export default function PricingSection({
           className="flex flex-col sm:flex-row gap-4 justify-center mt-12"
         >
           <motion.a
-            href="/s-inscrire"
+            href="/contact"
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 flex items-center justify-center gap-2"
           >
             <Check className="h-4 w-4" />
-            Je m'inscris
+            Contactez-Nous
           </motion.a>
 
           <motion.a

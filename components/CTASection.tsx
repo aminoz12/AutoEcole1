@@ -120,28 +120,6 @@ export default function CTASection() {
               <p className="opacity-90">Une équipe disponible à chaque étape de votre parcours</p>
             </motion.div>
           </motion.div>
-
-          {/* Urgency Message */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, type: 'spring', stiffness: 200 }}
-            viewport={{ once: true }}
-            className="mt-12 bg-white/10 rounded-2xl p-6 max-w-2xl mx-auto"
-          >
-            <motion.div
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="text-center"
-            >
-              <h4 className="text-lg font-bold mb-2">
-                Offre de lancement : -20 % sur votre première leçon
-              </h4>
-              <p className="opacity-90">
-                Mentionnez le code <span className="font-bold">AUTO2026</span> lors de votre inscription
-              </p>
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -175,8 +175,7 @@ export default function FAQSection() {
               Une question ? Parlons-en.
             </h3>
             <p className="text-lg mb-6 text-gray-600">
-              Notre équipe pédagogique répond à toutes vos questions sur les formules,
-              le CPF et les démarches d'inscription.
+              Notre équipe pédagogique répond à toutes vos questions sur les formules.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <motion.a

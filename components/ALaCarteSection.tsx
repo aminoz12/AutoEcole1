@@ -79,13 +79,13 @@ function CategoryCard({ title, children }: { title: string; children: React.Reac
 
 export default function ALaCarteSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0B0F19] py-16 lg:py-20">
+    <section id="prestations-a-la-carte" className="scroll-mt-28 relative overflow-hidden bg-[#0B0F19] py-16 lg:py-20">
       <div className="pointer-events-none absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/10 blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="font-poppins text-3xl font-extrabold text-white sm:text-4xl md:text-5xl">
-            Nos formules <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">à la carte&nbsp;!</span>
+            Nos prestations <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">à la carte&nbsp;!</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm text-gray-400 md:text-base">
             Le détail de toutes nos prestations, à composer selon vos besoins.

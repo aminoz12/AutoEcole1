@@ -3,15 +3,14 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { X } from 'lucide-react'
-import CPFRequestForm from './CPFRequestForm'
+import Link from 'next/link'
+import { X, Phone } from 'lucide-react'
 import { useScrollLock } from '@/lib/useScrollLock'
 
-const STORAGE_KEY = 'cpf-popup-dismissed'
+const STORAGE_KEY = 'echec-permis-popup-dismissed'
 
 export default function CPFPopup() {
   const [isOpen, setIsOpen] = useState(false)
-  const [showForm, setShowForm] = useState(false)
 
   useEffect(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return
@@ -31,14 +30,7 @@ export default function CPFPopup() {
     sessionStorage.setItem(STORAGE_KEY, 'true')
   }
 
-  const handleOpenForm = () => {
-    setIsOpen(false)
-    sessionStorage.setItem(STORAGE_KEY, 'true')
-    setShowForm(true)
-  }
-
   return (
-    <>
     <AnimatePresence>
       {isOpen && (
         <>
@@ -58,51 +50,59 @@ export default function CPFPopup() {
             className="fixed inset-0 z-[71] flex items-center justify-center p-4 pointer-events-none"
           >
             <div
-              className="relative bg-white rounded-2xl shadow-2xl max-w-xs sm:max-w-lg w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 text-center pointer-events-auto"
+              className="relative max-h-[90vh] w-full max-w-md overflow-y-auto rounded-2xl shadow-2xl pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Background image (dimmed so the text stays dominant) */}
+              <Image
+                src="/popup.png"
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, 448px"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/90 via-[#0B0F19]/85 to-[#1a0b22]/90" />
+
+              {/* Close */}
               <button
                 type="button"
                 onClick={handleClose}
-                className="absolute top-3 right-3 p-1.5 rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors"
+                className="absolute top-3 right-3 z-10 rounded-full bg-white/10 p-1.5 text-white/80 hover:bg-white/20 hover:text-white transition-colors"
                 aria-label="Fermer"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              <Image
-                src="/cpf.svg"
-                alt="Mon Compte Formation"
-                width={124}
-                height={86}
-                className="mx-auto mb-4 h-auto w-16 sm:mb-6 sm:w-28"
-              />
+              {/* Content */}
+              <div className="relative z-10 px-6 py-9 text-center sm:px-9 sm:py-11">
+                <h2 className="font-poppins text-2xl font-extrabold leading-tight text-white sm:text-3xl">
+                  🚗 Échec au permis&nbsp;?
+                  <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
+                    Ne baissez pas les bras&nbsp;!
+                  </span>
+                </h2>
 
-              <h2 className="text-lg sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 sm:mb-4 leading-tight">
-                Financez votre permis avec le CPF à partir de{' '}
-                <span className="text-primary">100 €</span>
-              </h2>
+                <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-gray-200 sm:text-base">
+                  Vous avez raté votre examen du permis de conduire&nbsp;? Pas de panique,
+                  une solution existe. Contactez-nous dès maintenant et bénéficiez d&apos;un
+                  accompagnement personnalisé pour retrouver rapidement une nouvelle date
+                  d&apos;examen et mettre toutes les chances de votre côté.
+                </p>
 
-              <p className="text-xs sm:text-base text-gray-700 mb-5 sm:mb-8 leading-relaxed">
-                Salarié, indépendant, demandeur d&apos;emploi ou apprenti : utilisez vos droits
-                CPF sur Mon Compte Formation pour financer tout ou partie de votre permis de
-                conduire. Nous vous accompagnons dans chaque étape de la demande.
-              </p>
-
-              <button
-                type="button"
-                onClick={handleOpenForm}
-                className="inline-block w-full sm:w-auto bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full text-sm sm:text-base font-semibold hover:opacity-90 transition-opacity shadow-lg"
-              >
-                M&apos;inscrire et faire ma demande CPF
-              </button>
+                <Link
+                  href="/contact"
+                  onClick={handleClose}
+                  className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3.5 font-poppins text-sm font-semibold text-white shadow-lg shadow-pink-500/25 transition-opacity hover:opacity-90 sm:text-base"
+                >
+                  <Phone className="h-4 w-4" />
+                  Contactez-nous dès aujourd&apos;hui&nbsp;!
+                </Link>
+              </div>
             </div>
           </motion.div>
         </>
       )}
     </AnimatePresence>
-
-    <CPFRequestForm isOpen={showForm} onClose={() => setShowForm(false)} />
-    </>
   )
 }
