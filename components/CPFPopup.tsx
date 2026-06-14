@@ -77,7 +77,7 @@ export default function CPFPopup() {
               {/* Content */}
               <div className="relative z-10 px-6 py-9 text-center sm:px-9 sm:py-11">
                 <h2 className="font-poppins text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                  🚗 Échec au permis&nbsp;?
+                  Échec au permis&nbsp;?
                   <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
                     Ne baissez pas les bras&nbsp;!
                   </span>
