@@ -47,6 +47,13 @@ export default function RootLayout({
             gtag('config', 'G-4PRT0D2ZX6');
           `}
         </Script>
+
+        {/* Ahrefs Analytics */}
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="+X78nAL97Jv1QUgZW6I5xQ"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="antialiased">
         {children}
