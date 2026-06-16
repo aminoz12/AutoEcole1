@@ -5,11 +5,19 @@
 [build.environment]
   NODE_VERSION = "18"
   NODE_OPTIONS = "--max-old-space-size=8192"
-  # Set NEXT_PUBLIC_SITE_URL in Netlify UI (e.g. https://autoecolepro.fr)
+  # Canonical site URL — used for metadata, canonical tags, sitemap and JSON-LD.
+  NEXT_PUBLIC_SITE_URL = "https://autoecoledespaquerettes.fr"
 
 # Next.js plugin for Netlify
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Force the canonical host: redirect www -> non-www (301)
+[[redirects]]
+  from = "https://www.autoecoledespaquerettes.fr/*"
+  to = "https://autoecoledespaquerettes.fr/:splat"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/*"

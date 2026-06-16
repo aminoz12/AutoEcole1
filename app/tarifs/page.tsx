@@ -47,6 +47,23 @@ export default function TarifsPage() {
     <main className="min-h-screen bg-[#0B0F19] pt-20">
       <Header />
 
+      {/* SEO intro + page H1 */}
+      <section className="bg-[#0B0F19] pt-10 lg:pt-14">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="font-poppins text-3xl font-extrabold text-white sm:text-4xl">
+              Tarifs auto-école à <span className="text-primary">Nanterre</span>
+            </h1>
+            <p className="mx-auto mt-4 text-gray-400">
+              Découvrez tous nos tarifs de permis de conduire à Nanterre&nbsp;: formules boîte
+              manuelle et automatique, avec ou sans code, conduite accompagnée et prestations
+              à l&apos;unité. Des prix transparents, le paiement en plusieurs fois sans frais et
+              un accompagnement jusqu&apos;à l&apos;examen — à partir de 899&nbsp;€.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Driving packs — all categories stacked, no tabs */}
       <PricingSection showFinalStretch={false} showAllCategories />
 

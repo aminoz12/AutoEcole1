@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import Header from '@/components/Header'
 import ContactForm from '@/components/ContactForm'
+import ContactInfo from '@/components/ContactInfo'
 import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
@@ -18,6 +19,7 @@ export default function Contact() {
     <main className="min-h-screen bg-[#0B0F19] pt-20">
       <Header />
       <ContactForm />
+      <ContactInfo />
       <Footer />
     </main>
   )
