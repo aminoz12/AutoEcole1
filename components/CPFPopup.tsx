@@ -59,16 +59,16 @@ export default function CPFPopup() {
                 alt=""
                 fill
                 sizes="(max-width: 640px) 100vw, 448px"
-                className="object-cover"
+                className="object-cover pointer-events-none"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/90 via-[#0B0F19]/85 to-[#1a0b22]/90" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B0F19]/90 via-[#0B0F19]/85 to-[#1a0b22]/90 pointer-events-none" />
 
               {/* Close */}
               <button
                 type="button"
                 onClick={handleClose}
-                className="absolute top-3 right-3 z-10 rounded-full bg-white/10 p-1.5 text-white/80 hover:bg-white/20 hover:text-white transition-colors"
+                className="absolute top-3 right-3 z-30 rounded-full bg-white/15 p-2 text-white hover:bg-white/25 transition-colors"
                 aria-label="Fermer"
               >
                 <X className="h-5 w-5" />

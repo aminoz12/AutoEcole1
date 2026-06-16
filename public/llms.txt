@@ -4,9 +4,9 @@
 
 ## Pages principales
 
-- [Accueil](https://autoecolepro.fr/): présentation, tarifs, financement CPF, FAQ et contact
-- [Inscription en ligne](https://autoecolepro.fr/s-inscrire): formulaire de demande d'inscription au permis
-- [Blog](https://autoecolepro.fr/blog): conseils permis, code de la route, sécurité et assurance
+- [Accueil](https://autoecoledespaquerettes.fr/): présentation, tarifs, financement CPF, FAQ et contact
+- [Inscription en ligne](https://autoecoledespaquerettes.fr/s-inscrire): formulaire de demande d'inscription au permis
+- [Blog](https://autoecoledespaquerettes.fr/blog): conseils permis, code de la route, sécurité et assurance
 
 ## Coordonnées
 

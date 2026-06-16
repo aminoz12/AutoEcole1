@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: 'Auto-école à Nanterre — permis accéléré, code et CPF',
   description:
     'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autoecolepro.fr',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autoecoledespaquerettes.fr',
   locale: 'fr_FR',
   email: 'autoecoledespaquerettes@hotmail.com',
   phone: '01 46 49 38 90',
@@ -39,11 +39,9 @@ export const siteConfig = {
     'financement CPF permis',
     'leçon de conduite',
   ],
-  social: {
-    facebook: 'https://www.facebook.com/',
-    instagram: 'https://www.instagram.com/',
-    linkedin: 'https://www.linkedin.com/',
-  },
+  // Add real profile URLs here when available (used for schema sameAs).
+  // Left empty on purpose — pointing to platform homepages hurts the entity graph.
+  social: {} as Record<string, string>,
 } as const
 
 export function absoluteUrl(path: string = '/') {

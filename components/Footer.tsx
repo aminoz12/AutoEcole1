@@ -33,12 +33,20 @@ export default function Footer() {
     },
   }
 
-  const socialLinks = [
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  ]
+  // Derived from siteConfig.social — only renders real profile links (no dead "#" icons)
+  const socialIcons: Record<string, typeof Facebook> = {
+    facebook: Facebook,
+    twitter: Twitter,
+    instagram: Instagram,
+    linkedin: Linkedin,
+  }
+  const socialLinks = Object.entries(siteConfig.social)
+    .filter(([, href]) => href && href !== '#')
+    .map(([key, href]) => ({
+      icon: socialIcons[key] ?? Facebook,
+      href,
+      label: key.charAt(0).toUpperCase() + key.slice(1),
+    }))
 
   return (
     <footer className="bg-gray-900 text-white">

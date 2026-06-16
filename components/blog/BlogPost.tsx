@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, Clock, Tag, Eye, ArrowLeft, Share2, Facebook, Twitter, MessageCircle } from 'lucide-react'
+import { Calendar, Clock, Tag, ArrowLeft, Share2, Facebook, Twitter, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import toast from 'react-hot-toast'
@@ -127,16 +127,16 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                   <Clock className="w-4 h-4" />
                   <span>5 min de lecture</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <Eye className="w-4 h-4" />
-                  <span>{post.views_count} vues</span>
-                </div>
               </div>
 
-              {/* Content */}
-              <div 
+              {/* Content — demote any H1 in the article body so the page keeps a single H1 (the title) */}
+              <div
                 className="prose prose-lg max-w-none"
-                dangerouslySetInnerHTML={{ __html: post.content }}
+                dangerouslySetInnerHTML={{
+                  __html: post.content
+                    .replace(/<h1(\s|>)/gi, '<h2$1')
+                    .replace(/<\/h1>/gi, '</h2>'),
+                }}
               />
 
               {/* Social Sharing */}
@@ -295,10 +295,6 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                       <div className="flex items-center gap-1">
                         <Calendar className="w-4 h-4" />
                         <span>{formatDate(relatedPost.published_at)}</span>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Eye className="w-4 h-4" />
-                        <span>{relatedPost.views_count}</span>
                       </div>
                     </div>
                   </div>

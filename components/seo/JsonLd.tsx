@@ -24,7 +24,7 @@ export function OrganizationJsonLd() {
         description: siteConfig.description,
         url: siteConfig.url,
         email: siteConfig.email,
-        telephone: siteConfig.phones[0],
+        telephone: `+33${siteConfig.phoneTel.replace(/^0/, '')}`,
         image: absoluteUrl('/logoautoecol.png'),
         address: {
           '@type': 'PostalAddress',
@@ -40,11 +40,52 @@ export function OrganizationJsonLd() {
           longitude: siteConfig.address.geo.lng,
         },
         areaServed: [
-          { '@type': 'City', name: 'Nanterre' },
-          { '@type': 'AdministrativeArea', name: 'Hauts-de-Seine' },
+          'Nanterre',
+          'Rueil-Malmaison',
+          'Courbevoie',
+          'Colombes',
+          'Puteaux',
+          'Suresnes',
+          'La Garenne-Colombes',
+          'Houilles',
+          'Bezons',
+        ].map((name) => ({ '@type': 'City', name })),
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+            opens: '10:00',
+            closes: '14:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+            opens: '15:30',
+            closes: '19:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Friday',
+            opens: '10:00',
+            closes: '13:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Friday',
+            opens: '15:30',
+            closes: '19:00',
+          },
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: 'Saturday',
+            opens: '10:00',
+            closes: '14:00',
+          },
         ],
         priceRange: '€€',
-        sameAs: Object.values(siteConfig.social),
+        ...(Object.values(siteConfig.social).length > 0 && {
+          sameAs: Object.values(siteConfig.social),
+        }),
       }}
     />
   )
