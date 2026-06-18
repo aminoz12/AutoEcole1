@@ -14,6 +14,47 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '11',
+    title: 'Comment gérer son stress pour réussir l\'examen de conduite',
+    slug: 'comment-gérer-son-stress-pour-réussir-l-examen-de-conduite',
+    excerpt: "Le stress est l'un des principaux obstacles le jour de l'examen de conduite. Découvrez nos conseils concrets pour rester calme, confiant et mettre toutes les chances de votre côté.",
+    content: `# Comment gérer son stress pour réussir l'examen de conduite
+
+Le jour de l'examen de conduite, le stress peut transformer un candidat parfaitement préparé en conducteur hésitant. La bonne nouvelle : le stress se gère et s'anticipe. Voici nos conseils pour aborder l'épreuve avec sérénité.
+
+## 1. Préparez-vous suffisamment en amont
+
+La confiance vient de la préparation. Plus vous avez d'heures de conduite et de situations variées derrière vous, moins l'examen vous semblera impressionnant. N'hésitez pas à demander à votre moniteur de refaire les manœuvres ou les parcours qui vous mettent le moins à l'aise.
+
+## 2. Adoptez une bonne hygiène la veille
+
+- Dormez suffisamment la nuit précédente.
+- Mangez normalement avant l'épreuve pour rester concentré.
+- Évitez les excitants (café en excès, boissons énergisantes) qui amplifient la nervosité.
+
+## 3. Respirez et relâchez la pression
+
+Quelques minutes avant de monter dans le véhicule, pratiquez la respiration profonde : inspirez lentement par le nez, retenez quelques secondes, puis expirez doucement. Cet exercice simple fait baisser le rythme cardiaque et clarifie l'esprit.
+
+## 4. Dédramatisez l'examen
+
+Rappelez-vous que l'examinateur n'est pas là pour vous piéger, mais pour vérifier que vous conduisez en sécurité. Une petite erreur n'est pas forcément éliminatoire : continuez à conduire calmement plutôt que de vous focaliser dessus.
+
+## 5. Concentrez-vous sur la conduite, pas sur le résultat
+
+Pendant l'épreuve, restez dans l'instant présent : observez, anticipez, signalez vos intentions. En vous concentrant sur les bons gestes plutôt que sur la note finale, vous laissez moins de place à l'anxiété.
+
+## Conclusion
+
+Le stress fait partie de l'examen, mais il ne doit pas vous contrôler. Avec une préparation solide, un bon repos et quelques techniques de respiration, vous aborderez l'épreuve avec confiance. Chez Auto Ecole Des Paquerettes, nous accompagnons chaque élève jusqu'au jour J pour qu'il se présente serein et prêt à réussir.`,
+    featured_image: '/blog2.jpeg',
+    author_name: 'Équipe Auto Ecole Des Paquerettes',
+    category: 'Conseils',
+    tags: ['examen de conduite', 'stress', 'conseils', 'permis'],
+    published_at: '2026-06-17',
+    views_count: 0
+  },
+  {
     id: '1',
     title: '5 Astuces pour Réussir votre Code de la Route du Premier Coup',
     slug: '5-astuces-reussir-code-route-premier-coup',

@@ -19,6 +19,13 @@
   status = 301
   force = true
 
+# Legacy blog path: /post/* -> /blog/* (301)
+[[redirects]]
+  from = "/post/*"
+  to = "/blog/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
