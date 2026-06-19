@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import BlogPost from '@/components/blog/BlogPost'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { BlogPostingJsonLd } from '@/components/seo/JsonLd'
+import { BlogPostingJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
@@ -54,6 +54,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         publishedAt={post.published_at}
         authorName={post.author_name}
         image={post.featured_image}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Accueil', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
       />
       <Header />
       <div className="pt-32">

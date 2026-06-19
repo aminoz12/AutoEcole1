@@ -26,6 +26,20 @@
   status = 301
   force = true
 
+# Retitled post: keep the old indexed URL alive (301)
+[[redirects]]
+  from = "/blog/code-route-nouvelles-regles-2024"
+  to = "/blog/code-route-nouvelles-regles-2026"
+  status = 301
+  force = true
+
+# De-accented slug: redirect the old accented URL (percent-encoded over the wire) -> ASCII (301)
+[[redirects]]
+  from = "/blog/comment-g%C3%A9rer-son-stress-pour-r%C3%A9ussir-l-examen-de-conduite"
+  to = "/blog/comment-gerer-son-stress-pour-reussir-l-examen-de-conduite"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]

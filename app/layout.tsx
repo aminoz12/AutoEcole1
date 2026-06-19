@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 import { createPageMetadata } from '@/lib/seo/metadata'
 import { siteConfig } from '@/lib/seo/site-config'
 
@@ -56,6 +57,10 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        {/* Site-wide business + website entity so every page (tarifs, contact, blog…)
+            carries the LocalBusiness/DrivingSchool graph, not just the homepage. */}
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         {children}
         <WhatsAppButton />
         <Toaster

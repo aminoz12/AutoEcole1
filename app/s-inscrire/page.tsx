@@ -12,7 +12,7 @@ import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = createPageMetadata({
 
-  title: 'Inscription en ligne',
+  title: 'Pré-inscription en ligne',
 
   description:
 

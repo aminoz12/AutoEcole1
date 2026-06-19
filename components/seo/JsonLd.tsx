@@ -1,4 +1,5 @@
 import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
+import { packCategories, packsData, webPlans } from '@/lib/content/pricing-data'
 
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[]
@@ -83,6 +84,14 @@ export function OrganizationJsonLd() {
           },
         ],
         priceRange: '€€',
+        // First-party verified reviews shown on the homepage hero ("4.9 · +de 300 avis vérifiés").
+        aggregateRating: {
+          '@type': 'AggregateRating',
+          ratingValue: '4.9',
+          reviewCount: '300',
+          bestRating: '5',
+          worstRating: '3',
+        },
         ...(Object.values(siteConfig.social).length > 0 && {
           sameAs: Object.values(siteConfig.social),
         }),
@@ -127,6 +136,80 @@ export function FAQPageJsonLd({ faqs }: { faqs: { question: string; answer: stri
   )
 }
 
+export function BreadcrumbJsonLd({ items }: { items: { name: string; path: string }[] }) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: items.map((item, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: item.name,
+          item: absoluteUrl(item.path),
+        })),
+      }}
+    />
+  )
+}
+
+// Product/Offer schema for the pricing page. Built from the same data the UI renders
+// (lib/content/pricing-data.ts) so the structured prices can never drift from the page.
+export function PricingJsonLd() {
+  const seller = { '@id': `${siteConfig.url}/#organization` }
+
+  const courseProducts = packCategories.flatMap((category) =>
+    packsData[category.key].map((pack) => ({
+      '@type': 'Product',
+      name: `${pack.title} — ${category.label}`,
+      description: pack.features.map((f) => f.trim()).join(' · '),
+      category: 'Permis de conduire',
+      brand: { '@type': 'Brand', name: siteConfig.name },
+      offers: {
+        '@type': 'Offer',
+        price: pack.total,
+        priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        url: absoluteUrl('/tarifs'),
+        seller,
+      },
+    })),
+  )
+
+  const webProducts = webPlans.map((plan) => ({
+    '@type': 'Product',
+    name: plan.name,
+    description: plan.perks.map((p) => p.trim()).join(' · '),
+    category: 'Code de la route en ligne',
+    brand: { '@type': 'Brand', name: siteConfig.name },
+    offers: {
+      '@type': 'Offer',
+      price: Number(plan.price),
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: absoluteUrl('/tarifs'),
+      seller,
+    },
+  }))
+
+  const products = [...courseProducts, ...webProducts]
+
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: `Tarifs et formules — ${siteConfig.name}`,
+        itemListElement: products.map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          item: product,
+        })),
+      }}
+    />
+  )
+}
+
 export function BlogPostingJsonLd({
   title,
   description,
@@ -152,7 +235,12 @@ export function BlogPostingJsonLd({
         url: absoluteUrl(`/blog/${slug}`),
         datePublished: publishedAt,
         dateModified: publishedAt,
-        author: { '@type': 'Organization', name: authorName },
+        author: {
+          '@type': 'Person',
+          name: authorName,
+          jobTitle: 'Responsable pédagogique',
+          worksFor: { '@id': `${siteConfig.url}/#organization` },
+        },
         publisher: { '@id': `${siteConfig.url}/#organization` },
         inLanguage: 'fr-FR',
         ...(image && { image: absoluteUrl(image) }),

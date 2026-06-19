@@ -1,3 +1,36 @@
+export const pricingFaqs = [
+  {
+    question: 'Quel est le prix du permis de conduire à Nanterre ?',
+    answer:
+      'Nos formules permis B démarrent à 899 € en boîte manuelle (20h de conduite) et à 799 € en boîte automatique (13h). Les formules avec code de la route inclus commencent également à 899 €. Tous nos prix sont transparents et affichés sur cette page.',
+  },
+  {
+    question: 'Peut-on payer le permis en plusieurs fois ?',
+    answer:
+      'Oui. Toutes nos formules permis sont payables en 2 fois sans frais, sans organisme de crédit. Le paiement s\'effectue directement auprès de l\'auto-école.',
+  },
+  {
+    question: 'Le code de la route est-il inclus dans vos formules ?',
+    answer:
+      'Le code est inclus dans nos formules « + CODE » avec un accès illimité pendant 1 an. Vous pouvez aussi réviser le code en ligne grâce au Pack Web, à partir de 10 € pour 1 mois ou 29 € en accès illimité.',
+  },
+  {
+    question: 'Peut-on financer son permis avec le CPF ?',
+    answer:
+      'Oui, le permis B peut être financé par le Compte Personnel de Formation (CPF) lorsqu\'il est lié à un projet professionnel. Vérifiez vos droits sur moncompteformation.gouv.fr et contactez-nous pour constituer votre dossier.',
+  },
+  {
+    question: 'Proposez-vous la conduite accompagnée (AAC) ?',
+    answer:
+      'Oui. La conduite accompagnée (AAC) est accessible dès 15 ans et permet d\'acquérir de l\'expérience avant l\'examen. Consultez notre formule Permis Accompagné détaillée sur cette page.',
+  },
+  {
+    question: 'Combien coûte une leçon de conduite à l\'unité ?',
+    answer:
+      'Une leçon de conduite à l\'unité est proposée à partir de 60 €. Les packs et formules complètes restent plus avantageux qu\'un achat d\'heures à l\'unité.',
+  },
+]
+
 export const homepageFaqs = [
   {
     question: 'Quel est le prix d\'une leçon de conduite chez Auto Ecole Des Paquerettes ?',

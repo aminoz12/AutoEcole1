@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ChevronDown, MapPin, Navigation } from 'lucide-react'
 import { useState } from 'react'
 import { homepageFaqs } from '@/lib/content/faq-data'
@@ -123,6 +123,7 @@ export default function FAQSection() {
                 >
                   <motion.button
                     onClick={() => toggleFAQ(index)}
+                    aria-expanded={openIndex === index}
                     className="w-full px-4 sm:px-6 py-4 sm:py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
                     whileHover={{ backgroundColor: 'rgba(0,0,0,0.02)' }}
                   >
@@ -138,23 +139,20 @@ export default function FAQSection() {
                     </motion.div>
                   </motion.button>
 
-                  <AnimatePresence>
-                    {openIndex === index && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-4 sm:px-6 pb-4 sm:pb-6">
-                          <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                            {faq.answer}
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* Always render the answer in the DOM (AEO/FAQ rich results need it
+                      in the HTML) — animate height to collapse rather than unmounting. */}
+                  <motion.div
+                    initial={false}
+                    animate={{ height: openIndex === index ? 'auto' : 0, opacity: openIndex === index ? 1 : 0 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+                      <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>

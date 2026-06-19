@@ -39,9 +39,13 @@ export const siteConfig = {
     'financement CPF permis',
     'leçon de conduite',
   ],
-  // Add real profile URLs here when available (used for schema sameAs).
-  // Left empty on purpose — pointing to platform homepages hurts the entity graph.
-  social: {} as Record<string, string>,
+  // Real profile URLs — used for schema `sameAs` (entity graph) and footer icons.
+  social: {
+    instagram: 'https://www.instagram.com/autoecoledespaquerettes',
+    tiktok: 'https://www.tiktok.com/@autoecoledespaquerettes',
+    snapchat: 'https://www.snapchat.com/add/autoecoledespaq',
+    google: 'https://www.google.com/maps?cid=16506969104775091149',
+  } as Record<string, string>,
 } as const
 
 export function absoluteUrl(path: string = '/') {

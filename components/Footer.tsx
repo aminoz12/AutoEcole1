@@ -5,6 +5,40 @@ import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'luc
 import Image from 'next/image'
 import { siteConfig } from '@/lib/seo/site-config'
 
+type IconProps = { className?: string }
+
+// Brand glyphs lucide-react doesn't ship — drawn to match its 24x24 viewBox.
+function TikTokIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M16.5 5.4a4.9 4.9 0 0 1-3-2.9h-2.8v11.8a2.7 2.7 0 1 1-1.9-2.6V8.8a5.6 5.6 0 1 0 4.7 5.5V9.1a7.7 7.7 0 0 0 3 .9V7.2a4.9 4.9 0 0 1-0-1.8z" />
+    </svg>
+  )
+}
+
+function SnapchatIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M12 2.2c2.4 0 4.1 1.9 4.2 4.3 0 .5 0 1.2-.1 1.9.3.1.6.1.9 0 .4-.1.9.1 1 .5.1.5-.3.8-.8 1-.5.2-1.2.3-1.3.8 0 .4.8 1.4 1.8 2 .6.4 1.3.6 1.9.8.4.1.5.5.4.8-.2.7-1.6.9-2.2 1-.1.2-.1.6-.3.8-.1.1-.3.1-.6.1-.4 0-.9-.1-1.5-.1-.4 0-.7 0-1 .1-.6.2-1.1.9-2.3.9s-1.7-.7-2.3-.9c-.3-.1-.6-.1-1-.1-.6 0-1.1.1-1.5.1-.3 0-.5 0-.6-.1-.2-.2-.2-.6-.3-.8-.6-.1-2-.3-2.2-1-.1-.3 0-.7.4-.8.6-.2 1.3-.4 1.9-.8 1-.6 1.8-1.6 1.8-2 0-.5-.8-.6-1.3-.8-.5-.2-.9-.5-.8-1 .1-.4.6-.6 1-.5.3.1.6.1.9 0-.1-.7-.1-1.4-.1-1.9C7.9 4.1 9.6 2.2 12 2.2z" />
+    </svg>
+  )
+}
+
+function GoogleIcon({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+      <path d="M12 11v2.8h4c-.2 1-1.3 3-4 3a4.4 4.4 0 0 1 0-8.8c1.3 0 2.1.5 2.6 1l1.9-1.8A7.2 7.2 0 0 0 12 4.5a7.5 7.5 0 1 0 0 15c4.3 0 7.2-3 7.2-7.3 0-.5 0-.9-.1-1.2H12z" />
+    </svg>
+  )
+}
+
+const socialLabels: Record<string, string> = {
+  google: 'Google Business',
+  tiktok: 'TikTok',
+  snapchat: 'Snapchat',
+  instagram: 'Instagram',
+}
+
 export default function Footer() {
   const footerLinks = {
     support: [
@@ -34,18 +68,21 @@ export default function Footer() {
   }
 
   // Derived from siteConfig.social — only renders real profile links (no dead "#" icons)
-  const socialIcons: Record<string, typeof Facebook> = {
+  const socialIcons: Record<string, React.ComponentType<IconProps>> = {
     facebook: Facebook,
     twitter: Twitter,
     instagram: Instagram,
     linkedin: Linkedin,
+    tiktok: TikTokIcon,
+    snapchat: SnapchatIcon,
+    google: GoogleIcon,
   }
   const socialLinks = Object.entries(siteConfig.social)
     .filter(([, href]) => href && href !== '#')
     .map(([key, href]) => ({
       icon: socialIcons[key] ?? Facebook,
       href,
-      label: key.charAt(0).toUpperCase() + key.slice(1),
+      label: socialLabels[key] ?? key.charAt(0).toUpperCase() + key.slice(1),
     }))
 
   return (

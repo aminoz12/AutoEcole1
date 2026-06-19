@@ -54,7 +54,7 @@ export default function FeaturesSection() {
     },
     {
       icon: Trophy,
-      title: '+10 ANS D\'EXPERTISE',
+      title: '+15 ANS D\'EXPERTISE',
       description: 'Expertise en sécurité routière reconnue et éprouvée',
       iconColor: 'text-yellow-500',
     },

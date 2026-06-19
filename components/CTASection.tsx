@@ -47,7 +47,7 @@ export default function CTASection() {
             viewport={{ once: true }}
             className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto opacity-90"
           >
-            Rejoignez les 1000+ élèves qui nous ont fait confiance. Réservez votre
+            Rejoignez les 1 000+ élèves qui nous ont fait confiance. Réservez votre
             premier rdv dès aujourd'hui.
           </motion.p>
 

@@ -8,6 +8,9 @@ import PermisAccompagneSection from '@/components/PermisAccompagneSection'
 import ALaCarteSection from '@/components/ALaCarteSection'
 import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
+import { PricingJsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
+import { webPlans } from '@/lib/content/pricing-data'
+import { pricingFaqs } from '@/lib/content/faq-data'
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Nos Tarifs — Permis & Code',
@@ -17,34 +20,17 @@ export const metadata: Metadata = createPageMetadata({
   keywords: ['tarifs auto-école', 'prix permis de conduire', 'tarif code de la route Nanterre'],
 })
 
-const webPlans = [
-  {
-    name: 'Pack Web — Accès illimité',
-    price: '29',
-    variant: 'primary' as const,
-    perks: [
-      'Révisez le code où vous voulez, quand vous voulez',
-      'Accès illimité sans date limite',
-      'Plus de 2000 questions',
-      'Exercices liés au code de la route',
-    ],
-  },
-  {
-    name: 'Pack Web — Accès 1 mois',
-    price: '10',
-    variant: 'secondary' as const,
-    perks: [
-      'Révisez le code où vous voulez, quand vous voulez',
-      'Accès illimité pendant 1 mois',
-      'Plus de 2000 questions',
-      'Exercices liés au code de la route',
-    ],
-  },
-]
-
 export default function TarifsPage() {
   return (
     <main className="min-h-screen bg-[#0B0F19] pt-20">
+      <PricingJsonLd />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Accueil', path: '/' },
+          { name: 'Tarifs', path: '/tarifs' },
+        ]}
+      />
+      <FAQPageJsonLd faqs={pricingFaqs} />
       <Header />
 
       {/* SEO intro + page H1 */}
@@ -131,6 +117,35 @@ export default function TarifsPage() {
               Découvrir le Pack Web
             </Link>
           </p>
+        </div>
+      </section>
+
+      {/* Pricing FAQ — native <details> so every answer stays in the HTML
+          (featured-snippet / FAQ rich-result eligible) without client JS. */}
+      <section id="faq-tarifs" className="bg-[#0B0F19] py-16 lg:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-center font-poppins text-3xl font-bold text-white lg:text-4xl">
+              Questions fréquentes sur nos <span className="text-primary">tarifs</span>
+            </h2>
+
+            <div className="mt-10 space-y-4">
+              {pricingFaqs.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="group rounded-2xl border border-white/10 bg-white/5 p-6 [&_summary::-webkit-details-marker]:hidden"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between gap-4 text-left font-poppins text-base font-semibold text-white">
+                    <h3 className="text-base font-semibold">{faq.question}</h3>
+                    <span className="shrink-0 text-primary transition-transform duration-300 group-open:rotate-45">
+                      +
+                    </span>
+                  </summary>
+                  <p className="mt-4 leading-relaxed text-gray-300">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 

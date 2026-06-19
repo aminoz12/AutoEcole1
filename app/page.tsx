@@ -9,7 +9,7 @@ import FAQSection from '@/components/FAQSection'
 import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import CPFPopup from '@/components/CPFPopup'
-import { OrganizationJsonLd, WebSiteJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
+import { FAQPageJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
 import { homepageFaqs } from '@/lib/content/faq-data'
 
@@ -18,8 +18,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      <OrganizationJsonLd />
-      <WebSiteJsonLd />
       <FAQPageJsonLd faqs={homepageFaqs} />
 
       <Header />
