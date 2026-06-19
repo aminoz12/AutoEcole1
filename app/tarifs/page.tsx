@@ -50,6 +50,55 @@ export default function TarifsPage() {
         </div>
       </section>
 
+      {/* Price comparison table — concise, scannable, table-snippet eligible (AEO) */}
+      <section className="bg-[#0B0F19] py-12 lg:py-16">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-8 text-center font-poppins text-2xl font-bold text-white sm:text-3xl">
+              Tarifs en un coup d&apos;œil
+            </h2>
+            <div className="overflow-x-auto rounded-2xl border border-white/10">
+              <table className="w-full min-w-[640px] border-collapse text-left text-sm text-gray-300">
+                <caption className="sr-only">
+                  Comparatif des formules et tarifs du permis de conduire à Nanterre
+                </caption>
+                <thead>
+                  <tr className="bg-white/5 text-white">
+                    <th scope="col" className="px-4 py-3 font-semibold">Formule</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Transmission</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Code inclus</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Conduite</th>
+                    <th scope="col" className="px-4 py-3 font-semibold">Prix à partir de</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    ['Permis B', 'Boîte manuelle', 'Non', '20 h', '899 €'],
+                    ['Permis BEA', 'Boîte automatique', 'Non', '13 h', '799 €'],
+                    ['Formule + Code', 'Boîte manuelle', 'Oui (1 an)', '20 h', '899 €'],
+                    ['Formule + Code', 'Boîte automatique', 'Oui (1 an)', '13 h', '799 €'],
+                    ['Pack Web — 1 mois', '—', 'Code en ligne', '—', '10 €'],
+                    ['Pack Web — illimité', '—', 'Code en ligne', '—', '29 €'],
+                    ['Leçon à l’unité', '—', '—', '1 h', '60 €'],
+                  ].map((row, i) => (
+                    <tr key={i} className="border-t border-white/10">
+                      <th scope="row" className="px-4 py-3 font-semibold text-white">{row[0]}</th>
+                      <td className="px-4 py-3">{row[1]}</td>
+                      <td className="px-4 py-3">{row[2]}</td>
+                      <td className="px-4 py-3">{row[3]}</td>
+                      <td className="px-4 py-3 font-semibold text-primary">{row[4]}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-center text-xs text-gray-500">
+              Tous nos permis sont payables en 2 fois sans frais. Détail des formules ci-dessous.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Driving packs — all categories stacked, no tabs */}
       <PricingSection showFinalStretch={false} showAllCategories />
 

@@ -29,6 +29,12 @@ export const blogPosts: BlogPost[] = [
 <p>Rappelez-vous que l'examinateur n'est pas là pour vous piéger, mais pour vérifier que vous conduisez en sécurité. Une petite erreur n'est pas forcément éliminatoire : continuez à conduire calmement plutôt que de vous focaliser dessus.</p>
 <h2>5. Concentrez-vous sur la conduite, pas sur le résultat</h2>
 <p>Pendant l'épreuve, restez dans l'instant présent : observez, anticipez, signalez vos intentions. En vous concentrant sur les bons gestes plutôt que sur la note finale, vous laissez moins de place à l'anxiété.</p>
+<h2>Que faire si le stress monte pendant l'épreuve ?</h2>
+<p>Même bien préparé, il arrive que la tension monte en cours de route. La première règle est de ne pas chercher à « rattraper » une erreur en accélérant le rythme : ralentissez légèrement, reprenez votre respiration et concentrez-vous sur la prochaine action. L'examinateur évalue votre conduite globale, pas un instant isolé.</p>
+<p>Quelques réflexes utiles le jour J :</p>
+<ul><li>Verbalisez intérieurement vos actions (« je contrôle, je clignote, je tourne ») pour rester dans le concret.</li><li>Gardez les yeux loin devant : regarder le bout de la rue calme naturellement la conduite.</li><li>Si vous ne comprenez pas une consigne, demandez-la à répéter — c'est autorisé et bien vu.</li></ul>
+<h2>Préparer son mental les jours précédents</h2>
+<p>La gestion du stress se travaille en amont. Dans la semaine qui précède, visualisez le déroulement de l'examen : le trajet, les manœuvres, l'arrivée au centre. Cette « répétition mentale » réduit l'effet de surprise. Évitez aussi de réviser intensément la veille au soir : une séance légère puis une bonne nuit de sommeil valent mieux qu'un bachotage anxiogène.</p>
 <h2>Conclusion</h2>
 <p>Le stress fait partie de l'examen, mais il ne doit pas vous contrôler. Avec une préparation solide, un bon repos et quelques techniques de respiration, vous aborderez l'épreuve avec confiance. Chez Auto Ecole Des Paquerettes, nous accompagnons chaque élève jusqu'au jour J pour qu'il se présente serein et prêt à réussir.</p>`,
     featured_image: '/blog2.jpeg',
@@ -57,6 +63,12 @@ export const blogPosts: BlogPost[] = [
 <p>Le stress est l'ennemi numéro un. Arrivez en avance, bien reposé et nourri. Respirez profondément avant de commencer. Rappelez-vous que vous êtes bien préparé.</p>
 <h2>5. Analysez chaque question</h2>
 <p>Prenez le temps de lire attentivement chaque question et chaque réponse. Éliminez les réponses évidemment fausses avant de choisir. Ne vous précipitez pas, vous avez le temps nécessaire.</p>
+<h2>Les erreurs de révision les plus fréquentes</h2>
+<p>Beaucoup de candidats échouent non par manque de travail, mais à cause d'une méthode inadaptée. La plus courante : enchaîner les séries de tests sans jamais analyser ses fautes. Or chaque erreur corrigée vaut plus que dix bonnes réponses. Prenez l'habitude de lire l'explication de chaque question ratée et de noter les thèmes qui reviennent.</p>
+<p>Autre piège : négliger les thématiques moins « visibles » comme les premiers secours, l'éco-conduite, la mécanique ou le partage de la route avec les autres usagers. Elles représentent pourtant une part croissante de l'examen.</p>
+<h2>Planifier ses révisions sur 3 à 4 semaines</h2>
+<ul><li>Semaines 1-2 : parcourir l'ensemble des thèmes, à raison de 30 minutes par jour.</li><li>Semaine 3 : enchaîner des séries complètes en conditions d'examen (40 questions).</li><li>Semaine 4 : revoir uniquement vos points faibles jusqu'à dépasser régulièrement 35/40.</li></ul>
+<p>Le seuil de réussite officiel est de 35 bonnes réponses sur 40 : visez 37 à 38 en entraînement pour aborder l'examen avec une marge confortable.</p>
 <h2>Conclusion</h2>
 <p>Avec une préparation sérieuse et ces astuces en tête, vous mettez toutes les chances de votre côté pour réussir votre code du premier coup. Bonne chance !</p>`,
     featured_image: '/blog1.jpeg',
@@ -88,6 +100,11 @@ export const blogPosts: BlogPost[] = [
 <h2>6. Le matériel pédagogique</h2>
 <p>Une bonne auto-école dispose de :</p>
 <ul><li>Véhicules modernes et bien entretenus</li><li>Applications de préparation au code</li><li>Simulateurs de conduite (optionnel)</li><li>Supports de cours complets</li></ul>
+<h2>Les questions à poser avant de signer</h2>
+<p>Avant de vous engager, demandez systématiquement le contrat de formation détaillé. Quelques questions permettent d'y voir clair :</p>
+<ul><li>Le prix affiché inclut-il les frais de présentation à l'examen et le véhicule le jour J ?</li><li>Que se passe-t-il en cas d'échec : les heures supplémentaires sont-elles à tarif normal ?</li><li>Quel est le délai moyen pour obtenir une place d'examen pratique ?</li><li>L'auto-école est-elle certifiée Qualiopi (condition indispensable pour un financement CPF) ?</li></ul>
+<h2>Les signaux qui doivent alerter</h2>
+<p>Méfiez-vous des forfaits « tout compris » anormalement bas : ils cachent souvent des frais annexes facturés en cours de route. Un taux de réussite jamais communiqué, l'absence de contrat écrit ou la pression à payer la totalité d'avance sont autant de signaux d'alerte. Une auto-école sérieuse affiche ses tarifs clairement et propose un paiement échelonné, comme le paiement en 2 fois sans frais.</p>
 <h2>Conclusion</h2>
 <p>Prenez le temps de visiter plusieurs auto-écoles, de rencontrer les moniteurs et de comparer les offres. Votre choix aura un impact direct sur votre apprentissage et votre réussite.</p>`,
     featured_image: '/blog2.jpeg',
@@ -123,6 +140,11 @@ export const blogPosts: BlogPost[] = [
 <h2>Est-ce fait pour vous ?</h2>
 <p>La formation accélérée convient particulièrement si :</p>
 <ul><li>Vous avez déjà une expérience de conduite</li><li>Vous êtes disponible à temps plein pendant la période</li><li>Vous apprenez rapidement</li><li>Vous êtes motivé et discipliné</li></ul>
+<h2>À qui s'adresse vraiment la formation accélérée ?</h2>
+<p>Le format intensif donne d'excellents résultats… à condition d'avoir le bon profil. Il convient particulièrement aux candidats disponibles à temps plein sur la période, à l'aise avec un rythme soutenu, et idéalement déjà titulaires du code de la route — car la formation accélérée porte surtout sur la conduite. À l'inverse, si vous avez besoin de temps pour ancrer les automatismes, une formule classique étalée sur quelques mois sera plus rassurante.</p>
+<h2>Code, examen et délais : ce qu'il faut anticiper</h2>
+<p>Obtenir le permis en 10 jours suppose d'avoir validé le code en amont, ou de le passer juste avant le stage. Il faut aussi une place d'examen pratique disponible à la fin de la formation : c'est souvent ce point, et non la formation elle-même, qui conditionne le délai réel. Renseignez-vous sur les disponibilités d'examen avant de réserver un stage intensif.</p>
+<p>Gardez enfin en tête que la réussite n'est jamais garantie par le format : c'est la régularité de la pratique pendant le stage et la qualité du suivi qui font la différence.</p>
 <h2>Conclusion</h2>
 <p>La formation en 10 jours est une excellente option pour les candidats qui peuvent supporter l'intensité. Évaluez votre profil et vos disponibilités avant de vous engager.</p>`,
     featured_image: '/blog3.jpeg',
@@ -157,6 +179,10 @@ export const blogPosts: BlogPost[] = [
 <p>Prenez votre temps. Même si l'examen a une durée limitée, la précipitation mène aux erreurs. Conduisez à votre rythme.</p>
 <h2>7. Perdre ses moyens en cas d'erreur</h2>
 <p>Si vous commettez une erreur, ne paniquez pas. Continuez à conduire normalement. Une erreur ne signifie pas l'échec automatique.</p>
+<h2>Comprendre la grille d'évaluation</h2>
+<p>L'examen pratique est noté sur 31 points : il faut en obtenir au moins 20, sans commettre de faute éliminatoire, pour réussir. L'inspecteur évalue notamment votre installation au poste de conduite, le respect des règles, la prise d'information, le partage de la route et votre autonomie. Comprendre cette grille aide à savoir où porter son attention.</p>
+<h2>Une faute éliminatoire n'arrive jamais par hasard</h2>
+<p>Les fautes éliminatoires les plus fréquentes sont le franchissement d'une ligne continue, le non-respect d'un feu ou d'un stop, et la mise en danger nécessitant l'intervention de l'inspecteur. La bonne nouvelle : elles découlent presque toujours d'un défaut d'anticipation. En regardant loin et en contrôlant régulièrement vos rétroviseurs, vous neutralisez la majorité de ces risques. Et si vous calez, pas de panique : un simple calage n'est pas éliminatoire, redémarrez calmement.</p>
 <h2>Conclusion</h2>
 <p>La clé est de rester concentré et de conduire comme vous l'avez appris. Avec une bonne préparation et ces conseils en tête, vous mettez toutes les chances de votre côté.</p>`,
     featured_image: '/blog4.jpeg',
@@ -193,6 +219,10 @@ export const blogPosts: BlogPost[] = [
 <h2>Montant pris en charge</h2>
 <p>Le CPF peut couvrir :</p>
 <ul><li>Jusqu'à 100% du coût de la formation</li><li>Dans la limite de vos droits CPF</li><li>Selon l'éligibilité de votre projet</li></ul>
+<h2>Permis B et CPF : les conditions précises</h2>
+<p>Le permis B est finançable par le CPF à condition que vous ne possédiez pas déjà un permis pour une catégorie de véhicule équivalente et que vous ne fassiez pas l'objet d'une suspension. La formation doit être dispensée par un établissement certifié Qualiopi. Les démarches se font intégralement en ligne, depuis votre espace personnel.</p>
+<h2>Et si le solde CPF ne suffit pas ?</h2>
+<p>Si vos droits ne couvrent pas la totalité, plusieurs options existent : compléter de votre poche (abondement personnel), mobiliser un éventuel co-financement de votre employeur, ou échelonner le reste à charge grâce au paiement en plusieurs fois proposé par l'auto-école. Pensez aussi aux aides locales : certaines régions et missions locales soutiennent le permis pour les jeunes ou les demandeurs d'emploi.</p>
 <h2>Conclusion</h2>
 <p>Le CPF est une excellente opportunité pour financer votre permis. Renseignez-vous dès maintenant sur vos droits et les démarches à suivre.</p>`,
     featured_image: '/blog5.jpeg',
@@ -234,6 +264,10 @@ export const blogPosts: BlogPost[] = [
 <h2>En cas d'éblouissement</h2>
 <p>Si vous êtes ébloui par un véhicule en face :</p>
 <ul><li>Regardez à droite de la route</li><li>Ralentissez sans freiner brusquement</li><li>Ne clignez pas des yeux en retour</li></ul>
+<h2>Pourquoi la nuit concentre autant de risques</h2>
+<p>Si le trafic est plus faible la nuit, une part importante des accidents mortels s'y produit. En cause : la fatigue, la baisse de vigilance liée au rythme biologique, et une perception des distances et des vitesses faussée par l'obscurité. La consommation d'alcool, plus fréquente en soirée, aggrave encore ces facteurs. Adapter sa conduite n'est donc pas une précaution accessoire, mais une nécessité.</p>
+<h2>Hiver et intempéries : la vigilance renforcée</h2>
+<p>En hiver, la nuit tombe tôt et s'ajoute souvent à la pluie, au brouillard ou au verglas. Augmentez vos distances de sécurité, nettoyez régulièrement vos optiques et votre pare-brise, et n'utilisez les feux de brouillard arrière que lorsque la visibilité est réellement réduite, pour ne pas éblouir les véhicules qui vous suivent.</p>
 <h2>Conclusion</h2>
 <p>La conduite de nuit demande plus de vigilance et d'anticipation. En suivant ces règles, vous roulez en toute sécurité.</p>`,
     featured_image: null,
@@ -281,6 +315,11 @@ export const blogPosts: BlogPost[] = [
 <ul><li>Garantie constructeur</li><li>Dernières technologies</li><li>Personnalisation possible</li></ul>
 <h3>Avantages de l'occasion</h3>
 <ul><li>Prix plus bas</li><li>Moins de décote</li><li>Plus de choix</li></ul>
+<h2>Le vrai budget d'une première voiture</h2>
+<p>Le prix d'achat n'est que la partie visible. Pour un budget réaliste, additionnez l'assurance (souvent élevée pour un jeune conducteur), le carburant, l'entretien, le contrôle technique, les pneus et la décote. Une citadine sobre et fiable coûte ainsi bien moins cher à l'usage qu'une berline puissante achetée d'occasion au même prix.</p>
+<h2>Acheter d'occasion sans se tromper</h2>
+<ul><li>Vérifiez la cohérence du carnet d'entretien et des factures.</li><li>Contrôlez l'historique administratif du véhicule (rapport Histovec, gratuit et officiel).</li><li>Essayez la voiture à froid, sur route et sur voie rapide.</li><li>En cas de doute, faites réaliser une contre-visite par un professionnel.</li></ul>
+<p>Côté assurance, commencer sur un véhicule modeste permet de constituer un bonus qui réduira vos cotisations années après année.</p>
 <h2>Conclusion</h2>
 <p>Prenez votre temps pour choisir. Essayez plusieurs modèles, comparez les offres et n'hésitez pas à demander conseil. Votre première voiture doit vous apporter sécurité et plaisir de conduire.</p>`,
     featured_image: null,
@@ -324,6 +363,10 @@ export const blogPosts: BlogPost[] = [
 <p>Des catégories de permis sont créées ou modifiées pour s'adapter aux nouveaux types de véhicules.</p>
 <h3>Formation continue</h3>
 <p>Certaines catégories de conducteurs doivent suivre une formation continue pour maintenir leurs droits.</p>
+<h2>Zones à faibles émissions : ce qui change concrètement</h2>
+<p>Les zones à faibles émissions mobilité (ZFE-m) se généralisent dans les grandes agglomérations, dont l'Île-de-France. L'accès y est conditionné à la vignette Crit'Air apposée sur le pare-brise, et les véhicules les plus polluants y sont progressivement interdits. Avant de circuler dans une métropole que vous connaissez mal, vérifiez la réglementation locale et la classe Crit'Air de votre véhicule pour éviter une amende.</p>
+<h2>Jeunes conducteurs : un cadre spécifique</h2>
+<p>Pendant la période probatoire (3 ans, ou 2 ans après une conduite accompagnée), le permis ne compte d'abord que 6 points, crédités progressivement. Les seuils d'alcoolémie sont abaissés à 0,2 g/L de sang, soit une tolérance quasi nulle. Connaître ces règles fait partie intégrante d'une conduite responsable une fois le permis en poche.</p>
 <h2>Conclusion</h2>
 <p>Restez informé des évolutions du code de la route. Consultez régulièrement les <a href="https://www.securite-routiere.gouv.fr" target="_blank" rel="noopener noreferrer">sources officielles de la Sécurité routière</a> et adaptez votre conduite en conséquence.</p>`,
     featured_image: null,
@@ -374,6 +417,10 @@ export const blogPosts: BlogPost[] = [
 <p>Lisez attentivement les conditions générales et les exclusions.</p>
 <h3>Adaptez à vos besoins</h3>
 <p>Choisissez selon la valeur de votre véhicule et votre utilisation.</p>
+<h2>Comprendre le bonus-malus</h2>
+<p>Le coefficient de réduction-majoration, ou bonus-malus, récompense les conducteurs sans sinistre responsable. Chaque année sans accident responsable réduit votre coefficient de 5 %, jusqu'à un bonus maximal ; à l'inverse, un sinistre responsable l'augmente. Pour un jeune conducteur, c'est le levier le plus puissant : quelques années de conduite prudente suffisent à faire baisser nettement la cotisation.</p>
+<h2>Jeune conducteur : comment limiter la surprime</h2>
+<ul><li>Choisir un véhicule peu puissant et peu coûteux à réparer.</li><li>Opter, si possible, pour la conduite accompagnée, qui réduit la surprime initiale.</li><li>Comparer plusieurs devis et ajuster les garanties à la valeur réelle du véhicule.</li><li>Envisager une formule au kilomètre si vous roulez peu.</li></ul>
 <h2>Conclusion</h2>
 <p>L'assurance auto est un investissement important. Prenez le temps de comparer et de choisir le contrat adapté à votre situation.</p>`,
     featured_image: '/blog4.jpeg',
@@ -421,6 +468,10 @@ export const blogPosts: BlogPost[] = [
 <ul><li>Ne taillez pas</li><li>Ne freinez pas brusquement sans raison</li><li>Respectez la priorité à droite</li></ul>
 <h3>La distraction</h3>
 <ul><li>Pas d'utilisation du téléphone</li><li>Concentrez-vous sur la route</li><li>Anticipez les situations</li></ul>
+<h2>Fatigue : le danger numéro un sur autoroute</h2>
+<p>La monotonie des longs trajets favorise l'« hypovigilance », un état de somnolence qui allonge dangereusement le temps de réaction. La règle est simple : une pause d'au moins 15 à 20 minutes toutes les deux heures, même sans sentir la fatigue. Au moindre signe (bâillements, paupières lourdes, regard qui se fixe), arrêtez-vous sur une aire — quelques minutes de repos valent tous les remèdes de fortune.</p>
+<h2>Bien gérer les aires, péages et insertions</h2>
+<p>Anticipez vos arrêts en repérant les aires à l'avance plutôt que de décider au dernier moment. Aux péages, ralentissez progressivement et choisissez votre voie tôt (télépéage, carte ou espèces). Lors d'une insertion ou d'une sortie, utilisez toute la longueur de la voie d'accélération ou de décélération : c'est elle qui vous permet d'entrer et de sortir en sécurité, sans gêner le flux.</p>
 <h2>Conclusion</h2>
 <p>La conduite sur autoroute demande vigilance et anticipation. En respectant ces règles, vous contribuez à la sécurité de tous.</p>`,
     featured_image: '/blog5.jpeg',

@@ -43,6 +43,7 @@ export default function Header() {
       ],
     },
     { name: 'Blog', href: '/#blog' },
+    { name: 'À propos', href: '/a-propos' },
     { name: 'Contact', href: '/contact' },
   ]
 
