@@ -12,7 +12,7 @@ export default function HeroSection() {
   const features = [
     {
       icon: Clock,
-      title: "On s'adapte a votre planning",
+      title: "On s'adapte à votre planning",
       description: 'Des créneaux flexibles, adaptés à votre emploi du temps',
     },
     {

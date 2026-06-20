@@ -61,7 +61,7 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
         whileTap={{ scale: 0.97 }}
         className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
       >
-        📄 Piéces à fournir
+        📄 Pièces à fournir
       </motion.a>
 
       <ul className="space-y-2.5 border-t border-white/10 pt-5">
