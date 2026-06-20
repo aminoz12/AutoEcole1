@@ -245,6 +245,45 @@ export function BlogPostingJsonLd({
         inLanguage: 'fr-FR',
         ...(image && { image: absoluteUrl(image) }),
         mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
+        // Voice-search: point answer engines at the headline + article body.
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['h1', '.prose'],
+        },
+      }}
+    />
+  )
+}
+
+// HowTo schema for genuinely step-by-step articles. Note: Google retired HowTo
+// rich results in 2023 — this primarily helps answer/voice engines (AEO), not
+// Google rich snippets.
+export function HowToJsonLd({
+  name,
+  description,
+  url,
+  steps,
+}: {
+  name: string
+  description: string
+  url: string
+  steps: { name: string; text: string }[]
+}) {
+  return (
+    <JsonLd
+      data={{
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name,
+        description,
+        inLanguage: 'fr-FR',
+        mainEntityOfPage: url,
+        step: steps.map((s, i) => ({
+          '@type': 'HowToStep',
+          position: i + 1,
+          name: s.name,
+          text: s.text,
+        })),
       }}
     />
   )

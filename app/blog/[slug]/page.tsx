@@ -2,8 +2,10 @@ import { notFound } from 'next/navigation'
 import BlogPost from '@/components/blog/BlogPost'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { BlogPostingJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd'
+import { BlogPostingJsonLd, BreadcrumbJsonLd, HowToJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
+import { howToBySlug } from '@/lib/content/howto-data'
+import { absoluteUrl } from '@/lib/seo/site-config'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export async function generateStaticParams() {
@@ -45,6 +47,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     .filter((p) => p.category === post.category && p.id !== post.id)
     .slice(0, 3)
 
+  const howTo = howToBySlug[post.slug]
+
   return (
     <main className="min-h-screen bg-gray-50">
       <BlogPostingJsonLd
@@ -55,6 +59,14 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         authorName={post.author_name}
         image={post.featured_image}
       />
+      {howTo && (
+        <HowToJsonLd
+          name={howTo.name}
+          description={howTo.description}
+          url={absoluteUrl(`/blog/${post.slug}`)}
+          steps={howTo.steps}
+        />
+      )}
       <BreadcrumbJsonLd
         items={[
           { name: 'Accueil', path: '/' },
