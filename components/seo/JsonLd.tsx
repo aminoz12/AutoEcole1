@@ -84,14 +84,10 @@ export function OrganizationJsonLd() {
           },
         ],
         priceRange: '€€',
-        // First-party verified reviews shown on the homepage hero ("4.9 · +de 300 avis vérifiés").
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: '4.9',
-          reviewCount: '300',
-          bestRating: '5',
-          worstRating: '3',
-        },
+        // Note: Google doesn't allow self-serving aggregateRating on LocalBusiness/
+        // Organization types — it's ineligible for star snippets and triggers a
+        // "Invalid object type for field <parent_node>" error in the Review Snippets
+        // report. The "4.9 · +de 300 avis vérifiés" claim stays in the homepage hero UI.
         ...(Object.values(siteConfig.social).length > 0 && {
           sameAs: Object.values(siteConfig.social),
         }),

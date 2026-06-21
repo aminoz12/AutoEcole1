@@ -42,7 +42,7 @@ export default function Header() {
         { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
       ],
     },
-    { name: 'Blog', href: '/#blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'À propos', href: '/a-propos' },
     { name: 'Contact', href: '/contact' },
   ]

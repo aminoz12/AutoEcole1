@@ -131,7 +131,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
 
               {/* Content — demote any H1 in the article body so the page keeps a single H1 (the title) */}
               <div
-                className="prose prose-lg max-w-none"
+                className="blog-content max-w-none"
                 dangerouslySetInnerHTML={{
                   __html: post.content
                     .replace(/<h1(\s|>)/gi, '<h2$1')

@@ -156,6 +156,117 @@ main > section [class*="from-gray-50"] {
   background-image: linear-gradient(to bottom right, #151b2e, #0f1421) !important;
 }
 
+/* ============ BLOG ARTICLE CONTENT ============ */
+/* The article body is injected via dangerouslySetInnerHTML and the
+   @tailwindcss/typography plugin is not installed, so `prose` does nothing.
+   Without this, the text inherits the dark-theme body color (#e5e7eb) on a
+   white card and is nearly invisible. These rules give it readable dark text. */
+.blog-content {
+  color: #1f2937; /* gray-800 */
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  color: #111827; /* gray-900 */
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content h3 {
+  font-size: 1.375rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.125rem;
+  color: #1f2937;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0 0 1.125rem 0;
+  padding-left: 1.5rem;
+  color: #1f2937;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-content strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.blog-content a {
+  color: rgb(182, 23, 155); /* primary */
+  text-decoration: underline;
+}
+
+.blog-content a:hover {
+  opacity: 0.8;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #f97316;
+  padding-left: 1rem;
+  margin: 1.25rem 0;
+  color: #4b5563; /* gray-600 */
+  font-style: italic;
+}
+
+.blog-content img {
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.blog-content th,
+.blog-content td {
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.blog-content th {
+  background-color: #f9fafb;
+  color: #111827;
+  font-weight: 600;
+}
+
 /* Rich Text Editor (Quill) Styles */
 .ql-toolbar {
   background-color: #f9fafb !important;
