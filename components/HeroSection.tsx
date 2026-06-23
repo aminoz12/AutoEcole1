@@ -121,7 +121,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
             whileHover={{ scale: 1.03 }}
-            className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-black/5"
+            className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-white/15 backdrop-blur-md"
           >
             {/* Google "G" logo */}
             <svg className="h-5 w-5 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
@@ -132,13 +132,13 @@ export default function HeroSection() {
             </svg>
 
             <div className="flex items-center gap-2 leading-none">
-              <span className="text-[#3c4043] font-bold text-base">4,9</span>
+              <span className="text-white font-bold text-base">4,9</span>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-4 w-4 text-[#FBBC05] fill-[#FBBC05]" />
                 ))}
               </div>
-              <span className="text-[#5f6368] text-sm whitespace-nowrap">+ de 300 avis vérifiés</span>
+              <span className="text-white text-sm whitespace-nowrap">+ de 300 avis vérifiés</span>
             </div>
           </motion.a>
         </div>
