@@ -4,29 +4,29 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Star, Clock, FastForward, BarChart3, CreditCard } from 'lucide-react'
+import { ArrowRight, Star } from 'lucide-react'
 import AuthModal from './auth/AuthModal'
 
 export default function HeroSection() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const features = [
     {
-      icon: Clock,
+      icon: '/icon1.png',
       title: "On s'adapte à votre planning",
       description: 'Des créneaux flexibles, adaptés à votre emploi du temps',
     },
     {
-      icon: FastForward,
+      icon: '/icon2.png',
       title: 'Votre permis dans les meilleures conditions',
       description: 'Des formules adaptées à votre rythme',
     },
     {
-      icon: BarChart3,
+      icon: '/icon3.png',
       title: 'Suivi pédagogique',
       description: 'Un suivi clair de votre progression à chaque cours',
     },
     {
-      icon: CreditCard,
+      icon: '/icon4.png',
       title: 'Paiement en 2 fois',
       description: 'Facilitez le financement de votre permis',
     },
@@ -112,21 +112,35 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Rating */}
-          <motion.div
+          {/* Google Rating Badge */}
+          <motion.a
+            href="https://www.google.com/search?q=auto+ecole+des+paquerettes+nanterre"
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="flex items-center gap-2"
+            whileHover={{ scale: 1.03 }}
+            className="inline-flex items-center gap-3 rounded-full bg-white px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-black/5"
           >
-            <span className="text-white font-bold text-lg">4.9</span>
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 text-amber-400 fill-amber-400" />
-              ))}
+            {/* Google "G" logo */}
+            <svg className="h-5 w-5 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+              <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+              <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+              <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+              <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+            </svg>
+
+            <div className="flex items-center gap-2 leading-none">
+              <span className="text-[#3c4043] font-bold text-base">4,9</span>
+              <div className="flex gap-0.5">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 text-[#FBBC05] fill-[#FBBC05]" />
+                ))}
+              </div>
+              <span className="text-[#5f6368] text-sm whitespace-nowrap">+ de 300 avis vérifiés</span>
             </div>
-            <span className="text-gray-400 text-sm">+de 300 avis vérifiés</span>
-          </motion.div>
+          </motion.a>
         </div>
 
         {/* Bottom Feature Cards */}
@@ -142,16 +156,20 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 + index * 0.1 }}
-              className="flex flex-col items-center text-center px-2"
+              whileHover={{ y: -4 }}
+              className="group flex flex-col items-start text-left px-2 transition-transform duration-300"
             >
-              <feature.icon className="h-5 w-5 text-gray-300 mb-3" />
-              <h3
-                className={`text-white font-semibold mb-1.5 ${
-                  index === 0
-                    ? 'text-xs sm:text-sm whitespace-nowrap'
-                    : 'text-sm'
-                }`}
-              >
+              {/* Icon */}
+              <div className="mb-4">
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 object-contain"
+                />
+              </div>
+              <h3 className="text-white font-semibold text-sm mb-1.5">
                 {feature.title}
               </h3>
               <p className="text-gray-400 text-xs leading-relaxed">
