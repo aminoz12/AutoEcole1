@@ -157,7 +157,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 + index * 0.1 }}
               whileHover={{ y: -4 }}
-              className="group flex flex-col items-start text-left px-2 transition-transform duration-300"
+              className="group flex flex-col items-center text-center px-2 transition-transform duration-300"
             >
               {/* Icon */}
               <div className="mb-4">
