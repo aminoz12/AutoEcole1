@@ -35,6 +35,17 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
       <head>
+        {/* Google Tag Manager */}
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5X3WZNWF');
+          `}
+        </Script>
+
         {/* Google tag (gtag.js) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-4PRT0D2ZX6"
@@ -57,6 +68,15 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5X3WZNWF"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         {/* Site-wide business + website entity so every page (tarifs, contact, blog…)
             carries the LocalBusiness/DrivingSchool graph, not just the homepage. */}
         <OrganizationJsonLd />
