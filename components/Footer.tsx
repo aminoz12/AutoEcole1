@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/seo/site-config'
+import { cities, cityPath } from '@/lib/content/cities-data'
 
 type IconProps = { className?: string }
 
@@ -41,6 +42,14 @@ const socialLabels: Record<string, string> = {
 
 export default function Footer() {
   const footerLinks = {
+    navigation: [
+      { name: 'Accueil', href: '/' },
+      { name: 'Tarifs', href: '/tarifs' },
+      { name: 'Pack Web', href: '/prestations-a-l-unite' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'À propos', href: '/a-propos' },
+      { name: 'S’inscrire', href: '/s-inscrire' },
+    ],
     support: [
       { name: 'FAQ', href: '/#faq' },
       { name: 'Contact', href: '/contact' },
@@ -51,7 +60,6 @@ export default function Footer() {
 
   const horairesData = {
     bureau: {
-      title: 'Nos horaires - Bureau',
       schedule: [
         { day: 'Lundi à Jeudi', time: '10h à 14h - 15h30 à 19h' },
         { day: 'Vendredi', time: '10h à 13h - 15h30 à 19h' },
@@ -59,7 +67,6 @@ export default function Footer() {
       ],
     },
     conduite: {
-      title: 'Nos horaires - Conduite',
       schedule: [
         { day: 'Lundi à Vendredi', time: '10h à 20h' },
         { day: 'Samedi', time: '9h à 15h' },
@@ -116,18 +123,23 @@ export default function Footer() {
               
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-gray-400">
-                  <Phone className="h-5 w-5 text-primary" />
+                <div className="flex items-start space-x-3 text-gray-400">
+                  <Phone className="h-5 w-5 shrink-0 mt-0.5 text-primary" />
                   <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-white transition-colors">
                     {siteConfig.phone}
                   </a>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-400">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span>autoecoledespaquerettes@hotmail.com</span>
+                <div className="flex items-start space-x-3 text-gray-400">
+                  <Mail className="h-5 w-5 shrink-0 mt-0.5 text-primary" />
+                  <a
+                    href={`mailto:${siteConfig.email}`}
+                    className="break-all hover:text-white transition-colors"
+                  >
+                    {siteConfig.email}
+                  </a>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-400">
-                  <MapPin className="h-5 w-5 text-primary" />
+                <div className="flex items-start space-x-3 text-gray-400">
+                  <MapPin className="h-5 w-5 shrink-0 mt-0.5 text-primary" />
                   <span>{siteConfig.address.full}</span>
                 </div>
                 <div className="text-sm text-gray-500 pl-8">
@@ -153,54 +165,64 @@ export default function Footer() {
               </a>
             </motion.div>
 
-            {/* Nos horaires - Bureau */}
+            {/* Navigation */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">{horairesData.bureau.title}</h3>
+              <h3 className="text-lg font-bold mb-5">Navigation</h3>
               <ul className="space-y-3">
-                {horairesData.bureau.schedule.map((item, index) => (
-                  <motion.li
-                    key={item.day}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-gray-400"
-                  >
-                    <div className="font-semibold text-gray-300">{item.day}</div>
-                    <div className="text-sm">{item.time}</div>
-                  </motion.li>
+                {footerLinks.navigation.map((link) => (
+                  <li key={link.name}>
+                    <a
+                      href={link.href}
+                      className="text-gray-400 hover:text-primary transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Nos horaires - Conduite */}
+            {/* Nos horaires */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">{horairesData.conduite.title}</h3>
-              <ul className="space-y-3">
-                {horairesData.conduite.schedule.map((item, index) => (
-                  <motion.li
-                    key={item.day}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="text-gray-400"
-                  >
-                    <div className="font-semibold text-gray-300">{item.day}</div>
-                    <div className="text-sm">{item.time}</div>
-                  </motion.li>
-                ))}
-              </ul>
+              <h3 className="text-lg font-bold mb-5">Nos horaires</h3>
+              <div className="space-y-6">
+                <div>
+                  <div className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
+                    Bureau
+                  </div>
+                  <ul className="space-y-2">
+                    {horairesData.bureau.schedule.map((item) => (
+                      <li key={item.day} className="text-gray-400">
+                        <div className="font-semibold text-gray-300">{item.day}</div>
+                        <div className="text-sm">{item.time}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold uppercase tracking-wider text-primary mb-3">
+                    Conduite
+                  </div>
+                  <ul className="space-y-2">
+                    {horairesData.conduite.schedule.map((item) => (
+                      <li key={item.day} className="text-gray-400">
+                        <div className="font-semibold text-gray-300">{item.day}</div>
+                        <div className="text-sm">{item.time}</div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </motion.div>
 
             {/* Support */}
@@ -210,28 +232,49 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-6">Support</h3>
+              <h3 className="text-lg font-bold mb-5">Support</h3>
               <ul className="space-y-3">
-                {footerLinks.support.map((link, index) => (
-                  <motion.li
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + index * 0.1 }}
-                    viewport={{ once: true }}
-                  >
+                {footerLinks.support.map((link) => (
+                  <li key={link.name}>
                     <a
                       href={link.href}
                       className="text-gray-400 hover:text-primary transition-colors duration-300"
                     >
                       {link.name}
                     </a>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
             </motion.div>
           </div>
         </div>
+
+        {/* Zones desservies — sitewide internal links to the local-SEO city pages */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="py-8 border-t border-gray-800"
+        >
+          <h3 className="text-lg font-bold mb-2">Zones desservies</h3>
+          <p className="text-gray-400 text-sm mb-5">
+            Notre auto-école de Nanterre accueille aussi les élèves des villes voisines :
+          </p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2.5">
+            {cities.map((city) => (
+              <li key={city.slug}>
+                <a
+                  href={cityPath(city)}
+                  className="inline-flex items-center gap-2 text-gray-400 text-sm hover:text-primary transition-colors duration-300"
+                >
+                  <MapPin className="h-3.5 w-3.5 shrink-0 text-primary/70" />
+                  Auto-école près de {city.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </motion.div>
 
         {/* Newsletter Signup */}
         <motion.div
