@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-data'
+import { cities, cityPath } from '@/lib/content/cities-data'
 import { siteConfig } from '@/lib/seo/site-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -51,6 +52,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${baseUrl}${cityPath(city)}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.published_at),
@@ -58,5 +66,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...blogPages]
+  return [...staticPages, ...cityPages, ...blogPages]
 }

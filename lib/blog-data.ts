@@ -14,6 +14,78 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '14',
+    title: 'Habiter Paris 8ᵉ, 16ᵉ ou 17ᵉ et passer son permis en banlieue : bonne idée ?',
+    slug: 'passer-permis-banlieue-paris-ouest-8-16-17',
+    excerpt: "Tarifs élevés, délais longs, conduite en accordéon : passer son permis dans l'Ouest parisien décourage plus d'un candidat. Voici pourquoi de plus en plus de Parisiens franchissent le périphérique pour se former à Nanterre.",
+    content: `<p>Dans les 8ᵉ, 16ᵉ et 17ᵉ arrondissements, le permis de conduire coûte cher : les forfaits y figurent parmi les plus élevés de France, et les délais pour obtenir une place d'examen s'allongent. Résultat : de plus en plus de Parisiens de l'Ouest choisissent une auto-école en proche banlieue. Bonne ou mauvaise idée ? Éléments de réponse.</p>
+<h2>L'argument budget : des écarts qui se chiffrent en centaines d'euros</h2>
+<p>À prestation équivalente (forfait 20 heures, accompagnement à l'examen), l'écart entre une auto-école parisienne et une auto-école des Hauts-de-Seine atteint fréquemment plusieurs centaines d'euros. Nos <a href="/tarifs">formules à Nanterre</a> sont affichées en toute transparence et payables en 2 fois sans frais — et le CPF est accepté pour les formations éligibles.</p>
+<h2>L'argument pédagogique : apprendre là où l'on est évalué</h2>
+<p>C'est le point que beaucoup de candidats découvrent trop tard : les examens pratiques se déroulent en grande partie sur des parcours de banlieue — giratoires, voies rapides, zones 30, insertions. S'entraîner boulevard Haussmann ou avenue de la Grande-Armée, dans une circulation en accordéon, prépare mal à ces situations. En vous formant à Nanterre, vous conduisez dès la première heure sur le type de routes que vous retrouverez le jour J.</p>
+<h2>Et le trajet, alors ?</h2>
+<p>C'est l'objection classique — et elle tombe vite :</p>
+<ul><li>Depuis <strong>Charles de Gaulle-Étoile</strong> (accessible des trois arrondissements), le RER A rejoint Nanterre en une dizaine de minutes.</li><li>Depuis <strong>Saint-Lazare</strong>, la ligne L dessert la gare de Nanterre-Université sans changement.</li><li>Nos moniteurs conduisent jusqu'à 20h en semaine et le samedi : une leçon après les cours ou le bureau est tout à fait réaliste.</li></ul>
+<h2>Pour quel profil est-ce le bon choix ?</h2>
+<p>Étudiants, jeunes actifs, salariés en horaires de bureau : si votre priorité est d'obtenir le permis vite et à coût maîtrisé, la banlieue proche est objectivement avantageuse. Nous avons détaillé l'accès et les réponses aux questions fréquentes pour chaque arrondissement : <a href="/auto-ecole-paris-8">auto-école près du 8ᵉ</a>, <a href="/auto-ecole-paris-16">auto-école près du 16ᵉ</a> et <a href="/auto-ecole-paris-17">auto-école près du 17ᵉ</a>.</p>
+<h2>Conclusion</h2>
+<p>Franchir le périphérique pour passer son permis, c'est payer moins cher, s'entraîner sur les vrais parcours d'examen et profiter de créneaux plus souples. À une dizaine de minutes de RER de l'Étoile, notre équipe accompagne chaque année de nombreux élèves parisiens jusqu'à la réussite.</p>`,
+    featured_image: '/blog5.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Local',
+    tags: ['permis Paris', 'auto-école banlieue', 'Paris 16', 'Paris 17', 'Paris 8'],
+    published_at: '2026-08-05',
+    views_count: 0
+  },
+  {
+    id: '13',
+    title: 'Passer son permis près de La Défense : le guide Courbevoie, Neuilly, Rueil',
+    slug: 'permis-pres-la-defense-courbevoie-neuilly-rueil',
+    excerpt: "Vous vivez ou travaillez autour de La Défense ? Voici comment organiser votre permis de conduire depuis Courbevoie, Neuilly-sur-Seine ou Rueil-Malmaison — sans y laisser votre budget ni vos soirées.",
+    content: `<p>Le quartier d'affaires de La Défense concentre des dizaines de milliers d'actifs venus de Courbevoie, Neuilly-sur-Seine, Rueil-Malmaison et au-delà. Pour eux, passer le permis pose deux problèmes très concrets : des tarifs locaux élevés et des emplois du temps chargés. Voici comment les contourner.</p>
+<h2>Le réflexe à avoir : regarder à une station de là</h2>
+<p>À quelques minutes de train du parvis, les tarifs changent sensiblement. Notre auto-école, au 375 avenue de la République à Nanterre, est reliée directement au secteur : ligne L depuis la <a href="/auto-ecole-courbevoie">gare de Courbevoie</a>, RER A depuis <a href="/auto-ecole-rueil-malmaison">Rueil-Malmaison</a>, métro 1 + RER A depuis <a href="/auto-ecole-neuilly-sur-seine">Neuilly-sur-Seine</a>.</p>
+<h2>Caser ses leçons dans une semaine de bureau</h2>
+<p>C'est souvent le vrai blocage. Trois leviers rendent la chose réaliste :</p>
+<ul><li><strong>Des créneaux étendus</strong> : nos moniteurs conduisent de 10h à 20h en semaine et le samedi de 9h à 15h — la leçon de 18h30 après la journée de travail est un grand classique chez nos élèves de La Défense.</li><li><strong>Le code en ligne</strong> : révisez dans le train ou à la pause déjeuner, les sessions en salle restent disponibles en complément.</li><li><strong>La formule accélérée</strong> : pour les plus pressés, code et conduite se concentrent sur quelques semaines.</li></ul>
+<h2>Boîte automatique : l'option qui accélère tout</h2>
+<p>Le permis boîte automatique se passe dès 13 heures de conduite (contre 20 heures minimum en manuelle). Dans un usage francilien — embouteillages, parkings, trajets courts — c'est un choix de plus en plus rationnel, et les véhicules de fonction ou d'autopartage sont massivement automatiques.</p>
+<h2>Un financement souvent oublié : le CPF</h2>
+<p>Salarié, vous cumulez chaque année des droits à la formation. Notre école étant certifiée Qualiopi, les formations éligibles peuvent être <a href="/blog/financement-cpf-compte-permis">financées via votre Compte Personnel de Formation</a> — un réflexe à vérifier avant de payer de votre poche.</p>
+<h2>Conclusion</h2>
+<p>Habiter ou travailler autour de La Défense n'oblige ni à payer le permis au prix fort, ni à sacrifier ses soirées. À quelques minutes de Courbevoie, Neuilly et Rueil, notre équipe adapte le planning à votre rythme — détails et accès sur nos pages dédiées à chaque ville.</p>`,
+    featured_image: '/blog4.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Local',
+    tags: ['La Défense', 'Courbevoie', 'Neuilly-sur-Seine', 'Rueil-Malmaison', 'permis B'],
+    published_at: '2026-07-30',
+    views_count: 0
+  },
+  {
+    id: '12',
+    title: 'Permis à Bezons, Colombes ou La Garenne-Colombes : pourquoi traverser la Seine',
+    slug: 'permis-conduire-bezons-colombes-la-garenne-colombes',
+    excerpt: "Peu d'auto-écoles, des délais qui s'allongent : dans la boucle nord des Hauts-de-Seine, trouver une place pour passer son permis n'est pas simple. La solution est souvent juste de l'autre côté du pont.",
+    content: `<p>Entre Bezons, Colombes et La Garenne-Colombes, des dizaines de milliers d'habitants se partagent une offre d'auto-écoles limitée. Conséquence : des listes d'attente pour commencer la conduite et des délais de présentation à l'examen qui s'étirent. Pourtant, à quelques minutes de là, la situation est bien différente.</p>
+<h2>Nanterre, la voisine directe</h2>
+<p>Notre agence est installée au 375 avenue de la République à Nanterre — l'axe même qui file vers Colombes. Concrètement :</p>
+<ul><li>Depuis <a href="/auto-ecole-bezons">Bezons</a> : environ 7 minutes en voiture une fois le pont de Bezons franchi, ou le tram T2 depuis le terminus.</li><li>Depuis <a href="/auto-ecole-colombes">Colombes</a> : moins de 10 minutes depuis le Petit-Colombes, T2 aux stations Parc Pierre Lagravère et Victor Basch.</li><li>Depuis <a href="/auto-ecole-la-garenne-colombes">La Garenne-Colombes</a> : 2 à 3 arrêts de ligne L jusqu'à Nanterre-Université.</li></ul>
+<h2>Ce que change une école avec de la disponibilité</h2>
+<p>Commencer la conduite rapidement, enchaîner les leçons sans trous de trois semaines, être présenté à l'examen dès que le niveau est là : la régularité est le premier facteur de réussite (et d'économies — chaque mois d'attente se paie en heures de « remise à niveau »). Avec des créneaux de 10h à 20h en semaine et le samedi matin, nos élèves de la boucle nord gardent un rythme d'une à deux leçons par semaine.</p>
+<h2>S'entraîner sur les routes de l'examen</h2>
+<p>Les leçons couvrent Nanterre, Colombes et les communes voisines : giratoires, avenues à double sens, zones 30, insertion sur voies rapides — exactement le tissu routier des parcours d'examen des Hauts-de-Seine. Le jour J, vous conduisez en terrain connu.</p>
+<h2>Et pour les lycéens : la conduite accompagnée</h2>
+<p>Dès 15 ans, la <strong>conduite accompagnée (AAC)</strong> permet de se former progressivement et d'aborder l'examen avec des centaines de kilomètres d'expérience — avec, à la clé, un taux de réussite supérieur et une assurance jeune conducteur moins chère. Une formule très demandée par les familles de Colombes et Bezons.</p>
+<h2>Conclusion</h2>
+<p>Si vous habitez la boucle nord, ne laissez pas les délais locaux retarder votre permis : l'auto-école la plus disponible est peut-être juste de l'autre côté de la Seine. Toutes nos formules — permis B manuel ou automatique, accéléré, code, CPF — sont détaillées sur notre <a href="/tarifs">page tarifs</a>.</p>`,
+    featured_image: '/blog3.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Local',
+    tags: ['Bezons', 'Colombes', 'La Garenne-Colombes', 'auto-école', 'permis B'],
+    published_at: '2026-07-23',
+    views_count: 0
+  },
+  {
     id: '11',
     title: 'Comment gérer son stress pour réussir l\'examen de conduite',
     slug: 'comment-gerer-son-stress-pour-reussir-l-examen-de-conduite',

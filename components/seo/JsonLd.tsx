@@ -1,5 +1,6 @@
 import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 import { packCategories, packsData, webPlans } from '@/lib/content/pricing-data'
+import { cities } from '@/lib/content/cities-data'
 
 type JsonLdProps = {
   data: Record<string, unknown> | Record<string, unknown>[]
@@ -40,16 +41,14 @@ export function OrganizationJsonLd() {
           latitude: siteConfig.address.geo.lat,
           longitude: siteConfig.address.geo.lng,
         },
+        // Nanterre + every city that has a local landing page, plus close
+        // communes that don't warrant a dedicated page (yet).
         areaServed: [
           'Nanterre',
-          'Rueil-Malmaison',
-          'Courbevoie',
-          'Colombes',
+          ...cities.map((c) => c.schemaName),
           'Puteaux',
           'Suresnes',
-          'La Garenne-Colombes',
           'Houilles',
-          'Bezons',
         ].map((name) => ({ '@type': 'City', name })),
         openingHoursSpecification: [
           {

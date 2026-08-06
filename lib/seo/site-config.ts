@@ -38,6 +38,8 @@ export const siteConfig = {
     'code de la route',
     'financement CPF permis',
     'leçon de conduite',
+    'auto-école Hauts-de-Seine',
+    'auto-école Ouest parisien',
   ],
   // Real profile URLs — used for schema `sameAs` (entity graph) and footer icons.
   social: {
