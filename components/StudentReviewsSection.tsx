@@ -68,10 +68,6 @@ export default function StudentReviewsSection() {
               ils ont réussi&nbsp;!
             </span>
           </h2>
-          <p className="mx-auto mt-5 max-w-xl text-lg text-gray-400">
-            Plus de 1 000 élèves formés et accompagnés jusqu’au jour J —
-            voici quelques-uns de leurs visages.
-          </p>
         </motion.div>
 
         {/* Fanned portraits — desktop / tablet */}

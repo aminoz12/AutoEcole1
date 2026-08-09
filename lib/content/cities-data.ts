@@ -79,7 +79,7 @@ export const cities: City[] = [
     whyUs: [
       'À quelques minutes du pont de Bezons : l’auto-école la plus accessible pour la rive droite de la Seine.',
       'Vous vous entraînez sur les routes de Nanterre et des Hauts-de-Seine, là où se déroulent réellement les examens du secteur.',
-      'Plus de 15 ans d’expérience, 4,9/5 sur plus de 300 avis et un suivi personnalisé jusqu’au jour J.',
+      'Une équipe pédagogique experte, des moniteurs diplômés d’État et un suivi personnalisé jusqu’au jour J.',
     ],
     faqs: [
       {
@@ -109,7 +109,7 @@ export const cities: City[] = [
     driveTime: '9 min',
     distanceKm: 4,
     metaDescription:
-      'Auto-école à deux pas de Colombes : permis B, permis accéléré, code et CPF à Nanterre, à 9 min du Petit-Colombes. Moniteurs diplômés, 4,9/5 sur plus de 300 avis.',
+      'Auto-école à deux pas de Colombes : permis B, permis accéléré, code et CPF à Nanterre, à 9 min du Petit-Colombes. Moniteurs diplômés, 4,9/5 sur plus de 300 avis Google.',
     intro: [
       'Colombes et Nanterre partagent une frontière — et notre auto-école est installée avenue de la République, l’axe qui relie justement les deux villes. Depuis le Petit-Colombes, comptez moins de 10 minutes en voiture ou en tram pour rejoindre l’agence : un trajet souvent plus court que pour traverser Colombes d’un quartier à l’autre.',
       'Que vous soyez lycéen près du stade Yves-du-Manoir, étudiant ou actif dans le centre, nous adaptons le planning à vos disponibilités : conduite de 10h à 20h en semaine, le samedi jusqu’à 15h, code en salle ou en ligne. Formations en boîte manuelle ou automatique, permis accéléré et conduite accompagnée (AAC) dès 15 ans.',
@@ -197,7 +197,7 @@ export const cities: City[] = [
     driveTime: '12 min',
     distanceKm: 5,
     metaDescription:
-      'Auto-école près de Courbevoie : ligne L directe jusqu’à Nanterre-Université, tarifs plus doux qu’à La Défense. Permis B, accéléré, boîte auto, code, CPF — 4,9/5 sur 300+ avis.',
+      'Auto-école près de Courbevoie : ligne L directe jusqu’à Nanterre-Université, tarifs plus doux qu’à La Défense. Permis B, accéléré, boîte auto, code, CPF — 4,9/5 sur 300+ avis Google.',
     intro: [
       'Depuis Courbevoie, rejoindre notre auto-école de Nanterre est direct : la ligne L relie la gare de Courbevoie à Nanterre-Université en trois arrêts, et le tram T2 dessert le Faubourg de l’Arche. Salariés de La Défense, vous pouvez même caler une leçon après le bureau — nos moniteurs conduisent jusqu’à 20h en semaine.',
       'Autour de La Défense, les tarifs des auto-écoles grimpent vite. À quelques minutes de train, nous proposons des formules transparentes, payables en 2 fois sans frais, en boîte manuelle ou automatique — et vous vous entraînez sur les routes des Hauts-de-Seine où se déroulent les examens, pas dans les tours.',
@@ -241,7 +241,7 @@ export const cities: City[] = [
     driveTime: '10 min',
     distanceKm: 4,
     metaDescription:
-      'Auto-école près de Rueil-Malmaison : RER A direct, permis B et permis accéléré, boîte automatique, code et financement CPF à Nanterre. Plus de 2 500 permis délivrés.',
+      'Auto-école près de Rueil-Malmaison : RER A direct, permis B et permis accéléré, boîte automatique, code et financement CPF à Nanterre. 451 permis délivrés.',
     intro: [
       'Rueil-Malmaison est l’une des villes d’origine de nos élèves les plus nombreuses — et pour cause : le RER A relie la gare de Rueil-Malmaison à Nanterre en quelques minutes, et en voiture l’agence du 375 avenue de la République est à environ 10 minutes par la D913.',
       'Nous connaissons parfaitement les axes que vous emprunterez le jour de l’examen : les leçons se déroulent sur les routes de Nanterre, Rueil et des communes voisines, celles-là mêmes des parcours officiels des Hauts-de-Seine. Permis B en boîte manuelle ou automatique, formule accélérée, AAC dès 15 ans, code en salle ou en ligne et CPF accepté.',
@@ -255,7 +255,7 @@ export const cities: City[] = [
     whyUs: [
       'Les leçons se déroulent en partie sur les axes de Rueil et Nanterre utilisés par les parcours d’examen du secteur.',
       'RER A direct + 10 minutes en voiture : une auto-école réellement pratique au quotidien.',
-      'Plus de 15 ans d’expérience et plus de 2 500 permis délivrés dans le secteur Nanterre – Rueil.',
+      'Une équipe pédagogique experte et 451 permis délivrés dans le secteur Nanterre – Rueil.',
     ],
     faqs: [
       {
@@ -299,7 +299,7 @@ export const cities: City[] = [
     whyUs: [
       'Des formules complètes à des tarifs nettement plus doux que ceux pratiqués à Neuilly, sans transiger sur l’encadrement.',
       'Vous apprenez sur les routes où se déroulent les examens du 92 — pas dans les avenues de Neuilly où vous ne serez jamais évalué.',
-      'Moniteurs diplômés d’État, 4,9/5 sur plus de 300 avis, suivi personnalisé jusqu’à l’examen.',
+      'Moniteurs diplômés d’État, 4,9/5 sur plus de 300 avis Google, suivi personnalisé jusqu’à l’examen.',
     ],
     faqs: [
       {

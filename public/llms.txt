@@ -14,6 +14,8 @@
 - Email: autoecoledespaquerettes@hotmail.com
 - Adresse: 375 Avenue de la République, 92000 Nanterre, France
 - Zone desservie: Nanterre, Hauts-de-Seine, Île-de-France
+- Avis: 4,9/5 sur plus de 300 avis Google — https://www.google.com/maps?cid=16506969104775091149
+- Agrément préfectoral: E 2209200030 — certification Qualiopi
 
 ## Formations proposées
 
@@ -38,6 +40,18 @@
 
 ## Articles du blog
 
+- /blog/passer-permis-nanterre-guide-complet
+- /blog/permis-boite-automatique-ou-manuelle-choisir
+- /blog/conduite-accompagnee-aac-guide-complet
+- /blog/echec-permis-que-faire-apres
+- /blog/papiers-inscription-permis-conduire-liste
+- /blog/prix-permis-conduire-nanterre
+- /blog/examen-permis-hauts-de-seine-deroulement
+- /blog/permis-etudiant-paris-nanterre-universite
+- /blog/apprendre-conduire-nanterre-situations-cles
+- /blog/passer-permis-banlieue-paris-ouest-8-16-17
+- /blog/permis-pres-la-defense-courbevoie-neuilly-rueil
+- /blog/permis-conduire-bezons-colombes-la-garenne-colombes
 - /blog/5-astuces-reussir-code-route-premier-coup
 - /blog/comment-choisir-auto-ecole-criteres-essentiels
 - /blog/permis-conduire-10-jours-possible
@@ -45,7 +59,7 @@
 - /blog/financement-cpf-compte-permis
 - /blog/conduite-nuit-regles-precautions
 - /blog/premiere-voiture-choisir-modele-adapte
-- /blog/code-route-nouvelles-regles-2024
+- /blog/code-route-nouvelles-regles-2026
 - /blog/assurance-auto-types-contrats-expliques
 - /blog/conduite-autoroute-regles-base-maitriser
 

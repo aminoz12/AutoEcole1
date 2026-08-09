@@ -13,11 +13,17 @@ export const metadata = createPageMetadata({
 })
 
 export default function BlogPage() {
+  // Trié par date, pas par ordre du tableau : ajouter un article en tête de
+  // lib/blog-data.ts ne peut plus casser la chronologie affichée.
+  const sortedPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.published_at).getTime() - new Date(a.published_at).getTime(),
+  )
+
   return (
     <main className="min-h-screen bg-gray-50">
       <Header />
       <div className="pt-32">
-        <BlogList posts={blogPosts} categories={blogCategories} />
+        <BlogList posts={sortedPosts} categories={blogCategories} />
       </div>
       <Footer />
     </main>

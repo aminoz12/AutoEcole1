@@ -116,9 +116,8 @@ export default function Footer() {
                 />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
-                Votre auto-école de confiance à Nanterre. Plus de 15 ans
-                d'expérience et plus de 2 500 permis délivrés avec un taux de réussite
-                parmi les meilleurs du secteur.
+                Votre auto-école de confiance à Nanterre. Une équipe pédagogique
+                experte, des moniteurs diplômés d'État et 451 permis délivrés.
               </p>
               
               {/* Contact Info */}

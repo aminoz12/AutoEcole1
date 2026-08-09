@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Award, ShieldCheck, MapPin, Users, Star, Clock } from 'lucide-react'
+import { Award, ShieldCheck, MapPin, Users, Star } from 'lucide-react'
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -11,15 +11,15 @@ import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 export const metadata: Metadata = createPageMetadata({
   title: 'À propos — Notre auto-école à Nanterre',
   description:
-    'Auto Ecole Des Paquerettes : plus de 15 ans d’expérience à Nanterre, agrément préfectoral E 2209200030, certification Qualiopi et plus de 2 500 permis délivrés. Découvrez notre école et notre approche.',
+    'Auto Ecole Des Paquerettes à Nanterre : équipe pédagogique experte, moniteurs diplômés d’État, agrément préfectoral E 2209200030, certification Qualiopi et 451 permis délivrés. Découvrez notre école et notre approche.',
   path: '/a-propos',
   keywords: ['auto-école Nanterre', 'à propos auto-école', 'agrément Qualiopi', 'moniteurs diplômés Nanterre'],
 })
 
 const stats = [
-  { icon: Clock, value: '15+ ans', label: 'd’expérience à Nanterre' },
-  { icon: Users, value: '2 500+', label: 'permis délivrés' },
-  { icon: Star, value: '4.9/5', label: 'sur plus de 300 avis vérifiés' },
+  { icon: Award, value: 'Diplômés d’État', label: 'équipe pédagogique experte' },
+  { icon: Users, value: '451', label: 'permis délivrés' },
+  { icon: Star, value: '4.9/5', label: 'sur plus de 300 avis Google' },
   { icon: ShieldCheck, value: 'Qualiopi', label: 'organisme certifié' },
 ]
 
@@ -56,9 +56,9 @@ export default function AProposPage() {
               Votre auto-école de confiance à <span className="text-primary">Nanterre</span>
             </h1>
             <p className="mx-auto mt-4 text-gray-400">
-              Depuis plus de 15 ans, Auto Ecole Des Paquerettes accompagne les habitants de Nanterre
-              et des Hauts-de-Seine vers la réussite de leur permis de conduire — avec une pédagogie
-              patiente, des formules transparentes et un suivi jusqu’au jour de l’examen.
+              Auto Ecole Des Paquerettes accompagne les habitants de Nanterre et des Hauts-de-Seine
+              vers la réussite de leur permis de conduire — avec une équipe pédagogique experte, une
+              pédagogie patiente, des formules transparentes et un suivi jusqu’au jour de l’examen.
             </p>
           </div>
         </div>
@@ -93,8 +93,8 @@ export default function AProposPage() {
             <p>
               Implantée au <strong>375 Avenue de la République à Nanterre</strong>, notre auto-école
               est un acteur local reconnu de la formation à la conduite. Au fil des années, nous avons
-              accompagné plus de 1 000 élèves et délivré plus de 2 500 permis, en restant fidèles à une
-              conviction simple : chaque élève progresse à son rythme, avec un moniteur qui le connaît.
+              délivré 451 permis, en restant fidèles à une conviction simple : chaque élève progresse
+              à son rythme, avec un moniteur qui le connaît.
             </p>
             <p>
               Nous formons aussi bien en <strong>boîte manuelle</strong> qu’en{' '}
