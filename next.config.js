@@ -35,6 +35,23 @@ const nextConfig = {
         destination: '/prestations-a-l-unite',
         permanent: true,
       },
+
+      // ---- URLs de l'ancien site (signalées en 404 par la Search Console) ----
+      // Elles restent explorées par Google : sans 301, l'antériorité SEO
+      // accumulée dessus est perdue et les 404 s'accumulent dans le rapport
+      // d'indexation.
+      { source: '/home', destination: '/', permanent: true },
+      { source: '/apropos', destination: '/a-propos', permanent: true },
+      { source: '/about-2', destination: '/a-propos', permanent: true },
+      { source: '/alacarte', destination: '/prestations-a-l-unite', permanent: true },
+      { source: '/nosformations', destination: '/tarifs', permanent: true },
+      { source: '/boitemanuelle', destination: '/tarifs', permanent: true },
+      { source: '/boiteautomatique', destination: '/tarifs', permanent: true },
+      // Variante accentuée réellement indexée. Next.js compare le chemin
+      // percent-encodé : un « î » littéral dans `source` ne matche jamais.
+      { source: '/bo%C3%AEteautomatique', destination: '/tarifs', permanent: true },
+      { source: '/formationssanscode', destination: '/tarifs', permanent: true },
+      { source: '/permis-professionnel', destination: '/tarifs', permanent: true },
       // Legacy blog path: /post/* -> /blog/*
       {
         source: '/post/:slug*',
@@ -47,9 +64,11 @@ const nextConfig = {
         destination: '/blog/code-route-nouvelles-regles-2026',
         permanent: true,
       },
-      // De-accented slug: redirect the old accented URL -> ASCII
+      // De-accented slug: redirect the old accented URL -> ASCII.
+      // Doit être percent-encodé (voir la note sur /bo%C3%AEteautomatique) :
+      // la version avec « é » littéral ne matchait pas et renvoyait un 404.
       {
-        source: '/blog/comment-gérer-son-stress-pour-réussir-l-examen-de-conduite',
+        source: '/blog/comment-g%C3%A9rer-son-stress-pour-r%C3%A9ussir-l-examen-de-conduite',
         destination: '/blog/comment-gerer-son-stress-pour-reussir-l-examen-de-conduite',
         permanent: true,
       },

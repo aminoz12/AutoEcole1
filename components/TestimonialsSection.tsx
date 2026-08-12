@@ -50,7 +50,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
             viewport={{ once: true }}
             className="text-xl text-gray-600 max-w-2xl mx-auto"
           >
-            Plus de 1 000 élèves satisfaits ont obtenu leur permis avec nous
+            Nos élèves satisfaits ont obtenu leur permis avec nous
           </motion.p>
         </div>
 
@@ -110,7 +110,7 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
           className="text-center mt-12"
         >
           <p className="text-gray-600 mb-4">
-            Rejoignez plus de 1 000 élèves satisfaits !
+            Rejoignez nos élèves satisfaits !
           </p>
           <a
             href="/s-inscrire"
