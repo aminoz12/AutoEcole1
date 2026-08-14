@@ -117,8 +117,8 @@ export default function AProposPage() {
               <li className="flex items-start gap-3">
                 <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                 <span>
-                  <strong>Certification Qualiopi</strong> — gage de qualité reconnu par l’État,
-                  ouvrant droit au financement CPF des formations éligibles.
+                  <strong>Certification Qualiopi</strong> — gage de qualité reconnu par l’État.
+                  La mobilisation du CPF dépend de la formation et des conditions d’éligibilité en vigueur.
                 </span>
               </li>
               <li className="flex items-start gap-3">

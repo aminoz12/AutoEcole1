@@ -53,7 +53,7 @@ export default function CityLandingPage({ city }: { city: City }) {
               Auto-école près de <span className="text-primary">{city.name}</span>
             </h1>
             <p className="mx-auto mt-4 text-gray-400">
-              Permis B, permis accéléré, boîte automatique, code de la route et financement CPF —
+              Permis B, permis accéléré, boîte automatique, code de la route et financement CPF selon éligibilité —
               votre auto-école de confiance à quelques minutes de {city.name}, au 375 avenue de la
               République à Nanterre.
             </p>

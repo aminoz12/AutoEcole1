@@ -17,7 +17,7 @@ export const pricingFaqs = [
   {
     question: 'Peut-on financer son permis avec le CPF ?',
     answer:
-      'Oui, le permis B peut être financé par le Compte Personnel de Formation (CPF) lorsqu\'il est lié à un projet professionnel. Vérifiez vos droits sur moncompteformation.gouv.fr et contactez-nous pour constituer votre dossier.',
+      'Le CPF peut financer le permis B selon votre situation et les règles en vigueur. Depuis 2026, vérifiez notamment votre statut et les éventuels financements complémentaires avant toute inscription sur moncompteformation.gouv.fr.',
   },
   {
     question: 'Proposez-vous la conduite accompagnée (AAC) ?',

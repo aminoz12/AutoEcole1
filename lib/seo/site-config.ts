@@ -3,9 +3,9 @@ export const siteConfig = {
   // Suffixe des balises <title>. Le nom complet mange 29 des ~60 caractères
   // affichés par Google, au détriment des mots-clés.
   shortName: 'Des Pâquerettes',
-  tagline: 'Auto-école à Nanterre — permis accéléré, code et CPF',
+  tagline: 'Auto-école à Nanterre — permis accéléré, code et CPF selon éligibilité',
   description:
-    'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
+    'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF selon les conditions d’éligibilité en vigueur.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://autoecoledespaquerettes.fr',
   locale: 'fr_FR',
   email: 'autoecoledespaquerettes@hotmail.com',

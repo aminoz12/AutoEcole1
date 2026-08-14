@@ -42,7 +42,7 @@ export function getCity(slug: string): City {
 
 export function cityMetadata(city: City): Metadata {
   return createPageMetadata({
-    title: `Auto-école près de ${city.name} — Permis B & Code`,
+    title: `Auto-école près de ${city.name} — Permis B & tarifs`,
     description: city.metaDescription,
     path: cityPath(city),
     keywords: [
@@ -65,7 +65,7 @@ export const cities: City[] = [
     driveTime: '7 min',
     distanceKm: 3,
     metaDescription:
-      'Habitant de Bezons ? Notre auto-école est juste de l’autre côté de la Seine, à Nanterre : permis B accéléré, boîte auto, code et financement CPF. À 7 min du pont de Bezons.',
+      'Permis B à Nanterre près de Bezons : boîte auto dès 799 €, manuelle dès 899 €, code en ligne et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Vous habitez Bezons et cherchez une auto-école proche, sérieuse et bien notée ? La nôtre est littéralement de l’autre côté de la Seine : une fois le pont de Bezons franchi, vous êtes au 375 avenue de la République à Nanterre en quelques minutes. Pour beaucoup de nos élèves bezonnais, c’est plus rapide que de traverser leur propre ville aux heures de pointe.',
       'L’offre d’auto-écoles à Bezons est limitée, et les délais s’allongent vite. En venant à Nanterre, vous profitez d’une équipe de moniteurs diplômés d’État, de créneaux de conduite du lundi au samedi jusqu’à 20h, et de formules claires : permis accéléré, boîte automatique, conduite accompagnée dès 15 ans et code en salle ou en ligne.',
@@ -95,7 +95,7 @@ export const cities: City[] = [
       {
         question: 'Proposez-vous le permis en boîte automatique ?',
         answer:
-          'Oui, nous formons en boîte manuelle comme en boîte automatique, avec des formules accélérées et un financement CPF possible pour les formations éligibles.',
+          'Oui, nous formons en boîte manuelle comme en boîte automatique, avec des formules accélérées. Le CPF dépend des conditions d’éligibilité en vigueur.',
       },
     ],
   },
@@ -109,7 +109,7 @@ export const cities: City[] = [
     driveTime: '9 min',
     distanceKm: 4,
     metaDescription:
-      'Auto-école à deux pas de Colombes : permis B, permis accéléré, code et CPF à Nanterre, à 9 min du Petit-Colombes. Moniteurs diplômés, 4,9/5 sur plus de 300 avis Google.',
+      'Permis B à Nanterre près de Colombes : boîte auto dès 799 €, manuelle dès 899 €, code en ligne et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Colombes et Nanterre partagent une frontière — et notre auto-école est installée avenue de la République, l’axe qui relie justement les deux villes. Depuis le Petit-Colombes, comptez moins de 10 minutes en voiture ou en tram pour rejoindre l’agence : un trajet souvent plus court que pour traverser Colombes d’un quartier à l’autre.',
       'Que vous soyez lycéen près du stade Yves-du-Manoir, étudiant ou actif dans le centre, nous adaptons le planning à vos disponibilités : conduite de 10h à 20h en semaine, le samedi jusqu’à 15h, code en salle ou en ligne. Formations en boîte manuelle ou automatique, permis accéléré et conduite accompagnée (AAC) dès 15 ans.',
@@ -123,7 +123,7 @@ export const cities: City[] = [
     whyUs: [
       'L’agence est sur l’avenue de la République, l’axe direct entre Colombes et Nanterre : idéal pour les habitants du Petit-Colombes.',
       'Créneaux de conduite étendus (10h–20h en semaine, samedi matin) pour caser vos leçons autour des cours ou du travail.',
-      'Certification Qualiopi : votre permis peut être financé via le CPF pour les formations éligibles.',
+      'Pour les profils et formations éligibles, le CPF peut être mobilisé selon les règles en vigueur.',
     ],
     faqs: [
       {
@@ -153,10 +153,10 @@ export const cities: City[] = [
     driveTime: '10 min',
     distanceKm: 4,
     metaDescription:
-      'Auto-école près de La Garenne-Colombes : à 2 arrêts de ligne L (gare Nanterre-Université). Permis B, permis accéléré, boîte auto, code et CPF — Auto Ecole Des Paquerettes, Nanterre.',
+      'Permis B à Nanterre près de La Garenne-Colombes : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Depuis La Garenne-Colombes, notre auto-école est à deux arrêts de train : la ligne L relie les gares de La Garenne-Colombes et des Vallées à Nanterre-Université en quelques minutes, et l’agence du 375 avenue de la République est toute proche. En voiture, comptez environ 10 minutes.',
-      'La Garenne-Colombes est une petite commune où l’offre d’auto-écoles reste réduite : beaucoup de Garennois nous choisissent pour la disponibilité des moniteurs et des dates. Permis B en boîte manuelle ou automatique, formule accélérée, code en salle ou en ligne et financement CPF pour les formations éligibles.',
+      'La Garenne-Colombes est une petite commune où l’offre d’auto-écoles reste réduite : beaucoup de Garennois nous choisissent pour la disponibilité des moniteurs et des dates. Permis B en boîte manuelle ou automatique, formule accélérée, code en salle ou en ligne et financement CPF selon les conditions d’éligibilité en vigueur.',
     ],
     access: [
       { mode: 'Ligne L', detail: 'Gares « La Garenne-Colombes » ou « Les Vallées » → « Nanterre-Université » en 2 à 3 arrêts, puis quelques minutes à pied ou en bus.' },
@@ -181,9 +181,9 @@ export const cities: City[] = [
           'Oui, notre formule accélérée permet de concentrer code et conduite sur quelques semaines, avec un planning intensif adapté à votre objectif.',
       },
       {
-        question: 'Le CPF est-il accepté ?',
+        question: 'Puis-je utiliser mon CPF pour financer mon permis ?',
         answer:
-          'Oui, nous sommes certifiés Qualiopi : les formations éligibles peuvent être financées via votre Compte Personnel de Formation.',
+          'Le CPF peut être mobilisé selon votre situation et la formation préparée. Vérifiez les conditions d’éligibilité en vigueur avant toute inscription.',
       },
     ],
   },
@@ -197,7 +197,7 @@ export const cities: City[] = [
     driveTime: '12 min',
     distanceKm: 5,
     metaDescription:
-      'Auto-école près de Courbevoie : ligne L directe jusqu’à Nanterre-Université, tarifs plus doux qu’à La Défense. Permis B, accéléré, boîte auto, code, CPF — 4,9/5 sur 300+ avis Google.',
+      'Permis B à Nanterre près de Courbevoie : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Depuis Courbevoie, rejoindre notre auto-école de Nanterre est direct : la ligne L relie la gare de Courbevoie à Nanterre-Université en trois arrêts, et le tram T2 dessert le Faubourg de l’Arche. Salariés de La Défense, vous pouvez même caler une leçon après le bureau — nos moniteurs conduisent jusqu’à 20h en semaine.',
       'Autour de La Défense, les tarifs des auto-écoles grimpent vite. À quelques minutes de train, nous proposons des formules transparentes, payables en 2 fois sans frais, en boîte manuelle ou automatique — et vous vous entraînez sur les routes des Hauts-de-Seine où se déroulent les examens, pas dans les tours.',
@@ -241,10 +241,10 @@ export const cities: City[] = [
     driveTime: '10 min',
     distanceKm: 4,
     metaDescription:
-      'Auto-école près de Rueil-Malmaison : RER A direct, permis B et permis accéléré, boîte automatique, code et financement CPF à Nanterre. 451 permis délivrés.',
+      'Permis B à Nanterre près de Rueil-Malmaison : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Rueil-Malmaison est l’une des villes d’origine de nos élèves les plus nombreuses — et pour cause : le RER A relie la gare de Rueil-Malmaison à Nanterre en quelques minutes, et en voiture l’agence du 375 avenue de la République est à environ 10 minutes par la D913.',
-      'Nous connaissons parfaitement les axes que vous emprunterez le jour de l’examen : les leçons se déroulent sur les routes de Nanterre, Rueil et des communes voisines, celles-là mêmes des parcours officiels des Hauts-de-Seine. Permis B en boîte manuelle ou automatique, formule accélérée, AAC dès 15 ans, code en salle ou en ligne et CPF accepté.',
+      'Nous connaissons parfaitement les axes que vous emprunterez le jour de l’examen : les leçons se déroulent sur les routes de Nanterre, Rueil et des communes voisines, celles-là mêmes des parcours officiels des Hauts-de-Seine. Permis B en boîte manuelle ou automatique, formule accélérée, AAC dès 15 ans, code en salle ou en ligne et financement CPF selon éligibilité.',
     ],
     access: [
       { mode: 'RER A', detail: 'Gare de Rueil-Malmaison → gares de Nanterre en quelques minutes directes, puis bus ou marche jusqu’à l’agence.' },
@@ -266,7 +266,7 @@ export const cities: City[] = [
       {
         question: 'Puis-je utiliser mon CPF pour financer mon permis ?',
         answer:
-          'Oui, nous sommes certifiés Qualiopi : les formations éligibles (dont le permis B) peuvent être financées via votre Compte Personnel de Formation.',
+          'Le CPF peut être mobilisé selon votre situation et la formation préparée. Vérifiez les conditions d’éligibilité en vigueur avant toute inscription.',
       },
       {
         question: 'Proposez-vous une formule accélérée ?',
@@ -285,7 +285,7 @@ export const cities: City[] = [
     driveTime: '15 min',
     distanceKm: 7,
     metaDescription:
-      'Auto-école près de Neuilly-sur-Seine : tarifs bien plus accessibles qu’à Neuilly, permis B et accéléré, boîte auto, code et CPF à Nanterre — métro 1 + RER A en 20 min.',
+      'Permis B à Nanterre près de Neuilly-sur-Seine : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'À Neuilly-sur-Seine, les auto-écoles pratiquent parmi les tarifs les plus élevés d’Île-de-France. À un quart d’heure de là, notre agence de Nanterre propose les mêmes formations — permis B, accéléré, boîte automatique, AAC — à des prix nettement plus accessibles, affichés clairement et payables en 2 fois sans frais.',
       'L’accès est simple : le métro 1 (Pont de Neuilly, Les Sablons) rejoint La Défense en quelques minutes, puis le RER A vous dépose à Nanterre. Et détail qui compte : les examens pratiques ne se passent pas dans Neuilly — s’entraîner sur les routes des Hauts-de-Seine, c’est s’entraîner sur les parcours que vous retrouverez le jour J.',
@@ -329,10 +329,10 @@ export const cities: City[] = [
     driveTime: '20 min',
     distanceKm: 9,
     metaDescription:
-      'Habitant du 17ᵉ arrondissement ? Passez votre permis à Nanterre : tarifs bien inférieurs à Paris, RER A direct depuis Charles de Gaulle-Étoile, permis accéléré, boîte auto, CPF.',
+      'Permis B à Nanterre près du 17ᵉ : boîte auto dès 799 €, manuelle dès 899 €, code en ligne et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Dans le 17ᵉ arrondissement, entre le prix des forfaits et les délais d’attente, passer son permis relève du parcours du combattant. La solution de nombreux Parisiens de l’Ouest : franchir le périphérique. Depuis Charles de Gaulle-Étoile, le RER A vous dépose à Nanterre en une dizaine de minutes — souvent moins que la traversée de l’arrondissement en bus.',
-      'Au-delà du tarif, il y a la pédagogie : conduire dans le 92, c’est apprendre sur des routes variées (ville, voies rapides, ronds-points) qui correspondent aux parcours d’examen d’Île-de-France, loin de la conduite en accordéon du boulevard Malesherbes. Permis B, accéléré, boîte automatique, code en ligne et financement CPF : tout est disponible à l’agence.',
+      'Au-delà du tarif, il y a la pédagogie : conduire dans le 92, c’est apprendre sur des routes variées (ville, voies rapides, ronds-points) qui correspondent aux parcours d’examen d’Île-de-France, loin de la conduite en accordéon du boulevard Malesherbes. Permis B, accéléré, boîte automatique, code en ligne et financement CPF selon les conditions d’éligibilité en vigueur sont proposés à l’agence.',
     ],
     access: [
       { mode: 'RER A', detail: 'Charles de Gaulle-Étoile (accessible des Ternes et de Wagram) → gares de Nanterre en une dizaine de minutes directes.' },
@@ -359,7 +359,7 @@ export const cities: City[] = [
       {
         question: 'Quels financements acceptez-vous ?',
         answer:
-          'CPF pour les formations éligibles (nous sommes certifiés Qualiopi), et paiement en 2 fois sans frais sur nos formules.',
+          'Paiement en 2 fois sans frais sur nos formules. Le CPF peut être mobilisé selon votre situation et les conditions d’éligibilité en vigueur.',
       },
     ],
   },
@@ -373,7 +373,7 @@ export const cities: City[] = [
     driveTime: '20 min',
     distanceKm: 9,
     metaDescription:
-      'Auto-école près du 16ᵉ arrondissement : permis B à Nanterre à tarifs bien inférieurs à Paris. RER A depuis Étoile, permis accéléré, conduite accompagnée, boîte auto, CPF.',
+      'Permis B à Nanterre près du 16ᵉ : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Du Trocadéro à la porte d’Auteuil, les auto-écoles du 16ᵉ affichent des forfaits parmi les plus élevés de la capitale. En passant le bois de Boulogne, notre agence de Nanterre propose les mêmes formations pour un budget nettement plus raisonnable — avec des moniteurs diplômés d’État et un suivi individuel jusqu’à l’examen.',
       'Le trajet est plus simple qu’on ne l’imagine : RER A depuis Charles de Gaulle-Étoile jusqu’à Nanterre en une dizaine de minutes, ou une vingtaine de minutes en voiture par le pont de Suresnes. Et pour les familles, la conduite accompagnée dès 15 ans dans le 92 offre un cadre d’apprentissage bien plus varié que les avenues embouteillées du 16ᵉ.',
@@ -387,7 +387,7 @@ export const cities: City[] = [
     whyUs: [
       'Un budget permis nettement inférieur aux forfaits pratiqués dans le 16ᵉ, pour une formation complète et encadrée.',
       'Conduite accompagnée (AAC) dès 15 ans sur les routes variées du 92 — idéale pour un premier apprentissage serein.',
-      'Formules boîte manuelle ou automatique, code en salle ou en ligne, CPF accepté (certification Qualiopi).',
+      'Formules boîte manuelle ou automatique, code en salle ou en ligne, avec financement CPF selon les conditions d’éligibilité en vigueur.',
     ],
     faqs: [
       {
@@ -417,7 +417,7 @@ export const cities: City[] = [
     driveTime: '25 min',
     distanceKm: 10,
     metaDescription:
-      'Auto-école près du 8ᵉ arrondissement : permis B et permis accéléré à Nanterre, RER A direct depuis Charles de Gaulle-Étoile ou ligne L depuis Saint-Lazare. Tarifs transparents, CPF.',
+      'Permis B à Nanterre près du 8ᵉ : boîte auto dès 799 €, manuelle dès 899 €, code et paiement en 2 fois. CPF selon éligibilité.',
     intro: [
       'Vous étudiez ou travaillez dans le 8ᵉ ? Deux lignes directes relient l’arrondissement à notre auto-école : le RER A depuis Charles de Gaulle-Étoile et la ligne L depuis la gare Saint-Lazare, toutes deux vers Nanterre. De quoi caler une leçon de conduite après les cours ou le bureau, nos moniteurs enseignant jusqu’à 20h en semaine.',
       'Passer son permis dans le 8ᵉ coûte cher et les délais s’étirent. À Nanterre, vous retrouvez des forfaits transparents payables en 2 fois sans frais, une formule accélérée pour les plus pressés, la boîte automatique, et un entraînement sur les routes du 92 — celles des parcours d’examen, pas les Champs-Élysées.',
@@ -431,7 +431,7 @@ export const cities: City[] = [
     whyUs: [
       'Deux accès directs (RER A depuis Étoile, ligne L depuis Saint-Lazare) : idéal pour les actifs et étudiants du 8ᵉ.',
       'Leçons possibles jusqu’à 20h en semaine et le samedi : votre permis avance sans empiéter sur vos horaires de bureau.',
-      'Formule accélérée, boîte automatique et CPF : des solutions concrètes pour obtenir le permis rapidement et à coût maîtrisé.',
+      'Formule accélérée, boîte automatique et financement CPF selon éligibilité : des solutions concrètes pour obtenir le permis rapidement et à coût maîtrisé.',
     ],
     faqs: [
       {
@@ -447,7 +447,7 @@ export const cities: City[] = [
       {
         question: 'Puis-je financer la formation avec mon CPF ?',
         answer:
-          'Oui, nous sommes certifiés Qualiopi : les formations éligibles peuvent être réglées via votre Compte Personnel de Formation, un financement très utilisé par les actifs parisiens.',
+          'Le CPF peut être mobilisé selon votre situation et la formation préparée. Vérifiez les conditions d’éligibilité en vigueur avant toute inscription.',
       },
     ],
   },

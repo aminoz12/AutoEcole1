@@ -89,7 +89,7 @@ export default function CPFRequestForm({ isOpen, onClose }: CPFRequestFormProps)
       }
 
       setSuccessMessage(
-        'Demande CPF envoyée avec succès ! Notre équipe vous recontactera sous 24h pour vous accompagner.'
+        'Demande envoyée avec succès. Notre équipe vous recontactera sous 24h pour vérifier les conditions de financement applicables.'
       )
       setFormData(initialData)
     } catch (err) {
@@ -147,9 +147,9 @@ export default function CPFRequestForm({ isOpen, onClose }: CPFRequestFormProps)
                   height={66}
                   className="mx-auto mb-3 rounded-md bg-white/95 p-1.5"
                 />
-                <h2 className="font-poppins text-2xl font-bold">Faire ma demande CPF</h2>
+                <h2 className="font-poppins text-2xl font-bold">Vérifier mon éligibilité CPF</h2>
                 <p className="mt-1 text-sm text-white/90">
-                  Financez votre permis dès 100 €. Remplissez ce formulaire, on s&apos;occupe du reste.
+                  Le financement CPF dépend de votre situation et de la formation préparée.
                 </p>
               </div>
 
@@ -303,14 +303,14 @@ export default function CPFRequestForm({ isOpen, onClose }: CPFRequestFormProps)
                         </>
                       ) : (
                         <>
-                          Envoyer ma demande CPF
+                          Demander une vérification CPF
                           <ArrowRight className="h-4 w-4" />
                         </>
                       )}
                     </motion.button>
 
                     <p className="text-center text-xs text-gray-500">
-                      Un conseiller vous recontacte sous 24h pour vous accompagner dans votre démarche.
+                      Un conseiller vous recontacte sous 24h pour vérifier votre situation et vous accompagner.
                     </p>
                   </form>
                 )}

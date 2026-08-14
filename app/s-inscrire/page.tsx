@@ -16,7 +16,7 @@ export const metadata: Metadata = createPageMetadata({
 
   description:
 
-    'Inscrivez-vous au permis de conduire à Nanterre en quelques minutes : permis B boîte manuelle ou automatique, formule accélérée, CPF accepté. Nous ouvrons votre dossier ANTS.',
+    'Inscrivez-vous au permis de conduire à Nanterre en quelques minutes : permis B boîte manuelle ou automatique et formule accélérée. CPF selon éligibilité. Nous ouvrons votre dossier ANTS.',
 
   path: '/s-inscrire',
 
