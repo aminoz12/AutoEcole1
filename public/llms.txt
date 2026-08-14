@@ -5,8 +5,10 @@
 ## Pages principales
 
 - [Accueil](https://autoecoledespaquerettes.fr/): présentation, tarifs, financement CPF, FAQ et contact
+- [Tarifs et formules](https://autoecoledespaquerettes.fr/tarifs): prix des formations permis B, boîte manuelle et automatique
 - [Inscription en ligne](https://autoecoledespaquerettes.fr/s-inscrire): formulaire de demande d'inscription au permis
 - [Blog](https://autoecoledespaquerettes.fr/blog): conseils permis, code de la route, sécurité et assurance
+- [Contact](https://autoecoledespaquerettes.fr/contact): coordonnées, horaires et itinéraire
 
 ## Coordonnées
 
@@ -24,14 +26,33 @@
 - Formules avec code de la route inclus
 - Formation accélérée (objectif permis en quelques semaines)
 - Révision code en ligne (pack web)
-- Financement CPF et paiement en plusieurs fois
+- Financement CPF selon les règles d'éligibilité en vigueur et paiement en 2 fois sans frais
 
 ## Tarifs indicatifs
 
 - Permis B 20h: à partir de 899 €
 - Permis BEA 13h: à partir de 799 €
-- Formules code + conduite: à partir de 990 €
-- Paiement en 4 ou 10 fois sans frais
+- Formules code + conduite: à partir de 799 €
+- Paiement en 2 fois sans frais
+
+## Pages locales
+
+- [Auto-école près de Bezons](https://autoecoledespaquerettes.fr/auto-ecole-bezons)
+- [Auto-école près de Colombes](https://autoecoledespaquerettes.fr/auto-ecole-colombes)
+- [Auto-école près de La Garenne-Colombes](https://autoecoledespaquerettes.fr/auto-ecole-la-garenne-colombes)
+- [Auto-école près de Courbevoie](https://autoecoledespaquerettes.fr/auto-ecole-courbevoie)
+- [Auto-école près de Rueil-Malmaison](https://autoecoledespaquerettes.fr/auto-ecole-rueil-malmaison)
+- [Auto-école près de Neuilly-sur-Seine](https://autoecoledespaquerettes.fr/auto-ecole-neuilly-sur-seine)
+- [Auto-école près de Paris 17e](https://autoecoledespaquerettes.fr/auto-ecole-paris-17)
+- [Auto-école près de Paris 16e](https://autoecoledespaquerettes.fr/auto-ecole-paris-16)
+- [Auto-école près de Paris 8e](https://autoecoledespaquerettes.fr/auto-ecole-paris-8)
+
+## Sources publiques de référence
+
+- [Démarches permis de conduire - France Titres (ANTS)](https://permisdeconduire.ants.gouv.fr/demarches-en-ligne?lang=fr)
+- [Règles CPF pour le permis de conduire - Mon Compte Formation](https://www.moncompteformation.gouv.fr/espace-public/tout-savoir-sur-le-permis-de-conduire)
+- [Code de la route - Observatoire national interministériel de la sécurité routière](https://www.onisr.securite-routiere.gouv.fr/politique-de-securite-routiere/code-de-la-route)
+- [Sitemap](https://autoecoledespaquerettes.fr/sitemap.xml)
 
 ## Horaires
 

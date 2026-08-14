@@ -7,11 +7,11 @@ import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Contactez-nous',
+  title: 'Contact — Auto-école à Nanterre (92)',
   description:
-    'Contactez Auto Ecole Des Paquerettes pour toute question sur nos formations de conduite. Notre équipe vous répond rapidement à Nanterre.',
+    'Contactez notre auto-école au 375 avenue de la République à Nanterre : 01 46 49 38 90. Bureau ouvert du lundi au samedi, conduite jusqu’à 20h en semaine.',
   path: '/contact',
-  keywords: ['contact auto-école', 'question permis de conduire'],
+  keywords: ['contact auto-école Nanterre', 'adresse auto-école Nanterre', 'téléphone auto-école 92'],
 })
 
 export default function Contact() {

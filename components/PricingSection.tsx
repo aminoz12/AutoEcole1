@@ -272,6 +272,17 @@ export default function PricingSection({
             <Phone className="h-4 w-4" />
             Nous appeler
           </motion.a>
+
+          {/* Lien contextuel vers la page qui doit se positionner sur
+              « prix / tarifs permis Nanterre ». L'ancre porte le mot-clé. */}
+          <motion.a
+            href="/tarifs"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-3 px-8 rounded-full border border-white/20 flex items-center justify-center gap-2 transition-all"
+          >
+            Tous les tarifs du permis à Nanterre
+          </motion.a>
         </motion.div>
         </>
         )}

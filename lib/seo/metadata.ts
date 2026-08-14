@@ -12,7 +12,13 @@ type PageMetadataOptions = {
   modifiedTime?: string
   authors?: string[]
   tags?: string[]
+  /** Chemin d'image relatif (ex. '/blog3.jpeg'). Par défaut : visuel du site. */
+  image?: string | null
 }
+
+// Image de partage par défaut (WhatsApp, Facebook, LinkedIn, X). 1600x900 :
+// au-dessus des 1200px recommandés, dans le ratio 1.91:1 attendu.
+const DEFAULT_OG_IMAGE = '/hero.png'
 
 export function createPageMetadata({
   title,
@@ -25,9 +31,11 @@ export function createPageMetadata({
   modifiedTime,
   authors,
   tags,
+  image,
 }: PageMetadataOptions): Metadata {
   const url = absoluteUrl(path)
-  const fullTitle = path === '/' ? title : `${title} | ${siteConfig.name}`
+  const fullTitle = path === '/' ? title : `${title} | ${siteConfig.shortName}`
+  const ogImage = absoluteUrl(image || DEFAULT_OG_IMAGE)
 
   return {
     title: fullTitle,
@@ -45,6 +53,9 @@ export function createPageMetadata({
       siteName: siteConfig.name,
       title: fullTitle,
       description,
+      // Pas de width/height déclarés : les images varient d'une page à l'autre
+      // et une dimension erronée dégrade le rendu chez les scrapers.
+      images: [{ url: ogImage, alt: siteConfig.name }],
       ...(publishedTime && { publishedTime }),
       ...(modifiedTime && { modifiedTime }),
       ...(authors && { authors }),
@@ -54,6 +65,7 @@ export function createPageMetadata({
       card: 'summary_large_image',
       title: fullTitle,
       description,
+      images: [ogImage],
     },
   }
 }

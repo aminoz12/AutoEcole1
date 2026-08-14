@@ -12,15 +12,15 @@ import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = createPageMetadata({
 
-  title: 'Pré-inscription en ligne',
+  title: 'Inscription au permis à Nanterre — en ligne',
 
   description:
 
-    'Inscrivez-vous à Auto Ecole Des Paquerettes en quelques minutes. Demande de permis B, boîte manuelle ou automatique à Nanterre. Réponse rapide de notre équipe.',
+    'Inscrivez-vous au permis de conduire à Nanterre en quelques minutes : permis B boîte manuelle ou automatique, formule accélérée, CPF accepté. Nous ouvrons votre dossier ANTS.',
 
   path: '/s-inscrire',
 
-  keywords: ['inscription auto-école', 'demande permis de conduire en ligne'],
+  keywords: ['inscription auto-école Nanterre', 'inscription permis en ligne', 's’inscrire permis de conduire 92'],
 
 })
 

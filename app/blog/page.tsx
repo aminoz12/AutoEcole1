@@ -5,11 +5,11 @@ import { blogPosts, blogCategories } from '@/lib/blog-data'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata = createPageMetadata({
-  title: 'Blog — Conseils permis & code de la route',
+  title: 'Blog permis de conduire — conseils et guides',
   description:
-    'Guides pratiques, astuces d\'experts et actualités pour réussir votre code, votre permis de conduire et rouler en toute sécurité.',
+    'Guides pratiques pour réussir le code et le permis : prix du permis à Nanterre, boîte auto ou manuelle, conduite accompagnée, CPF, examen dans les Hauts-de-Seine.',
   path: '/blog',
-  keywords: ['conseils permis de conduire', 'réviser code de la route', 'sécurité routière'],
+  keywords: ['conseils permis de conduire', 'réussir le code de la route', 'guide permis Nanterre', 'examen permis 92'],
 })
 
 export default function BlogPage() {

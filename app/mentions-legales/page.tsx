@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
+import { siteConfig } from '@/lib/seo/site-config'
 
 export const metadata: Metadata = createPageMetadata({
   title: 'Mentions légales',
@@ -25,28 +26,30 @@ export default function MentionsLegales() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Éditeur du site</h2>
             <div className="text-gray-300 space-y-2">
-              <p><strong>Auto Ecole Des Paquerettes</strong></p>
-              <p>Adresse : [Adresse complète de l'auto-école]</p>
-              <p>Téléphone : [Numéro de téléphone]</p>
-              <p>Email : [Adresse email]</p>
-              <p>SIRET : [Numéro SIRET]</p>
+              <p><strong>SARL Autoécole des Paquerettes</strong></p>
+              <p>Siège social : {siteConfig.address.full}</p>
+              <p>Téléphone : {siteConfig.phone}</p>
+              <p>Email : {siteConfig.email}</p>
+              <p>SIREN : 905 351 821</p>
+              <p>SIRET : 905 351 821 00012</p>
+              <p>RCS Nanterre : 905 351 821</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Directeur de la publication</h2>
             <div className="text-gray-300 space-y-2">
-              <p><strong>[Nom du directeur]</strong></p>
-              <p>Adresse : [Adresse du directeur]</p>
+              <p><strong>Fadil M&apos;hamed et Fadil Walid, co-gérants</strong></p>
+              <p>Contact : {siteConfig.email}</p>
             </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">Hébergement</h2>
             <div className="text-gray-300 space-y-2">
-              <p><strong>[Nom de l'hébergeur]</strong></p>
-              <p>Adresse : [Adresse de l'hébergeur]</p>
-              <p>Téléphone : [Numéro de téléphone de l'hébergeur]</p>
+              <p><strong>Vercel Inc.</strong></p>
+              <p>440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis</p>
+              <p><a href="https://vercel.com" className="text-primary underline-offset-4 hover:underline">vercel.com</a></p>
             </div>
           </section>
 

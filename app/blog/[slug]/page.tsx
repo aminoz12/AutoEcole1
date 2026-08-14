@@ -5,7 +5,8 @@ import Footer from '@/components/Footer'
 import { BlogPostingJsonLd, BreadcrumbJsonLd, HowToJsonLd } from '@/components/seo/JsonLd'
 import { blogPosts } from '@/lib/blog-data'
 import { howToBySlug } from '@/lib/content/howto-data'
-import { absoluteUrl } from '@/lib/seo/site-config'
+import { articleReviewsBySlug, editorialAuthor } from '@/lib/content/editorial-data'
+import { absoluteUrl, siteConfig } from '@/lib/seo/site-config'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export async function generateStaticParams() {
@@ -24,6 +25,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     })
   }
 
+  const review = articleReviewsBySlug[post.slug]
+
   return createPageMetadata({
     title: post.title,
     description: post.excerpt,
@@ -31,8 +34,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     keywords: post.tags,
     ogType: 'article',
     publishedTime: post.published_at,
-    authors: [post.author_name],
+    modifiedTime: review?.reviewedAt,
+    authors: [editorialAuthor.name],
     tags: post.tags,
+    // Chaque article partage son propre visuel plutôt que celui du site.
+    image: post.featured_image,
   })
 }
 
@@ -48,6 +54,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     .slice(0, 3)
 
   const howTo = howToBySlug[post.slug]
+  const review = articleReviewsBySlug[post.slug]
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -56,7 +63,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         description={post.excerpt}
         slug={post.slug}
         publishedAt={post.published_at}
-        authorName={post.author_name}
+        reviewedAt={review?.reviewedAt}
+        reviewer={review?.reviewer}
         image={post.featured_image}
       />
       {howTo && (

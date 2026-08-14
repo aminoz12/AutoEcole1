@@ -20,11 +20,14 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
+// Cible la requête principale « auto-école Nanterre ». Le mot-clé est placé en
+// tête de title et de description, la marque en fin.
 export const metadata: Metadata = createPageMetadata({
-  title: `${siteConfig.name} — Permis de conduire à Nanterre`,
-  description: siteConfig.description,
+  title: 'Auto-école à Nanterre — Permis B dès 899 € | Des Pâquerettes',
+  description:
+    'Auto-école à Nanterre (92) : permis B boîte manuelle ou automatique, formation accélérée, code de la route et financement CPF. Forfait 20h dès 899 €, 4,9/5 sur Google.',
   path: '/',
-  keywords: ['permis accéléré 10 jours', 'auto-école CPF Nanterre'],
+  keywords: ['auto-école Nanterre', 'permis accéléré Nanterre', 'auto-école CPF Nanterre', 'permis B 92'],
 })
 
 export default function RootLayout({

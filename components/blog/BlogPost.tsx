@@ -1,10 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, Clock, Tag, ArrowLeft, Share2, Facebook, Twitter, MessageCircle } from 'lucide-react'
+import { BadgeCheck, Calendar, Clock, ExternalLink, Tag, ArrowLeft, Share2, Facebook, Twitter, MessageCircle } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import toast from 'react-hot-toast'
+import { articleReviewsBySlug, editorialAuthor, officialSourcesBySlug } from '@/lib/content/editorial-data'
 
 interface BlogPost {
   id: string
@@ -26,6 +27,9 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
+  const review = articleReviewsBySlug[post.slug]
+  const officialSources = officialSourcesBySlug[post.slug] || []
+
   const formatDate = (date: string) => {
     return new Date(date).toLocaleDateString('fr-FR', {
       day: 'numeric',
@@ -114,10 +118,10 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                 <div className="flex items-center gap-2">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                     <span className="text-primary font-semibold">
-                      {post.author_name.charAt(0)}
+                      {editorialAuthor.name.charAt(0)}
                     </span>
                   </div>
-                  <span>{post.author_name}</span>
+                  <span>{editorialAuthor.name}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
@@ -127,7 +131,19 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                   <Clock className="w-4 h-4" />
                   <span>5 min de lecture</span>
                 </div>
+                {review && (
+                  <div className="flex items-center gap-1 text-emerald-700">
+                    <BadgeCheck className="w-4 h-4" />
+                    <span>Vérifié le {formatDate(review.reviewedAt)}</span>
+                  </div>
+                )}
               </div>
+
+              {review && (
+                <p className="-mt-2 mb-6 text-sm text-gray-600">
+                  Révision pédagogique : {review.reviewer.name} — {review.reviewer.credential}.
+                </p>
+              )}
 
               {/* Content — demote any H1 in the article body so the page keeps a single H1 (the title) */}
               <div
@@ -138,6 +154,32 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                     .replace(/<\/h1>/gi, '</h2>'),
                 }}
               />
+
+              {officialSources.length > 0 && (
+                <section className="mt-8 border-t border-gray-200 pt-8" aria-labelledby="sources-officielles">
+                  <h2 id="sources-officielles" className="text-xl font-bold text-gray-900">
+                    Sources officielles
+                  </h2>
+                  <ul className="mt-4 space-y-3">
+                    {officialSources.map((source) => (
+                      <li key={source.url}>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start gap-3 rounded-lg border border-gray-200 p-4 transition hover:border-primary hover:bg-primary/5"
+                        >
+                          <ExternalLink className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                          <span>
+                            <span className="block font-semibold text-gray-900 group-hover:text-primary">{source.label}</span>
+                            <span className="mt-1 block text-sm text-gray-600">{source.description}</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
               {/* Social Sharing */}
               <div className="mt-8 pt-8 border-t border-gray-200">
@@ -307,5 +349,4 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
     </div>
   )
 }
-
 

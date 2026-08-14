@@ -35,6 +35,13 @@ const nextConfig = {
         destination: '/prestations-a-l-unite',
         permanent: true,
       },
+      // Obsolete price sheet from the previous site. Send visitors and crawlers
+      // to the current, maintained pricing page instead.
+      {
+        source: '/_files/ugd/7479d7_aa91e48815a442d7b21ea51dd9546fa5.pdf',
+        destination: '/tarifs',
+        permanent: true,
+      },
 
       // ---- URLs de l'ancien site (signalées en 404 par la Search Console) ----
       // Elles restent explorées par Google : sans 301, l'antériorité SEO

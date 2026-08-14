@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
 <p>Votre code de la route reste valable <strong>5 ans</strong> et couvre jusqu'à <strong>5 présentations</strong> à l'épreuve pratique. Vous n'avez donc rien à repasser de ce côté, tant que vous restez dans ces limites. C'est une source d'inquiétude fréquente, et infondée dans la grande majorité des cas.</p>
 <h2>4. Ne repayez pas une formation complète</h2>
 <p>C'est l'erreur budgétaire classique. Après un échec, vous n'avez pas besoin d'un nouveau forfait de 20 heures : vous avez besoin de <strong>quelques heures ciblées</strong> sur les points identifiés dans le bilan.</p>
-<p>C'est exactement l'objet de nos <a href="/prestations-a-l-unite">prestations à l'unité</a> : leçon à partir de <strong>60 €</strong>, ou <strong>600 € les 10 leçons</strong>. Pour beaucoup de candidats, quatre à six heures bien orientées suffisent — travailler les giratoires, refaire des insertions sur voie rapide, ou simplement remettre de la régularité avant la nouvelle présentation.</p>
+<p>Nous proposons pour cela des heures à l'unité — <strong>à partir de 60 € la leçon</strong>, ou <strong>600 € les 10 leçons</strong> — sans repartir sur un forfait complet. La grille est sur notre <a href="/tarifs">page tarifs</a>, et le plan d'heures se décide après une évaluation. Pour beaucoup de candidats, quatre à six heures bien orientées suffisent — travailler les giratoires, refaire des insertions sur voie rapide, ou simplement remettre de la régularité avant la nouvelle présentation.</p>
 <h2>5. Se représenter : les délais</h2>
 <p>Il n'existe pas de délai d'attente réglementaire imposé après un échec : vous pouvez être représenté dès qu'une place est disponible et que votre auto-école estime le niveau suffisant. En pratique, le délai dépend des places d'examen attribuées à l'établissement. C'est un point à aborder franchement avec votre école — nous indiquons toujours à nos élèves une échéance réaliste plutôt qu'une promesse vague.</p>
 <h2>6. Utiliser la conduite supervisée</h2>
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Nos tarifs à Nanterre</h2>
 <p>Nos prix sont affichés publiquement, sans devis surprise :</p>
 <ul><li><strong>Permis B 20h (boîte manuelle) : 899 €</strong> — le forfait le plus demandé, correspondant au minimum légal de 20 heures.</li><li><strong>Permis BEA 13h (boîte automatique) : 799 €</strong> — le minimum légal en automatique est de 13 heures.</li><li><strong>Permis B 30h : 1 399 €</strong> et <strong>Permis B 40h : 1 699 €</strong> — pour les profils qui savent d'emblée qu'ils auront besoin de plus d'heures.</li><li><strong>Formule accélérée 20h : 1 499 €</strong> — code et conduite concentrés sur quelques semaines.</li><li><strong>Leçon à l'unité : à partir de 60 €</strong>, ou <strong>600 € les 10 leçons</strong> pour un perfectionnement ou une reprise après échec.</li><li><strong>Pack web code : 29 €</strong> en accès illimité.</li></ul>
-<p>La grille complète, catégorie par catégorie, est sur notre <a href="/tarifs">page tarifs</a>, et les prestations à la carte sur la page <a href="/prestations-a-l-unite">prestations à l'unité</a>.</p>
+<p>La grille complète, catégorie par catégorie, est sur notre <a href="/tarifs">page tarifs à Nanterre</a>, et le <a href="/prestations-a-l-unite">Pack Web pour réviser le code de la route en ligne</a> a sa page dédiée.</p>
 <h2>Combien d'heures faut-il vraiment ?</h2>
 <p>C'est la variable décisive. Les 20 heures légales sont un plancher, pas une moyenne : en Île-de-France, un candidat débutant en boîte manuelle dépasse souvent ce seuil, en raison de la densité de circulation. D'où l'importance de <strong>l'évaluation de départ</strong> : une heure passée à mesurer votre niveau réel évite d'acheter un forfait inadapté. Nous préférons annoncer un volume honnête plutôt que de vendre un forfait bas complété par dix heures supplémentaires.</p>
 <h2>Nanterre ou Paris : l'écart</h2>
@@ -566,35 +566,26 @@ export const blogPosts: BlogPost[] = [
     id: '5',
     title: 'Financement CPF : Comment Utiliser votre Compte pour le Permis',
     slug: 'financement-cpf-compte-permis',
-    excerpt: "Le Compte Personnel de Formation peut financer tout ou partie de votre permis de conduire. Découvrez les conditions et les démarches.",
-    content: `<p>Le Compte Personnel de Formation (CPF) est une opportunité pour financer votre permis de conduire. Voici comment en bénéficier.</p>
-<h2>Qu'est-ce que le CPF ?</h2>
-<p>Le CPF est un compte individuel alimenté tout au long de votre vie professionnelle. Il permet de financer des formations éligibles, dont le permis de conduire dans certaines conditions.</p>
-<h2>Conditions d'éligibilité</h2>
-<p>Pour utiliser votre CPF pour le permis de conduire :</p>
-<ul><li>Le permis doit être lié à une activité professionnelle</li><li>La formation doit être dispensée par un organisme certifié</li><li>Vous devez justifier d'un besoin professionnel</li></ul>
-<h2>Les permis éligibles</h2>
-<p>Certains permis sont plus facilement éligibles :</p>
-<ul><li>Permis B (voiture) : souvent accepté avec justification professionnelle</li><li>Permis poids lourd : très éligible pour les métiers du transport</li><li>Permis moto : éligible selon les situations</li></ul>
+    excerpt: "Les règles CPF pour financer le permis ont changé en 2026. Voici les conditions à vérifier avant toute inscription.",
+    content: `<p>Le Compte Personnel de Formation (CPF) peut financer une préparation au permis de conduire, mais les conditions ont évolué en 2026. Vérifiez toujours votre situation dans votre espace personnel avant de vous inscrire : l'éligibilité dépend du permis préparé et de votre situation professionnelle.</p>
+<h2>Qui peut utiliser son CPF pour le permis B ?</h2>
+<p>Depuis le 20 février 2026, la mobilisation du CPF pour les permis du groupe léger, dont le permis B, est réservée aux <strong>demandeurs d'emploi inscrits à France Travail</strong> et aux <strong>salariés bénéficiant d'un financement d'un tiers</strong> (par exemple un abondement de l'employeur, d'un Opco, d'une région ou du FIPHFP).</p>
+<p>Un projet professionnel reste nécessaire. La plateforme Mon Compte Formation vérifie également les informations liées au permis avant la validation de la demande.</p>
+<h2>Quel montant peut être mobilisé ?</h2>
+<p>Pour un permis du groupe léger, les droits CPF mobilisables sont plafonnés à <strong>900 €</strong>. Le reste éventuel peut être complété selon les modalités affichées sur la plateforme et celles convenues avec l'auto-école.</p>
+<h2>Formations qui ne sont pas éligibles</h2>
+<p>Le CPF ne finance notamment pas les heures complémentaires d'une formation qui n'a pas été achetée initialement via Mon Compte Formation, les stages de récupération de points, les remises à niveau ni la passerelle boîte automatique vers boîte manuelle.</p>
 <h2>Comment faire la demande ?</h2>
-<h3>1. Vérifiez votre solde CPF</h3>
-<p>Connectez-vous sur le site officiel <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener noreferrer">moncompteformation.gouv.fr</a> pour connaître vos droits.</p>
-<h3>2. Trouvez une auto-école éligible</h3>
-<p>Toutes les <a href="/tarifs">auto-école</a>s n'acceptent pas le CPF. Renseignez-vous auprès de celles qui sont certifiées.</p>
-<h3>3. Constituez votre dossier</h3>
-<p>Préparez les documents :</p>
-<ul><li>Justificatif d'identité</li><li>Attestation CPF</li><li>Devis de la formation</li><li>Justificatif de besoin professionnel</li></ul>
-<h3>4. Déposez votre demande</h3>
-<p>Faites la demande en ligne via le site CPF. L'instruction peut prendre plusieurs semaines.</p>
-<h2>Montant pris en charge</h2>
-<p>Le CPF peut couvrir :</p>
-<ul><li>Jusqu'à 100% du coût de la formation</li><li>Dans la limite de vos droits CPF</li><li>Selon l'éligibilité de votre projet</li></ul>
-<h2>Permis B et CPF : les conditions précises</h2>
-<p>Le permis B est finançable par le CPF à condition que vous ne possédiez pas déjà un permis pour une catégorie de véhicule équivalente et que vous ne fassiez pas l'objet d'une suspension. La formation doit être dispensée par un établissement certifié Qualiopi. Les démarches se font intégralement en ligne, depuis votre espace personnel.</p>
-<h2>Et si le solde CPF ne suffit pas ?</h2>
-<p>Si vos droits ne couvrent pas la totalité, plusieurs options existent : compléter de votre poche (abondement personnel), mobiliser un éventuel co-financement de votre employeur, ou échelonner le reste à charge grâce au paiement en plusieurs fois proposé par l'auto-école. Pensez aussi aux aides locales : certaines régions et missions locales soutiennent le permis pour les jeunes ou les demandeurs d'emploi.</p>
-<h2>Conclusion</h2>
-<p>Le CPF est une excellente opportunité pour financer votre permis. Renseignez-vous dès maintenant sur vos droits et les démarches à suivre.</p>`,
+<h3>1. Vérifiez votre éligibilité</h3>
+<p>Connectez-vous sur le site officiel <a href="https://www.moncompteformation.gouv.fr/espace-public/tout-savoir-sur-le-permis-de-conduire" target="_blank" rel="noopener noreferrer">Mon Compte Formation</a>. Consultez les conditions applicables à votre situation avant de choisir une offre.</p>
+<h3>2. Consultez l'offre de formation</h3>
+<p>Vérifiez que l'offre correspond au permis souhaité, que l'organisme est bien référencé et que le contenu, le prix et les dates vous conviennent. Nos <a href="/tarifs">formules et tarifs</a> permettent de préparer votre échange avec l'auto-école.</p>
+<h3>3. Finalisez la demande sur la plateforme</h3>
+<p>La demande CPF se réalise dans votre espace personnel. Ne communiquez jamais vos identifiants à un tiers et lisez les informations affichées par la plateforme avant validation.</p>
+<h2>Et si le CPF ne couvre pas la formation ?</h2>
+<p>Selon votre éligibilité et le montant disponible, un reste à charge peut subsister. Parlez-en avec nous avant votre inscription : nous vous expliquerons les prix de nos formations et les modalités de paiement disponibles, sans promettre de prise en charge.</p>
+<h2>À retenir</h2>
+<p>Les règles CPF peuvent évoluer. Les conditions publiées par Mon Compte Formation prévalent toujours sur les informations générales de cet article.</p>`,
     featured_image: '/blog5.jpeg',
     author_name: 'Julien Moreau',
     category: 'Conseils',

@@ -1,5 +1,8 @@
 export const siteConfig = {
   name: 'Auto Ecole Des Paquerettes',
+  // Suffixe des balises <title>. Le nom complet mange 29 des ~60 caractères
+  // affichés par Google, au détriment des mots-clés.
+  shortName: 'Des Pâquerettes',
   tagline: 'Auto-école à Nanterre — permis accéléré, code et CPF',
   description:
     'Auto Ecole Des Paquerettes vous accompagne à Nanterre pour obtenir votre permis de conduire : formation accélérée, boîte manuelle ou automatique, code en ligne et financement CPF.',
@@ -48,6 +51,13 @@ export const siteConfig = {
     snapchat: 'https://www.snapchat.com/add/autoecoledespaq',
     google: 'https://www.google.com/maps?cid=16506969104775091149',
   } as Record<string, string>,
+  business: {
+    legalName: 'SARL Autoécole des Paquerettes',
+    siren: '905351821',
+    siret: '90535182100012',
+    rcs: '905351821 R.C.S. Nanterre',
+    foundingDate: '2021-11-19',
+  },
 } as const
 
 export function absoluteUrl(path: string = '/') {

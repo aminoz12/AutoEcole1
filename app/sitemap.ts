@@ -5,48 +5,40 @@ import { siteConfig } from '@/lib/seo/site-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url.replace(/\/$/, '')
-  const now = new Date()
 
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 1,
     },
     {
       url: `${baseUrl}/s-inscrire`,
-      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/prestations-a-l-unite`,
-      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/tarifs`,
-      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/a-propos`,
-      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
@@ -54,7 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
     url: `${baseUrl}${cityPath(city)}`,
-    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.8,
   }))

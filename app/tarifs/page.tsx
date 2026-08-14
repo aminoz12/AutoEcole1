@@ -13,11 +13,11 @@ import { webPlans } from '@/lib/content/pricing-data'
 import { pricingFaqs } from '@/lib/content/faq-data'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Nos Tarifs — Permis & Code',
+  title: 'Tarifs permis à Nanterre — dès 899 €',
   description:
-    'Découvrez tous les tarifs Auto Ecole Des Paquerettes : formules permis B (boîte manuelle et automatique), packs avec code et Pack Web pour réviser le code en ligne.',
+    'Prix du permis de conduire à Nanterre : forfait 20h boîte manuelle à 899 €, boîte automatique 13h à 799 €, formule accélérée, code inclus. CPF accepté, paiement en plusieurs fois.',
   path: '/tarifs',
-  keywords: ['tarifs auto-école', 'prix permis de conduire', 'tarif code de la route Nanterre'],
+  keywords: ['prix permis de conduire Nanterre', 'tarifs auto-école Nanterre', 'permis pas cher 92', 'forfait permis B'],
 })
 
 export default function TarifsPage() {

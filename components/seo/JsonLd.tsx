@@ -16,6 +16,34 @@ export function JsonLd({ data }: JsonLdProps) {
 }
 
 export function OrganizationJsonLd() {
+  const services = [
+    {
+      name: 'Permis B boîte manuelle',
+      description: 'Formation au permis B en boîte manuelle à Nanterre.',
+      url: absoluteUrl('/tarifs'),
+    },
+    {
+      name: 'Permis B boîte automatique',
+      description: 'Formation au permis B sur véhicule à boîte automatique (BEA).',
+      url: absoluteUrl('/tarifs'),
+    },
+    {
+      name: 'Permis accéléré',
+      description: 'Formation intensive au permis B selon les disponibilités.',
+      url: absoluteUrl('/tarifs'),
+    },
+    {
+      name: 'Conduite accompagnée',
+      description: 'Apprentissage anticipé de la conduite (AAC) à partir de 15 ans.',
+      url: absoluteUrl('/tarifs'),
+    },
+    {
+      name: 'Code de la route en ligne',
+      description: 'Préparation au code de la route en ligne.',
+      url: absoluteUrl('/prestations-a-l-unite'),
+    },
+  ]
+
   return (
     <JsonLd
       data={{
@@ -23,11 +51,32 @@ export function OrganizationJsonLd() {
         '@type': 'DrivingSchool',
         '@id': `${siteConfig.url}/#organization`,
         name: siteConfig.name,
+        legalName: siteConfig.business.legalName,
         description: siteConfig.description,
         url: siteConfig.url,
         email: siteConfig.email,
         telephone: `+33${siteConfig.phoneTel.replace(/^0/, '')}`,
         image: absoluteUrl('/logoautoecol.png'),
+        logo: absoluteUrl('/logoautoecol.png'),
+        hasMap: siteConfig.social.google,
+        foundingDate: siteConfig.business.foundingDate,
+        identifier: [
+          {
+            '@type': 'PropertyValue',
+            propertyID: 'SIREN',
+            value: siteConfig.business.siren,
+          },
+          {
+            '@type': 'PropertyValue',
+            propertyID: 'SIRET',
+            value: siteConfig.business.siret,
+          },
+          {
+            '@type': 'PropertyValue',
+            propertyID: 'RCS',
+            value: siteConfig.business.rcs,
+          },
+        ],
         address: {
           '@type': 'PostalAddress',
           streetAddress: siteConfig.address.street,
@@ -83,6 +132,20 @@ export function OrganizationJsonLd() {
           },
         ],
         priceRange: '€€',
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: `Formations proposées par ${siteConfig.name}`,
+          itemListElement: services.map((service) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: service.name,
+              description: service.description,
+              serviceType: service.name,
+              url: service.url,
+            },
+          })),
+        },
         // Note: Google doesn't allow self-serving aggregateRating on LocalBusiness/
         // Organization types — it's ineligible for star snippets and triggers a
         // "Invalid object type for field <parent_node>" error in the Review Snippets
@@ -148,46 +211,50 @@ export function BreadcrumbJsonLd({ items }: { items: { name: string; path: strin
   )
 }
 
-// Product/Offer schema for the pricing page. Built from the same data the UI renders
-// (lib/content/pricing-data.ts) so the structured prices can never drift from the page.
+// Driving lessons are services, not physical retail products. Keep their exact prices
+// in schema without sending Google Merchant listing signals such as shipping or returns.
 export function PricingJsonLd() {
-  const seller = { '@id': `${siteConfig.url}/#organization` }
+  const provider = { '@id': `${siteConfig.url}/#organization` }
 
-  const courseProducts = packCategories.flatMap((category) =>
+  const courseServices = packCategories.flatMap((category) =>
     packsData[category.key].map((pack) => ({
-      '@type': 'Product',
+      '@type': 'Service',
       name: `${pack.title} — ${category.label}`,
       description: pack.features.map((f) => f.trim()).join(' · '),
-      category: 'Permis de conduire',
-      brand: { '@type': 'Brand', name: siteConfig.name },
+      serviceType: 'Formation au permis de conduire',
+      provider,
+      areaServed: {
+        '@type': 'City',
+        name: siteConfig.address.city,
+      },
       offers: {
         '@type': 'Offer',
         price: pack.total,
         priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
         url: absoluteUrl('/tarifs'),
-        seller,
       },
     })),
   )
 
-  const webProducts = webPlans.map((plan) => ({
-    '@type': 'Product',
+  const webServices = webPlans.map((plan) => ({
+    '@type': 'Service',
     name: plan.name,
     description: plan.perks.map((p) => p.trim()).join(' · '),
-    category: 'Code de la route en ligne',
-    brand: { '@type': 'Brand', name: siteConfig.name },
+    serviceType: 'Préparation au code de la route en ligne',
+    provider,
+    areaServed: {
+      '@type': 'City',
+      name: siteConfig.address.city,
+    },
     offers: {
       '@type': 'Offer',
       price: Number(plan.price),
       priceCurrency: 'EUR',
-      availability: 'https://schema.org/InStock',
       url: absoluteUrl('/tarifs'),
-      seller,
     },
   }))
 
-  const products = [...courseProducts, ...webProducts]
+  const services = [...courseServices, ...webServices]
 
   return (
     <JsonLd
@@ -195,10 +262,10 @@ export function PricingJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'ItemList',
         name: `Tarifs et formules — ${siteConfig.name}`,
-        itemListElement: products.map((product, index) => ({
+        itemListElement: services.map((service, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          item: product,
+          item: service,
         })),
       }}
     />
@@ -210,14 +277,16 @@ export function BlogPostingJsonLd({
   description,
   slug,
   publishedAt,
-  authorName,
+  reviewedAt,
+  reviewer,
   image,
 }: {
   title: string
   description: string
   slug: string
   publishedAt: string
-  authorName: string
+  reviewedAt?: string
+  reviewer?: { name: string; role: string; credential: string }
   image?: string | null
 }) {
   return (
@@ -229,14 +298,22 @@ export function BlogPostingJsonLd({
         description,
         url: absoluteUrl(`/blog/${slug}`),
         datePublished: publishedAt,
-        dateModified: publishedAt,
+        dateModified: reviewedAt || publishedAt,
         author: {
-          '@type': 'Person',
-          name: authorName,
-          jobTitle: 'Responsable pédagogique',
-          worksFor: { '@id': `${siteConfig.url}/#organization` },
+          '@type': 'Organization',
+          '@id': `${siteConfig.url}/#organization`,
+          name: siteConfig.name,
+          url: siteConfig.url,
         },
         publisher: { '@id': `${siteConfig.url}/#organization` },
+        ...(reviewedAt && reviewer && {
+          reviewedBy: {
+            '@type': 'Organization',
+            name: reviewer.name,
+            description: `${reviewer.role} — ${reviewer.credential}`,
+            url: siteConfig.url,
+          },
+        }),
         inLanguage: 'fr-FR',
         ...(image && { image: absoluteUrl(image) }),
         mainEntityOfPage: absoluteUrl(`/blog/${slug}`),
