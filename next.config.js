@@ -49,7 +49,11 @@ const nextConfig = {
       // d'indexation.
       { source: '/home', destination: '/', permanent: true },
       { source: '/apropos', destination: '/a-propos', permanent: true },
-      { source: '/about-2', destination: '/a-propos', permanent: true },
+      // L'ancien site avait plusieurs variantes /about-N (2, 3 et 5 reçoivent
+      // encore des impressions). Un motif les couvre toutes, y compris celles
+      // qu'on n'a pas vues passer dans la Search Console.
+      { source: '/about', destination: '/a-propos', permanent: true },
+      { source: '/about-:n', destination: '/a-propos', permanent: true },
       { source: '/alacarte', destination: '/prestations-a-l-unite', permanent: true },
       { source: '/nosformations', destination: '/tarifs', permanent: true },
       { source: '/boitemanuelle', destination: '/tarifs', permanent: true },
@@ -57,6 +61,7 @@ const nextConfig = {
       // Variante accentuée réellement indexée. Next.js compare le chemin
       // percent-encodé : un « î » littéral dans `source` ne matche jamais.
       { source: '/bo%C3%AEteautomatique', destination: '/tarifs', permanent: true },
+      { source: '/bo%C3%AEtemanuelle', destination: '/tarifs', permanent: true },
       { source: '/formationssanscode', destination: '/tarifs', permanent: true },
       { source: '/permis-professionnel', destination: '/tarifs', permanent: true },
       // Legacy blog path: /post/* -> /blog/*
