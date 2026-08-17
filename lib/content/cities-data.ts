@@ -451,4 +451,136 @@ export const cities: City[] = [
       },
     ],
   },
+  {
+    slug: 'puteaux',
+    name: 'Puteaux',
+    schemaName: 'Puteaux',
+    fromCity: 'depuis Puteaux',
+    postalCode: '92800',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '12 min',
+    distanceKm: 5,
+    metaDescription:
+      'Auto-école près de Puteaux : permis B dès 899 €, boîte automatique dès 799 €, accéléré et code. RER A et tram T2 directs vers Nanterre. CPF selon éligibilité.',
+    intro: [
+      'Adossée à La Défense, Puteaux subit les tarifs du quartier d’affaires : à formation égale, le permis y coûte sensiblement plus cher qu’à quelques stations de là. Notre agence du 375 avenue de la République à Nanterre propose les mêmes formations — permis B manuel ou automatique, formule accélérée, conduite accompagnée — avec des prix affichés et un paiement en 2 fois sans frais.',
+      'Le trajet est court et sans rupture de charge : le RER A relie La Défense à Nanterre-Préfecture en une station. Autre avantage, moins visible mais décisif : les parcours d’examen du secteur empruntent les axes des Hauts-de-Seine, pas les voies sur dalle de La Défense. S’entraîner à Nanterre, c’est s’entraîner là où vous serez réellement évalué.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Depuis La Défense, une seule station jusqu’à Nanterre-Préfecture — quelques minutes de trajet, sans changement.' },
+      { mode: 'Tram T2', detail: 'Les stations Puteaux et Belvédère rejoignent La Défense en quelques minutes, où le RER A prend le relais vers Nanterre.' },
+      { mode: 'Voiture', detail: 'Environ 12 minutes par le boulevard Circulaire puis l’avenue Georges-Clemenceau et l’avenue de la République.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Bergères', 'Île de Puteaux', 'Bas-Rogers'],
+    whyUs: [
+      'Des tarifs sans commune mesure avec ceux pratiqués sur le secteur de La Défense, à une station de RER.',
+      'Conduite jusqu’à 20h en semaine et le samedi jusqu’à 15h : la leçon de fin de journée après le bureau est notre créneau le plus demandé.',
+      'Les leçons se déroulent sur les axes du 92 réellement empruntés par les parcours d’examen du secteur.',
+    ],
+    faqs: [
+      {
+        question: 'Combien de temps pour venir de Puteaux à votre auto-école ?',
+        answer:
+          'Comptez environ 12 minutes en voiture, ou une dizaine de minutes en transports : tram T2 ou marche jusqu’à La Défense, puis une station de RER A jusqu’à Nanterre-Préfecture.',
+      },
+      {
+        question: 'Je travaille à La Défense : puis-je prendre des leçons après le travail ?',
+        answer:
+          'Oui. Nos moniteurs conduisent jusqu’à 20h du lundi au vendredi et le samedi de 9h à 15h. Beaucoup de nos élèves du secteur réservent le créneau de 18h30.',
+      },
+      {
+        question: 'Faut-il habiter Nanterre pour s’inscrire chez vous ?',
+        answer:
+          'Non, aucune condition de résidence n’existe pour choisir son auto-école. Vous pouvez habiter Puteaux et vous former à Nanterre sans aucune démarche particulière.',
+      },
+    ],
+  },
+  {
+    slug: 'suresnes',
+    name: 'Suresnes',
+    schemaName: 'Suresnes',
+    fromCity: 'depuis Suresnes',
+    postalCode: '92150',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '12 min',
+    distanceKm: 5,
+    metaDescription:
+      'Auto-école près de Suresnes : permis B dès 899 €, boîte auto dès 799 €, accéléré et code. Tram T2 et ligne L vers Nanterre. CPF selon éligibilité.',
+    intro: [
+      'Entre les quais de Seine et les pentes du Mont-Valérien, Suresnes offre un terrain d’apprentissage exigeant — et c’est précisément ce qui en fait un bon voisinage pour apprendre à conduire. Notre auto-école de Nanterre, à une douzaine de minutes, forme au permis B en boîte manuelle ou automatique, en formule accélérée comme en conduite accompagnée.',
+      'Un détail que les candidats découvrent souvent trop tard : le démarrage en côte et la maîtrise du frein de stationnement sont des compétences évaluées, et les rues en pente du Mont-Valérien sont l’un des meilleurs terrains d’entraînement du secteur. Nos moniteurs y emmènent régulièrement les élèves qui préparent leur examen.',
+    ],
+    access: [
+      { mode: 'Tram T2', detail: 'Les stations Suresnes-Longchamp et Belvédère mènent à La Défense, d’où le RER A rejoint Nanterre en une station.' },
+      { mode: 'Transilien L', detail: 'Depuis la gare de Suresnes Mont-Valérien, la ligne L dessert Nanterre-Université en direction de Saint-Lazare.' },
+      { mode: 'Voiture', detail: 'Environ 12 minutes par le boulevard Henri-Sellier puis la D913 vers l’avenue de la République.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Cité-Jardins', 'Mont-Valérien', 'Quartier Liberté'],
+    whyUs: [
+      'Un entraînement au démarrage en côte sur les pentes du Mont-Valérien — une compétence notée à l’examen, rarement travaillée en terrain plat.',
+      'Deux liaisons directes vers Nanterre : tram T2 via La Défense, ou ligne L jusqu’à Nanterre-Université.',
+      'Formules affichées sans devis surprise, payables en 2 fois sans frais.',
+    ],
+    faqs: [
+      {
+        question: 'Comment venir de Suresnes jusqu’à votre auto-école ?',
+        answer:
+          'En voiture, comptez une douzaine de minutes par la D913. En transports, le tram T2 vous mène à La Défense puis le RER A à Nanterre, ou la ligne L depuis Suresnes Mont-Valérien jusqu’à Nanterre-Université.',
+      },
+      {
+        question: 'Travaillez-vous le démarrage en côte pendant la formation ?',
+        answer:
+          'Oui, systématiquement. C’est une compétence évaluée le jour de l’examen, et le relief du secteur Suresnes – Mont-Valérien offre un terrain d’entraînement bien plus réaliste que les avenues plates.',
+      },
+      {
+        question: 'Proposez-vous la boîte automatique ?',
+        answer:
+          'Oui. En boîte automatique, l’examen est possible dès 13 heures de conduite contre 20 heures en boîte manuelle, et une formation passerelle de 7 heures permet ensuite de lever la restriction si vous le souhaitez.',
+      },
+    ],
+  },
+  {
+    slug: 'houilles',
+    name: 'Houilles',
+    schemaName: 'Houilles',
+    fromCity: 'depuis Houilles',
+    postalCode: '78800',
+    department: 'Yvelines (78)',
+    driveTime: '15 min',
+    distanceKm: 7,
+    metaDescription:
+      'Auto-école près de Houilles (78) : permis B dès 899 €, boîte auto dès 799 €, accéléré et code. RER A direct vers Nanterre. CPF selon éligibilité.',
+    intro: [
+      'Habiter Houilles et se former à Nanterre est plus simple qu’il n’y paraît : la gare de Houilles–Carrières-sur-Seine est desservie par le RER A, qui rejoint les gares de Nanterre en quelques minutes sans changement. Aucune condition de résidence n’existe pour choisir son auto-école — le département sur votre justificatif de domicile ne limite en rien votre inscription.',
+      'Ce passage des Yvelines aux Hauts-de-Seine a même un intérêt pratique : votre présentation à l’examen dépend du centre auquel votre auto-école est rattachée. En vous formant à Nanterre, vous vous entraînez pendant toute la formation sur les axes du 92 où se déroulera votre épreuve, au lieu de découvrir le secteur le jour J.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Gare de Houilles–Carrières-sur-Seine → gares de Nanterre en quelques minutes, direct et sans changement.' },
+      { mode: 'Voiture', detail: 'Environ 15 minutes par le pont de Bezons puis l’avenue de la République.' },
+      { mode: 'Transilien L', detail: 'La ligne L relie également Houilles à Nanterre-Université en direction de Paris Saint-Lazare.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Réveil-Matin', 'Chateaubriand', 'Champs-Fleuris'],
+    whyUs: [
+      'RER A direct : l’une des liaisons les plus rapides vers Nanterre depuis la boucle de Seine.',
+      'Vous vous entraînez toute la formation sur les routes du secteur où se déroule l’examen, plutôt que de les découvrir le jour même.',
+      'Permis B manuel ou automatique, formule accélérée, conduite accompagnée dès 15 ans et code en salle comme en ligne.',
+    ],
+    faqs: [
+      {
+        question: 'J’habite dans les Yvelines : puis-je m’inscrire dans une auto-école des Hauts-de-Seine ?',
+        answer:
+          'Oui, sans aucune restriction. Le choix de l’auto-école est libre et ne dépend pas de votre commune ni de votre département de résidence. De nombreux élèves de Houilles se forment chez nous.',
+      },
+      {
+        question: 'Où se déroulera mon examen pratique ?',
+        answer:
+          'Votre présentation dépend du centre d’examen auquel notre établissement est rattaché, dans les Hauts-de-Seine. C’est précisément pour cela que nos leçons se déroulent sur les axes de Nanterre et des communes voisines.',
+      },
+      {
+        question: 'Combien de temps de trajet depuis Houilles ?',
+        answer:
+          'Quelques minutes en RER A jusqu’aux gares de Nanterre, ou environ 15 minutes en voiture par le pont de Bezons.',
+      },
+    ],
+  },
 ]

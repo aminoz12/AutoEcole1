@@ -51,6 +51,19 @@ export const siteConfig = {
     snapchat: 'https://www.snapchat.com/add/autoecoledespaq',
     google: 'https://www.google.com/maps?cid=16506969104775091149',
   } as Record<string, string>,
+  // Fiches tierces décrivant la même entité. Elles alimentent `sameAs` (et non
+  // les icônes du pied de page) : c'est ce qui permet à Google et aux moteurs
+  // de réponse de rattacher le site aux sources qu'ils consultent réellement
+  // pour recommander un commerce local. À n'alimenter qu'avec des URLs
+  // vérifiées pointant bien vers cet établissement.
+  directories: [
+    'https://www.pagesjaunes.fr/pros/61668260',
+    'https://www.vroomvroom.fr/auto-ecoles/hauts-de-seine/nanterre/auto-ecole-des-paquerettes',
+    'https://fr.mappy.com/poi/62c25c333189a6234f79a741',
+    'https://www.maconduiteaac.fr/auto-ecole/auto-ecole-nanterre-des-paquerettes/',
+    'https://acceslibre.beta.gouv.fr/app/92-nanterre/a/auto-ecole/erp/auto-ecole-des-paquerettes/',
+    'https://www.societe.com/societe/autoecole-des-paquerettes-905351821.html',
+  ] as string[],
   business: {
     legalName: 'SARL Autoécole des Paquerettes',
     siren: '905351821',

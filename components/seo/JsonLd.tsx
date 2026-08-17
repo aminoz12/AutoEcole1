@@ -90,15 +90,13 @@ export function OrganizationJsonLd() {
           latitude: siteConfig.address.geo.lat,
           longitude: siteConfig.address.geo.lng,
         },
-        // Nanterre + every city that has a local landing page, plus close
-        // communes that don't warrant a dedicated page (yet).
-        areaServed: [
-          'Nanterre',
-          ...cities.map((c) => c.schemaName),
-          'Puteaux',
-          'Suresnes',
-          'Houilles',
-        ].map((name) => ({ '@type': 'City', name })),
+        // Nanterre + every city that has a local landing page. Puteaux,
+        // Suresnes et Houilles ont désormais la leur : les lister à la main en
+        // plus créerait des doublons dans le graphe.
+        areaServed: ['Nanterre', ...cities.map((c) => c.schemaName)].map((name) => ({
+          '@type': 'City',
+          name,
+        })),
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
@@ -150,9 +148,11 @@ export function OrganizationJsonLd() {
         // Organization types — it's ineligible for star snippets and triggers a
         // "Invalid object type for field <parent_node>" error in the Review Snippets
         // report. The "4.9 · +de 300 avis vérifiés" claim stays in the homepage hero UI.
-        ...(Object.values(siteConfig.social).length > 0 && {
-          sameAs: Object.values(siteConfig.social),
-        }),
+        // sameAs = toutes les URLs décrivant la même entité : réseaux sociaux,
+        // fiche Google et annuaires tiers. Ce sont ces fiches que Google et les
+        // moteurs de réponse recoupent pour recommander un commerce local ; les
+        // déclarer ici rend le rattachement explicite au lieu d'être deviné.
+        sameAs: [...Object.values(siteConfig.social), ...siteConfig.directories],
       }}
     />
   )

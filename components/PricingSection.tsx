@@ -26,7 +26,7 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
     >
       {pack.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
-          Formule la plus choisie — 80 % de nos élèves
+          Formule la plus choisie
         </div>
       )}
 
