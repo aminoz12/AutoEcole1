@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Bike, ShieldCheck, MapPin, Clock, Phone } from 'lucide-react'
 
 import Header from '@/components/Header'
@@ -14,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     'Moto-école à Nanterre (92) : permis A1, A2, passerelle A, BSR/permis AM et formation 125 pour les titulaires du permis B. Plateau et circulation dans les Hauts-de-Seine.',
   path: '/permis-moto',
+  image: '/blog/permis-moto.webp',
   keywords: [
     'permis moto Nanterre',
     'moto école Nanterre',
@@ -84,6 +86,17 @@ export default function PermisMotoPage() {
                 {siteConfig.phone}
               </a>
             </div>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-2xl border border-white/10">
+            <Image
+              src="/blog/permis-moto.webp"
+              alt="Élève en formation plateau sur une moto, avec son moniteur — auto-école à Nanterre"
+              width={1536}
+              height={1024}
+              className="h-auto w-full object-cover"
+              priority
+            />
           </div>
         </div>
       </section>

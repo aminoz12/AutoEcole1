@@ -41,3 +41,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+
+# Originaux PNG des visuels (20 Mo) : seules les WebP de public/blog sont versionnees
+public/blogpictures/

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Clock, Car, CheckCircle2, HelpCircle, ChevronRight } from 'lucide-react'
 
 import Header from '@/components/Header'
@@ -72,6 +73,19 @@ export default function CityLandingPage({ city }: { city: City }) {
               </Link>
             </div>
           </div>
+
+          {city.image && (
+            <div className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src={city.image}
+                alt={`Leçon de conduite — auto-école ${nearCity(city.name)}`}
+                width={1536}
+                height={1024}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+          )}
         </div>
       </section>
 

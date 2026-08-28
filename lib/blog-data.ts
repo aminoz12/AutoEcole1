@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
 <p>Attention&nbsp;: le code voiture ne vaut pas pour les deux-roues. Depuis mars 2020, une épreuve théorique moto distincte (l'ETM) est exigée pour les permis A1 et A2. Le détail figure sur notre page <a href="/permis-moto">permis moto à Nanterre</a>.</p>
 <h2>Réviser avant de réserver</h2>
 <p>Ne réservez pas votre place tant que vous n'obtenez pas régulièrement 37 ou 38 sur 40 en test blanc. Notre <a href="/prestations-a-l-unite">Pack Web</a> donne accès aux séries et aux cours en ligne, en complément des séances en salle — et nos formules <a href="/tarifs">code + conduite</a> intègrent la préparation complète.</p>`,
-    featured_image: '/code.png',
+    featured_image: '/blog/ou-passer-code-route.webp',
     author_name: 'Julien Moreau',
     category: 'Code',
     tags: ['code de la route', 'examen code', 'prix code', 'La Poste', 'Objectif Code'],
@@ -73,7 +73,7 @@ export const blogPosts: BlogPost[] = [
 <p>Le résultat n'est jamais communiqué sur place. Il est consultable <strong>sous 48 heures</strong> sur le site de la Sécurité routière, accompagné du bilan de compétences détaillé — le document à lire absolument, comme nous l'expliquons dans notre guide sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a>.</p>
 <h2>Se préparer sur les bons parcours</h2>
 <p>Connaître la grille ne suffit pas&nbsp;: encore faut-il s'entraîner là où l'on sera évalué. Nos leçons se déroulent sur les axes de Nanterre et des Hauts-de-Seine empruntés par les parcours d'examen du secteur — le détail est dans notre article sur <a href="/blog/examen-permis-hauts-de-seine-deroulement">l'examen du permis dans les Hauts-de-Seine</a>.</p>`,
-    featured_image: '/permis.png',
+    featured_image: '/blog/notation-permis.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ['notation permis', 'faute éliminatoire', 'examen pratique', '31 points', 'grille évaluation'],
@@ -104,7 +104,7 @@ export const blogPosts: BlogPost[] = [
 <p>Le même que pour l'AAC&nbsp;: observer, laisser conduire, et débriefer à l'arrêt plutôt que de corriger en continu. Un accompagnateur qui commente chaque geste empêche le conducteur d'installer ses propres automatismes.</p>
 <h2>Se lancer à Nanterre</h2>
 <p>Nous accompagnons régulièrement des élèves en conduite supervisée, notamment après un premier échec. La démarche démarre par une évaluation et un rendez-vous préalable&nbsp;: <a href="/contact">contactez-nous</a> ou consultez nos <a href="/tarifs">formules</a>.</p>`,
-    featured_image: '/blog2.jpeg',
+    featured_image: '/blog/conduite-supervisee.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ['conduite supervisée', 'après échec permis', 'permis B', 'accompagnateur'],
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
 <p>Aucune aide ne compense un forfait mal choisi. Un forfait d'appel très bas assorti d'heures supplémentaires chères revient plus cher qu'un forfait complet à prix affiché. C'est le premier des <a href="/blog/comment-choisir-auto-ecole-criteres-essentiels">6 critères pour choisir son auto-école</a>, et le détail du calcul est dans notre article sur <a href="/blog/prix-permis-conduire-nanterre">le prix du permis à Nanterre</a>.</p>
 <h2>Nos modalités</h2>
 <p>Nos prix sont affichés sans devis surprise, et payables <strong>en 2 fois sans frais</strong>. Le forfait 20 heures en boîte manuelle démarre à 899 €, la boîte automatique 13 heures à 799 € — grille complète sur notre <a href="/tarifs">page tarifs</a>. Pour étudier votre situation et les dispositifs auxquels vous pouvez prétendre, <a href="/contact">appelez-nous</a>&nbsp;: c'est souvent réglé en quelques minutes.</p>`,
-    featured_image: '/cpf.svg',
+    featured_image: '/blog/aides-financement.webp',
     author_name: 'Julien Moreau',
     category: 'Conseils',
     tags: ['financement permis', 'CPF', 'permis à 1 euro', 'France Travail', 'aides'],

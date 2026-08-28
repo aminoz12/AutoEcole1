@@ -30,6 +30,8 @@ export interface City {
   neighborhoods: string[]
   whyUs: string[]
   faqs: CityFaq[]
+  /** Visuel de la page, sous public/. Sert aussi d'image de partage. */
+  image?: string
 }
 
 export const cityPath = (city: City) => `/auto-ecole-${city.slug}`
@@ -50,6 +52,7 @@ export function cityMetadata(city: City): Metadata {
     title: `Auto-école ${nearCity(city.name)} — Permis B & tarifs`,
     description: city.metaDescription,
     path: cityPath(city),
+    image: city.image,
     keywords: [
       `auto-école ${city.name}`,
       `auto-école ${nearCity(city.name)}`,
@@ -614,6 +617,7 @@ export const cities: City[] = [
       'RER A direct : l’une des liaisons les plus simples vers Nanterre depuis la boucle de Seine.',
       'Vous vous entraînez sur les axes du 92 où se déroulera votre épreuve, au lieu de les découvrir le jour J.',
     ],
+    image: '/blog/ville-sartrouville.webp',
     faqs: [
       {
         question: 'J’habite Sartrouville, dans les Yvelines : puis-je m’inscrire chez vous ?',
@@ -658,6 +662,7 @@ export const cities: City[] = [
       'Un quart d’heure par le pont de Bezons, sans traverser Paris ni La Défense.',
       'Formules affichées sans devis surprise, payables en 2 fois sans frais.',
     ],
+    image: '/blog/ville-argenteuil.webp',
     faqs: [
       {
         question: 'Faut-il habiter les Hauts-de-Seine pour s’inscrire ?',
@@ -702,6 +707,7 @@ export const cities: City[] = [
       'Conduite jusqu’à 20h en semaine et le samedi jusqu’à 15h : la leçon d’après-travail est notre créneau le plus demandé.',
       'Permis B manuel ou automatique, formule accélérée, conduite accompagnée dès 15 ans et code en salle comme en ligne.',
     ],
+    image: '/blog/ville-asnieres-sur-seine.webp',
     faqs: [
       {
         question: 'Comment venir d’Asnières-sur-Seine à votre auto-école ?',
@@ -746,6 +752,7 @@ export const cities: City[] = [
       'Des leçons sur les axes de Rueil et Nanterre, ceux qu’empruntent les parcours d’examen du secteur.',
       'Des tarifs affichés et payables en 2 fois sans frais, nettement plus doux que sur la rive yvelinoise.',
     ],
+    image: '/blog/ville-chatou.webp',
     faqs: [
       {
         question: 'Puis-je m’inscrire chez vous en habitant Chatou, dans les Yvelines ?',
@@ -790,6 +797,7 @@ export const cities: City[] = [
       'Un accompagnement sur les dispositifs d’aide au financement, notamment pour les demandeurs d’emploi.',
       'Conduite du lundi au samedi, avec des créneaux jusqu’à 20h en semaine.',
     ],
+    image: '/blog/ville-gennevilliers.webp',
     faqs: [
       {
         question: 'Comment venir de Gennevilliers jusqu’à votre auto-école ?',
