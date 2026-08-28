@@ -6,6 +6,7 @@
 
 - [Accueil](https://autoecoledespaquerettes.fr/): présentation, tarifs, financement CPF selon éligibilité, FAQ et contact
 - [Tarifs et formules](https://autoecoledespaquerettes.fr/tarifs): prix des formations permis B, boîte manuelle et automatique
+- [Permis moto](https://autoecoledespaquerettes.fr/permis-moto): permis AM (BSR), A1, A2, passerelle A et formation 125 pour les titulaires du permis B
 - [Inscription en ligne](https://autoecoledespaquerettes.fr/s-inscrire): formulaire de demande d'inscription au permis
 - [Blog](https://autoecoledespaquerettes.fr/blog): conseils permis, code de la route, sécurité et assurance
 - [Contact](https://autoecoledespaquerettes.fr/contact): coordonnées, horaires et itinéraire
@@ -26,6 +27,8 @@
 - Formules avec code de la route inclus
 - Formation accélérée (objectif permis en quelques semaines)
 - Révision code en ligne (pack web)
+- Permis moto : AM (BSR) dès 14 ans, A1 dès 16 ans, A2 dès 18 ans, passerelle A2 vers A
+- Formation 7h « 125 cm³ » pour les titulaires du permis B depuis 2 ans
 - Financement CPF selon les règles d'éligibilité en vigueur et paiement en 2 fois sans frais
 
 ## Tarifs indicatifs
@@ -49,6 +52,11 @@
 - [Auto-école près de Puteaux](https://autoecoledespaquerettes.fr/auto-ecole-puteaux)
 - [Auto-école près de Suresnes](https://autoecoledespaquerettes.fr/auto-ecole-suresnes)
 - [Auto-école près de Houilles](https://autoecoledespaquerettes.fr/auto-ecole-houilles)
+- [Auto-école près de Sartrouville](https://autoecoledespaquerettes.fr/auto-ecole-sartrouville)
+- [Auto-école près d’Argenteuil](https://autoecoledespaquerettes.fr/auto-ecole-argenteuil)
+- [Auto-école près d’Asnières-sur-Seine](https://autoecoledespaquerettes.fr/auto-ecole-asnieres-sur-seine)
+- [Auto-école près de Chatou](https://autoecoledespaquerettes.fr/auto-ecole-chatou)
+- [Auto-école près de Gennevilliers](https://autoecoledespaquerettes.fr/auto-ecole-gennevilliers)
 
 ## Sources publiques de référence
 
@@ -69,6 +77,10 @@
 - /blog/conduite-accompagnee-aac-guide-complet
 - /blog/echec-permis-que-faire-apres
 - /blog/papiers-inscription-permis-conduire-liste
+- /blog/ou-passer-code-route-centres-prix-delais
+- /blog/notation-permis-31-points-fautes-eliminatoires
+- /blog/conduite-supervisee-guide-complet
+- /blog/aides-financement-permis-conduire-2026
 - /blog/prix-permis-conduire-nanterre
 - /blog/examen-permis-hauts-de-seine-deroulement
 - /blog/permis-etudiant-paris-nanterre-universite

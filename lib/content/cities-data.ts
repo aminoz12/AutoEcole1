@@ -34,6 +34,11 @@ export interface City {
 
 export const cityPath = (city: City) => `/auto-ecole-${city.slug}`
 
+// « près de Argenteuil » est fautif. Les noms à initiale vocalique prennent
+// l'élision ; on laisse le H de Houilles, où l'usage garde « de Houilles ».
+export const nearCity = (name: string) =>
+  /^[aeiouyàâéèêîïôùû]/i.test(name) ? `près d’${name}` : `près de ${name}`
+
 export function getCity(slug: string): City {
   const city = cities.find((c) => c.slug === slug)
   if (!city) throw new Error(`Unknown city slug: ${slug}`)
@@ -42,12 +47,12 @@ export function getCity(slug: string): City {
 
 export function cityMetadata(city: City): Metadata {
   return createPageMetadata({
-    title: `Auto-école près de ${city.name} — Permis B & tarifs`,
+    title: `Auto-école ${nearCity(city.name)} — Permis B & tarifs`,
     description: city.metaDescription,
     path: cityPath(city),
     keywords: [
       `auto-école ${city.name}`,
-      `auto-école près de ${city.name}`,
+      `auto-école ${nearCity(city.name)}`,
       `permis de conduire ${city.name}`,
       `code de la route ${city.name}`,
     ],
@@ -580,6 +585,226 @@ export const cities: City[] = [
         question: 'Combien de temps de trajet depuis Houilles ?',
         answer:
           'Quelques minutes en RER A jusqu’aux gares de Nanterre, ou environ 15 minutes en voiture par le pont de Bezons.',
+      },
+    ],
+  },
+  {
+    slug: 'sartrouville',
+    name: 'Sartrouville',
+    schemaName: 'Sartrouville',
+    fromCity: 'depuis Sartrouville',
+    postalCode: '78500',
+    department: 'Yvelines (78)',
+    driveTime: '20 min',
+    distanceKm: 10,
+    metaDescription:
+      'Auto-école près de Sartrouville : permis B dès 899 €, boîte automatique dès 799 €, accéléré et code. RER A direct vers Nanterre. CPF selon éligibilité.',
+    intro: [
+      'Avec plus de cinquante mille habitants, Sartrouville est l’une des plus grandes communes des Yvelines — et l’offre d’auto-écoles y suit rarement la demande. Les listes d’attente pour démarrer la conduite s’allongent, et les délais de présentation à l’examen avec elles. À vingt minutes de là, notre agence de Nanterre garde des créneaux disponibles du lundi au samedi.',
+      'Le RER A relie directement la gare de Sartrouville aux gares de Nanterre, sans changement. Aucune condition de résidence n’existe pour choisir son auto-école : habiter les Yvelines ne vous empêche en rien de vous former dans les Hauts-de-Seine, et votre présentation à l’examen suivra le centre auquel notre établissement est rattaché.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Depuis la gare de Sartrouville, liaison directe vers les gares de Nanterre — sans changement, quelques minutes de trajet.' },
+      { mode: 'Voiture', detail: 'Environ 20 minutes en passant par le pont de Bezons puis l’avenue de la République.' },
+      { mode: 'Transilien L', detail: 'La ligne L dessert également Sartrouville en direction de Paris Saint-Lazare, avec correspondance vers Nanterre-Université.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Les Richebourgs', 'La Vaudoire', 'Cité des Indes'],
+    whyUs: [
+      'Des créneaux réellement disponibles, là où les délais s’allongent côté Yvelines.',
+      'RER A direct : l’une des liaisons les plus simples vers Nanterre depuis la boucle de Seine.',
+      'Vous vous entraînez sur les axes du 92 où se déroulera votre épreuve, au lieu de les découvrir le jour J.',
+    ],
+    faqs: [
+      {
+        question: 'J’habite Sartrouville, dans les Yvelines : puis-je m’inscrire chez vous ?',
+        answer:
+          'Oui, sans aucune restriction. Le choix de l’auto-école est libre et ne dépend ni de votre commune ni de votre département de résidence. Plusieurs de nos élèves viennent de Sartrouville et des communes voisines.',
+      },
+      {
+        question: 'Combien de temps de trajet depuis Sartrouville ?',
+        answer:
+          'Quelques minutes en RER A jusqu’aux gares de Nanterre, sans changement, ou une vingtaine de minutes en voiture par le pont de Bezons.',
+      },
+      {
+        question: 'Proposez-vous la boîte automatique et la formule accélérée ?',
+        answer:
+          'Oui, les deux. En boîte automatique, l’examen est possible dès 13 heures de conduite contre 20 heures en boîte manuelle, et la formule accélérée concentre code et conduite sur quelques semaines.',
+      },
+    ],
+  },
+  {
+    slug: 'argenteuil',
+    name: 'Argenteuil',
+    schemaName: 'Argenteuil',
+    fromCity: 'depuis Argenteuil',
+    postalCode: '95100',
+    department: 'Val-d’Oise (95)',
+    driveTime: '15 min',
+    distanceKm: 8,
+    metaDescription:
+      'Auto-école près d’Argenteuil : permis B dès 899 €, boîte auto dès 799 €, accéléré et code. À 15 min par le pont de Bezons. CPF selon éligibilité.',
+    intro: [
+      'Argenteuil est la commune la plus peuplée du Val-d’Oise, et ses auto-écoles absorbent une demande considérable. Résultat bien connu des candidats du secteur : des mois d’attente avant de commencer, puis avant d’être présenté. Franchir la Seine change souvent radicalement le calendrier.',
+      'Le pont de Bezons met notre agence du 375 avenue de la République à un quart d’heure du centre d’Argenteuil. Et le passage dans les Hauts-de-Seine a un intérêt pédagogique : les parcours d’examen du secteur empruntent les axes du 92, ceux-là mêmes sur lesquels se déroulent nos leçons.',
+    ],
+    access: [
+      { mode: 'Voiture', detail: 'Environ 15 minutes par le pont de Bezons puis l’avenue de la République — l’itinéraire le plus direct depuis le sud d’Argenteuil.' },
+      { mode: 'Tram T2', detail: 'Le terminus « Pont de Bezons », accessible en bus depuis Argenteuil, relie ensuite tout le secteur de La Défense.' },
+      { mode: 'Transilien J', detail: 'La ligne J dessert Argenteuil vers Paris Saint-Lazare, avec correspondance possible vers Nanterre.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Val d’Argent', 'Orgemont', 'Les Coteaux'],
+    whyUs: [
+      'Des délais de démarrage sans commune mesure avec ceux du secteur d’Argenteuil.',
+      'Un quart d’heure par le pont de Bezons, sans traverser Paris ni La Défense.',
+      'Formules affichées sans devis surprise, payables en 2 fois sans frais.',
+    ],
+    faqs: [
+      {
+        question: 'Faut-il habiter les Hauts-de-Seine pour s’inscrire ?',
+        answer:
+          'Non. Aucune condition de résidence n’existe pour choisir son auto-école. De nombreux élèves d’Argenteuil et du Val-d’Oise se forment chez nous.',
+      },
+      {
+        question: 'Où se déroulera mon examen si je viens d’Argenteuil ?',
+        answer:
+          'Votre présentation dépend du centre d’examen auquel notre établissement est rattaché, dans les Hauts-de-Seine. C’est précisément pour cela que nos leçons se déroulent sur les axes de Nanterre et des communes voisines.',
+      },
+      {
+        question: 'Combien de temps pour venir depuis Argenteuil ?',
+        answer:
+          'Environ 15 minutes en voiture par le pont de Bezons. En transports, comptez un bus jusqu’au secteur de Bezons puis une correspondance vers Nanterre.',
+      },
+    ],
+  },
+  {
+    slug: 'asnieres-sur-seine',
+    name: 'Asnières-sur-Seine',
+    schemaName: 'Asnières-sur-Seine',
+    fromCity: 'depuis Asnières-sur-Seine',
+    postalCode: '92600',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '15 min',
+    distanceKm: 8,
+    metaDescription:
+      'Auto-école près d’Asnières-sur-Seine : ligne L directe vers Nanterre-Université. Permis B dès 899 €, boîte auto, accéléré et code. CPF selon éligibilité.',
+    intro: [
+      'Depuis Asnières-sur-Seine, rejoindre notre auto-école ne demande pas de changement : la ligne L relie directement la gare d’Asnières à Nanterre-Université, en desservant Bécon-les-Bruyères, Courbevoie et La Garenne-Colombes. C’est l’une des liaisons les plus confortables de tout notre secteur.',
+      'Asnières compte près de quatre-vingt-dix mille habitants et une forte proportion de jeunes actifs. Pour eux, la difficulté n’est pas le trajet mais le planning : c’est pourquoi nous conduisons jusqu’à 20h en semaine et le samedi jusqu’à 15h, de façon à caser une leçon après le travail.',
+    ],
+    access: [
+      { mode: 'Transilien L', detail: 'Gare d’Asnières-sur-Seine → Nanterre-Université sans changement, via Bécon-les-Bruyères, Courbevoie et La Garenne-Colombes.' },
+      { mode: 'Voiture', detail: 'Environ 15 minutes par Colombes et l’avenue de la République.' },
+      { mode: 'Bus', detail: 'Plusieurs lignes relient Asnières à Colombes et à Nanterre, en complément du train.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Bourguignons', 'Le Bac d’Asnières', 'Voltaire'],
+    whyUs: [
+      'Une liaison ferroviaire directe vers Nanterre-Université, sans aucun changement.',
+      'Conduite jusqu’à 20h en semaine et le samedi jusqu’à 15h : la leçon d’après-travail est notre créneau le plus demandé.',
+      'Permis B manuel ou automatique, formule accélérée, conduite accompagnée dès 15 ans et code en salle comme en ligne.',
+    ],
+    faqs: [
+      {
+        question: 'Comment venir d’Asnières-sur-Seine à votre auto-école ?',
+        answer:
+          'La ligne L relie la gare d’Asnières-sur-Seine à Nanterre-Université sans changement. En voiture, comptez une quinzaine de minutes par Colombes.',
+      },
+      {
+        question: 'Puis-je prendre des leçons après le travail ?',
+        answer:
+          'Oui. Nos moniteurs conduisent de 10h à 20h du lundi au vendredi et le samedi de 9h à 15h. Le créneau de fin de journée est le plus réservé par nos élèves du secteur.',
+      },
+      {
+        question: 'Le code se prépare-t-il en salle ou en ligne ?',
+        answer:
+          'Les deux, au choix. Les séances en salle se tiennent à Nanterre, et notre pack de révision en ligne vous permet de travailler depuis chez vous ou dans le train.',
+      },
+    ],
+  },
+  {
+    slug: 'chatou',
+    name: 'Chatou',
+    schemaName: 'Chatou',
+    fromCity: 'depuis Chatou',
+    postalCode: '78400',
+    department: 'Yvelines (78)',
+    driveTime: '15 min',
+    distanceKm: 8,
+    metaDescription:
+      'Auto-école près de Chatou : RER A direct vers Nanterre. Permis B dès 899 €, boîte automatique dès 799 €, accéléré et code. CPF selon éligibilité.',
+    intro: [
+      'La gare de Chatou–Croissy est sur le RER A : quelques stations suffisent pour rejoindre Nanterre, en passant par Rueil-Malmaison. C’est un trajet que font quotidiennement de nombreux Catoviens, et il rend notre auto-école aussi accessible qu’un établissement du centre-ville.',
+      'L’intérêt ne se limite pas au tarif. Entre les berges de Seine, l’île des Impressionnistes et les axes qui filent vers Rueil et Nanterre, le secteur offre une variété de situations de conduite bien plus formatrice qu’un apprentissage cantonné aux rues résidentielles — et c’est sur ces axes du 92 que se déroulent les parcours d’examen.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Gare de Chatou–Croissy → gares de Nanterre en quelques stations, via Rueil-Malmaison, sans changement.' },
+      { mode: 'Voiture', detail: 'Environ 15 minutes par Rueil-Malmaison et l’avenue Georges-Clemenceau.' },
+      { mode: 'Bus', detail: 'Les lignes reliant Chatou à Rueil-Malmaison permettent de rejoindre le RER A ou de poursuivre vers Nanterre.' },
+    ],
+    neighborhoods: ['Centre-ville', 'Le Village', 'Les Landes', 'Île des Impressionnistes'],
+    whyUs: [
+      'RER A direct depuis Chatou–Croissy : quelques stations, sans changement.',
+      'Des leçons sur les axes de Rueil et Nanterre, ceux qu’empruntent les parcours d’examen du secteur.',
+      'Des tarifs affichés et payables en 2 fois sans frais, nettement plus doux que sur la rive yvelinoise.',
+    ],
+    faqs: [
+      {
+        question: 'Puis-je m’inscrire chez vous en habitant Chatou, dans les Yvelines ?',
+        answer:
+          'Oui. Le choix de l’auto-école est entièrement libre et ne dépend pas de votre département de résidence. Le RER A rend le trajet très simple depuis Chatou–Croissy.',
+      },
+      {
+        question: 'Combien de stations depuis Chatou ?',
+        answer:
+          'Quelques stations de RER A en passant par Rueil-Malmaison, sans changement. En voiture, comptez une quinzaine de minutes.',
+      },
+      {
+        question: 'Proposez-vous la conduite accompagnée ?',
+        answer:
+          'Oui, dès 15 ans. Cette formule affiche le meilleur taux de réussite au niveau national et réduit la période probatoire à 2 ans au lieu de 3.',
+      },
+    ],
+  },
+  {
+    slug: 'gennevilliers',
+    name: 'Gennevilliers',
+    schemaName: 'Gennevilliers',
+    fromCity: 'depuis Gennevilliers',
+    postalCode: '92230',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '15 min',
+    distanceKm: 8,
+    metaDescription:
+      'Auto-école près de Gennevilliers : permis B dès 899 €, boîte automatique dès 799 €, accéléré et code à Nanterre. Métro 13 et T1. CPF selon éligibilité.',
+    intro: [
+      'Gennevilliers compte l’une des populations les plus jeunes des Hauts-de-Seine, et une part importante de ses habitants passe le permis pour accéder à l’emploi — notamment autour du port et des zones d’activité. Pour ce public, deux choses comptent avant tout : le budget et le délai.',
+      'Nos formules sont affichées sans devis surprise et payables en 2 fois sans frais, et nous gardons des créneaux de conduite du lundi au samedi. Si vous êtes inscrit à France Travail, une aide au financement peut par ailleurs être mobilisée : nous en détaillons les conditions dans notre guide des aides au permis.',
+    ],
+    access: [
+      { mode: 'Métro 13', detail: 'Les stations Gabriel Péri et Les Courtilles desservent Gennevilliers, avec correspondances bus vers Colombes et Nanterre.' },
+      { mode: 'Voiture', detail: 'Environ 15 minutes par Colombes et l’avenue de la République.' },
+      { mode: 'Tram T1', detail: 'Le T1 traverse Gennevilliers et permet de rejoindre les correspondances vers le secteur de Nanterre.' },
+    ],
+    neighborhoods: ['Le Luth', 'Les Agnettes', 'Village', 'Les Grésillons'],
+    whyUs: [
+      'Des tarifs affichés parmi les plus accessibles du secteur, payables en 2 fois sans frais.',
+      'Un accompagnement sur les dispositifs d’aide au financement, notamment pour les demandeurs d’emploi.',
+      'Conduite du lundi au samedi, avec des créneaux jusqu’à 20h en semaine.',
+    ],
+    faqs: [
+      {
+        question: 'Comment venir de Gennevilliers jusqu’à votre auto-école ?',
+        answer:
+          'Comptez une quinzaine de minutes en voiture par Colombes. En transports, le métro 13 et le T1 desservent Gennevilliers, avec des correspondances bus vers Nanterre.',
+      },
+      {
+        question: 'Existe-t-il des aides pour financer le permis ?',
+        answer:
+          'Plusieurs dispositifs existent selon votre situation : aide de France Travail pour les demandeurs d’emploi, permis à 1 € par jour pour les 15-25 ans, aides communales ou de la mission locale. Le CPF reste possible selon les règles d’éligibilité en vigueur.',
+      },
+      {
+        question: 'Proposez-vous une formule accélérée ?',
+        answer:
+          'Oui. Code et conduite peuvent être concentrés sur quelques semaines si vos disponibilités le permettent — une formule souvent choisie lorsque le permis conditionne une embauche.',
       },
     ],
   },

@@ -14,6 +14,136 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '27',
+    title: 'Où passer le code de la route ? Centres, prix et délais',
+    slug: 'ou-passer-code-route-centres-prix-delais',
+    excerpt: "30 € dans n'importe quel centre agréé, une place souvent disponible sous 48 heures : voici comment et où passer l'épreuve du code, et ce qui change d'un opérateur à l'autre.",
+    content: `<p>Depuis la réforme de 2016, l'examen du code de la route n'est plus organisé par l'État mais par des opérateurs privés agréés. Conséquence directe pour vous&nbsp;: le tarif est fixe, les délais se comptent en jours, et vous choisissez librement votre centre. Voici ce qu'il faut savoir avant de réserver.</p>
+<h2>Combien ça coûte&nbsp;: 30 €, partout</h2>
+<p>Le tarif de l'épreuve théorique est <strong>réglementé à 30 €</strong>. Ce prix est identique quel que soit l'opérateur&nbsp;: aucun centre ne peut facturer davantage pour l'examen lui-même. Si on vous annonce un montant supérieur, c'est qu'il inclut autre chose — un pack de révision, par exemple.</p>
+<p>En cas d'échec, chaque nouvelle présentation coûte à nouveau 30 €. C'est la raison pour laquelle il vaut mieux se présenter réellement prêt&nbsp;: nos <a href="/blog/5-astuces-reussir-code-route-premier-coup">5 astuces pour réussir du premier coup</a> détaillent la méthode.</p>
+<h2>Qui organise l'examen&nbsp;?</h2>
+<p>Plusieurs opérateurs sont agréés sur le territoire, parmi lesquels&nbsp;:</p>
+<ul><li><strong>La Poste</strong> — le réseau le plus dense, avec des sessions dans de nombreux bureaux.</li><li><strong>SGS</strong>, sous la marque Objectif Code.</li><li><strong>Dekra</strong>, <strong>Code'nGo</strong> et <strong>Bureau Veritas</strong>, selon les départements.</li></ul>
+<p>Le contenu de l'épreuve est rigoureusement identique chez tous&nbsp;: même banque de questions officielle, même barème. Ce qui change, ce sont les créneaux disponibles, la localisation des salles et l'ergonomie de la réservation. Choisissez donc le centre le plus pratique pour vous, pas celui réputé « plus facile » — cette réputation n'a aucun fondement.</p>
+<h2>Le déroulé de l'épreuve</h2>
+<ul><li><strong>40 questions</strong> à choix multiple, sur tablette individuelle.</li><li><strong>35 bonnes réponses minimum</strong> pour être reçu — vous n'avez donc droit qu'à 5 erreurs.</li><li>Environ <strong>30 minutes</strong>, avec un temps de réflexion limité par question.</li><li>Une pièce d'identité en cours de validité et votre convocation sont exigées à l'entrée. Sans pièce d'identité valide, l'accès est refusé et la somme n'est pas remboursée.</li></ul>
+<h2>Comment réserver</h2>
+<p>La réservation se fait directement sur le site de l'opérateur choisi, avec votre <strong>numéro NEPH</strong>. C'est le seul prérequis&nbsp;: sans NEPH, aucune inscription n'est possible. Si vous passez par nous, ce numéro vous est communiqué dès l'ouverture de votre dossier — voir notre <a href="/blog/papiers-inscription-permis-conduire-liste">liste des pièces à fournir</a>.</p>
+<p>Les délais sont l'un des grands acquis de la réforme&nbsp;: là où il fallait patienter des mois avant 2016, une place se trouve aujourd'hui souvent <strong>sous 48 heures</strong> en Île-de-France, grâce à la densité de centres du secteur.</p>
+<h2>Les résultats</h2>
+<p>Le résultat n'est pas communiqué immédiatement en salle. Il vous parvient généralement <strong>sous 48 heures</strong>, par courriel ou depuis votre espace personnel sur le site de la Sécurité routière, selon l'opérateur.</p>
+<h2>Une fois le code obtenu</h2>
+<p>Votre code reste valable <strong>5 ans</strong> et couvre jusqu'à <strong>5 présentations</strong> à l'épreuve pratique. Vous n'avez donc rien à repasser tant que vous restez dans ces limites, y compris après un échec à la conduite — un point que beaucoup de candidats ignorent, comme nous l'expliquons dans notre article sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a>.</p>
+<h2>Et pour la moto</h2>
+<p>Attention&nbsp;: le code voiture ne vaut pas pour les deux-roues. Depuis mars 2020, une épreuve théorique moto distincte (l'ETM) est exigée pour les permis A1 et A2. Le détail figure sur notre page <a href="/permis-moto">permis moto à Nanterre</a>.</p>
+<h2>Réviser avant de réserver</h2>
+<p>Ne réservez pas votre place tant que vous n'obtenez pas régulièrement 37 ou 38 sur 40 en test blanc. Notre <a href="/prestations-a-l-unite">Pack Web</a> donne accès aux séries et aux cours en ligne, en complément des séances en salle — et nos formules <a href="/tarifs">code + conduite</a> intègrent la préparation complète.</p>`,
+    featured_image: '/code.png',
+    author_name: 'Julien Moreau',
+    category: 'Code',
+    tags: ['code de la route', 'examen code', 'prix code', 'La Poste', 'Objectif Code'],
+    published_at: '2026-08-18',
+    views_count: 0
+  },
+  {
+    id: '26',
+    title: 'Notation du permis : les 31 points et les fautes éliminatoires',
+    slug: 'notation-permis-31-points-fautes-eliminatoires',
+    excerpt: "20 points sur 31 pour être reçu, mais une seule faute éliminatoire suffit à tout arrêter. Voici comment l'inspecteur vous note réellement pendant les 32 minutes de l'épreuve.",
+    content: `<p>Beaucoup de candidats abordent l'épreuve pratique sans savoir précisément sur quoi ils sont évalués. C'est dommage&nbsp;: la grille de notation est publique, et la comprendre change la façon de conduire le jour J. Décryptage.</p>
+<h2>Le principe&nbsp;: 20 points sur 31</h2>
+<p>L'inspecteur remplit une grille d'évaluation comportant plusieurs compétences, chacune notée de <strong>0 à 3 points</strong>. Le total maximum est de <strong>31 points</strong>, et il faut en obtenir <strong>20 au minimum</strong> pour être reçu.</p>
+<p>Autrement dit&nbsp;: vous pouvez perdre 11 points et décrocher tout de même votre permis. L'examen ne cherche pas la perfection, mais un conducteur autonome et sûr.</p>
+<h2>Ce qui est évalué</h2>
+<p>Les compétences notées se regroupent en grandes familles&nbsp;:</p>
+<ul><li><strong>Connaître et maîtriser son véhicule</strong> — installation au poste de conduite, utilisation des commandes, vérifications.</li><li><strong>Appréhender la route et circuler</strong> — allure adaptée, positionnement sur la chaussée, franchissement des intersections, dépassements.</li><li><strong>Partager la route avec les autres usagers</strong> — piétons, cyclistes, deux-roues, transports en commun.</li><li><strong>Automatiser les contrôles</strong> — rétroviseurs, angles morts, clignotants.</li><li><strong>Faire preuve d'autonomie</strong> — savoir décider seul, y compris pendant la phase de conduite libre.</li><li><strong>Courtoisie au volant</strong> — un point souvent sous-estimé, qui se joue sur des détails.</li></ul>
+<p>Un <strong>point bonus</strong> peut être accordé pour une conduite économique et respectueuse de l'environnement&nbsp;: anticipation, souplesse, utilisation raisonnée des rapports.</p>
+<h2>Les fautes éliminatoires</h2>
+<p>C'est l'autre versant de la notation, et le plus impitoyable&nbsp;: <strong>une seule faute éliminatoire entraîne l'échec</strong>, quel que soit votre total de points. Vous pouvez avoir 28 points et échouer.</p>
+<p>Entrent notamment dans cette catégorie&nbsp;:</p>
+<ul><li>toute <strong>intervention de l'examinateur</strong> sur les commandes — pédale ou volant&nbsp;;</li><li>le <strong>non-respect d'un feu rouge, d'un stop ou d'une priorité</strong>&nbsp;;</li><li>le <strong>franchissement d'une ligne continue</strong>&nbsp;;</li><li>la <strong>circulation à contresens</strong>&nbsp;;</li><li>toute manœuvre <strong>mettant en danger</strong> un autre usager.</li></ul>
+<p>À l'inverse, caler, hésiter ou rater un créneau ne sont pas éliminatoires&nbsp;: ce sont des points en moins, rien de plus. C'est une source d'angoisse inutile pour beaucoup de candidats.</p>
+<h2>Les erreurs qui coûtent le plus de points</h2>
+<p>D'expérience, ce ne sont presque jamais des fautes spectaculaires&nbsp;:</p>
+<ul><li><strong>Une allure trop timide</strong> — rouler à 40 là où la limite est à 50 est sanctionné au même titre qu'un excès. Une conduite trop lente gêne la circulation et traduit un manque d'assurance.</li><li><strong>Des contrôles non visibles</strong> — l'inspecteur doit voir votre regard bouger. Un contrôle fait « du coin de l'œil » ne compte pas.</li><li><strong>Le manque d'autonomie</strong> — attendre une instruction au lieu de décider soi-même, surtout pendant la conduite libre.</li></ul>
+<p>Notre article sur les <a href="/blog/erreurs-eviter-jour-examen-conduite">erreurs à éviter le jour de l'examen</a> détaille chacun de ces points.</p>
+<h2>Le déroulé et le résultat</h2>
+<p>L'épreuve dure environ <strong>32 minutes</strong> et comprend une phase de conduite autonome, une manœuvre, et des questions de vérification intérieure ou extérieure ainsi qu'une question de premiers secours.</p>
+<p>Le résultat n'est jamais communiqué sur place. Il est consultable <strong>sous 48 heures</strong> sur le site de la Sécurité routière, accompagné du bilan de compétences détaillé — le document à lire absolument, comme nous l'expliquons dans notre guide sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a>.</p>
+<h2>Se préparer sur les bons parcours</h2>
+<p>Connaître la grille ne suffit pas&nbsp;: encore faut-il s'entraîner là où l'on sera évalué. Nos leçons se déroulent sur les axes de Nanterre et des Hauts-de-Seine empruntés par les parcours d'examen du secteur — le détail est dans notre article sur <a href="/blog/examen-permis-hauts-de-seine-deroulement">l'examen du permis dans les Hauts-de-Seine</a>.</p>`,
+    featured_image: '/permis.png',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ['notation permis', 'faute éliminatoire', 'examen pratique', '31 points', 'grille évaluation'],
+    published_at: '2026-08-17',
+    views_count: 0
+  },
+  {
+    id: '25',
+    title: 'Conduite supervisée : le guide complet',
+    slug: 'conduite-supervisee-guide-complet',
+    excerpt: "Accessible dès 18 ans, sans durée ni kilométrage imposés, et particulièrement efficace après un échec à l'examen : la conduite supervisée reste la formule la plus méconnue du permis.",
+    content: `<p>Entre la formation classique et la conduite accompagnée, il existe une troisième voie que peu de candidats connaissent&nbsp;: la <strong>conduite supervisée</strong>. Elle permet de conduire avec un proche, sans les contraintes de l'AAC, et se révèle redoutablement efficace dans deux situations précises.</p>
+<h2>De quoi s'agit-il&nbsp;?</h2>
+<p>La conduite supervisée autorise un candidat majeur à conduire accompagné d'un titulaire du permis B, en dehors des leçons avec un moniteur. Le principe est celui de la conduite accompagnée — accumuler de l'expérience réelle — mais le cadre est nettement plus souple.</p>
+<h2>Les deux portes d'entrée</h2>
+<p><strong>1. Après la formation initiale.</strong> Une fois le code obtenu et les 20 heures de conduite réglementaires validées, si vous ne vous sentez pas prêt ou si les délais d'examen s'allongent, vous pouvez passer en conduite supervisée plutôt que d'attendre sans conduire.</p>
+<p><strong>2. Après un échec à l'épreuve pratique.</strong> C'est l'usage le plus pertinent, et le plus sous-employé. Plutôt que de racheter un forfait complet, vous accumulez des kilomètres à coût quasi nul en attendant votre nouvelle présentation, en complément de quelques heures ciblées avec un moniteur. Notre article sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a> replace cette option dans une stratégie de reprise complète.</p>
+<h2>Ce qui la distingue de la conduite accompagnée</h2>
+<p>La différence tient en quatre points&nbsp;:</p>
+<ul><li><strong>Âge</strong> — 15 ans pour l'AAC, <strong>18 ans</strong> pour la supervisée.</li><li><strong>Durée minimale</strong> — un an pour l'AAC, <strong>aucune</strong> pour la supervisée.</li><li><strong>Kilométrage</strong> — 3 000 km pour l'AAC, <strong>aucun minimum</strong> pour la supervisée.</li><li><strong>Période probatoire</strong> — réduite à 2 ans avec l'AAC, mais <strong>maintenue à 3 ans</strong> avec la supervisée.</li></ul>
+<p>C'est le point à retenir&nbsp;: la conduite supervisée <strong>ne réduit pas la période probatoire</strong>. Si vous avez le choix et l'âge pour l'AAC, celle-ci reste plus avantageuse — voir notre <a href="/blog/conduite-accompagnee-aac-guide-complet">guide de la conduite accompagnée</a>. La supervisée, elle, répond à un besoin différent&nbsp;: gagner de l'expérience vite, sans contrainte de calendrier.</p>
+<h2>Les conditions à respecter</h2>
+<ul><li>Avoir <strong>obtenu le code</strong> et validé la formation initiale en auto-école.</li><li>Participer à un <strong>rendez-vous préalable</strong> avec l'enseignant, l'élève et le ou les accompagnateurs.</li><li>L'accompagnateur doit détenir le <strong>permis B depuis au moins 5 ans sans interruption</strong>.</li><li>Obtenir l'<strong>accord de l'assureur</strong> du véhicule — démarche gratuite chez la quasi-totalité des compagnies.</li><li>Apposer le <strong>disque « conduite supervisée »</strong> à l'arrière du véhicule et respecter les vitesses réduites applicables.</li></ul>
+<h2>Bien l'utiliser</h2>
+<p>La conduite supervisée n'a d'intérêt que si elle vous confronte à ce que vous maîtrisez mal. Reproduire chaque semaine le même trajet domicile-travail n'apporte presque rien. Ciblez au contraire&nbsp;:</p>
+<ul><li>les <strong>situations pointées dans votre bilan de compétences</strong> si vous venez d'échouer&nbsp;;</li><li>les <strong>giratoires et insertions sur voie rapide</strong>, qui concentrent les points perdus&nbsp;;</li><li>la <strong>conduite de nuit et sous la pluie</strong> — voir nos <a href="/blog/conduite-nuit-regles-precautions">règles de conduite de nuit</a>&nbsp;;</li><li>les <strong>manœuvres de stationnement</strong>, rarement travaillées en volume suffisant pendant les leçons.</li></ul>
+<h2>Et le rôle de l'accompagnateur&nbsp;?</h2>
+<p>Le même que pour l'AAC&nbsp;: observer, laisser conduire, et débriefer à l'arrêt plutôt que de corriger en continu. Un accompagnateur qui commente chaque geste empêche le conducteur d'installer ses propres automatismes.</p>
+<h2>Se lancer à Nanterre</h2>
+<p>Nous accompagnons régulièrement des élèves en conduite supervisée, notamment après un premier échec. La démarche démarre par une évaluation et un rendez-vous préalable&nbsp;: <a href="/contact">contactez-nous</a> ou consultez nos <a href="/tarifs">formules</a>.</p>`,
+    featured_image: '/blog2.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ['conduite supervisée', 'après échec permis', 'permis B', 'accompagnateur'],
+    published_at: '2026-08-16',
+    views_count: 0
+  },
+  {
+    id: '24',
+    title: 'Financer son permis en 2026 : toutes les aides possibles',
+    slug: 'aides-financement-permis-conduire-2026',
+    excerpt: "CPF, permis à 1 € par jour, France Travail, aides locales : le tour complet des dispositifs qui existent encore en 2026, et de ceux qui ont changé.",
+    content: `<p>Le permis représente un budget conséquent, et les dispositifs d'aide sont nombreux — mais ils changent vite, et beaucoup d'informations qui circulent sont périmées. Voici l'état des lieux, avec les évolutions récentes.</p>
+<h2>Le CPF&nbsp;: des règles nettement plus strictes en 2026</h2>
+<p>C'est le changement majeur de l'année. La mobilisation du CPF pour les permis du groupe léger est désormais réservée aux <strong>demandeurs d'emploi inscrits à France Travail</strong> et aux <strong>salariés bénéficiant d'un cofinancement par un tiers</strong> (employeur, Opco, région). Un salarié ne peut plus, seul, financer son permis avec son CPF.</p>
+<p>Le montant mobilisable est par ailleurs <strong>plafonné à 900 €</strong>, et une participation forfaitaire reste à votre charge selon votre situation. Le détail complet, avec les pièces à réunir, est dans notre article dédié&nbsp;: <a href="/blog/financement-cpf-compte-permis">CPF permis 2026</a>.</p>
+<h2>Le permis à 1 € par jour</h2>
+<p>Souvent mal compris&nbsp;: ce n'est pas une subvention mais un <strong>prêt à taux zéro</strong>. L'État prend en charge les intérêts, vous remboursez le capital à raison de 30 € par mois.</p>
+<ul><li>Réservé aux <strong>15-25 ans</strong>.</li><li>L'auto-école doit être <strong>conventionnée</strong> pour le dispositif.</li><li>Le prêt est accordé par un établissement bancaire partenaire, sous conditions de solvabilité — souvent avec la caution d'un parent.</li></ul>
+<p>L'avantage réel est la trésorerie&nbsp;: vous étalez le coût sans payer d'intérêts. Mais vous remboursez bien l'intégralité de la formation.</p>
+<h2>Les aides de France Travail</h2>
+<p>Si vous êtes inscrit et que l'absence de permis constitue un frein documenté à l'embauche, une aide peut être mobilisée. Elle n'est pas automatique&nbsp;: elle se négocie avec votre conseiller, dans le cadre d'un projet professionnel précis. Le réflexe à avoir&nbsp;: en parler <strong>avant</strong> de vous inscrire, pas après.</p>
+<h2>Les aides locales, les plus oubliées</h2>
+<p>Ce sont souvent les plus accessibles, et personne ne pense à les demander&nbsp;:</p>
+<ul><li>votre <strong>commune</strong> — certaines villes proposent une aide en contrepartie de quelques heures de bénévolat&nbsp;;</li><li>votre <strong>département</strong> ou votre <strong>région</strong>&nbsp;;</li><li>la <strong>mission locale</strong>, si vous avez entre 16 et 25 ans&nbsp;;</li><li>votre <strong>caisse d'allocations familiales</strong> ou votre comité d'entreprise&nbsp;;</li><li>certaines <strong>mutuelles et assurances</strong> proposent un coup de pouce à leurs adhérents.</li></ul>
+<p>Un appel à votre mairie et à la mission locale de Nanterre coûte quelques minutes et peut représenter plusieurs centaines d'euros.</p>
+<h2>Apprentis et alternants</h2>
+<p>Le dispositif d'aide destiné aux apprentis a <strong>évolué en 2026</strong>. Les conditions changent régulièrement&nbsp;: renseignez-vous directement auprès de votre CFA ou de votre région plutôt que de vous fier à un article — y compris celui-ci — sur les montants en vigueur.</p>
+<h2>Ce qui reste le plus efficace&nbsp;: ne pas dépasser le forfait</h2>
+<p>Aucune aide ne compense un forfait mal choisi. Un forfait d'appel très bas assorti d'heures supplémentaires chères revient plus cher qu'un forfait complet à prix affiché. C'est le premier des <a href="/blog/comment-choisir-auto-ecole-criteres-essentiels">6 critères pour choisir son auto-école</a>, et le détail du calcul est dans notre article sur <a href="/blog/prix-permis-conduire-nanterre">le prix du permis à Nanterre</a>.</p>
+<h2>Nos modalités</h2>
+<p>Nos prix sont affichés sans devis surprise, et payables <strong>en 2 fois sans frais</strong>. Le forfait 20 heures en boîte manuelle démarre à 899 €, la boîte automatique 13 heures à 799 € — grille complète sur notre <a href="/tarifs">page tarifs</a>. Pour étudier votre situation et les dispositifs auxquels vous pouvez prétendre, <a href="/contact">appelez-nous</a>&nbsp;: c'est souvent réglé en quelques minutes.</p>`,
+    featured_image: '/cpf.svg',
+    author_name: 'Julien Moreau',
+    category: 'Conseils',
+    tags: ['financement permis', 'CPF', 'permis à 1 euro', 'France Travail', 'aides'],
+    published_at: '2026-08-15',
+    views_count: 0
+  },
+  {
     id: '23',
     title: 'Boîte automatique ou boîte manuelle : quel permis choisir en 2026 ?',
     slug: 'permis-boite-automatique-ou-manuelle-choisir',
@@ -416,9 +546,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '1',
-    title: '5 Astuces pour Réussir votre Code de la Route du Premier Coup',
+    title: 'Réussir le code du premier coup : 5 astuces',
     slug: '5-astuces-reussir-code-route-premier-coup',
-    excerpt: "Découvrez les meilleures stratégies et techniques pour réussir votre examen du code de la route dès la première tentative. Nos experts partagent leurs conseils.",
+    excerpt: "35 bonnes réponses sur 40 pour être reçu. Voici les 5 méthodes qui séparent ceux qui décrochent le code du premier coup de ceux qui doivent le repasser.",
     content: `<p>Réaliser son code de la route du premier coup est l'objectif de tout candidat. Voici nos 5 astuces essentielles pour maximiser vos chances de succès.</p>
 <h2>1. Préparez-vous avec les bonnes ressources</h2>
 <p>Utilisez des applications sérieuses et reconnues pour votre préparation. Les tests en ligne simulant les conditions réelles de l'examen sont particulièrement efficaces. Entraînez-vous régulièrement, au moins 30 minutes par jour.</p>
@@ -450,9 +580,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    title: 'Comment Choisir sa Auto-École : Les Critères Essentiels',
+    title: 'Comment choisir son auto-école : 6 critères',
     slug: 'comment-choisir-auto-ecole-criteres-essentiels',
-    excerpt: "Le choix de votre auto-école est crucial pour réussir votre permis. Découvrez les critères à prendre en compte pour faire le bon choix.",
+    excerpt: "Forfait affiché, prix des heures supplémentaires, taux de réussite, disponibilité des moniteurs : les 6 critères à vérifier avant de signer — et le piège du forfait trop bas.",
     content: `<p>Choisir la bonne <a href="/tarifs">auto-école</a> est une décision importante qui peut influencer votre réussite au permis de conduire. Voici les critères essentiels à considérer.</p>
 <h2>1. Le taux de réussite</h2>
 <p>Renseignez-vous sur le taux de réussite de l'auto-école. Un bon taux (supérieur à 70%) indique généralement une qualité d'enseignement. N'hésitez pas à demander ces chiffres.</p>
@@ -564,9 +694,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '5',
-    title: 'Financement CPF : Comment Utiliser votre Compte pour le Permis',
+    title: 'CPF permis 2026 : conditions, montant et pièces à fournir',
     slug: 'financement-cpf-compte-permis',
-    excerpt: "Les règles CPF pour financer le permis ont changé en 2026. Voici les conditions à vérifier avant toute inscription.",
+    excerpt: "Plafond à 900 €, salariés désormais soumis à un cofinancement : les règles CPF ont changé en 2026. Conditions, montant mobilisable et pièces justificatives à réunir.",
     content: `<p>Le Compte Personnel de Formation (CPF) peut financer une préparation au permis de conduire, mais les conditions ont évolué en 2026. Vérifiez toujours votre situation dans votre espace personnel avant de vous inscrire : l'éligibilité dépend du permis préparé et de votre situation professionnelle.</p>
 <h2>Qui peut utiliser son CPF pour le permis B ?</h2>
 <p>Depuis le 20 février 2026, la mobilisation du CPF pour les permis du groupe léger, dont le permis B, est réservée aux <strong>demandeurs d'emploi inscrits à France Travail</strong> et aux <strong>salariés bénéficiant d'un financement d'un tiers</strong> (par exemple un abondement de l'employeur, d'un Opco, d'une région ou du FIPHFP).</p>
@@ -582,6 +712,10 @@ export const blogPosts: BlogPost[] = [
 <p>Vérifiez que l'offre correspond au permis souhaité, que l'organisme est bien référencé et que le contenu, le prix et les dates vous conviennent. Nos <a href="/tarifs">formules et tarifs</a> permettent de préparer votre échange avec l'auto-école.</p>
 <h3>3. Finalisez la demande sur la plateforme</h3>
 <p>La demande CPF se réalise dans votre espace personnel. Ne communiquez jamais vos identifiants à un tiers et lisez les informations affichées par la plateforme avant validation.</p>
+<h2>Quelles pièces justificatives faut-il fournir ?</h2>
+<p>C'est la question qui bloque le plus de dossiers. La demande se fait intégralement en ligne, mais plusieurs éléments doivent être prêts avant de commencer :</p>
+<ul><li><strong>Votre identité vérifiée</strong> — la connexion à Mon Compte Formation passe par FranceConnect+. Prévoyez votre pièce d'identité et votre téléphone : c'est l'étape qui prend le plus de temps si vous ne l'avez jamais faite.</li><li><strong>Votre numéro NEPH</strong> — le numéro d'enregistrement préparatoire à l'examen. Si vous n'en avez pas encore, nous nous en chargeons : voir notre <a href="/blog/papiers-inscription-permis-conduire-liste">liste des pièces d'inscription au permis</a>.</li><li><strong>Une déclaration liée à votre projet professionnel</strong> — le permis doit s'inscrire dans un parcours professionnel, et la plateforme vous le fait déclarer.</li><li><strong>Le justificatif de votre situation</strong> — attestation d'inscription à France Travail pour un demandeur d'emploi, ou accord écrit du financeur tiers pour un salarié.</li><li><strong>Un permis ni suspendu ni annulé</strong> — le financement est exclu dans ces situations.</li></ul>
+<p>Aucune pièce ne se transmet à l'auto-école : tout passe par votre espace personnel. Méfiez-vous de tout interlocuteur qui vous demanderait vos identifiants ou vos justificatifs par téléphone — c'est le mode opératoire classique de la fraude au CPF.</p>
 <h2>Et si le CPF ne couvre pas la formation ?</h2>
 <p>Selon votre éligibilité et le montant disponible, un reste à charge peut subsister. Parlez-en avec nous avant votre inscription : nous vous expliquerons les prix de nos formations et les modalités de paiement disponibles, sans promettre de prise en charge.</p>
 <h2>À retenir</h2>

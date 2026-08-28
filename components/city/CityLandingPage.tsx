@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { JsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
 import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
-import { cities, cityPath, type City } from '@/lib/content/cities-data'
+import { cities, cityPath, nearCity, type City } from '@/lib/content/cities-data'
 
 // Local-SEO landing page shared by every /auto-ecole-<ville> route. All the
 // city-specific substance lives in lib/content/cities-data.ts.
@@ -21,7 +21,7 @@ export default function CityLandingPage({ city }: { city: City }) {
           '@type': 'Service',
           '@id': `${absoluteUrl(path)}#service`,
           serviceType: 'Formation au permis de conduire',
-          name: `Auto-école près de ${city.name} — ${siteConfig.name}`,
+          name: `Auto-école ${nearCity(city.name)} — ${siteConfig.name}`,
           description: city.metaDescription,
           url: absoluteUrl(path),
           provider: { '@id': `${siteConfig.url}/#organization` },
@@ -36,7 +36,7 @@ export default function CityLandingPage({ city }: { city: City }) {
       <BreadcrumbJsonLd
         items={[
           { name: 'Accueil', path: '/' },
-          { name: `Auto-école près de ${city.name}`, path },
+          { name: `Auto-école ${nearCity(city.name)}`, path },
         ]}
       />
       <FAQPageJsonLd faqs={city.faqs} />

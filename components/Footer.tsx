@@ -45,6 +45,7 @@ export default function Footer() {
     navigation: [
       { name: 'Accueil', href: '/' },
       { name: 'Tarifs', href: '/tarifs' },
+      { name: 'Permis moto', href: '/permis-moto' },
       { name: 'Pack Web', href: '/prestations-a-l-unite' },
       { name: 'Blog', href: '/blog' },
       { name: 'À propos', href: '/a-propos' },
