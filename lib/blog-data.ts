@@ -14,6 +14,127 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '30',
+    title: 'Vérifications intérieures du permis : les questions et les réponses',
+    slug: 'questions-verifications-interieures-permis',
+    excerpt: "Trois questions orales, 3 points sur 31, et un numéro tiré des deux derniers chiffres du compteur : voici comment fonctionnent les vérifications du permis B et comment y répondre sans hésiter.",
+    content: `<p>C'est le moment de l'examen que les candidats préparent le moins, alors qu'il rapporte des points presque gratuitement. Les questions de vérification interviennent en fin d'épreuve, elles sont tirées d'une liste publique, et elles peuvent faire basculer un résultat serré. Voici exactement comment elles fonctionnent.</p>
+<h2>Trois questions, pas une</h2>
+<p>À la fin de l'épreuve pratique, l'inspecteur pose <strong>trois questions orales</strong> tirées d'un référentiel officiel de <strong>100 questions</strong> :</p>
+<ul><li>une <strong>question de vérification</strong> du véhicule — intérieure ou extérieure&nbsp;;</li><li>une <strong>question de sécurité routière</strong>&nbsp;;</li><li>une <strong>question de premiers secours</strong>.</li></ul>
+<p>Beaucoup de candidats ne préparent que la première et découvrent les deux autres le jour J. C'est dommage : ce sont les points les plus faciles de tout l'examen.</p>
+<h2>Combien ça rapporte&nbsp;: 3 points sur 31</h2>
+<p>Chaque bonne réponse vaut <strong>1 point</strong>. L'épreuve étant notée sur 31 points — <strong>28 pour la conduite et 3 pour les questions</strong> — vous jouez ici près d'un dixième de la note totale, sans toucher au volant.</p>
+<p>Rappel du seuil : il faut <strong>20 points sur 31</strong> pour être reçu. Autrement dit, trois bonnes réponses peuvent suffire à faire passer un candidat de 19 à 22 points. Le détail complet du barème est dans notre article sur <a href="/blog/notation-permis-31-points-fautes-eliminatoires">la notation du permis</a>.</p>
+<h2>Une mauvaise réponse n'est pas éliminatoire</h2>
+<p>Point important pour la sérénité : <strong>se tromper ne fait pas échouer</strong>. Vous perdez simplement le point. Aucune de ces trois questions ne figure parmi les fautes éliminatoires. Inutile donc de paniquer si une question vous échappe — répondez au mieux et passez à la suivante.</p>
+<h2>Comment votre question est tirée</h2>
+<p>Le détail que presque personne ne connaît : le numéro de la question est déterminé par les <strong>deux derniers chiffres du compteur kilométrique</strong> du véhicule au moment du tirage. Ce n'est ni l'inspecteur qui choisit, ni le hasard pur — d'où l'inutilité totale de chercher à « deviner » les questions les plus probables. La seule stratégie qui fonctionne est de connaître la liste.</p>
+<h2>Les vérifications intérieures les plus fréquentes</h2>
+<p>Elles se répartissent en trois familles. Sachez, pour chacune, <strong>montrer</strong> l'élément puis <strong>expliquer</strong> à quoi il sert.</p>
+<h3>Les témoins du tableau de bord</h3>
+<ul><li><strong>Témoin de charge de la batterie</strong> — signale un défaut de charge&nbsp;; s'il s'allume en roulant, le véhicule s'arrêtera à court terme.</li><li><strong>Témoin de pression d'huile</strong> — le plus grave&nbsp;: il impose l'arrêt immédiat sous peine de détruire le moteur.</li><li><strong>Témoin de température du liquide de refroidissement</strong> — surchauffe&nbsp;; s'arrêter et laisser refroidir avant d'ouvrir quoi que ce soit.</li><li><strong>Témoin ABS</strong> — le système antiblocage est hors service&nbsp;; le freinage reste possible mais les roues peuvent se bloquer.</li><li><strong>Témoin d'airbag</strong> — défaut du système de retenue&nbsp;; l'airbag risque de ne pas se déclencher.</li><li><strong>Témoin de frein de stationnement et de liquide de frein</strong> — à ne jamais confondre avec le précédent.</li><li><strong>Témoin de préchauffage</strong>, sur un véhicule diesel — attendre son extinction avant de démarrer.</li></ul>
+<h3>Les commandes</h3>
+<ul><li>Essuie-glaces avant et arrière, <strong>lave-glace</strong>.</li><li><strong>Dégivrage</strong> avant et arrière, ventilation, désembuage.</li><li><strong>Feux de détresse</strong> et avertisseur sonore.</li><li>Commande d'éclairage : feux de position, de croisement, de route, antibrouillards.</li></ul>
+<h3>Les équipements de sécurité</h3>
+<ul><li><strong>Ceintures de sécurité</strong> — vérifier l'absence d'usure, le bon enroulement et le verrouillage.</li><li><strong>Appuie-têtes</strong> — le haut de l'appuie-tête doit arriver au niveau du haut du crâne, pas de la nuque.</li><li><strong>Rétroviseurs</strong> et réglage du siège.</li></ul>
+<h2>La méthode qui fait gagner le point</h2>
+<p>Une réponse complète comporte toujours trois temps :</p>
+<ol><li><strong>Montrer</strong> physiquement l'élément — l'inspecteur doit voir votre geste.</li><li><strong>Nommer</strong> sa fonction.</li><li><strong>Dire la conséquence</strong> : que se passe-t-il si ça ne fonctionne pas, et que faites-vous&nbsp;?</li></ol>
+<p>C'est le troisième temps qui distingue une réponse correcte d'une réponse complète. « Voici le témoin de pression d'huile » vaut moins que « voici le témoin de pression d'huile ; s'il s'allume en roulant, je m'arrête immédiatement en sécurité et je coupe le moteur, sinon le moteur peut être détruit ».</p>
+<h2>Les erreurs classiques</h2>
+<ul><li><strong>Confondre le témoin de frein et celui de l'ABS</strong> — la confusion la plus fréquente.</li><li><strong>Répondre sans montrer</strong> — la réponse orale seule ne suffit pas sur une vérification.</li><li><strong>Réviser sur un autre véhicule que celui de l'examen</strong> — l'emplacement des commandes change d'un modèle à l'autre. Révisez sur la voiture de votre auto-école, celle que vous conduirez le jour J.</li><li><strong>Négliger les questions de premiers secours</strong> — elles portent sur des gestes simples : protéger, alerter, secourir.</li></ul>
+<h2>Comment réviser efficacement</h2>
+<p>La liste étant publique et finie, la préparation est purement mécanique : quelques séances de dix minutes suffisent. Le meilleur moment reste les dernières minutes de chaque leçon, directement dans le véhicule — c'est ce que font nos moniteurs à Nanterre, en glissant deux ou trois questions à la fin de chaque heure de conduite.</p>
+<p>Un <a href="/blog/examen-blanc-conduite-pourquoi-important">examen blanc</a> est également l'occasion de les passer en conditions réelles, avec la pression du chronomètre. Et pour tout ce qui se joue avant, notre article sur les <a href="/blog/erreurs-eviter-jour-examen-conduite">erreurs à éviter le jour de l'examen</a> complète utilement cette préparation.</p>
+<h2>Se préparer avec nous</h2>
+<p>Nos formules intègrent la préparation aux questions orales, sans supplément. Consultez nos <a href="/tarifs">tarifs à Nanterre</a> ou <a href="/contact">contactez-nous</a> pour organiser une séance de révision avant votre présentation.</p>`,
+    featured_image: '/blog/ou-passer-code-route.webp',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ['vérifications intérieures', 'questions permis', 'examen pratique', 'premiers secours', '100 questions'],
+    published_at: '2026-08-28',
+    views_count: 0
+  },
+  {
+    id: '29',
+    title: 'Comment apprendre à stationner : créneau, bataille et épi',
+    slug: 'apprendre-stationner-creneau-bataille-epi',
+    excerpt: "Le créneau terrorise plus de candidats que n'importe quelle autre manœuvre — alors qu'une manœuvre ratée n'est pas éliminatoire. Méthode, repères et erreurs à éviter pour se garer sereinement.",
+    content: `<p>« Je suis nul en créneau. » C'est probablement la phrase que nous entendons le plus souvent en début de formation. Pourtant, le stationnement est la partie la plus mécanique de l'apprentissage : il ne demande ni talent ni intuition, seulement une méthode et des repères. Voici comment s'y prendre.</p>
+<h2>D'abord, dédramatiser&nbsp;: une manœuvre ratée n'élimine pas</h2>
+<p>Commençons par le plus important. À l'examen, <strong>rater son stationnement ne provoque pas l'échec</strong>. Ce n'est pas une faute éliminatoire : vous perdez des points, c'est tout. Vous pouvez manquer votre créneau et obtenir votre permis.</p>
+<p>Ce qui est sanctionné plus sévèrement, en revanche, c'est de <strong>mettre en danger</strong> pendant la manœuvre — monter sur le trottoir où circule un piéton, toucher un véhicule, ou ne pas contrôler avant de reculer. La sécurité prime sur la précision. Le détail du barème est dans notre article sur <a href="/blog/notation-permis-31-points-fautes-eliminatoires">la notation du permis</a>.</p>
+<h2>Les manœuvres possibles le jour J</h2>
+<p>L'inspecteur en choisit une parmi :</p>
+<ul><li>le <strong>stationnement en créneau</strong>, en marche arrière&nbsp;;</li><li>le <strong>stationnement en bataille</strong>, en marche avant ou arrière&nbsp;;</li><li>le <strong>stationnement en épi</strong>&nbsp;;</li><li>le <strong>demi-tour</strong> en trois temps&nbsp;;</li><li>la <strong>marche arrière</strong> en ligne droite ou en courbe&nbsp;;</li><li>le <strong>freinage d'urgence</strong>, souvent associé à une autre manœuvre.</li></ul>
+<p>Il faut donc toutes les maîtriser, pas seulement le créneau.</p>
+<h2>Le créneau, pas à pas</h2>
+<p>La règle d'or : <strong>tout se joue à la vitesse du pas</strong>. Un créneau raté est presque toujours un créneau fait trop vite, parce qu'on veut en finir.</p>
+<ol><li><strong>Se positionner</strong> parallèlement au véhicule devant la place, à environ 80 cm à un mètre de lui, vos rétroviseurs à sa hauteur.</li><li><strong>Contrôler</strong> — rétroviseur intérieur, extérieur gauche, angle mort — et mettre le clignotant droit.</li><li><strong>Reculer très lentement</strong> en braquant à droite, jusqu'à voir apparaître dans votre rétroviseur droit le bord de la place ou le véhicule arrière.</li><li><strong>Redresser</strong> les roues et continuer à reculer en diagonale.</li><li><strong>Contrebraquer</strong> à gauche pour ramener l'arrière du véhicule le long du trottoir.</li><li><strong>Ajuster</strong> en avançant si nécessaire — reprendre en une fois est parfaitement admis et bien mieux vu qu'un véhicule mal placé.</li></ol>
+<p>Les repères exacts dépendent du véhicule. C'est pourquoi il faut s'entraîner sur <strong>la voiture de l'auto-école</strong>, celle que vous aurez à l'examen — les repères d'une citadine ne valent pas pour un break.</p>
+<h2>La bataille&nbsp;: préférez la marche arrière</h2>
+<p>Se garer en bataille marche avant est plus simple sur le moment, mais ressortir devient une manœuvre à l'aveugle, dos à la circulation. <strong>Entrer en marche arrière</strong> demande un peu plus de technique et permet de repartir en visibilité directe. C'est la solution recommandée en sécurité routière, et les inspecteurs le savent.</p>
+<h2>L'épi et le demi-tour</h2>
+<p>Le <strong>stationnement en épi</strong> est le plus facile des trois : les places étant orientées, l'angle de braquage requis est faible. Ne le négligez pas pour autant — c'est souvent celui où les contrôles sont oubliés, précisément parce qu'il paraît simple.</p>
+<p>Le <strong>demi-tour</strong> se juge sur la lecture de la voie : choisir un endroit dégagé, sans intersection ni sommet de côte, et où la visibilité est bonne dans les deux sens. Le faire en trois temps proprement vaut mieux que de forcer en deux.</p>
+<h2>Les cinq erreurs qui coûtent des points</h2>
+<ul><li><strong>Aller trop vite.</strong> Le pied doit rester en équilibre sur l'embrayage, la voiture au ralenti.</li><li><strong>Ne pas contrôler avant de reculer.</strong> L'angle mort arrière est le contrôle le plus souvent oublié — et là, ce n'est plus une question de points mais de sécurité.</li><li><strong>Regarder uniquement les rétroviseurs.</strong> Il faut tourner la tête ; l'inspecteur doit voir votre regard bouger.</li><li><strong>S'acharner.</strong> Reprendre en avançant est autorisé. Un candidat qui corrige calmement fait meilleure impression qu'un candidat qui s'entête.</li><li><strong>Oublier le clignotant</strong> en entrant comme en sortant de la place.</li></ul>
+<h2>Comment progresser vite</h2>
+<p>Le stationnement s'automatise par la répétition courte et fréquente, pas par de longues séances. Quelques conseils qui fonctionnent :</p>
+<ul><li>Consacrez les <strong>dix dernières minutes</strong> de chaque leçon à une manœuvre, plutôt qu'une heure entière une fois.</li><li>Alternez les places : trottoir haut, trottoir bas, place courte, place longue.</li><li>Entraînez-vous <strong>en conduite supervisée</strong> si vous en avez la possibilité — c'est l'usage idéal de cette formule, détaillée dans notre <a href="/blog/conduite-supervisee-guide-complet">guide de la conduite supervisée</a>.</li><li>Travaillez aussi de nuit et sous la pluie : les repères visuels changent complètement.</li></ul>
+<h2>S'entraîner à Nanterre</h2>
+<p>Le secteur offre une vraie variété de configurations : places en créneau serrées de l'avenue de la République, stationnements en bataille des zones commerciales, épis autour des gares. Nos moniteurs y font travailler les manœuvres dans les conditions mêmes que vous retrouverez le jour de l'examen — les <a href="/blog/apprendre-conduire-nanterre-situations-cles">situations clés de la conduite à Nanterre</a> sont détaillées dans un article dédié.</p>
+<p>Besoin de quelques heures ciblées uniquement sur les manœuvres&nbsp;? C'est possible sans reprendre un forfait complet : <a href="/contact">appelez-nous</a> ou consultez nos <a href="/tarifs">formules</a>.</p>`,
+    featured_image: '/blog/ville-chatou.webp',
+    author_name: 'Julien Moreau',
+    category: 'Conduite',
+    tags: ['stationnement', 'créneau', 'manœuvres permis', 'se garer', 'bataille épi'],
+    published_at: '2026-08-27',
+    views_count: 0
+  },
+  {
+    id: '28',
+    title: 'Pourquoi l’examen blanc change tout avant le permis',
+    slug: 'examen-blanc-conduite-pourquoi-important',
+    excerpt: "Le stress et le manque d'autonomie causent plus d'échecs que les lacunes techniques. L'examen blanc est le seul exercice qui reproduit ces deux conditions — et qui révèle ce qu'une leçon ordinaire masque.",
+    content: `<p>Un candidat peut conduire correctement pendant trente heures et échouer le jour de l'examen. Ce n'est pas un paradoxe : l'épreuve ne teste pas la même chose qu'une leçon. L'examen blanc existe précisément pour combler cet écart. Voici pourquoi il est bien plus qu'une formalité.</p>
+<h2>Une leçon ne ressemble pas à un examen</h2>
+<p>Pendant une leçon, votre moniteur vous guide. Il annonce les directions, corrige au fil de l'eau, dispose d'une double commande, et vous savez qu'il est là. Rien de tout cela le jour J :</p>
+<ul><li>l'inspecteur ne vous connaît pas et n'intervient pas&nbsp;;</li><li>une partie du parcours se fait <strong>en autonomie</strong>, sans qu'on vous dise où aller&nbsp;;</li><li>chaque geste est noté, sur un barème de 31 points&nbsp;;</li><li>et vous ne recommencerez pas avant plusieurs semaines si ça se passe mal.</li></ul>
+<p>Un examen blanc reproduit ces conditions. C'est la seule façon de savoir comment vous conduisez <em>sans filet</em> — et la réponse surprend souvent.</p>
+<h2>Ce que l'examen blanc révèle</h2>
+<h3>Votre vraie autonomie</h3>
+<p>C'est la révélation la plus fréquente. Beaucoup d'élèves ne conduisent pas : ils exécutent. Tant que le moniteur annonce « à droite au prochain feu », tout va bien. Privés de consigne, ils ralentissent, hésitent aux intersections, cherchent une validation. L'autonomie est une compétence notée à part entière, et elle ne se teste qu'en la retirant.</p>
+<h3>Vos contrôles réels</h3>
+<p>En leçon, on vous rappelle vos rétroviseurs. En examen blanc, personne ne vous le rappelle — et l'on découvre lesquels sont vraiment automatisés. Les points perdus à l'examen viennent massivement de contrôles non faits ou non visibles.</p>
+<h3>Votre allure</h3>
+<p>Rouler nettement en dessous de la limitation est sanctionné au même titre qu'un excès. Sous pression, la plupart des candidats ralentissent sans s'en rendre compte. Un examen blanc le met en évidence, chiffres à l'appui.</p>
+<h3>Votre réaction au stress</h3>
+<p>Le stress est l'une des premières causes d'échec, et il ne se travaille pas dans le vide : il se travaille en s'y exposant. Un candidat qui a déjà vécu la situation une ou deux fois l'aborde tout autrement. Nos conseils spécifiques sont réunis dans notre article sur <a href="/blog/comment-gerer-son-stress-pour-reussir-l-examen-de-conduite">la gestion du stress à l'examen</a>.</p>
+<h2>Comment nous le faisons</h2>
+<p>Un examen blanc sérieux respecte le cadre réel :</p>
+<ul><li><strong>La même durée</strong> — environ 32 minutes de conduite effective.</li><li><strong>Les parcours officiels</strong> du secteur, sur les axes de Nanterre et des Hauts-de-Seine réellement utilisés le jour de l'examen.</li><li><strong>Le silence du moniteur</strong>, qui adopte la posture de l'inspecteur et n'intervient qu'en cas de danger.</li><li><strong>Une phase de conduite autonome</strong> et une manœuvre tirée au sort.</li><li><strong>Les trois questions orales</strong> — vérification, sécurité routière, premiers secours — comme le jour J.</li><li><strong>La grille officielle</strong> remplie pendant l'épreuve, notée sur 31 points.</li></ul>
+<h2>Le vrai bénéfice&nbsp;: le débriefing</h2>
+<p>La conduite n'est que la moitié de l'exercice. Ce qui change tout, c'est la grille remplie à l'arrivée : elle transforme un ressenti flou — « ça s'est mal passé » — en un plan de travail précis. Trois points perdus sur les giratoires, deux sur l'allure, un contrôle systématiquement oublié à droite.</p>
+<p>Vous savez alors exactement à quoi consacrer vos dernières heures. C'est la même logique que le <strong>bilan de compétences</strong> remis après un échec, à ceci près qu'ici vous en disposez <em>avant</em> de jouer votre présentation. Notre article sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a> explique comment lire ce document.</p>
+<h2>Quand le programmer</h2>
+<p>Le bon moment se situe <strong>deux à trois semaines avant votre présentation</strong>. Assez tôt pour laisser le temps de corriger ce qu'il révèle, assez tard pour que le résultat reflète votre niveau réel.</p>
+<p>Un seul examen blanc suffit rarement pour un candidat très anxieux : deux, espacés de dix jours, donnent de bien meilleurs résultats. Le second sert alors à vérifier que les corrections ont pris.</p>
+<h2>Et si l'examen blanc se passe mal&nbsp;?</h2>
+<p>C'est le meilleur scénario possible. Un examen blanc raté coûte une heure de conduite&nbsp;; un examen raté coûte plusieurs semaines d'attente et une nouvelle présentation. Le but n'est pas de vous rassurer, c'est de trouver les failles pendant qu'il est encore temps de les corriger.</p>
+<p>Méfiez-vous d'ailleurs d'une auto-école dont les examens blancs se passent toujours bien : soit le parcours est trop facile, soit le moniteur intervient trop.</p>
+<h2>Le programmer à Nanterre</h2>
+<p>Nous intégrons l'examen blanc à la préparation de nos élèves, sur les parcours officiels des Hauts-de-Seine — le déroulé complet de l'épreuve réelle est décrit dans notre article sur <a href="/blog/examen-permis-hauts-de-seine-deroulement">l'examen du permis dans le 92</a>.</p>
+<p>Vous êtes formé ailleurs et souhaitez simplement passer un examen blanc avant votre présentation&nbsp;? C'est possible à l'unité : <a href="/contact">contactez-nous</a> ou consultez nos <a href="/tarifs">formules</a>.</p>`,
+    featured_image: '/blog/notation-permis.webp',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ['examen blanc', 'préparation examen', 'permis B', 'autonomie', 'conduite Nanterre'],
+    published_at: '2026-08-26',
+    views_count: 0
+  },
+  {
     id: '27',
     title: 'Où passer le code de la route ? Centres, prix et délais',
     slug: 'ou-passer-code-route-centres-prix-delais',
@@ -69,7 +190,7 @@ export const blogPosts: BlogPost[] = [
 <ul><li><strong>Une allure trop timide</strong> — rouler à 40 là où la limite est à 50 est sanctionné au même titre qu'un excès. Une conduite trop lente gêne la circulation et traduit un manque d'assurance.</li><li><strong>Des contrôles non visibles</strong> — l'inspecteur doit voir votre regard bouger. Un contrôle fait « du coin de l'œil » ne compte pas.</li><li><strong>Le manque d'autonomie</strong> — attendre une instruction au lieu de décider soi-même, surtout pendant la conduite libre.</li></ul>
 <p>Notre article sur les <a href="/blog/erreurs-eviter-jour-examen-conduite">erreurs à éviter le jour de l'examen</a> détaille chacun de ces points.</p>
 <h2>Le déroulé et le résultat</h2>
-<p>L'épreuve dure environ <strong>32 minutes</strong> et comprend une phase de conduite autonome, une manœuvre, et des questions de vérification intérieure ou extérieure ainsi qu'une question de premiers secours.</p>
+<p>L'épreuve dure environ <strong>32 minutes</strong> et comprend une phase de conduite autonome, une manœuvre, et <strong>trois questions orales</strong> tirées d'un référentiel de 100 questions : une vérification du véhicule, une question de sécurité routière et une question de premiers secours. Elles valent 1 point chacune — la note se répartit en <strong>28 points de conduite et 3 points de questions</strong>. Le détail est dans notre article sur <a href="/blog/questions-verifications-interieures-permis">les vérifications intérieures</a>.</p>
 <p>Le résultat n'est jamais communiqué sur place. Il est consultable <strong>sous 48 heures</strong> sur le site de la Sécurité routière, accompagné du bilan de compétences détaillé — le document à lire absolument, comme nous l'expliquons dans notre guide sur <a href="/blog/echec-permis-que-faire-apres">l'échec au permis</a>.</p>
 <h2>Se préparer sur les bons parcours</h2>
 <p>Connaître la grille ne suffit pas&nbsp;: encore faut-il s'entraîner là où l'on sera évalué. Nos leçons se déroulent sur les axes de Nanterre et des Hauts-de-Seine empruntés par les parcours d'examen du secteur — le détail est dans notre article sur <a href="/blog/examen-permis-hauts-de-seine-deroulement">l'examen du permis dans les Hauts-de-Seine</a>.</p>`,
@@ -515,9 +636,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '11',
-    title: 'Comment gérer son stress pour réussir l\'examen de conduite',
+    title: 'Comment ne pas stresser à l’examen du permis',
     slug: 'comment-gerer-son-stress-pour-reussir-l-examen-de-conduite',
-    excerpt: "Le stress est l'un des principaux obstacles le jour de l'examen de conduite. Découvrez nos conseils concrets pour rester calme, confiant et mettre toutes les chances de votre côté.",
+    excerpt: "Respiration, sommeil, déroulé du jour J et ce qu’il ne faut surtout pas prendre pour se calmer : la méthode pour aborder l’épreuve pratique sans se laisser déborder.",
     content: `<p>Le jour de l'<a href="/blog/erreurs-eviter-jour-examen-conduite">examen de conduite</a>, le stress peut transformer un candidat parfaitement préparé en conducteur hésitant. La bonne nouvelle : le stress se gère et s'anticipe. Voici nos conseils pour aborder l'épreuve avec sérénité.</p>
 <h2>1. Préparez-vous suffisamment en amont</h2>
 <p>La confiance vient de la préparation. Plus vous avez d'heures de conduite et de situations variées derrière vous, moins l'examen vous semblera impressionnant. N'hésitez pas à demander à votre moniteur de refaire les manœuvres ou les parcours qui vous mettent le moins à l'aise.</p>
@@ -535,6 +656,15 @@ export const blogPosts: BlogPost[] = [
 <ul><li>Verbalisez intérieurement vos actions (« je contrôle, je clignote, je tourne ») pour rester dans le concret.</li><li>Gardez les yeux loin devant : regarder le bout de la rue calme naturellement la conduite.</li><li>Si vous ne comprenez pas une consigne, demandez-la à répéter — c'est autorisé et bien vu.</li></ul>
 <h2>Préparer son mental les jours précédents</h2>
 <p>La gestion du stress se travaille en amont. Dans la semaine qui précède, visualisez le déroulement de l'examen : le trajet, les manœuvres, l'arrivée au centre. Cette « répétition mentale » réduit l'effet de surprise. Évitez aussi de réviser intensément la veille au soir : une séance légère puis une bonne nuit de sommeil valent mieux qu'un bachotage anxiogène.</p>
+<h2>Le jour J, heure par heure</h2>
+<p>Le stress se gère surtout par l'organisation. Un déroulé qui fonctionne :</p>
+<ul><li><strong>La veille au soir</strong> — préparez vos papiers (pièce d'identité en cours de validité, convocation) et posez-les à côté de vos clés. La peur d'oublier un document entretient l'anxiété toute la nuit.</li><li><strong>Le matin</strong> — mangez normalement. Se présenter le ventre vide fait chuter la concentration au bout de vingt minutes.</li><li><strong>Une heure avant</strong> — si possible, prenez une leçon juste avant l'épreuve. Arriver les mains déjà chaudes change tout.</li><li><strong>Dix minutes avant</strong> — arrêtez de réviser. Relire ses fiches à ce stade n'apporte rien et alimente le doute.</li><li><strong>Dans la voiture</strong> — prenez le temps de vos réglages : siège, rétroviseurs, ceinture. Ce rituel connu remet le corps en terrain familier.</li></ul>
+<h2>Faut-il prendre quelque chose pour se calmer&nbsp;?</h2>
+<p>La question revient souvent, et la réponse est clairement non. Les calmants, anxiolytiques et somnifères — y compris ceux vendus sans ordonnance — <strong>altèrent la vigilance et les réflexes</strong>, exactement les deux facultés évaluées. Certains sont incompatibles avec la conduite et signalés comme tels sur leur boîte par un pictogramme.</p>
+<p>Même remarque pour les boissons énergisantes et le café en excès&nbsp;: ils amplifient les tremblements et l'agitation au lieu de les calmer. Si votre anxiété est réellement invalidante, parlez-en à votre médecin bien en amont, pas la veille.</p>
+<h2>Ce qui fait vraiment baisser le stress</h2>
+<p>Une seule chose, en réalité&nbsp;: <strong>l'exposition</strong>. Le stress diminue quand la situation cesse d'être inconnue. C'est précisément l'objet de l'<a href="/blog/examen-blanc-conduite-pourquoi-important">examen blanc</a>, qui reproduit la durée, le silence de l'évaluateur et la phase de conduite autonome. Un candidat qui a déjà vécu ces trente minutes une ou deux fois les aborde tout autrement.</p>
+<p>Savoir précisément comment vous êtes noté aide également&nbsp;: beaucoup d'angoisse vient de l'idée fausse qu'une erreur suffit à échouer. Il faut 20 points sur 31, et caler ou rater une manœuvre n'est pas éliminatoire — voir <a href="/blog/notation-permis-31-points-fautes-eliminatoires">la notation du permis</a>.</p>
 <h2>Conclusion</h2>
 <p>Le stress fait partie de l'examen, mais il ne doit pas vous contrôler. Avec une préparation solide, un bon repos et quelques techniques de respiration, vous aborderez l'épreuve avec confiance. Chez Auto Ecole Des Paquerettes, nous accompagnons chaque élève jusqu'au jour J pour qu'il se présente serein et prêt à réussir.</p>`,
     featured_image: '/blog2.jpeg',
@@ -616,9 +746,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Le Permis de Conduire en 10 Jours : Est-ce Possible ?',
+    title: 'Permis accéléré : avoir son permis rapidement',
     slug: 'permis-conduire-10-jours-possible',
-    excerpt: "La formation accélérée en 10 jours est de plus en plus populaire. Découvrez les avantages, les inconvénients et si c'est fait pour vous.",
+    excerpt: "Permis en 10 jours, en 2 semaines, formule accélérée : ce qui se compresse vraiment, ce qui ne se compresse jamais, et pour qui cette formule est un bon calcul.",
     content: `<p>La formation accélérée en 10 jours séduit de nombreux candidats pressés. Mais est-ce vraiment une bonne option ? Faisons le point.</p>
 <h2>Qu'est-ce que la formation accélérée ?</h2>
 <p>La formation accélérée condense l'ensemble de l'apprentissage sur une période courte, généralement 10 à 14 jours, avec :</p>
@@ -645,6 +775,17 @@ export const blogPosts: BlogPost[] = [
 <h2>Code, examen et délais : ce qu'il faut anticiper</h2>
 <p>Obtenir le permis en 10 jours suppose d'avoir validé le code en amont, ou de le passer juste avant le stage. Il faut aussi une place d'examen pratique disponible à la fin de la formation : c'est souvent ce point, et non la formation elle-même, qui conditionne le délai réel. Renseignez-vous sur les disponibilités d'examen avant de réserver un stage intensif.</p>
 <p>Gardez enfin en tête que la réussite n'est jamais garantie par le format : c'est la régularité de la pratique pendant le stage et la qualité du suivi qui font la différence.</p>
+<h2>Combien de temps faut-il réellement&nbsp;?</h2>
+<p>La formation accélérée compresse les heures de conduite, mais elle ne compresse pas l'administratif. Le calendrier réel se décompose ainsi&nbsp;:</p>
+<ul><li><strong>L'ouverture du dossier</strong> et l'obtention du numéro NEPH — voir notre <a href="/blog/papiers-inscription-permis-conduire-liste">liste des pièces à fournir</a>.</li><li><strong>Le code</strong>, si vous ne l'avez pas déjà. Une place d'examen se trouve souvent sous 48 heures en Île-de-France&nbsp;: <a href="/blog/ou-passer-code-route-centres-prix-delais">où passer le code</a>.</li><li><strong>Les heures de conduite</strong>, concentrées sur une à trois semaines.</li><li><strong>La place d'examen pratique</strong> — c'est ici que se joue le vrai délai, et il ne dépend pas de vous.</li></ul>
+<p>Autrement dit&nbsp;: « permis en 10 jours » désigne la durée de la <em>formation</em>, jamais la durée totale entre l'inscription et le permis en poche. Toute auto-école qui vous garantit le contraire vous vend quelque chose qu'elle ne maîtrise pas.</p>
+<h2>Permis accéléré ou formation classique&nbsp;: comment choisir</h2>
+<p>La formule accélérée convient particulièrement si&nbsp;:</p>
+<ul><li>vous avez une <strong>embauche ou une mutation</strong> conditionnée au permis&nbsp;;</li><li>vous disposez d'une <strong>période réellement libre</strong> — congés, entre deux contrats, vacances universitaires&nbsp;;</li><li>vous avez déjà le code, ce qui supprime une étape entière&nbsp;;</li><li>vous choisissez la <strong>boîte automatique</strong>, dont le minimum légal est de 13 heures contre 20 — voir <a href="/blog/permis-boite-automatique-ou-manuelle-choisir">boîte auto ou manuelle</a>.</li></ul>
+<p>Elle convient mal si vous débutez totalement, si vous êtes anxieux au volant, ou si vous ne pouvez dégager que deux heures par semaine — dans ces cas, l'intensité produit surtout de la fatigue.</p>
+<h2>Le coût d'un permis rapide</h2>
+<p>Une formule accélérée n'est pas nécessairement plus chère à l'heure, mais elle laisse moins de marge&nbsp;: si le compte d'heures ne suffit pas, les heures supplémentaires s'ajoutent au tarif normal. Chez nous, la formule accélérée 20 heures est affichée à <strong>1 499 €</strong>, code et conduite compris&nbsp;; la grille complète est sur notre <a href="/tarifs">page tarifs à Nanterre</a>.</p>
+<p>Le calcul à faire avant de comparer deux devis est détaillé dans notre article sur <a href="/blog/prix-permis-conduire-nanterre">le prix du permis à Nanterre</a>.</p>
 <h2>Conclusion</h2>
 <p>La formation en 10 jours est une excellente option pour les candidats qui peuvent supporter l'intensité. Évaluez votre profil et vos disponibilités avant de vous engager.</p>`,
     featured_image: '/blog3.jpeg',
