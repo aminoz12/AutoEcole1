@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { createMailer, LEADS_INBOX } from '@/lib/mailer'
 
 export async function POST(request: Request) {
   try {
@@ -14,27 +14,15 @@ export async function POST(request: Request) {
       )
     }
 
-    // Create email transporter
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    })
+    const { transporter, from } = createMailer()
 
     const submittedAt =
       new Date().toLocaleDateString('fr-FR') + ' à ' + new Date().toLocaleTimeString('fr-FR')
 
     // Email content
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: 'autoecole.despaquerettes@gmail.com',
+      from,
+      to: LEADS_INBOX,
       subject: 'Nouvelle demande CPF — Auto Ecole Des Paquerettes',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">

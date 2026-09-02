@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { createMailer, LEADS_INBOX } from '@/lib/mailer'
 
 // Demande de rappel : formulaire court (nom + téléphone) affiché sur les pages
 // villes, les articles de blog et la popup. Le but est de générer un appel
@@ -16,18 +16,7 @@ export async function POST(request: Request) {
       )
     }
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    })
+    const { transporter, from } = createMailer()
 
     const submittedAt =
       new Date().toLocaleDateString('fr-FR') +
@@ -35,8 +24,8 @@ export async function POST(request: Request) {
       new Date().toLocaleTimeString('fr-FR')
 
     const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: 'autoecole.despaquerettes@gmail.com',
+      from,
+      to: LEADS_INBOX,
       subject: '📞 Demande de rappel — Auto Ecole Des Paquerettes',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
