@@ -4,12 +4,14 @@ import nodemailer from 'nodemailer'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+    // Formulaire court : seuls nom + téléphone sont obligatoires. Adresse,
+    // ville et date de naissance sont collectées au téléphone (les anciens
+    // champs restent acceptés s'ils sont envoyés).
     const { fullName, email, phone, address, city, dateOfBirth, licenseType } = body
 
-    // Validate required fields
-    if (!fullName || !email || !phone || !address || !city || !dateOfBirth) {
+    if (!fullName || !phone) {
       return NextResponse.json(
-        { error: 'Tous les champs sont requis' },
+        { error: 'Nom et numéro de téléphone requis' },
         { status: 400 }
       )
     }
@@ -29,7 +31,7 @@ export async function POST(request: Request) {
     })
 
     // Format date
-    const formattedDate = new Date(dateOfBirth).toLocaleDateString('fr-FR')
+    const formattedDate = dateOfBirth ? new Date(dateOfBirth).toLocaleDateString('fr-FR') : ''
     const submittedAt = new Date().toLocaleDateString('fr-FR') + ' à ' + new Date().toLocaleTimeString('fr-FR')
 
     // Email content
@@ -45,11 +47,11 @@ export async function POST(request: Request) {
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 10px 0;"><strong>Nom complet:</strong> ${fullName}</p>
-            <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
             <p style="margin: 10px 0;"><strong>Téléphone:</strong> ${phone}</p>
-            <p style="margin: 10px 0;"><strong>Adresse:</strong> ${address}, ${city}</p>
-            <p style="margin: 10px 0;"><strong>Date de naissance:</strong> ${formattedDate}</p>
-            <p style="margin: 10px 0;"><strong>Catégorie de permis:</strong> ${licenseType}</p>
+            ${email ? `<p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>` : ''}
+            ${address ? `<p style="margin: 10px 0;"><strong>Adresse:</strong> ${address}${city ? `, ${city}` : ''}</p>` : ''}
+            ${formattedDate ? `<p style="margin: 10px 0;"><strong>Date de naissance:</strong> ${formattedDate}</p>` : ''}
+            <p style="margin: 10px 0;"><strong>Formule souhaitée:</strong> ${licenseType}</p>
             <p style="margin: 10px 0;"><strong>Date d'inscription:</strong> ${submittedAt}</p>
           </div>
 

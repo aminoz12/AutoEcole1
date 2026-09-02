@@ -1,124 +1,104 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Phone, Calendar, Car } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/seo/site-config'
+import { trackEvent } from '@/lib/analytics'
 
+// Bloc de conversion final : uniquement des preuves vérifiables (permis
+// obtenus, avis Google, paiement 2×) — pas de promesses qu'on ne tient pas.
 export default function CTASection() {
-  const handleReservationClick = () => {
-    window.location.href = '/s-inscrire'
-  }
+  const proofs = [
+    {
+      icon: '/permis.png',
+      title: '451 permis obtenus',
+      desc: 'Des centaines d’élèves formés et diplômés depuis 2021',
+    },
+    {
+      icon: '/star.png',
+      title: '4,9/5 — plus de 300 avis',
+      desc: 'La note de nos élèves sur Google, vérifiable en un clic',
+    },
+    {
+      icon: '/payment.png',
+      title: 'Paiement en 2 fois sans frais',
+      desc: 'Facilitez le financement de votre permis',
+    },
+  ]
 
   return (
-    <section className="section-padding bg-gradient-to-br from-primary to-orange-600 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div 
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}
-        ></div>
-      </div>
+    <section className="section-padding relative overflow-hidden bg-[#0B0F19]">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="text-center text-white"
         >
-          <motion.h2
+          <h2 className="text-4xl lg:text-6xl font-extrabold mb-6">
+            Prêt à obtenir votre{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
+              permis
+            </span>{' '}
+            ?
+          </h2>
+
+          <p className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto text-gray-400">
+            Inscrivez-vous en 30 secondes — un conseiller vous rappelle sous 24 h ouvrées.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/s-inscrire"
+                onClick={() => trackEvent('cta_click', { location: 'cta_section', target: 's-inscrire' })}
+                className="flex items-center gap-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg shadow-pink-500/25 hover:opacity-90 transition-opacity"
+              >
+                Je commence mon permis dès 799 €
+              </Link>
+            </motion.div>
+
+            <motion.a
+              href={`tel:${siteConfig.phoneTel}`}
+              onClick={() => trackEvent('phone_click', { location: 'cta_section' })}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-white/25 bg-white/5 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-3"
+            >
+              <Phone className="h-5 w-5" />
+              <span>{siteConfig.phone}</span>
+            </motion.a>
+          </div>
+
+          {/* Preuves vérifiées */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-4xl lg:text-6xl font-bold mb-6"
+            className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
-            Prêt à obtenir votre{' '}
-            <span className="text-yellow-300">permis</span> ?
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            viewport={{ once: true }}
-            className="text-xl lg:text-2xl mb-12 max-w-3xl mx-auto opacity-90"
-          >
-            Rejoignez nos élèves qui nous ont fait confiance. Réservez votre
-            premier rdv dès aujourd'hui.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleReservationClick}
-              className="flex items-center gap-2 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg"
-              style={{ background: 'linear-gradient(90deg, #3b82f6 0%, #ec4899 100%)', boxShadow: '0 10px 25px rgba(236, 72, 153, 0.5)' }}
-            >
-              <span>Réserver mon inscription</span>
-            </motion.button>
-
-            <motion.a
-              href={`tel:${siteConfig.phoneTel}`}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 flex items-center space-x-3"
-            >
-              <Phone className="h-6 w-6" />
-              <span>{siteConfig.phone}</span>
-            </motion.a>
-          </motion.div>
-
-          {/* Features */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
-          >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Car className="h-8 w-8 text-white" />
+            {proofs.map((proof) => (
+              <div
+                key={proof.title}
+                className="rounded-2xl border border-white/10 bg-[#151b2e]/80 p-6 text-center"
+              >
+                <Image
+                  src={proof.icon}
+                  alt=""
+                  width={56}
+                  height={56}
+                  className="mx-auto mb-4 h-14 w-14 object-contain"
+                />
+                <h3 className="text-lg font-bold mb-1.5">{proof.title}</h3>
+                <p className="text-sm text-gray-400">{proof.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">Leçon d'essai offerte</h3>
-              <p className="opacity-90">Testez notre pédagogie sans engagement</p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Calendar className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Réservation 24h/24</h3>
-              <p className="opacity-90">Planifiez vos leçons en ligne, quand vous voulez</p>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Phone className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Accompagnement dédié</h3>
-              <p className="opacity-90">Une équipe disponible à chaque étape de votre parcours</p>
-            </motion.div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

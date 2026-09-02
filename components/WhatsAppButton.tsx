@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { trackEvent } from '@/lib/analytics'
 
 export default function WhatsAppButton() {
   const phoneNumber = '33780950041'
@@ -10,11 +11,14 @@ export default function WhatsAppButton() {
   )
 
   const handleWhatsAppClick = () => {
+    trackEvent('whatsapp_click', { location: 'floating' })
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
 
+  // Desktop uniquement : sur mobile, la barre fixe en bas d'écran (StickyMobileCTA)
+  // porte déjà WhatsApp — deux boutons flottants se chevaucheraient.
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col items-end gap-2">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

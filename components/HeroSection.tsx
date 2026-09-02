@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
 import AuthModal from './auth/AuthModal'
+import { trackEvent } from '@/lib/analytics'
 
 export default function HeroSection() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
@@ -54,24 +55,25 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.05 }}
             className="text-gray-400 text-sm md:text-base mb-6"
           >
             Auto-école agréée — Nanterre
           </motion.p>
 
-          {/* Headline */}
+          {/* Headline — 799 € = prix d'appel réel (BEA 13h), cohérent avec les
+              meta descriptions et la page tarifs */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
             className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight mb-6 max-w-4xl uppercase"
           >
-            Auto-école à Nanterre — Votre permis dès 899€
+            Auto-école à Nanterre — Votre permis dès 799€
             <br />
             Prêt pour{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-fuchsia-500 to-pink-500">
-              l'examen en Quelques Semaines
+              l'examen en quelques semaines
             </span>
           </motion.h1>
 
@@ -79,37 +81,38 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.2 }}
             className="text-gray-400 text-base md:text-lg mb-8 max-w-xl"
           >
-            Paiement en 2 fois sans frais · Renseignement en ligne immédiat · Boîte Manuelle ou Automatique
+            Code de la route inclus · Paiement en 2 fois sans frais · Boîte manuelle ou automatique
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons — l'inscription (le lead) en premier, les tarifs en second */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.25 }}
             className="flex flex-col sm:flex-row gap-4 mb-10"
           >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="/s-inscrire"
+                onClick={() => trackEvent('cta_click', { location: 'hero', target: 's-inscrire' })}
+                className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2 inline-flex"
+              >
+                Je commence mon permis dès 799 €
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
             <motion.a
               href="#tarifs"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25 flex items-center justify-center gap-2"
+              className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/25 flex items-center justify-center gap-2"
             >
-              Découvrir nos formules
+              Voir les formules
               <ArrowRight className="h-4 w-4" />
             </motion.a>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="/s-inscrire"
-                className="bg-white text-gray-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-gray-100 transition-all duration-300 shadow-lg shadow-white/25 flex items-center justify-center gap-2 inline-flex"
-              >
-                Je m'inscris
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </motion.div>
           </motion.div>
 
           {/* Google Rating Badge */}
@@ -119,7 +122,7 @@ export default function HeroSection() {
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.3 }}
             whileHover={{ scale: 1.03 }}
             className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-white/15 backdrop-blur-md"
           >
@@ -147,7 +150,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto pb-8 mt-8"
         >
           {features.map((feature, index) => (
@@ -155,7 +158,7 @@ export default function HeroSection() {
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1 + index * 0.1 }}
+              transition={{ delay: 0.45 + index * 0.05 }}
               whileHover={{ y: -4 }}
               className="group flex flex-col items-center text-center px-2 transition-transform duration-300"
             >

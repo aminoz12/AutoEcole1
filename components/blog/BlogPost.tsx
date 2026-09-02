@@ -6,6 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import toast from 'react-hot-toast'
 import { articleReviewsBySlug, editorialAuthor, officialSourcesBySlug } from '@/lib/content/editorial-data'
+import CallbackForm from '@/components/CallbackForm'
+import { siteConfig } from '@/lib/seo/site-config'
+import { trackEvent } from '@/lib/analytics'
 
 interface BlogPost {
   id: string
@@ -247,6 +250,16 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
               )}
             </div>
           </article>
+
+          {/* Capture de lead sous l'article : le lecteur SEO convertit sans
+              devoir chercher le formulaire d'inscription */}
+          <div className="mt-8">
+            <CallbackForm
+              source={`blog:${post.slug}`}
+              title="Envie de passer votre permis ?"
+              subtitle="Laissez votre numéro — un conseiller de l'auto-école vous rappelle sous 24 h ouvrées, gratuitement et sans engagement."
+            />
+          </div>
         </div>
 
         {/* Sidebar */}
@@ -283,14 +296,22 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                 Prêt à commencer ?
               </h3>
               <p className="text-white/90 mb-4">
-                Inscrivez-vous dès maintenant et commencez votre formation
+                Permis dès 799 € — inscription en 30 secondes, rappel sous 24 h.
               </p>
               <Link
                 href="/s-inscrire"
+                onClick={() => trackEvent('cta_click', { location: 'blog_sidebar', target: 's-inscrire' })}
                 className="block w-full bg-white text-primary text-center font-semibold py-2 rounded-lg hover:bg-gray-100 transition-colors"
               >
                 S'inscrire
               </Link>
+              <a
+                href={`tel:${siteConfig.phoneTel}`}
+                onClick={() => trackEvent('phone_click', { location: 'blog_sidebar' })}
+                className="mt-3 block w-full border border-white/40 text-white text-center font-semibold py-2 rounded-lg hover:bg-white/10 transition-colors"
+              >
+                📞 {siteConfig.phone}
+              </a>
             </div>
           </div>
         </div>

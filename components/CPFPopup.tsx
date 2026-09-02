@@ -4,11 +4,15 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { X, Phone } from 'lucide-react'
+import { X, Phone, Check } from 'lucide-react'
 import { useScrollLock } from '@/lib/useScrollLock'
+import { siteConfig } from '@/lib/seo/site-config'
+import { trackEvent } from '@/lib/analytics'
 
-const STORAGE_KEY = 'echec-permis-popup-dismissed'
+const STORAGE_KEY = 'offre-permis-popup-dismissed'
 
+// Popup d'offre : porte le prix d'appel et pousse vers l'inscription. Ne
+// s'affiche qu'une fois par session, après 8 s (le temps de lire le hero).
 export default function CPFPopup() {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -17,7 +21,8 @@ export default function CPFPopup() {
 
     const timer = setTimeout(() => {
       setIsOpen(true)
-    }, 5000)
+      trackEvent('popup_view', { popup: 'offre-permis' })
+    }, 8000)
 
     return () => clearTimeout(timer)
   }, [])
@@ -29,6 +34,13 @@ export default function CPFPopup() {
     setIsOpen(false)
     sessionStorage.setItem(STORAGE_KEY, 'true')
   }
+
+  const bullets = [
+    'Boîte automatique 13 h dès 799 €',
+    'Code de la route inclus pendant 1 an',
+    'Paiement en 2 fois sans frais',
+    'Un conseiller vous rappelle sous 24 h',
+  ]
 
   return (
     <AnimatePresence>
@@ -77,27 +89,40 @@ export default function CPFPopup() {
               {/* Content */}
               <div className="relative z-10 px-6 py-9 text-center sm:px-9 sm:py-11">
                 <h2 className="font-poppins text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-                  Échec au permis&nbsp;?
+                  Votre permis
                   <span className="mt-1 block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-fuchsia-400 to-purple-400">
-                    Ne baissez pas les bras&nbsp;!
+                    dès 799&nbsp;€
                   </span>
                 </h2>
 
-                <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-gray-200 sm:text-base">
-                  Vous avez raté votre examen du permis de conduire&nbsp;? Pas de panique,
-                  une solution existe. Contactez-nous dès maintenant et bénéficiez d&apos;un
-                  accompagnement personnalisé pour retrouver rapidement une nouvelle date
-                  d&apos;examen et mettre toutes les chances de votre côté.
-                </p>
+                <ul className="mx-auto mt-6 max-w-xs space-y-3 text-left">
+                  {bullets.map((bullet) => (
+                    <li key={bullet} className="flex items-start gap-2.5 text-sm text-gray-200 sm:text-base">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-pink-400" strokeWidth={3} />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
 
                 <Link
-                  href="/contact"
-                  onClick={handleClose}
+                  href="/s-inscrire"
+                  onClick={() => {
+                    trackEvent('cta_click', { location: 'popup', target: 's-inscrire' })
+                    handleClose()
+                  }}
                   className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-7 py-3.5 font-poppins text-sm font-semibold text-white shadow-lg shadow-pink-500/25 transition-opacity hover:opacity-90 sm:text-base"
                 >
-                  <Phone className="h-4 w-4" />
-                  Contactez-nous dès aujourd&apos;hui&nbsp;!
+                  Je commence mon permis
                 </Link>
+
+                <a
+                  href={`tel:${siteConfig.phoneTel}`}
+                  onClick={() => trackEvent('phone_click', { location: 'popup' })}
+                  className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-300 underline-offset-4 hover:text-white hover:underline"
+                >
+                  <Phone className="h-4 w-4" />
+                  ou appelez-nous : {siteConfig.phone}
+                </a>
               </div>
             </div>
           </motion.div>

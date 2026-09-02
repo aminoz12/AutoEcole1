@@ -1,10 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Mail, User, Phone as PhoneIcon, MessageSquare, ArrowRight, CheckCircle } from 'lucide-react'
+import { trackLead } from '@/lib/analytics'
 
 export default function ContactForm() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -14,7 +17,6 @@ export default function ContactForm() {
 
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [successMessage, setSuccessMessage] = useState('')
 
   const validateForm = () => {
     setError('')
@@ -80,22 +82,9 @@ export default function ContactForm() {
         throw new Error(data.error || 'Erreur lors de l\'envoi')
       }
 
-      // Show success message
-      setSuccessMessage(
-        'Message envoyé avec succès ! Notre équipe vous recontactera sous 24h.'
-      )
-
-      // Reset form
-      setFormData({
-        fullName: '',
-        email: '',
-        phone: '',
-        message: '',
-      })
-
-      setTimeout(() => {
-        setSuccessMessage('')
-      }, 5000)
+      trackLead('contact')
+      router.push('/merci')
+      return
     } catch (error) {
       console.error('Contact error:', error)
       setError(error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'envoi')
@@ -135,17 +124,6 @@ export default function ContactForm() {
             >
               <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
               <p className="flex-1">{error}</p>
-            </motion.div>
-          )}
-
-          {successMessage && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mb-6 p-4 bg-green-50 border border-green-200 text-green-600 rounded-lg flex items-start gap-3"
-            >
-              <CheckCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
-              <p className="flex-1">{successMessage}</p>
             </motion.div>
           )}
 

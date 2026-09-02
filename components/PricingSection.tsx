@@ -18,11 +18,11 @@ interface PricingSectionProps {
 function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
   return (
     <div
-      className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col ${
+      className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col min-h-[420px] ${
         pack.popular
           ? 'border-purple-500/40 shadow-2xl shadow-purple-500/10'
           : 'border-white/10'
-      } ${catKey === 'manuelle' || catKey === 'auto' ? 'min-h-[420px]' : ''}`}
+      }`}
     >
       {pack.popular && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
@@ -40,34 +40,22 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
         </div>
       </div>
 
+      {/* Le lien porte la formule + le pack pour pré-remplir le formulaire :
+          l'élève ne re-choisit pas ce qu'il vient de cliquer */}
       <motion.a
-        href="/s-inscrire"
+        href={`/s-inscrire?formule=${catKey}&pack=${encodeURIComponent(pack.title)}`}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
-        className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-4 flex items-center justify-center gap-2 w-max mx-auto"
+        className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"
       >
         <Check className="h-4 w-4" />
         Je m&apos;inscris
       </motion.a>
 
-      <motion.a
-        href={
-          catKey === 'manuelle' || catKey === 'auto'
-            ? '/Pieces_a_fournir_simple.pdf'
-            : '/Pieces_a_fournir.pdf'
-        }
-        download
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        className="bg-white/10 hover:bg-white/20 text-white text-center text-sm font-semibold py-2.5 px-6 rounded-full border border-white/20 mb-6 flex items-center justify-center gap-2 w-max mx-auto transition-all"
-      >
-        📄 Pièces à fournir
-      </motion.a>
-
       <ul className="space-y-2.5 border-t border-white/10 pt-5">
         {pack.features.map((feature, i) => (
-          <li key={i} className="flex items-center gap-2.5 text-sm text-gray-300">
-            <Check className="h-4 w-4 text-purple-400 flex-shrink-0" strokeWidth={2.5} />
+          <li key={i} className="flex items-start gap-2.5 text-sm text-gray-300">
+            <Check className="mt-0.5 h-4 w-4 text-purple-400 flex-shrink-0" strokeWidth={2.5} />
             <span>{feature}</span>
           </li>
         ))}
@@ -103,7 +91,7 @@ export default function PricingSection({
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base">
-            Boîte manuelle, automatique ou avec code — choisissez la formule adaptée à votre profil
+            Code de la route inclus dans toutes nos formules — choisissez votre boîte, manuelle ou automatique
           </p>
         </motion.div>
 
@@ -147,7 +135,7 @@ export default function PricingSection({
                 <h3 className="text-center text-xl sm:text-2xl font-bold text-white mb-8">
                   {tab.label}
                 </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
                   {packsData[tab.key].map((pack) => (
                     <PackCard key={pack.title} pack={pack} catKey={tab.key} />
                   ))}
@@ -163,7 +151,7 @@ export default function PricingSection({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35 }}
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 max-w-7xl mx-auto"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"
             >
               {packs.map((pack) => (
                 <PackCard key={pack.title} pack={pack} catKey={activeTab} />

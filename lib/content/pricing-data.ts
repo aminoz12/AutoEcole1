@@ -2,7 +2,7 @@
 // Consumed by the PricingSection UI and by the Product/Offer JSON-LD on /tarifs,
 // so the structured data can never drift from what visitors actually see.
 
-export type PackKey = 'manuelle' | 'auto' | 'manuelle-code' | 'auto-code'
+export type PackKey = 'manuelle' | 'auto'
 
 export interface Pack {
   title: string
@@ -12,199 +12,117 @@ export interface Pack {
   features: string[]
 }
 
+// Deux catégories seulement : le code (collectif illimité 1 an, ou intensif
+// pour l'accéléré) est désormais inclus dans toutes les formules.
 export const packCategories: { key: PackKey; label: string }[] = [
-  { key: 'manuelle', label: 'Boîte Manuelle - SANS CODE' },
-  { key: 'auto', label: 'Boîte Auto - SANS CODE' },
-  { key: 'manuelle-code', label: 'Boîte Manuelle + CODE' },
-  { key: 'auto-code', label: 'Boîte Auto + CODE' },
+  { key: 'manuelle', label: 'Boîte Manuelle' },
+  { key: 'auto', label: 'Boîte Automatique' },
 ]
 
 export const packsData: Record<PackKey, Pack[]> = {
   manuelle: [
     {
-      title: 'Permis B 20h',
+      title: 'Permis B 20H',
       total: 899,
-      features: [
-        'Leçons de conduite 20h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'PERMIS B 40H',
-      total: 1699,
-      features: [
-        'Leçons de conduite 40h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'Permis B accéléré 20h',
-      total: 1499,
       popular: true,
       features: [
-        'Formation pratique en accéléré minimum 20H',
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 20h',
         'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
       ],
     },
     {
-      title: 'Permis B 30h',
-      total: 1399,
+      title: 'Permis B AAC',
+      total: 1100,
       features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 20h',
+        'Fourniture pédagogique (livret apprentissage)',
+      ],
+    },
+    {
+      title: 'Permis B 30H',
+      total: 1449,
+      features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
         'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
+      ],
+    },
+    {
+      title: 'Permis B 20H accéléré',
+      total: 1559,
+      features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Séances de code intensif',
+        'Formation pratique en accéléré minimum 20h',
+        'Fourniture pédagogique (livret apprentissage)',
+      ],
+    },
+    {
+      title: 'Permis B 40H',
+      total: 1749,
+      features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 40h',
+        'Fourniture pédagogique (livret apprentissage)',
       ],
     },
   ],
   auto: [
     {
-      title: 'Permis BEA 13h',
+      title: 'Permis B 13H',
       total: 799,
-      features: [
-        'Leçons de conduite 13h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'Permis BEA 20h accéléré',
-      total: 1699,
       popular: true,
       features: [
-        'Leçons de conduite 20h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'Permis BEA 20h',
-      total: 1249,
-      features: [
-        'Leçons de conduite 20h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'Permis BEA 30h',
-      total: 1699,
-      features: [
-        'Leçons de conduite 30h',
-        'Fourniture pédagogique (livret apprentissage)',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 20H ACCÉLÉRÉ',
-      monthly: 150,
-      total: 1500,
-      features: [
-        'Terminez votre formation en 10 jours',
-        ' Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'Permis BEA 13h accéléré',
-      total: 1199,
-      features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
         'Leçons de conduite 13h',
         'Fourniture pédagogique (livret apprentissage)',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-  ],
-  'manuelle-code': [
-    {
-      title: 'FORMULE 20H',
-      total: 899,
-      features: [
-        'Cours de code illimité (1 an)',
-        '20h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
       ],
     },
     {
-      title: 'FORMULE 30H',
-      total: 1399,
-      features: [
-        'Cours de code illimité (1 an)',
-        '30h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 20H ACCÉLÉRÉ',
-      total: 1490,
-      features: [
-        'Terminez votre formation rapidement',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 40H',
-      total: 1699,
-      features: [
-        'Cours de code illimité (1 an)',
-        '40h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-  ],
-  'auto-code': [
-    {
-      title: 'FORMULE 13H',
-      total: 799,
-      features: [
-        'Cours de code illimité (1 an)',
-        '13h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
-      ],
-    },
-    {
-      title: 'FORMULE 20H',
+      title: 'Permis B 20H',
       total: 1249,
       features: [
-        'Cours de code illimité (1 an)',
-        '20h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 20h',
+        'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
-      title: 'FORMULE 20H ACCÉLÉRÉ',
-      total: 1740,
+      title: 'Permis B AAC',
+      total: 1250,
       features: [
-        'Terminez votre formation rapidement',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 20h',
+        'Fourniture pédagogique (livret apprentissage)',
       ],
     },
     {
-      title: 'FORMULE 30H',
+      title: 'Permis B 20H accéléré',
       total: 1749,
       features: [
-        'Cours de code illimité (1 an)',
-        '30h de leçons de conduite',
-        'Paiement en 2 fois sans frais',
-        'Suivi pédagogique',
+        'Frais de constitution de dossier + démarches préfecture',
+        'Séances de code intensif',
+        'Formation pratique en accéléré minimum 20h',
+        'Fourniture pédagogique (livret apprentissage)',
+      ],
+    },
+    {
+      title: 'Permis B 30H',
+      total: 1749,
+      features: [
+        'Frais de constitution de dossier + démarches préfecture',
+        'Cours de code collectif illimité pendant 1 an',
+        'Leçons de conduite 30h',
+        'Fourniture pédagogique (livret apprentissage)',
       ],
     },
   ],

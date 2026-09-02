@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import StickyMobileCTA from '@/components/StickyMobileCTA'
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 import { createPageMetadata } from '@/lib/seo/metadata'
 import { siteConfig } from '@/lib/seo/site-config'
@@ -25,7 +26,7 @@ const inter = Inter({
 export const metadata: Metadata = createPageMetadata({
   title: 'Auto-école à Nanterre — Permis B dès 799 €',
   description:
-    'Permis B à Nanterre : boîte auto dès 799 €, manuelle 20 h dès 899 €, code en ligne, formation accélérée et paiement en 2 fois. CPF selon éligibilité.',
+    'Permis B à Nanterre : boîte auto dès 799 €, manuelle 20 h dès 899 €, code de la route inclus, formation accélérée et paiement en 2 fois. CPF selon éligibilité.',
   path: '/',
   keywords: ['auto-école Nanterre', 'permis accéléré Nanterre', 'auto-école CPF Nanterre', 'permis B 92'],
 })
@@ -86,6 +87,7 @@ export default function RootLayout({
         <WebSiteJsonLd />
         {children}
         <WhatsAppButton />
+        <StickyMobileCTA />
         <Toaster
           position="top-right"
           toastOptions={{

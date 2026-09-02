@@ -42,9 +42,10 @@ export default function TarifsPage() {
             </h1>
             <p className="mx-auto mt-4 text-gray-400">
               Découvrez tous nos tarifs de permis de conduire à Nanterre&nbsp;: formules boîte
-              manuelle et automatique, avec ou sans code, conduite accompagnée et prestations
-              à l&apos;unité. Des prix transparents, le paiement en plusieurs fois sans frais et
-              un accompagnement jusqu&apos;à l&apos;examen — à partir de 899&nbsp;€.
+              manuelle et automatique — code de la route inclus dans toutes nos formules —,
+              conduite accompagnée (AAC) et prestations à l&apos;unité. Des prix transparents,
+              le paiement en 2 fois sans frais et un accompagnement jusqu&apos;à l&apos;examen —
+              à partir de 799&nbsp;€.
             </p>
           </div>
         </div>
@@ -73,10 +74,10 @@ export default function TarifsPage() {
                 </thead>
                 <tbody>
                   {[
-                    ['Permis B', 'Boîte manuelle', 'Non', '20 h', '899 €'],
-                    ['Permis BEA', 'Boîte automatique', 'Non', '13 h', '799 €'],
-                    ['Formule + Code', 'Boîte manuelle', 'Oui (1 an)', '20 h', '899 €'],
-                    ['Formule + Code', 'Boîte automatique', 'Oui (1 an)', '13 h', '799 €'],
+                    ['Permis B 13 h', 'Boîte automatique', 'Oui (1 an)', '13 h', '799 €'],
+                    ['Permis B 20 h', 'Boîte manuelle', 'Oui (1 an)', '20 h', '899 €'],
+                    ['Permis B AAC (conduite accompagnée)', 'Manuelle ou auto', 'Oui (1 an)', '20 h', '1 100 €'],
+                    ['Permis B accéléré', 'Manuelle ou auto', 'Oui (intensif)', '20 h min.', '1 559 €'],
                     ['Pack Web — 1 mois', '—', 'Code en ligne', '—', '10 €'],
                     ['Pack Web — illimité', '—', 'Code en ligne', '—', '29 €'],
                     ['Leçon à l’unité', '—', '—', '1 h', '60 €'],

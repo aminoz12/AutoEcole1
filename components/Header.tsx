@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Phone, ChevronDown } from 'lucide-react'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/seo/site-config'
+import { trackEvent } from '@/lib/analytics'
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,10 +35,8 @@ export default function Header() {
       name: 'Tarifs',
       href: '/tarifs',
       submenu: [
-        { name: 'Boîte Manuelle - SANS CODE', href: '/tarifs#manuelle' },
-        { name: 'Boîte Auto - SANS CODE', href: '/tarifs#auto' },
-        { name: 'Boîte Manuelle + CODE', href: '/tarifs#manuelle-code' },
-        { name: 'Boîte Auto + CODE', href: '/tarifs#auto-code' },
+        { name: 'Boîte Manuelle', href: '/tarifs#manuelle' },
+        { name: 'Boîte Automatique', href: '/tarifs#auto' },
         { name: 'Prestations à l’unité', href: '/tarifs#prestations-a-la-carte' },
         { name: 'Permis Accompagné', href: '/tarifs#permis-accompagne' },
       ],
@@ -107,24 +106,13 @@ export default function Header() {
                 )}
               </motion.div>
             ))}
-            {/* S'inscrire Button */}
+            {/* Phone CTA */}
             <motion.a
-              href="/s-inscrire"
+              href={`tel:${siteConfig.phoneTel}`}
+              onClick={() => trackEvent('phone_click', { location: 'header' })}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: navItems.length * 0.1 + 0.3 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25"
-            >
-              Je m'inscris
-            </motion.a>
-          </nav>
-
-          {/* Right Side - Phone CTA */}
-          <div className="hidden lg:flex items-center space-x-3">
-            <motion.a
-              href={`tel:${siteConfig.phoneTel}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white px-4 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-pink-500/25"
@@ -132,20 +120,44 @@ export default function Header() {
               <Phone className="h-4 w-4" />
               <span>{siteConfig.phone}</span>
             </motion.a>
+          </nav>
+
+          {/* Right Side - S'inscrire Button (desktop) */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <motion.a
+              href="/s-inscrire"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-all duration-300 shadow-lg shadow-pink-500/25"
+            >
+              Je m'inscris
+            </motion.a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
-          >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6 text-white" />
-            ) : (
-              <Menu className="h-6 w-6 text-white" />
-            )}
-          </motion.button>
+          {/* Mobile/tablet: click-to-call always visible + menu button (phone only up to lg) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <motion.a
+              href={`tel:${siteConfig.phoneTel}`}
+              onClick={() => trackEvent('phone_click', { location: 'header_mobile' })}
+              whileTap={{ scale: 0.95 }}
+              aria-label={`Appeler l'auto-école au ${siteConfig.phone}`}
+              className="flex items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-pink-500 p-2.5 text-white shadow-lg shadow-pink-500/25"
+            >
+              <Phone className="h-5 w-5" />
+            </motion.a>
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Menu"
+              className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+            >
+              {isMobileMenuOpen ? (
+                <X className="h-6 w-6 text-white" />
+              ) : (
+                <Menu className="h-6 w-6 text-white" />
+              )}
+            </motion.button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -192,10 +204,14 @@ export default function Header() {
               >
                 Je m'inscris
               </a>
-              <div className="flex items-center space-x-2 text-sm text-gray-400">
+              <a
+                href={`tel:${siteConfig.phoneTel}`}
+                onClick={() => trackEvent('phone_click', { location: 'mobile_menu' })}
+                className="flex items-center space-x-2 text-sm text-gray-300 hover:text-white"
+              >
                 <Phone className="h-4 w-4" />
                 <span>{siteConfig.phone}</span>
-              </div>
+              </a>
             </div>
           </div>
         </motion.div>

@@ -2,7 +2,7 @@ export const pricingFaqs = [
   {
     question: 'Quel est le prix du permis de conduire à Nanterre ?',
     answer:
-      'Nos formules permis B démarrent à 899 € en boîte manuelle (20h de conduite) et à 799 € en boîte automatique (13h). Les formules avec code de la route inclus commencent également à 899 €. Tous nos prix sont transparents et affichés sur cette page.',
+      'Nos formules permis B démarrent à 799 € en boîte automatique (13h de conduite) et à 899 € en boîte manuelle (20h). Le code de la route (cours collectif illimité pendant 1 an) et les frais de dossier sont inclus dans toutes nos formules. Tous nos prix sont transparents et affichés sur cette page.',
   },
   {
     question: 'Peut-on payer le permis en plusieurs fois ?',
@@ -12,7 +12,7 @@ export const pricingFaqs = [
   {
     question: 'Le code de la route est-il inclus dans vos formules ?',
     answer:
-      'Le code est inclus dans nos formules « + CODE » avec un accès illimité pendant 1 an. Vous pouvez aussi réviser le code en ligne grâce au Pack Web, à partir de 10 € pour 1 mois ou 29 € en accès illimité.',
+      'Oui, le code est inclus dans toutes nos formules : cours de code collectif illimité pendant 1 an (ou séances de code intensif pour les formules accélérées). Vous pouvez aussi réviser le code en ligne grâce au Pack Web, à partir de 10 € pour 1 mois ou 29 € en accès illimité.',
   },
   {
     question: 'Peut-on financer son permis avec le CPF ?',

@@ -4,6 +4,7 @@ import { MapPin, Clock, Car, CheckCircle2, HelpCircle, ChevronRight } from 'luci
 
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import CallbackForm from '@/components/CallbackForm'
 import { JsonLd, BreadcrumbJsonLd, FAQPageJsonLd } from '@/components/seo/JsonLd'
 import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 import { cities, cityPath, nearCity, type City } from '@/lib/content/cities-data'
@@ -108,6 +109,20 @@ export default function CityLandingPage({ city }: { city: City }) {
               <div className="font-poppins text-xl font-bold text-white">10h – 20h</div>
               <div className="mt-1 text-sm text-gray-400">conduite en semaine, samedi 9h–15h</div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Capture de lead là où le trafic SEO atterrit : pas besoin de
+          naviguer vers le formulaire complet pour être rappelé */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-3xl">
+            <CallbackForm
+              source={`city:${city.slug}`}
+              title={`Habitant(e) de ${city.name} ? On vous rappelle`}
+              subtitle="Laissez votre numéro — un conseiller vous rappelle sous 24 h ouvrées pour parler formules, planning et financement."
+            />
           </div>
         </div>
       </section>
@@ -265,12 +280,19 @@ export default function CityLandingPage({ city }: { city: City }) {
               >
                 S’inscrire en ligne
               </Link>
-              <Link
-                href="/contact"
+              <a
+                href={`tel:${siteConfig.phoneTel}`}
                 className="rounded-full border border-white/20 bg-white/5 px-8 py-3 text-center font-poppins font-semibold text-white transition hover:border-primary hover:bg-white/10"
               >
-                Nous contacter
-              </Link>
+                Appeler le {siteConfig.phone}
+              </a>
+            </div>
+            <div className="mt-8 border-t border-white/10 pt-8 text-left">
+              <CallbackForm
+                source={`city:${city.slug}:bottom`}
+                title="Ou laissez votre numéro"
+                subtitle="Un conseiller vous rappelle sous 24 h ouvrées — gratuit et sans engagement."
+              />
             </div>
           </div>
         </div>
