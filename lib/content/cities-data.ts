@@ -32,6 +32,9 @@ export interface City {
   faqs: CityFaq[]
   /** Visuel de la page, sous public/. Sert aussi d'image de partage. */
   image?: string
+  /** Titre du mini-formulaire de rappel — remplace « Habitant(e) de X ? »
+      quand la page cible un lieu plutôt qu'une ville (fac, La Défense…). */
+  callbackTitle?: string
 }
 
 export const cityPath = (city: City) => `/auto-ecole-${city.slug}`
@@ -813,6 +816,140 @@ export const cities: City[] = [
         question: 'Proposez-vous une formule accélérée ?',
         answer:
           'Oui. Code et conduite peuvent être concentrés sur quelques semaines si vos disponibilités le permettent — une formule souvent choisie lorsque le permis conditionne une embauche.',
+      },
+    ],
+  },
+  {
+    slug: 'universite-nanterre',
+    name: 'la fac de Nanterre',
+    schemaName: 'Nanterre',
+    fromCity: 'depuis le campus',
+    postalCode: '92000',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '4 min',
+    distanceKm: 2,
+    metaDescription:
+      'Auto-école près de la fac de Nanterre (université Paris Nanterre) : permis B dès 799 €, code inclus, paiement en 2 fois — sur la même avenue que le campus.',
+    callbackTitle: 'Étudiant(e) à Nanterre ? On vous rappelle',
+    intro: [
+      'Étudiant(e) à l’université Paris Nanterre ? Notre auto-école est installée sur la même avenue que votre campus : le 375 avenue de la République, à quelques minutes du site universitaire et de la gare RER Nanterre-Université. Entre deux cours, après les TD ou le samedi matin, vous rejoignez vos leçons de conduite sans traverser la ville — c’est probablement l’auto-école la plus simple d’accès de toute votre vie étudiante.',
+      'On connaît les contraintes d’un budget étudiant : nos formules démarrent à 799 € en boîte automatique (code de la route inclus pendant 1 an), le paiement en 2 fois sans frais est possible sur toutes les formules, et le code se révise en ligne depuis votre chambre ou la BU. Pour les alternants, le CPF peut financer tout ou partie du permis selon votre éligibilité — un vrai levier quand le permis conditionne un stage ou une embauche.',
+    ],
+    access: [
+      { mode: 'À pied', detail: 'Le campus (200 avenue de la République) et l’agence (375 avenue de la République) sont sur la même avenue — comptez une quinzaine de minutes à pied.' },
+      { mode: 'RER A', detail: 'Depuis la gare Nanterre-Université, l’avenue de la République est directement accessible ; l’agence se trouve à quelques minutes.' },
+      { mode: 'Bus / vélo', detail: 'Les lignes qui longent l’avenue de la République desservent l’agence ; à vélo, comptez environ 5 minutes depuis le campus.' },
+    ],
+    neighborhoods: ['Campus universitaire', 'Résidences étudiantes', 'Quartier Université', 'Anatole-France'],
+    whyUs: [
+      'Sur la même avenue que l’université : les leçons se calent entre deux cours, sans temps de trajet perdu.',
+      'Des formules pensées pour les budgets étudiants : boîte auto dès 799 €, code inclus, paiement en 2 fois sans frais.',
+      'Créneaux de conduite de 10h à 20h en semaine et le samedi matin — compatibles avec un emploi du temps universitaire.',
+    ],
+    faqs: [
+      {
+        question: 'Je suis étudiant(e) à la fac de Nanterre : quelle est l’auto-école la plus proche du campus ?',
+        answer:
+          'Notre agence est au 375 avenue de la République, sur la même avenue que l’université Paris Nanterre (200 avenue de la République) — à une quinzaine de minutes à pied du campus et à quelques minutes de la gare RER Nanterre-Université.',
+      },
+      {
+        question: 'Peut-on caler les leçons de conduite autour d’un emploi du temps étudiant ?',
+        answer:
+          'Oui. Les leçons se réservent de 10h à 20h en semaine et le samedi de 9h à 15h : entre deux cours, en fin de journée ou le week-end. Le code se révise en ligne, où et quand vous voulez.',
+      },
+      {
+        question: 'Existe-t-il des facilités de paiement pour les étudiants ?',
+        answer:
+          'Toutes nos formules sont payables en 2 fois sans frais, à partir de 799 € en boîte automatique (code inclus 1 an). Les alternants peuvent aussi mobiliser leur CPF selon les conditions d’éligibilité en vigueur.',
+      },
+    ],
+  },
+  {
+    slug: 'la-defense',
+    name: 'La Défense',
+    schemaName: 'La Défense',
+    fromCity: 'depuis La Défense',
+    postalCode: '92800',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '10 min',
+    distanceKm: 4,
+    metaDescription:
+      'Auto-école près de La Défense : permis B dès 799 €, leçons jusqu’à 20h après le bureau, à quelques minutes en RER A. Code inclus, paiement en 2 fois.',
+    callbackTitle: 'Vous travaillez à La Défense ? On vous rappelle',
+    intro: [
+      'Vous travaillez à La Défense et cherchez une auto-école accessible depuis le bureau ? La nôtre est à Nanterre, à quelques minutes du quartier d’affaires : deux arrêts de RER A ou une dizaine de minutes en voiture, et vous êtes au 375 avenue de la République. Avec des leçons de conduite jusqu’à 20h en semaine, vous conduisez après le travail sans sacrifier votre soirée — et le samedi reste disponible pour les semaines chargées.',
+      'Beaucoup de nos élèves sont des actifs du quartier d’affaires qui passent (ou repassent) le permis pour un poste, une mutation ou simplement pour ne plus dépendre des transports. Formules boîte manuelle ou automatique, permis accéléré quand le calendrier presse, code de la route inclus 1 an et révisable en ligne entre deux réunions. Le CPF peut financer la formation selon votre éligibilité — un avantage souvent méconnu des salariés.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Depuis La Défense (Grande Arche), Nanterre est à quelques minutes de RER A ; l’agence se rejoint facilement depuis les gares de Nanterre.' },
+      { mode: 'Voiture', detail: 'Environ 10 minutes depuis le quartier d’affaires en direction de Nanterre — l’agence est sur l’avenue de la République.' },
+      { mode: 'Bus', detail: 'Plusieurs lignes relient La Défense aux quartiers de Nanterre desservant l’avenue de la République.' },
+    ],
+    neighborhoods: ['Grande Arche', 'Esplanade', 'Quatre Temps', 'Les Terrasses (Nanterre)'],
+    whyUs: [
+      'À quelques minutes du quartier d’affaires en RER A : les leçons se glissent avant ou après le bureau.',
+      'Conduite jusqu’à 20h en semaine et le samedi matin — un planning pensé pour les actifs.',
+      'Permis accéléré et CPF selon éligibilité : la bonne formule quand le permis conditionne un poste ou une mutation.',
+    ],
+    faqs: [
+      {
+        question: 'Je travaille à La Défense : puis-je prendre des leçons après le travail ?',
+        answer:
+          'Oui. Les leçons de conduite se réservent jusqu’à 20h en semaine — depuis La Défense, vous êtes à l’agence en quelques minutes de RER A ou une dizaine de minutes en voiture. Le samedi (9h–15h) complète les semaines chargées.',
+      },
+      {
+        question: 'Puis-je financer mon permis avec le CPF en tant que salarié ?',
+        answer:
+          'Le CPF peut financer le permis B selon votre situation et les règles en vigueur — vérifiez votre solde et votre éligibilité sur moncompteformation.gouv.fr. Nous vous guidons dans les démarches lors de l’inscription.',
+      },
+      {
+        question: 'Proposez-vous des formules accélérées pour un besoin professionnel urgent ?',
+        answer:
+          'Oui. Le permis B accéléré (dès 1 559 €, code intensif inclus) concentre la formation sur quelques semaines — la formule choisie par nos élèves dont l’embauche ou la mutation dépend du permis.',
+      },
+    ],
+  },
+  {
+    slug: 'nanterre-ville',
+    name: 'Nanterre-Ville',
+    schemaName: 'Nanterre',
+    fromCity: 'depuis le centre-ville',
+    postalCode: '92000',
+    department: 'Hauts-de-Seine (92)',
+    driveTime: '5 min',
+    distanceKm: 2,
+    metaDescription:
+      'Auto-école à Nanterre centre : permis B dès 799 €, code inclus 1 an, paiement en 2 fois. À quelques minutes du Vieux-Nanterre et de la gare Nanterre-Ville.',
+    intro: [
+      'Vous habitez le centre de Nanterre — Vieux-Nanterre, quartier de la mairie, Plateau ou Parc Sud ? Notre agence du 375 avenue de la République est à quelques minutes de chez vous, sur l’un des axes principaux de la ville. Depuis la gare RER Nanterre-Ville, l’avenue se rejoint rapidement à pied, en bus ou à vélo : pas besoin de quitter votre ville pour une formation sérieuse et bien notée.',
+      'Apprendre à conduire là où l’on vit a un vrai avantage : vous vous formez sur les ronds-points, les zones 30 et les grands axes que vous emprunterez ensuite au quotidien — et qui correspondent aux parcours d’examen du secteur. Formules boîte manuelle ou automatique dès 799 €, code de la route inclus pendant 1 an (en salle à l’agence ou en ligne), conduite accompagnée dès 15 ans et paiement en 2 fois sans frais.',
+    ],
+    access: [
+      { mode: 'RER A', detail: 'Depuis la gare Nanterre-Ville, rejoignez l’avenue de la République en quelques minutes de bus ou de vélo.' },
+      { mode: 'Bus', detail: 'Les lignes qui traversent le centre de Nanterre desservent l’avenue de la République, où se trouve l’agence.' },
+      { mode: 'Voiture / vélo', detail: 'Environ 5 minutes en voiture depuis la place de la Boule ou la mairie ; l’avenue de la République est un axe direct.' },
+    ],
+    neighborhoods: ['Vieux-Nanterre / Centre', 'Plateau – Mont-Valérien', 'Parc Sud', 'Chemin-de-l’Île'],
+    whyUs: [
+      'Votre auto-école de quartier : l’agence est sur l’avenue de la République, à quelques minutes du centre-ville.',
+      'Vous apprenez sur les routes de Nanterre — celles des parcours d’examen du secteur et de vos trajets quotidiens.',
+      'Plus de 300 avis Google (4,9/5) laissés en grande partie par des élèves nanterriens.',
+    ],
+    faqs: [
+      {
+        question: 'Où se trouve exactement votre auto-école à Nanterre ?',
+        answer:
+          'Au 375 avenue de la République, 92000 Nanterre — l’un des axes principaux de la ville, accessible en bus, à vélo ou à pied depuis le centre et la gare RER Nanterre-Ville.',
+      },
+      {
+        question: 'Les leçons se déroulent-elles dans Nanterre même ?',
+        answer:
+          'Oui, en grande partie : vous vous formez sur les routes de Nanterre et des communes voisines, qui correspondent aux parcours utilisés par les centres d’examen du secteur.',
+      },
+      {
+        question: 'Quels sont vos horaires pour les habitants du centre-ville ?',
+        answer:
+          'La conduite se réserve de 10h à 20h en semaine et de 9h à 15h le samedi. Le bureau est ouvert du lundi au samedi — passez nous voir avenue de la République pour un devis en quelques minutes.',
       },
     ],
   },

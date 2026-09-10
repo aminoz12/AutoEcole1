@@ -120,7 +120,7 @@ export default function CityLandingPage({ city }: { city: City }) {
           <div className="mx-auto max-w-3xl">
             <CallbackForm
               source={`city:${city.slug}`}
-              title={`Habitant(e) de ${city.name} ? On vous rappelle`}
+              title={city.callbackTitle ?? `Habitant(e) de ${city.name} ? On vous rappelle`}
               subtitle="Laissez votre numéro — un conseiller vous rappelle sous 24 h ouvrées pour parler formules, planning et financement."
             />
           </div>
