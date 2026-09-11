@@ -2,9 +2,11 @@
 
 import { Fragment, useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Check, Map, Users, CalendarCheck, Phone } from 'lucide-react'
+import { Check, Map, Users, CalendarCheck, Phone, X, AlertCircle } from 'lucide-react'
 import { siteConfig } from '@/lib/seo/site-config'
 import { packsData, packCategories as tabs, type Pack, type PackKey } from '@/lib/content/pricing-data'
+import { useScrollLock } from '@/lib/useScrollLock'
+import { trackEvent } from '@/lib/analytics'
 
 interface PricingSectionProps {
   transmissionType?: 'manuelle' | 'auto'
@@ -16,6 +18,24 @@ interface PricingSectionProps {
 }
 
 function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
+  // Popup de confirmation (packs avec confirmNote, ex. Représentation Rapide) :
+  // l'élève coche qu'il a lu le rappel avant d'accéder au formulaire.
+  const [confirmOpen, setConfirmOpen] = useState(false)
+  const [acknowledged, setAcknowledged] = useState(false)
+  useScrollLock(confirmOpen)
+
+  const signupHref = `/s-inscrire?formule=${catKey}&pack=${encodeURIComponent(pack.title)}`
+
+  const closeConfirm = () => {
+    setConfirmOpen(false)
+    setAcknowledged(false)
+  }
+
+  const proceed = () => {
+    trackEvent('cta_click', { location: 'pricing_confirm_popup', target: 's-inscrire' })
+    window.location.href = signupHref
+  }
+
   return (
     <div
       className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col min-h-[420px] ${
@@ -35,6 +55,11 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
       </h3>
 
       <div className="text-center mb-6">
+        {pack.fromPrice && (
+          <div className="text-xs font-medium uppercase tracking-wide text-gray-400 mb-1">
+            À partir de
+          </div>
+        )}
         <div className="flex items-baseline justify-center gap-1">
           <span className="text-5xl font-extrabold text-white">{pack.total}€</span>
         </div>
@@ -42,15 +67,28 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
 
       {/* Le lien porte la formule + le pack pour pré-remplir le formulaire :
           l'élève ne re-choisit pas ce qu'il vient de cliquer */}
-      <motion.a
-        href={`/s-inscrire?formule=${catKey}&pack=${encodeURIComponent(pack.title)}`}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.97 }}
-        className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"
-      >
-        <Check className="h-4 w-4" />
-        Je m&apos;inscris
-      </motion.a>
+      {pack.confirmNote ? (
+        <motion.button
+          type="button"
+          onClick={() => setConfirmOpen(true)}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"
+        >
+          <Check className="h-4 w-4" />
+          Je m&apos;inscris
+        </motion.button>
+      ) : (
+        <motion.a
+          href={signupHref}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          className="bg-gradient-to-r from-purple-600 to-purple-400 text-white text-center text-sm font-semibold py-3 px-8 rounded-full shadow-lg shadow-purple-500/25 mb-6 flex items-center justify-center gap-2 w-max mx-auto"
+        >
+          <Check className="h-4 w-4" />
+          Je m&apos;inscris
+        </motion.a>
+      )}
 
       <ul className="space-y-2.5 border-t border-white/10 pt-5">
         {pack.features.map((feature, i) => (
@@ -60,6 +98,85 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
           </li>
         ))}
       </ul>
+
+      {/* Popup de confirmation */}
+      <AnimatePresence>
+        {confirmOpen && pack.confirmNote && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[120] bg-black/60"
+              onClick={closeConfirm}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+              className="fixed inset-0 z-[121] flex items-center justify-center p-4 pointer-events-none"
+            >
+              <div
+                role="dialog"
+                aria-modal="true"
+                aria-label={`Avant de vous inscrire — ${pack.title}`}
+                className="relative w-full max-w-md rounded-2xl border border-white/10 bg-[#151b2e] p-7 shadow-2xl pointer-events-auto"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  type="button"
+                  onClick={closeConfirm}
+                  className="absolute top-3 right-3 rounded-full bg-white/10 p-2 text-white hover:bg-white/20 transition-colors"
+                  aria-label="Fermer"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber-500/15">
+                    <AlertCircle className="h-5 w-5 text-amber-400" />
+                  </div>
+                  <h4 className="font-poppins text-lg font-bold text-white">
+                    Avant de vous inscrire
+                  </h4>
+                </div>
+
+                <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4">
+                  <input
+                    type="checkbox"
+                    checked={acknowledged}
+                    onChange={(e) => setAcknowledged(e.target.checked)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-purple-500"
+                  />
+                  <span className="text-sm leading-relaxed text-gray-300">
+                    {pack.confirmNote}
+                  </span>
+                </label>
+
+                <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+                  <button
+                    type="button"
+                    onClick={closeConfirm}
+                    className="rounded-full border border-white/20 bg-white/5 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Annuler
+                  </button>
+                  <button
+                    type="button"
+                    onClick={proceed}
+                    disabled={!acknowledged}
+                    className="rounded-full bg-gradient-to-r from-purple-600 to-purple-400 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-purple-500/25 transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+                  >
+                    J&apos;ai compris
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
@@ -135,9 +252,16 @@ export default function PricingSection({
                 <h3 className="text-center text-xl sm:text-2xl font-bold text-white mb-8">
                   {tab.label}
                 </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <p className="md:hidden text-center text-xs text-gray-500 mb-3">
+                  Faites glisser pour comparer les formules →
+                </p>
+                {/* Mobile : carrousel horizontal (snap) pour éviter 6 cartes empilées ;
+                    dès md : grille classique */}
+                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
                   {packsData[tab.key].map((pack) => (
-                    <PackCard key={pack.title} pack={pack} catKey={tab.key} />
+                    <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
+                      <PackCard pack={pack} catKey={tab.key} />
+                    </div>
                   ))}
                 </div>
               </div>
@@ -151,11 +275,19 @@ export default function PricingSection({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.35 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
-              {packs.map((pack) => (
-                <PackCard key={pack.title} pack={pack} catKey={activeTab} />
-              ))}
+              <p className="md:hidden text-center text-xs text-gray-500 mb-3">
+                Faites glisser pour comparer les formules →
+              </p>
+              {/* Mobile : carrousel horizontal (snap) ; dès md : grille classique */}
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
+                {packs.map((pack) => (
+                  <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
+                    <PackCard pack={pack} catKey={activeTab} />
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </AnimatePresence>
         )}

@@ -9,6 +9,10 @@ export interface Pack {
   monthly?: number
   total: number
   popular?: boolean
+  /** Affiche « À partir de » au-dessus du prix (prix plancher, pas fixe). */
+  fromPrice?: boolean
+  /** Texte de rappel à confirmer (case à cocher) avant d'accéder à l'inscription. */
+  confirmNote?: string
   features: string[]
 }
 
@@ -72,6 +76,19 @@ export const packsData: Record<PackKey, Pack[]> = {
         'Fourniture pédagogique (livret apprentissage)',
       ],
     },
+    {
+      title: 'Représentation Rapide',
+      total: 749,
+      fromPrice: true,
+      confirmNote:
+        'Pour rappel, la représentation comprend 4H de formation. Il s’adresse à des candidats ayant déjà passé le permis de conduire, et ce récemment.',
+      features: [
+        'Durée du stage : 1 à 3 jours',
+        '4H de conduite',
+        '1 date d’examen 100% garantie',
+        'Délai : 3 à 10 jours après le stage',
+      ],
+    },
   ],
   auto: [
     {
@@ -123,6 +140,19 @@ export const packsData: Record<PackKey, Pack[]> = {
         'Cours de code collectif illimité pendant 1 an',
         'Leçons de conduite 30h',
         'Fourniture pédagogique (livret apprentissage)',
+      ],
+    },
+    {
+      title: 'Représentation Rapide',
+      total: 749,
+      fromPrice: true,
+      confirmNote:
+        'Pour rappel, la représentation comprend 4H de formation. Il s’adresse à des candidats ayant déjà passé le permis de conduire, et ce récemment.',
+      features: [
+        'Durée du stage : 1 à 3 jours',
+        '4H de conduite',
+        '1 date d’examen 100% garantie',
+        'Délai : 3 à 10 jours après le stage',
       ],
     },
   ],
