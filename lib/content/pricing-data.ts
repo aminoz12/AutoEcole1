@@ -8,7 +8,6 @@ export interface Pack {
   title: string
   monthly?: number
   total: number
-  popular?: boolean
   /** Affiche « À partir de » au-dessus du prix (prix plancher, pas fixe). */
   fromPrice?: boolean
   /** Texte de rappel à confirmer (case à cocher) avant d'accéder à l'inscription. */
@@ -28,7 +27,6 @@ export const packsData: Record<PackKey, Pack[]> = {
     {
       title: 'Permis B 20H',
       total: 899,
-      popular: true,
       features: [
         'Frais de constitution de dossier + démarches préfecture',
         'Cours de code collectif illimité pendant 1 an',
@@ -94,7 +92,6 @@ export const packsData: Record<PackKey, Pack[]> = {
     {
       title: 'Permis B 13H',
       total: 799,
-      popular: true,
       features: [
         'Frais de constitution de dossier + démarches préfecture',
         'Cours de code collectif illimité pendant 1 an',

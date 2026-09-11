@@ -37,19 +37,7 @@ function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
   }
 
   return (
-    <div
-      className={`relative bg-[#151b2e] border rounded-2xl p-7 flex flex-col min-h-[420px] ${
-        pack.popular
-          ? 'border-purple-500/40 shadow-2xl shadow-purple-500/10'
-          : 'border-white/10'
-      }`}
-    >
-      {pack.popular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gradient-to-r from-purple-500 to-pink-500 text-white text-[10px] font-semibold px-3 py-1 rounded-full shadow-lg">
-          Formule la plus choisie
-        </div>
-      )}
-
+    <div className="relative bg-[#151b2e] border border-white/10 rounded-2xl p-7 flex flex-col min-h-[420px]">
       <h3 className="text-white text-center text-base font-bold tracking-wide mb-6 mt-2">
         {pack.title}
       </h3>
@@ -257,7 +245,7 @@ export default function PricingSection({
                 </p>{/* le pt-4 du carrousel laisse dépasser le badge « Formule la plus choisie » */}
                 {/* Mobile : carrousel horizontal (snap) pour éviter 6 cartes empilées ;
                     dès md : grille classique */}
-                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pt-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pt-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
+                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
                   {packsData[tab.key].map((pack) => (
                     <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
                       <PackCard pack={pack} catKey={tab.key} />
@@ -281,7 +269,7 @@ export default function PricingSection({
                 Faites glisser pour comparer les formules →
               </p>
               {/* Mobile : carrousel horizontal (snap) ; dès md : grille classique */}
-              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pt-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pt-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
                 {packs.map((pack) => (
                   <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
                     <PackCard pack={pack} catKey={activeTab} />
