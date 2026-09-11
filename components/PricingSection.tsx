@@ -254,10 +254,10 @@ export default function PricingSection({
                 </h3>
                 <p className="md:hidden text-center text-xs text-gray-500 mb-3">
                   Faites glisser pour comparer les formules →
-                </p>
+                </p>{/* le pt-4 du carrousel laisse dépasser le badge « Formule la plus choisie » */}
                 {/* Mobile : carrousel horizontal (snap) pour éviter 6 cartes empilées ;
                     dès md : grille classique */}
-                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
+                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pt-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pt-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
                   {packsData[tab.key].map((pack) => (
                     <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
                       <PackCard pack={pack} catKey={tab.key} />
@@ -281,7 +281,7 @@ export default function PricingSection({
                 Faites glisser pour comparer les formules →
               </p>
               {/* Mobile : carrousel horizontal (snap) ; dès md : grille classique */}
-              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
+              <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 pt-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:px-0 md:pt-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-5 md:overflow-visible">
                 {packs.map((pack) => (
                   <div key={pack.title} className="grid w-[82%] shrink-0 snap-center sm:w-[55%] md:w-auto md:shrink">
                     <PackCard pack={pack} catKey={activeTab} />

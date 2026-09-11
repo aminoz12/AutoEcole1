@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Phone, MessageCircle } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/seo/site-config'
 import { trackEvent } from '@/lib/analytics'
 
@@ -49,7 +50,7 @@ export default function StickyMobileCTA() {
             onClick={() => trackEvent('whatsapp_click', { location: 'sticky_bar' })}
             className="flex flex-col items-center justify-center gap-0.5 text-white active:bg-white/10"
           >
-            <MessageCircle className="h-5 w-5 text-[#25D366]" />
+            <Image src="/whatsapp.png" alt="" width={20} height={20} className="h-5 w-5 object-contain" />
             <span className="text-[11px] font-semibold">WhatsApp</span>
           </a>
           {onRegistrationPage ? (
