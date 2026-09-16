@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { blogPosts } from '@/lib/blog-data'
 import { cities, cityPath } from '@/lib/content/cities-data'
+import { accelereCities, accelerePath } from '@/lib/content/permis-accelere-data'
 import { siteConfig } from '@/lib/seo/site-config'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -38,6 +39,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/permis-accelere`,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/contact`,
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -55,6 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const accelerePages: MetadataRoute.Sitemap = accelereCities.map((city) => ({
+    url: `${baseUrl}${accelerePath(city)}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post.published_at),
@@ -62,5 +74,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
-  return [...staticPages, ...cityPages, ...blogPages]
+  return [...staticPages, ...cityPages, ...accelerePages, ...blogPages]
 }

@@ -17,7 +17,9 @@ interface PricingSectionProps {
   showAllCategories?: boolean
 }
 
-function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
+// Exporté : la page /permis-accelere réutilise les mêmes cartes (popup de
+// confirmation Représentation Rapide comprise).
+export function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
   // Popup de confirmation (packs avec confirmNote, ex. Représentation Rapide) :
   // l'élève coche qu'il a lu le rappel avant d'accéder au formulaire.
   const [confirmOpen, setConfirmOpen] = useState(false)

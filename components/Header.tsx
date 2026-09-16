@@ -30,6 +30,7 @@ export default function Header() {
   const navItems: NavItem[] = [
     { name: 'Accueil', href: '/' },
     { name: 'Pack Web', href: '/prestations-a-l-unite' },
+    { name: 'Permis Accéléré', href: '/permis-accelere' },
     {
       name: 'Tarifs',
       href: '/tarifs',
