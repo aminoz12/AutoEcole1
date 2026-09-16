@@ -80,7 +80,7 @@ export const accelereCities: AccelereCity[] = [
     slug: 'paris',
     name: 'Paris',
     h1: 'Permis accéléré près de Paris — décrochez-le en quelques semaines',
-    title: 'Permis accéléré Paris — permis rapide dès 1 199 €',
+    title: 'Permis accéléré près de Paris — permis rapide dès 1 199 €',
     metaDescription:
       'Permis accéléré près de Paris : stage intensif code + conduite, boîte auto ou manuelle, dès 1 199 €. À Nanterre, accessible en RER A depuis Paris.',
     intro: [
@@ -96,8 +96,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'la-defense',
     name: 'La Défense',
-    h1: 'Permis accéléré à La Défense — formez-vous entre deux réunions',
-    title: 'Permis accéléré La Défense — stage intensif près du quartier d’affaires',
+    h1: 'Permis accéléré près de La Défense — formez-vous entre deux réunions',
+    title: 'Permis accéléré près de La Défense — stage intensif',
     metaDescription:
       'Permis accéléré près de La Défense : stage intensif dès 1 199 €, leçons jusqu’à 20h après le bureau, à quelques minutes en RER A. Code intensif inclus.',
     intro: [
@@ -113,8 +113,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'courbevoie',
     name: 'Courbevoie',
-    h1: 'Permis accéléré à Courbevoie — votre permis sans attendre',
-    title: 'Permis accéléré Courbevoie — stage code + conduite intensif',
+    h1: 'Permis accéléré proche de Courbevoie — votre permis sans attendre',
+    title: 'Permis accéléré près de Courbevoie — stage intensif',
     metaDescription:
       'Permis accéléré près de Courbevoie : formation intensive dès 1 199 €, code inclus, date d’examen prioritaire. Auto-école à Nanterre, à quelques minutes.',
     intro: [
@@ -130,8 +130,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'puteaux',
     name: 'Puteaux',
-    h1: 'Permis rapide à Puteaux — l’accéléré qui tient ses délais',
-    title: 'Permis rapide Puteaux — formation accélérée dès 1 199 €',
+    h1: 'Permis rapide près de Puteaux — l’accéléré qui tient ses délais',
+    title: 'Permis rapide près de Puteaux — accéléré dès 1 199 €',
     metaDescription:
       'Permis rapide près de Puteaux : stage accéléré code + conduite, boîte auto dès 1 199 €, date d’examen prioritaire. Auto-école à Nanterre, accès direct.',
     intro: [
@@ -147,8 +147,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'colombes',
     name: 'Colombes',
-    h1: 'Passez votre permis rapidement à Colombes',
-    title: 'Permis accéléré Colombes — code + conduite en quelques semaines',
+    h1: 'Passez votre permis rapidement, proche de Colombes',
+    title: 'Permis accéléré près de Colombes — code + conduite',
     metaDescription:
       'Passer le permis rapidement près de Colombes : stage accéléré dès 1 199 €, code intensif inclus, tram T2 direct vers notre agence de Nanterre.',
     intro: [
@@ -164,8 +164,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'la-garenne-colombes',
     name: 'La Garenne-Colombes',
-    h1: 'Permis express à La Garenne-Colombes',
-    title: 'Permis express La Garenne-Colombes — stage accéléré près de chez vous',
+    h1: 'Permis express près de La Garenne-Colombes',
+    title: 'Permis express près de La Garenne-Colombes — accéléré',
     metaDescription:
       'Permis express près de La Garenne-Colombes : formation accélérée code + conduite dès 1 199 €, date d’examen prioritaire. Agence à Nanterre, tout proche.',
     intro: [
@@ -181,8 +181,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'bezons',
     name: 'Bezons',
-    h1: 'Permis en accéléré à Bezons — juste de l’autre côté du pont',
-    title: 'Permis en accéléré Bezons — stage intensif à Nanterre',
+    h1: 'Permis en accéléré près de Bezons — juste de l’autre côté du pont',
+    title: 'Permis en accéléré près de Bezons — stage intensif',
     metaDescription:
       'Permis en accéléré près de Bezons : stage intensif code + conduite dès 1 199 €, à 7 minutes par le pont de Bezons. Date d’examen prioritaire.',
     intro: [
@@ -199,8 +199,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'argenteuil',
     name: 'Argenteuil',
-    h1: 'Permis accéléré à Argenteuil — arrêtez d’attendre votre tour',
-    title: 'Permis accéléré Argenteuil — formation intensive dès 1 199 €',
+    h1: 'Permis accéléré proche d’Argenteuil — arrêtez d’attendre votre tour',
+    title: 'Permis accéléré proche d’Argenteuil — dès 1 199 €',
     metaDescription:
       'Permis accéléré près d’Argenteuil : stage intensif code + conduite, boîte auto dès 1 199 €, date d’examen prioritaire. Auto-école à Nanterre.',
     intro: [
@@ -217,8 +217,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'asnieres-sur-seine',
     name: 'Asnières-sur-Seine',
-    h1: 'Permis intensif à Asnières-sur-Seine',
-    title: 'Permis intensif Asnières-sur-Seine — accéléré code + conduite',
+    h1: 'Permis intensif près d’Asnières-sur-Seine',
+    title: 'Permis intensif près d’Asnières-sur-Seine — accéléré',
     metaDescription:
       'Permis intensif près d’Asnières-sur-Seine : stage accéléré dès 1 199 €, code inclus, date d’examen prioritaire. Auto-école à Nanterre, accès rapide.',
     intro: [
@@ -235,8 +235,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'gennevilliers',
     name: 'Gennevilliers',
-    h1: 'Formation accélérée au permis à Gennevilliers',
-    title: 'Permis accéléré Gennevilliers — stage intensif dès 1 199 €',
+    h1: 'Formation accélérée au permis près de Gennevilliers',
+    title: 'Permis accéléré près de Gennevilliers — dès 1 199 €',
     metaDescription:
       'Formation accélérée au permis près de Gennevilliers : code intensif + conduite concentrée, dès 1 199 €. Idéal emploi et logistique. Agence à Nanterre.',
     intro: [
@@ -253,8 +253,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'houilles',
     name: 'Houilles',
-    h1: 'Permis rapide à Houilles — quelques semaines suffisent',
-    title: 'Permis rapide Houilles — stage accéléré code + conduite',
+    h1: 'Permis rapide près de Houilles — quelques semaines suffisent',
+    title: 'Permis rapide près de Houilles — stage accéléré',
     metaDescription:
       'Permis rapide près de Houilles : stage accéléré dès 1 199 €, code intensif inclus, date d’examen prioritaire. Auto-école à Nanterre, RER A direct.',
     intro: [
@@ -271,8 +271,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'sartrouville',
     name: 'Sartrouville',
-    h1: 'Permis accéléré à Sartrouville — sans les délais habituels',
-    title: 'Permis accéléré Sartrouville — formation intensive dès 1 199 €',
+    h1: 'Permis accéléré proche de Sartrouville — sans les délais habituels',
+    title: 'Permis accéléré près de Sartrouville — dès 1 199 €',
     metaDescription:
       'Permis accéléré près de Sartrouville : stage intensif code + conduite dès 1 199 €, date d’examen prioritaire. Auto-école à Nanterre, RER A direct.',
     intro: [
@@ -289,8 +289,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'chatou',
     name: 'Chatou',
-    h1: 'Stage de permis accéléré à Chatou',
-    title: 'Stage permis accéléré Chatou — code + conduite en semaines',
+    h1: 'Stage de permis accéléré près de Chatou',
+    title: 'Stage permis accéléré près de Chatou — code + conduite',
     metaDescription:
       'Stage de permis accéléré près de Chatou : formation intensive dès 1 199 €, code inclus, date d’examen prioritaire. Auto-école à Nanterre, RER A.',
     intro: [
@@ -307,8 +307,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'rueil-malmaison',
     name: 'Rueil-Malmaison',
-    h1: 'Permis intensif à Rueil-Malmaison',
-    title: 'Permis intensif Rueil-Malmaison — accéléré dès 1 199 €',
+    h1: 'Permis intensif près de Rueil-Malmaison',
+    title: 'Permis intensif près de Rueil-Malmaison — dès 1 199 €',
     metaDescription:
       'Permis intensif près de Rueil-Malmaison : stage accéléré code + conduite dès 1 199 €, date d’examen prioritaire. Auto-école à Nanterre, RER A direct.',
     intro: [
@@ -325,8 +325,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'suresnes',
     name: 'Suresnes',
-    h1: 'Permis rapide à Suresnes — objectif : quelques semaines',
-    title: 'Permis rapide Suresnes — stage accéléré code + conduite',
+    h1: 'Permis rapide près de Suresnes — objectif : quelques semaines',
+    title: 'Permis rapide près de Suresnes — stage accéléré',
     metaDescription:
       'Permis rapide près de Suresnes : formation accélérée dès 1 199 €, code intensif inclus, date d’examen prioritaire. Auto-école à Nanterre, tout proche.',
     intro: [
@@ -343,8 +343,8 @@ export const accelereCities: AccelereCity[] = [
   {
     slug: 'neuilly-sur-seine',
     name: 'Neuilly-sur-Seine',
-    h1: 'Permis accéléré à Neuilly-sur-Seine',
-    title: 'Permis accéléré Neuilly-sur-Seine — stage intensif près de chez vous',
+    h1: 'Permis accéléré près de Neuilly-sur-Seine',
+    title: 'Permis accéléré près de Neuilly-sur-Seine — stage intensif',
     metaDescription:
       'Permis accéléré près de Neuilly-sur-Seine : stage intensif code + conduite dès 1 199 €, date d’examen prioritaire. Auto-école à Nanterre, accès direct.',
     intro: [
