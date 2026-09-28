@@ -10,7 +10,17 @@ declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
     gtag?: (...args: unknown[]) => void
+    fbq?: (...args: unknown[]) => void
   }
+}
+
+// Miroir Meta Pixel : nos événements de conversion sont renvoyés au pixel
+// sous leurs noms standard Meta, pour que les campagnes Facebook/Instagram
+// puissent optimiser sur les leads et pas seulement les PageView.
+const META_EVENT_MAP: Record<string, string> = {
+  generate_lead: 'Lead',
+  phone_click: 'Contact',
+  whatsapp_click: 'Contact',
 }
 
 export function trackEvent(event: string, params: Record<string, unknown> = {}) {
@@ -23,6 +33,9 @@ export function trackEvent(event: string, params: Record<string, unknown> = {}) 
   // ever added in GTM for these same events, remove this line to avoid
   // double counting.
   window.gtag?.('event', event, params)
+  // Meta Pixel (init in layout.tsx)
+  const metaEvent = META_EVENT_MAP[event]
+  if (metaEvent) window.fbq?.('track', metaEvent, params)
 }
 
 export function trackLead(form: string, params: Record<string, unknown> = {}) {
