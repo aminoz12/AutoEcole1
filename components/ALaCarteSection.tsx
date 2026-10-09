@@ -79,7 +79,7 @@ function CategoryCard({ title, children }: { title: string; children: React.Reac
 
 export default function ALaCarteSection() {
   return (
-    <section id="prestations-a-la-carte" className="scroll-mt-28 relative overflow-hidden bg-[#0B0F19] py-16 lg:py-20">
+    <section id="prestations-a-la-carte" className="scroll-mt-28 relative overflow-hidden bg-[#0B0F19] py-12 sm:py-16 lg:py-20">
       <div className="pointer-events-none absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-purple-600/10 blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-4">

@@ -61,7 +61,7 @@ export default function TarifsPage() {
       <ALaCarteSection />
 
       {/* Pack Web prices */}
-      <section id="pack-web" className="scroll-mt-28 bg-[#0B0F19] py-16 lg:py-20">
+      <section id="pack-web" className="scroll-mt-28 bg-[#0B0F19] py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="font-poppins text-3xl font-bold text-white lg:text-4xl">
@@ -85,7 +85,7 @@ export default function TarifsPage() {
                 <h3 className="font-poppins text-xl font-semibold text-white">{plan.name}</h3>
 
                 <div className="mt-4 flex items-end gap-1">
-                  <span className="font-poppins text-5xl font-bold text-white">{plan.price}</span>
+                  <span className="font-poppins text-4xl sm:text-5xl font-bold text-white">{plan.price}</span>
                   <span className="mb-2 text-2xl font-semibold text-gray-300">€</span>
                 </div>
 
@@ -123,7 +123,7 @@ export default function TarifsPage() {
 
       {/* Pricing FAQ — native <details> so every answer stays in the HTML
           (featured-snippet / FAQ rich-result eligible) without client JS. */}
-      <section id="faq-tarifs" className="bg-[#0B0F19] py-16 lg:py-20">
+      <section id="faq-tarifs" className="bg-[#0B0F19] py-12 sm:py-16 lg:py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-center font-poppins text-3xl font-bold text-white lg:text-4xl">

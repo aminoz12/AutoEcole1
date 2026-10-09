@@ -34,7 +34,7 @@ export default function HeroSection() {
   ]
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden pt-32 md:pt-36 bg-[#0B0F19]">
+    <section className="relative min-h-[100svh] flex flex-col overflow-hidden pt-28 sm:pt-32 md:pt-36 bg-[#0B0F19]">
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0">
         <Image
@@ -124,7 +124,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             whileHover={{ scale: 1.03 }}
-            className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-white/15 backdrop-blur-md"
+            className="inline-flex max-w-full items-center gap-2 sm:gap-3 rounded-full bg-white/10 px-4 sm:px-5 py-2.5 shadow-lg shadow-black/20 ring-1 ring-white/15 backdrop-blur-md"
           >
             {/* Google "G" logo */}
             <svg className="h-5 w-5 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
@@ -138,10 +138,10 @@ export default function HeroSection() {
               <span className="text-white font-bold text-base">4,9</span>
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 text-[#FBBC05] fill-[#FBBC05]" />
+                  <Star key={i} className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#FBBC05] fill-[#FBBC05]" />
                 ))}
               </div>
-              <span className="text-white text-sm whitespace-nowrap">+ de 300 avis vérifiés</span>
+              <span className="text-white text-xs sm:text-sm whitespace-nowrap"><span className="sm:hidden">+300 avis</span><span className="hidden sm:inline">+ de 300 avis vérifiés</span></span>
             </div>
           </motion.a>
         </div>
@@ -151,7 +151,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl mx-auto pb-8 mt-8"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-6 sm:gap-4 w-full max-w-5xl mx-auto pb-8 mt-8"
         >
           {features.map((feature, index) => (
             <motion.div
@@ -169,13 +169,13 @@ export default function HeroSection() {
                   alt={feature.title}
                   width={44}
                   height={44}
-                  className="h-11 w-11 object-contain"
+                  className="h-9 w-9 sm:h-11 sm:w-11 object-contain"
                 />
               </div>
-              <h3 className="text-white font-semibold text-sm mb-1.5">
+              <h3 className="text-white font-semibold text-xs sm:text-sm mb-1.5">
                 {feature.title}
               </h3>
-              <p className="text-gray-400 text-xs leading-relaxed">
+              <p className="text-gray-400 text-[11px] sm:text-xs leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

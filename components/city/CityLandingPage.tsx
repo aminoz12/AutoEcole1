@@ -93,21 +93,21 @@ export default function CityLandingPage({ city }: { city: City }) {
       {/* Key facts */}
       <section className="py-10 lg:py-12">
         <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-              <Car className="mx-auto mb-2 h-6 w-6 text-primary" />
-              <div className="font-poppins text-xl font-bold text-white">≈ {city.driveTime}</div>
-              <div className="mt-1 text-sm text-gray-400">en voiture {city.fromCity}</div>
+          <div className="mx-auto grid max-w-3xl grid-cols-3 gap-2 sm:gap-4">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 text-center">
+              <Car className="mx-auto mb-2 h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+              <div className="font-poppins text-base sm:text-xl font-bold text-white">≈ {city.driveTime}</div>
+              <div className="mt-1 text-[11px] leading-snug sm:text-sm text-gray-400">en voiture {city.fromCity}</div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-              <MapPin className="mx-auto mb-2 h-6 w-6 text-primary" />
-              <div className="font-poppins text-xl font-bold text-white">{city.distanceKm} km</div>
-              <div className="mt-1 text-sm text-gray-400">de notre agence de Nanterre</div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 text-center">
+              <MapPin className="mx-auto mb-2 h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+              <div className="font-poppins text-base sm:text-xl font-bold text-white">{city.distanceKm} km</div>
+              <div className="mt-1 text-[11px] leading-snug sm:text-sm text-gray-400">de notre agence de Nanterre</div>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">
-              <Clock className="mx-auto mb-2 h-6 w-6 text-primary" />
-              <div className="font-poppins text-xl font-bold text-white">10h – 20h</div>
-              <div className="mt-1 text-sm text-gray-400">conduite en semaine, samedi 9h–15h</div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-5 text-center">
+              <Clock className="mx-auto mb-2 h-5 w-5 sm:h-6 sm:w-6 text-primary" />
+              <div className="font-poppins text-base sm:text-xl font-bold text-white">10h – 20h</div>
+              <div className="mt-1 text-[11px] leading-snug sm:text-sm text-gray-400">conduite en semaine, samedi 9h–15h</div>
             </div>
           </div>
         </div>

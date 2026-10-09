@@ -60,7 +60,7 @@ export function AccelereSteps() {
       {steps.map((step) => {
         const Icon = step.icon
         return (
-          <div key={step.title} className="rounded-2xl border border-white/10 bg-[#151b2e]/80 p-7">
+          <div key={step.title} className="rounded-2xl border border-white/10 bg-[#151b2e]/80 p-5 sm:p-7">
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/5">
               <Icon className="h-6 w-6 text-purple-400" />
             </div>

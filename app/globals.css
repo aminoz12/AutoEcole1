@@ -367,3 +367,23 @@ main > section [class*="from-gray-50"] {
   color: #f97316 !important;
   text-decoration: underline !important;
 }
+
+/* Blog typography on small screens: the desktop sizes (17px body, 28px h2)
+   are too heavy below 640px and push articles to an endless scroll. */
+@media (max-width: 639px) {
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .blog-content h2 {
+    font-size: 1.375rem;
+    margin-top: 1.75rem;
+  }
+  .blog-content h3 {
+    font-size: 1.1875rem;
+  }
+  .blog-content ul,
+  .blog-content ol {
+    padding-left: 1.25rem;
+  }
+}

@@ -39,7 +39,7 @@ export function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
   }
 
   return (
-    <div className="relative bg-[#151b2e] border border-white/10 rounded-2xl p-7 flex flex-col min-h-[420px]">
+    <div className="relative bg-[#151b2e] border border-white/10 rounded-2xl p-5 sm:p-7 flex flex-col min-h-[420px]">
       <h3 className="text-white text-center text-base font-bold tracking-wide mb-6 mt-2">
         {pack.title}
       </h3>
@@ -51,7 +51,7 @@ export function PackCard({ pack, catKey }: { pack: Pack; catKey: PackKey }) {
           </div>
         )}
         <div className="flex items-baseline justify-center gap-1">
-          <span className="text-5xl font-extrabold text-white">{pack.total}€</span>
+          <span className="text-4xl sm:text-5xl font-extrabold text-white">{pack.total}€</span>
         </div>
       </div>
 

@@ -262,7 +262,7 @@ export default function Footer() {
           <p className="text-gray-400 text-sm mb-5">
             Notre auto-école de Nanterre accueille aussi les élèves des villes voisines :
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2.5">
+          <ul className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8 gap-y-2.5">
             {cities.map((city) => (
               <li key={city.slug}>
                 <a

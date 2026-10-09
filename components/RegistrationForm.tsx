@@ -121,8 +121,8 @@ export default function RegistrationForm() {
           className="overflow-hidden rounded-2xl bg-white shadow-2xl"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-8 text-center text-white">
-            <h1 className="mb-2 text-3xl font-bold md:text-4xl">Pré-inscription en ligne</h1>
+          <div className="bg-gradient-to-r from-pink-500 to-purple-600 p-6 sm:p-8 text-center text-white">
+            <h1 className="mb-2 text-2xl sm:text-3xl font-bold md:text-4xl">Pré-inscription en ligne</h1>
             <p className="text-white/90">
               30 secondes suffisent — un conseiller vous rappelle sous 24 h ouvrées.
             </p>
@@ -139,7 +139,7 @@ export default function RegistrationForm() {
           </div>
 
           {/* Form Content */}
-          <div className="p-8 md:p-10">
+          <div className="p-5 sm:p-8 md:p-10">
             {packName && (
               <div className="mb-6 rounded-lg border border-purple-200 bg-purple-50 px-4 py-3 text-sm text-purple-800">
                 Formule choisie : <strong>{packName}</strong>

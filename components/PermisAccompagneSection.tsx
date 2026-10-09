@@ -94,7 +94,7 @@ export default function PermisAccompagneSection() {
 
                 <div className="mt-8 flex flex-wrap items-center gap-6">
                   <div className="flex items-end gap-1">
-                    <span className="font-poppins text-5xl font-extrabold text-white">
+                    <span className="font-poppins text-4xl sm:text-5xl font-extrabold text-white">
                       {plan.price}
                     </span>
                     <span className="mb-2 text-2xl font-semibold text-gray-300">€</span>
