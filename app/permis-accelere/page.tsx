@@ -194,6 +194,10 @@ export default function PermisAccelerePage() {
                 <a href="/blog/permis-conduire-10-jours-possible" className="text-primary underline-offset-4 hover:underline">
                   «&nbsp;Permis accéléré&nbsp;: avoir son permis rapidement&nbsp;»
                 </a>
+                , et le fonctionnement pas à pas dans{' '}
+                <a href="/blog/permis-accelere-comment-obtenir-rapidement" className="text-primary underline-offset-4 hover:underline">
+                  comment obtenir son permis accéléré
+                </a>
                 .
               </p>
             </div>
@@ -227,7 +231,12 @@ export default function PermisAccelerePage() {
                 véhicules à boîte mécanique. Notre comparatif complet&nbsp;:{' '}
                 <a href="/blog/permis-boite-automatique-ou-manuelle-choisir" className="text-primary underline-offset-4 hover:underline">
                   boîte automatique ou manuelle, que choisir&nbsp;?
+                </a>{' '}
+                — et le détail des prix et de la durée dans{' '}
+                <a href="/blog/permis-boite-automatique-prix-duree-avantages" className="text-primary underline-offset-4 hover:underline">
+                  permis boîte automatique&nbsp;: prix, durée et avantages
                 </a>
+                .
               </p>
             </div>
 
@@ -282,7 +291,10 @@ export default function PermisAccelerePage() {
                 réserve dès que votre niveau est validé à l&apos;examen blanc. Au total, un
                 candidat disponible qui part de zéro obtient généralement son permis en{' '}
                 <strong className="text-white">4 à 8 semaines</strong>&nbsp;; avec un code déjà en
-                poche, quelques semaines suffisent.
+                poche, quelques semaines suffisent. Nous passons chaque durée au crible dans{' '}
+                <a href="/blog/permis-5-jours-1-semaine-2-semaines-possible" className="text-primary underline-offset-4 hover:underline">
+                  permis en 5 jours, 1 semaine ou 2 semaines&nbsp;: est-ce vraiment possible&nbsp;?
+                </a>
               </p>
             </div>
 
@@ -290,6 +302,13 @@ export default function PermisAccelerePage() {
               <h3 className="mb-3 font-poppins text-xl font-bold text-white">
                 Financer son permis accéléré
               </h3>
+              <p className="mb-4">
+                Le détail de ce que recouvrent nos forfaits, les postes facturés en supplément et
+                les trois questions à poser avant de signer sont réunis dans notre article{' '}
+                <a href="/blog/prix-permis-accelere-combien-ca-coute" className="text-primary underline-offset-4 hover:underline">
+                  prix du permis accéléré&nbsp;: combien ça coûte vraiment&nbsp;?
+                </a>
+              </p>
               <p>
                 Toutes nos formules accélérées sont payables en{' '}
                 <strong className="text-white">2 fois sans frais</strong>, directement auprès de

@@ -14,6 +14,175 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '34',
+    title: "Permis accéléré : comment l'obtenir rapidement en 2026 ?",
+    slug: 'permis-accelere-comment-obtenir-rapidement',
+    excerpt: "Passer son permis en accéléré, ce n'est pas une formation au rabais : c'est le même programme, compressé. Voici les conditions réelles, les étapes, les délais honnêtes et ce qui ne se compresse jamais.",
+    content: `<p>Une embauche qui démarre dans six semaines, une alternance qui exige la conduite, un déménagement en zone mal desservie : il existe des situations où le permis ne peut pas attendre un an. La formation accélérée répond exactement à ce besoin — à condition de savoir ce qui se compresse réellement et ce qui ne se compressera jamais.</p>
+<h2>Ce qu'est vraiment un permis accéléré</h2>
+<p>Première idée reçue à écarter : le permis en accéléré n'est <strong>pas une formation au rabais</strong>. Le programme est identique à celui d'une formation classique — même référentiel officiel (REMC), mêmes moniteurs diplômés d'État, même examen, même inspecteur. Ce qui change, c'est uniquement la <strong>densité</strong>.</p>
+<p>En formation classique, une à deux leçons par semaine étalent l'apprentissage sur six à douze mois. En accéléré, vous enchaînez plusieurs séances par semaine — parfois plusieurs par jour — sur deux à quatre semaines. Le volume d'heures reste le même ; c'est le calendrier qui se resserre.</p>
+<h3>L'effet secondaire que personne ne mentionne</h3>
+<p>Resserrer le calendrier a un bénéfice pédagogique réel : <strong>on oublie moins entre deux leçons</strong>. Un élève qui conduit le lundi puis le jeudi repart là où il s'était arrêté. Celui qui conduit tous les quinze jours passe les vingt premières minutes à retrouver ses repères — et paie ces vingt minutes au tarif horaire. À volume égal, l'accéléré est souvent plus efficace, pas seulement plus rapide.</p>
+<h2>Les conditions pour passer son permis en accéléré</h2>
+<p>Elles sont les mêmes que pour le permis B classique, avec une exigence supplémentaire qui n'est pas administrative mais pratique :</p>
+<ul><li><strong>Avoir 17 ans</strong> au minimum pour se présenter à l'épreuve pratique.</li><li>Constituer un dossier : pièce d'identité, photo-signature numérique, justificatif de domicile, et le numéro NEPH si vous avez déjà un dossier ouvert. La liste détaillée est dans notre article sur <a href="/blog/papiers-inscription-permis-conduire-liste">les papiers d'inscription au permis</a>.</li><li><strong>Être réellement disponible</strong> — c'est le vrai critère. Une formation intensive suppose de pouvoir bloquer quatre à six heures de conduite par semaine, parfois en journée. Si votre agenda ne le permet pas, l'accéléré n'apportera rien de plus qu'une formation classique.</li></ul>
+<p>Bon à savoir : si vous avez déjà le code et qu'il a moins de cinq ans, il reste valable et couvre jusqu'à cinq présentations à l'épreuve pratique. Votre formation accélérée porte alors uniquement sur la conduite, et le calendrier se raccourcit d'autant.</p>
+<h2>Les étapes, du premier contact à l'examen</h2>
+<h3>1. L'évaluation de départ</h3>
+<p>Une heure au volant pour mesurer votre niveau réel. Elle est obligatoire et elle est utile : c'est elle qui détermine le volume d'heures à prévoir. Un candidat ayant déjà conduit n'a pas besoin du même programme qu'un débutant complet — et un devis sérieux ne peut pas être établi avant cette séance.</p>
+<h3>2. Le code intensif</h3>
+<p>Si vous ne l'avez pas, le code se prépare en séances rapprochées complétées par l'entraînement en ligne. L'examen théorique se passe en centre agréé, et les places se trouvent généralement sous quelques jours — nous détaillons les modalités dans <a href="/blog/ou-passer-code-route-centres-prix-delais">où passer le code de la route</a>.</p>
+<h3>3. La conduite concentrée</h3>
+<p>Le cœur du dispositif : plusieurs séances par semaine, <strong>avec le même moniteur</strong>. Ce point compte plus qu'on ne le croit en accéléré — changer d'instructeur à mi-parcours fait perdre un temps précieux en réajustements.</p>
+<h3>4. L'examen blanc</h3>
+<p>Un test complet en conditions réelles, sur les parcours du centre d'examen. Il valide — ou non — que vous êtes prêt. Son utilité est détaillée dans notre article sur <a href="/blog/examen-blanc-conduite-pourquoi-important">l'examen blanc de conduite</a>.</p>
+<h3>5. La présentation à l'examen</h3>
+<p>Dès que le niveau est validé, la date est réservée. C'est ici que les auto-écoles se distinguent réellement les unes des autres.</p>
+<h2>Ce qui ne se compresse pas</h2>
+<p>Soyons honnêtes, car c'est le point sur lequel beaucoup de candidats sont déçus. Trois choses échappent à toute accélération :</p>
+<ul><li><strong>L'ouverture du dossier</strong> — l'enregistrement et l'obtention du numéro NEPH prennent leur temps, indépendamment de votre bonne volonté.</li><li><strong>La place d'examen</strong> — chaque auto-école reçoit un quota de places attribué par l'administration. C'est le facteur limitant numéro un en Île-de-France, et aucune formation intensive ne le contourne.</li><li><strong>Votre progression personnelle</strong> — certains élèves ont besoin de plus d'heures, et aucun forfait ne change cette réalité. Une auto-école qui garantit un permis en X jours sans vous avoir vu conduire vend du vent.</li></ul>
+<h2>Combien de temps, concrètement ?</h2>
+<p>Avec un candidat réellement disponible :</p>
+<ul><li><strong>Code déjà acquis</strong> : deux à quatre semaines jusqu'à la présentation, selon les places disponibles.</li><li><strong>Départ de zéro</strong> : généralement quatre à huit semaines, code compris.</li></ul>
+<p>Les promesses de permis en trois ou cinq jours méritent une lecture attentive — nous passons chaque durée au crible dans notre article <a href="/blog/permis-5-jours-1-semaine-2-semaines-possible">permis en 5 jours, 1 semaine ou 2 semaines : est-ce vraiment possible ?</a>.</p>
+<h2>Pour qui l'accéléré est un bon calcul</h2>
+<p>Le format donne d'excellents résultats pour les candidats disponibles à temps plein ou presque, à l'aise avec un rythme soutenu, et motivés par une échéance précise : prise de poste, alternance, mutation, rentrée universitaire. Les étudiants l'utilisent souvent pendant les vacances, les salariés en bloquant des demi-journées.</p>
+<p>À l'inverse, si vous avez besoin de temps pour ancrer les automatismes, si vous êtes particulièrement anxieux au volant, ou si vous ne pouvez dégager qu'un créneau par semaine, la formule classique sera plus rassurante — et moins coûteuse en heures supplémentaires.</p>
+<h2>Combien ça coûte</h2>
+<p>Une formation accélérée n'est pas nécessairement plus chère à l'heure, mais elle laisse moins de marge : si le compte d'heures ne suffit pas, les heures supplémentaires s'ajoutent au tarif normal. Chez nous, les forfaits accélérés démarrent à <strong>1 199 €</strong> en boîte automatique 13h et <strong>1 559 €</strong> en boîte manuelle 20h, code intensif compris. Le détail est sur notre <a href="/permis-accelere">page permis accéléré</a>, et nous décortiquons la structure des prix dans <a href="/blog/prix-permis-accelere-combien-ca-coute">prix du permis accéléré : combien ça coûte vraiment ?</a>.</p>
+<h2>Passer son permis en accéléré à Nanterre</h2>
+<p>Nous organisons des formations intensives au 375 avenue de la République à Nanterre, pour les candidats des Hauts-de-Seine et de l'ouest parisien. Le planning est construit avec vous dès l'évaluation, les dates sont connues d'avance, et la présentation à l'examen est réservée dès que votre niveau le permet. <a href="/s-inscrire">Demandez un rappel</a> ou appelez-nous pour en parler : nous vous dirons franchement si l'accéléré est adapté à votre situation — ou si une formule classique vous servira mieux.</p>`,
+    featured_image: '/permisaccimages/PERMISACC1.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ["permis accéléré", "permis en accéléré", "permis de conduire accéléré", "auto école accéléré", "formation intensive"],
+    published_at: '2026-10-08',
+    views_count: 0
+  },
+  {
+    id: '33',
+    title: "Prix du permis accéléré : combien ça coûte vraiment ?",
+    slug: 'prix-permis-accelere-combien-ca-coute',
+    excerpt: "Entre les forfaits qui excluent le code et les heures supplémentaires à 60 €, le prix affiché dit rarement la vérité. Les tarifs réels, ce qui doit être inclus, et les trois questions à poser avant de signer.",
+    content: `<p>Le prix est la première question que pose un candidat pressé — et celle sur laquelle les auto-écoles sont le moins lisibles. Entre les forfaits qui excluent le code, ceux qui facturent l'accompagnement à l'examen et ceux qui affichent un tarif plancher impossible à tenir, comparer demande de savoir quoi regarder. Voici les chiffres réels et les pièges à éviter.</p>
+<h2>Pourquoi le permis accéléré coûte plus cher</h2>
+<p>À volume d'heures égal, une formation intensive se facture généralement 30 à 60 % de plus qu'une formation classique. Ce n'est pas une marge opportuniste : la contrainte est logistique. Concentrer vingt heures de conduite sur trois semaines mobilise un moniteur et un véhicule sur des créneaux bloqués, souvent en journée, au détriment d'autres élèves. L'auto-école vend de la <strong>priorité</strong>, pas seulement des heures.</p>
+<p>À cela s'ajoutent les séances de code intensif, plus coûteuses à organiser que l'accès à une salle en libre-service.</p>
+<h2>Les prix constatés en Île-de-France</h2>
+<p>Pour une formation accélérée complète (code + conduite), les tarifs observés en 2026 se situent dans ces fourchettes :</p>
+<ul><li><strong>Boîte automatique, 13 heures</strong> : de 1 100 € à 1 600 €</li><li><strong>Boîte manuelle, 20 heures</strong> : de 1 400 € à 2 200 €</li><li><strong>Formules « tout compris » avec hébergement en province</strong> : de 1 800 € à 3 000 €</li></ul>
+<p>Un tarif très en dessous de ces fourchettes doit alerter : il exclut presque toujours quelque chose — les frais de dossier, le code, ou la présentation à l'examen.</p>
+<h2>Nos tarifs à Nanterre</h2>
+<p>Pour que la comparaison soit possible, voici nos prix réels, tous frais de dossier et démarches préfecture inclus :</p>
+<ul><li><strong>Permis B 13H accéléré, boîte automatique : 1 199 €</strong> — séances de code intensif comprises.</li><li><strong>Permis B 20H accéléré, boîte manuelle : 1 559 €</strong></li><li><strong>Permis B 20H accéléré, boîte automatique : 1 749 €</strong></li><li><strong>Représentation Rapide : à partir de 749 €</strong> — pour les candidats ayant récemment échoué, avec une nouvelle date d'examen garantie sous 3 à 10 jours après le stage.</li></ul>
+<p>La grille complète, formules classiques comprises, est sur notre <a href="/tarifs">page tarifs</a>, et le détail du format sur notre <a href="/permis-accelere">page permis accéléré</a>.</p>
+<h2>Ce qui doit être inclus — et ce qui ne l'est presque jamais</h2>
+<p>Avant de signer, vérifiez ligne par ligne ce que couvre le forfait. Devraient y figurer :</p>
+<ul><li>Les <strong>frais de constitution de dossier</strong> et les démarches préfecture (ouverture ANTS).</li><li>La <strong>formation au code</strong>, en séances intensives ou en accès illimité.</li><li>Le <strong>volume d'heures de conduite</strong> annoncé, clairement chiffré.</li><li>La <strong>fourniture pédagogique</strong> : livret d'apprentissage.</li><li>La <strong>présentation à l'épreuve pratique</strong>.</li></ul>
+<p>En revanche, ces postes sont presque toujours en supplément, quelle que soit l'auto-école :</p>
+<ul><li>Les <strong>heures supplémentaires</strong> si le forfait ne suffit pas — comptez 50 à 70 € de l'heure. C'est le premier poste de dépassement.</li><li>La <strong>seconde présentation</strong> en cas d'échec.</li><li>Les frais de <strong>transfert de dossier</strong> si vous changez d'auto-école.</li></ul>
+<h3>Le piège du forfait trop juste</h3>
+<p>Un forfait 13 heures à prix cassé coûte plus cher qu'un forfait 20 heures correctement dimensionné si vous avez besoin de 24 heures au total. Le minimum légal est un plancher réglementaire, pas une prévision pédagogique : la moyenne nationale réelle tourne autour de 30 à 35 heures pour un débutant. En accéléré, l'évaluation de départ sert précisément à éviter cette erreur de dimensionnement.</p>
+<h2>Code et permis accéléré : faut-il tout prendre ?</h2>
+<p>Si vous détenez déjà le code et qu'il date de moins de cinq ans, il reste valable pour cinq présentations à la pratique. Inutile donc de payer un forfait incluant le code : demandez une formule conduite seule, l'économie va de 200 à 400 €.</p>
+<p>Si vous partez de zéro, le code intensif inclus dans le forfait est généralement plus avantageux qu'un achat séparé. Notre Pack Web (accès illimité à l'entraînement en ligne) est proposé à 29 € pour ceux qui veulent compléter leur préparation.</p>
+<h2>Permis automatique accéléré : la voie la plus économique</h2>
+<p>C'est l'arbitrage le plus efficace pour faire baisser la facture. Le minimum légal est de <strong>13 heures</strong> contre 20 en manuelle, soit sept heures de moins à payer, et l'apprentissage est plus rapide puisqu'il n'y a ni embrayage ni passage de rapports à gérer.</p>
+<p>L'objection habituelle — « je serai bloqué sur une boîte auto » — ne tient plus : depuis mars 2024, la passerelle de 7 heures vers la boîte manuelle s'effectue <strong>sans délai d'attente</strong> après l'obtention. Nous détaillons ce calcul dans notre article sur le <a href="/blog/permis-boite-automatique-prix-duree-avantages">permis boîte automatique</a>.</p>
+<h2>Comment payer moins cher sans sacrifier la qualité</h2>
+<ul><li><strong>Le paiement en plusieurs fois</strong> : toutes nos formules, accélérées comprises, sont payables en 2 fois sans frais, sans organisme de crédit.</li><li><strong>Le CPF</strong> : le permis B est finançable selon votre situation et les règles en vigueur. Vérifiez votre solde sur moncompteformation.gouv.fr — nous vous accompagnons sur le dossier.</li><li><strong>Les aides publiques</strong> : France Travail, aides régionales, permis à 1 € par jour selon l'âge. Notre guide des <a href="/blog/aides-financement-permis-conduire-2026">aides au financement du permis</a> les recense.</li><li><strong>Choisir l'automatique</strong> si votre usage futur le permet.</li><li><strong>Ne pas surdimensionner</strong> : prenez le forfait correspondant à votre évaluation, pas le plus gros par précaution.</li></ul>
+<h2>Permis accéléré pas cher : la vraie question à poser</h2>
+<p>Plutôt que « combien coûte votre forfait ? », posez ces trois questions à l'auto-école que vous envisagez : <strong>quel est le prix de l'heure supplémentaire</strong>, <strong>combien de places d'examen obtenez-vous par mois</strong>, et <strong>quel est votre taux de réussite</strong> ? Un forfait à 1 200 € suivi de huit heures supplémentaires coûte plus cher qu'un forfait à 1 550 € correctement calibré — et un permis obtenu six mois plus tard coûte encore davantage, en temps comme en argent.</p>
+<p>Pour un devis chiffré après évaluation, <a href="/s-inscrire">laissez-nous votre numéro</a> : nous vous rappelons sous 24 h ouvrées et nous vous dirons honnêtement quel volume d'heures prévoir.</p>`,
+    featured_image: '/blog2.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Conseils',
+    tags: ["prix permis accéléré", "permis accéléré pas cher", "code et permis accéléré", "permis automatique accéléré", "tarifs"],
+    published_at: '2026-10-07',
+    views_count: 0
+  },
+  {
+    id: '32',
+    title: "Permis en 5 jours, 1 semaine ou 2 semaines : est-ce vraiment possible ?",
+    slug: 'permis-5-jours-1-semaine-2-semaines-possible',
+    excerpt: "Ces promesses ne sont pas toutes mensongères, mais elles reposent sur un non-dit. Durée par durée, ce qui est réellement faisable — et les quatre questions qui démasquent une auto-école trop optimiste.",
+    content: `<p>« Permis en 5 jours », « permis en 1 semaine », « votre permis en 3 jours » : ces promesses circulent largement, et elles ne sont pas toutes mensongères. Mais elles reposent presque toutes sur un non-dit. Voici, durée par durée, ce qui est réellement faisable et à quelles conditions.</p>
+<h2>Le non-dit de toutes ces annonces</h2>
+<p>Quand une auto-école annonce un permis en 5 jours, elle parle de la <strong>durée du stage de conduite</strong> — pas du délai entre votre inscription et le permis dans votre poche. Entre les deux s'intercalent trois éléments incompressibles :</p>
+<ul><li><strong>L'ouverture du dossier</strong> et l'obtention du numéro NEPH.</li><li><strong>L'examen du code</strong>, si vous ne l'avez pas déjà.</li><li><strong>La place d'examen pratique</strong>, attribuée par quota à chaque auto-école.</li></ul>
+<p>Ce dernier point est le facteur limitant réel, particulièrement en Île-de-France. Aucune intensité de formation ne crée une place d'examen qui n'existe pas. Un stage de cinq jours suivi de six semaines d'attente reste, dans les faits, un permis en deux mois.</p>
+<h2>Permis en 3 jours : pour qui est-ce crédible ?</h2>
+<p>Pour un débutant, non — c'est matériellement impossible : le minimum légal est de 13 heures en boîte automatique et 20 en manuelle, et personne n'acquiert les automatismes de la conduite en trois jours.</p>
+<p>En revanche, le format est parfaitement crédible dans <strong>un seul cas</strong> : celui d'un candidat ayant déjà suivi une formation complète et récemment échoué à l'examen. Il ne s'agit alors plus d'apprendre à conduire mais de corriger deux ou trois points précis identifiés sur le bilan de compétences. C'est exactement l'objet de notre formule <a href="/permis-accelere">Représentation Rapide</a> : un stage de 1 à 3 jours, 4 heures de formation ciblée, et une nouvelle date d'examen garantie sous 3 à 10 jours après le stage, à partir de 749 €.</p>
+<h2>Permis en 5 jours : possible avec le code en poche</h2>
+<p>Cinq jours permettent de caser 13 à 20 heures de conduite à raison de trois à quatre heures par jour. C'est donc <strong>arithmétiquement faisable</strong>, et des candidats y parviennent — mais trois conditions doivent être réunies :</p>
+<ul><li><strong>Avoir déjà le code</strong>, valide depuis moins de cinq ans. Sinon l'examen théorique s'ajoute au calendrier.</li><li><strong>Être totalement disponible</strong> sur la semaine, en journée.</li><li><strong>Avoir déjà conduit</strong>, même un peu. Un débutant intégral qui enchaîne quatre heures quotidiennes sature : la fatigue cognitive annule le bénéfice des dernières heures.</li></ul>
+<p>Notre avis honnête : pour un vrai débutant, cinq jours produisent un candidat capable de manœuvrer, rarement un candidat prêt pour l'examen.</p>
+<h2>Permis en 1 semaine : le format le plus demandé</h2>
+<p>Sept jours offrent une marge réelle. Avec 20 heures de conduite réparties sur six jours, il reste du temps pour un <a href="/blog/examen-blanc-conduite-pourquoi-important">examen blanc</a> en fin de semaine — l'étape qui distingue une formation sérieuse d'un bachotage. C'est le format que choisissent la plupart des candidats pressés disposant déjà du code.</p>
+<p>Le risque principal ici n'est pas pédagogique mais logistique : si la place d'examen tombe trois semaines après la fin du stage, une partie des acquis s'érode. Demandez systématiquement à l'auto-école <strong>quand</strong> elle peut vous présenter, pas seulement quand le stage finit.</p>
+<h2>Permis en 2 semaines : le meilleur compromis</h2>
+<p>C'est, de notre expérience, la durée qui offre le meilleur rapport entre rapidité et solidité. Deux semaines permettent :</p>
+<ul><li>de préparer et passer <strong>le code</strong> si nécessaire, en séances intensives ;</li><li>d'étaler 20 à 30 heures de conduite sans journées épuisantes ;</li><li>d'intégrer une <strong>nuit de sommeil entre les blocs</strong> — c'est pendant le sommeil que les automatismes moteurs se consolident, ce qui explique pourquoi deux semaines battent souvent cinq jours à volume égal ;</li><li>de faire un examen blanc et de corriger ce qu'il révèle.</li></ul>
+<p>C'est le format que nous recommandons par défaut aux candidats qui partent de zéro et veulent aller vite.</p>
+<h2>Récapitulatif : ce qui est réaliste</h2>
+<ul><li><strong>3 jours</strong> — uniquement en représentation après un échec récent. Pas pour un débutant.</li><li><strong>5 jours</strong> — possible avec le code acquis et une expérience préalable de la conduite. Tendu pour un débutant.</li><li><strong>1 semaine</strong> — réaliste avec le code acquis. Prévoir l'examen blanc.</li><li><strong>2 semaines</strong> — réaliste même en partant de zéro, code compris. Le meilleur compromis.</li><li><strong>4 à 8 semaines</strong> — le délai réel le plus fréquent entre l'inscription et le permis obtenu, places d'examen comprises.</li></ul>
+<h2>Comment reconnaître une auto-école rapide et sérieuse</h2>
+<p>Quatre questions suffisent à faire le tri :</p>
+<ol><li><strong>Combien de places d'examen obtenez-vous par mois ?</strong> — une école qui esquive cette question n'a pas de réponse flatteuse.</li><li><strong>Le délai annoncé inclut-il la présentation à l'examen ?</strong> — c'est toute la différence entre un stage de 5 jours et un permis en 5 jours.</li><li><strong>Que se passe-t-il si j'ai besoin d'heures supplémentaires ?</strong> — demandez le tarif horaire par écrit.</li><li><strong>Puis-je faire une évaluation avant de m'engager ?</strong> — toute promesse de durée formulée sans vous avoir vu conduire est une promesse creuse.</li></ol>
+<p>Méfiez-vous également des garanties de réussite : aucune auto-école ne maîtrise la décision de l'inspecteur. Ce qu'une bonne école garantit, c'est un calendrier et un accompagnement — pas un résultat.</p>
+<h2>Notre approche à Nanterre</h2>
+<p>Nous ne vendons pas de durée avant d'avoir évalué votre niveau. Après l'heure d'évaluation, nous vous annonçons un volume d'heures et une échéance réaliste, puis la date d'examen est réservée dès que votre niveau est validé. Nos formules accélérées démarrent à 1 199 € en boîte automatique — détail sur notre <a href="/permis-accelere">page permis accéléré</a>, structure des prix dans <a href="/blog/prix-permis-accelere-combien-ca-coute">prix du permis accéléré</a>, et fonctionnement complet dans <a href="/blog/permis-accelere-comment-obtenir-rapidement">comment obtenir son permis accéléré</a>.</p>
+<p>Pour savoir ce qui est faisable dans votre cas précis, <a href="/s-inscrire">laissez-nous votre numéro</a> : un conseiller vous rappelle sous 24 h ouvrées.</p>`,
+    featured_image: '/blog4.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ["permis accéléré 5 jours", "permis accéléré 1 semaine", "permis en 1 semaine", "permis accéléré 2 semaines", "auto école rapide"],
+    published_at: '2026-10-06',
+    views_count: 0
+  },
+  {
+    id: '31',
+    title: "Permis boîte automatique : prix, durée et avantages",
+    slug: 'permis-boite-automatique-prix-duree-avantages',
+    excerpt: "13 heures au lieu de 20, un forfait dès 799 € et, depuis 2024, une passerelle vers la manuelle sans délai d'attente. Tout ce qu'il faut savoir sur le permis B automatique avant de choisir.",
+    content: `<p>Longtemps considéré comme un choix par défaut, le permis boîte automatique est devenu une option stratégique : moins d'heures obligatoires, un apprentissage plus simple, un budget réduit — et depuis 2024, une passerelle vers la manuelle sans délai d'attente. Voici les chiffres, les avantages réels et les limites à connaître avant de choisir.</p>
+<h2>13 heures au lieu de 20 : la différence de durée</h2>
+<p>C'est l'écart le plus concret. Le permis B classique impose un minimum légal de <strong>20 heures</strong> de conduite. Le permis B boîte automatique — officiellement BEA, catégorie B assortie de la mention 78 — n'en exige que <strong>13</strong>.</p>
+<p>La raison est pédagogique : en supprimant l'embrayage et le passage des rapports, on retire une part importante de la charge mentale du débutant. L'élève consacre plus tôt son attention à ce qui est réellement évalué le jour de l'examen — le regard, l'anticipation, le partage de la route, les contrôles.</p>
+<p>Attention toutefois : 13 heures est un <strong>plancher réglementaire, pas une moyenne</strong>. Dans les faits, un débutant en boîte automatique prend souvent 18 à 25 heures. L'écart avec la manuelle reste réel, mais il se mesure en heures, pas en miracles.</p>
+<h2>Prix du permis boîte automatique</h2>
+<p>Moins d'heures obligatoires signifie mécaniquement un forfait de départ moins cher. Les tarifs constatés en Île-de-France pour une formule complète (code + conduite) vont de 750 € à 1 300 € selon les écoles.</p>
+<p>Nos prix à Nanterre, frais de dossier et démarches préfecture inclus :</p>
+<ul><li><strong>Permis B 13H boîte automatique : 799 €</strong> — code de la route collectif illimité pendant 1 an inclus.</li><li><strong>Permis B 20H boîte automatique : 1 249 €</strong> — pour les profils qui savent d'emblée qu'ils auront besoin de plus d'heures.</li><li><strong>Permis B AAC boîte automatique : 1 250 €</strong> — conduite accompagnée dès 15 ans.</li><li><strong>Permis B 13H accéléré : 1 199 €</strong> — formation intensive, code intensif compris.</li></ul>
+<p>Toutes nos formules sont payables en 2 fois sans frais. La grille complète est sur notre <a href="/tarifs">page tarifs</a>.</p>
+<h3>Tarif permis boîte automatique sans code</h3>
+<p>Si vous détenez déjà le code et qu'il a moins de cinq ans, il reste valable pour cinq présentations à l'épreuve pratique : inutile de payer une formation théorique. Demandez une formule conduite seule — l'économie représente généralement 200 à 400 € par rapport à un forfait complet.</p>
+<h2>Les avantages réels</h2>
+<ul><li><strong>Un apprentissage plus rapide</strong> — les premières heures sont nettement moins frustrantes : pas de calage, pas de démarrage en côte raté, pas de coordination du pied gauche à acquérir.</li><li><strong>Un coût d'entrée plus faible</strong> — une centaine d'euros d'écart sur le forfait de base chez nous, davantage chez certains concurrents.</li><li><strong>Moins de sources d'erreur le jour J</strong> — les fautes liées à la maîtrise mécanique du véhicule disparaissent du champ des possibles.</li><li><strong>Un parc automobile qui bascule</strong> — tous les véhicules électriques et la plupart des hybrides sont à transmission automatique. Le choix devient cohérent avec le marché qui vous attend.</li><li><strong>Un confort réel en ville</strong> — dans les embouteillages des Hauts-de-Seine ou sur l'A86, l'absence d'embrayage change la vie.</li></ul>
+<h2>Les limites à connaître</h2>
+<p>Elles se résument à une seule, mais elle est importante : le permis porte la <strong>mention restrictive 78</strong>, qui vous autorise uniquement à conduire des véhicules à transmission automatique. Concrètement :</p>
+<ul><li>Vous ne pouvez pas emprunter une voiture à boîte manuelle, ce qui reste la majorité du parc d'occasion.</li><li>Certains emplois exigeant la conduite de véhicules de société à boîte mécanique vous seront fermés tant que la mention n'est pas levée.</li><li>La location de véhicule, en France comme à l'étranger, propose moins de modèles automatiques — et souvent plus chers.</li></ul>
+<h2>La passerelle de 7 heures : ce qui a changé en 2024</h2>
+<p>C'est l'information qui modifie tout le calcul. Pour lever la mention 78 et conduire une boîte manuelle, il faut suivre une formation de <strong>7 heures</strong> en auto-école, sans examen à la clé : une attestation suffit.</p>
+<p>Jusqu'en mars 2024, il fallait attendre trois mois après l'obtention du permis pour y accéder. <strong>Ce délai a été supprimé.</strong> Vous pouvez donc désormais passer votre permis en boîte automatique puis lever la restriction immédiatement si le besoin apparaît. Le choix de l'automatique n'est plus un enfermement — c'est une étape réversible.</p>
+<h2>Pour qui l'automatique est le bon choix</h2>
+<p>Nous le recommandons franchement si vous êtes dans l'un de ces cas :</p>
+<ul><li>Vous conduirez essentiellement <strong>en ville</strong> ou en région parisienne.</li><li>Vous visez un <strong>véhicule électrique ou hybride</strong>, maintenant ou à moyen terme.</li><li>L'embrayage est un <strong>point de blocage</strong> qui vous a déjà fait échouer ou qui vous angoisse.</li><li>Vous voulez le permis <strong>vite</strong> — c'est la voie la plus courte, notamment en formation accélérée.</li><li>Vous avez une <strong>contrainte médicale</strong> ou de mobilité rendant la boîte mécanique difficile.</li></ul>
+<p>À l'inverse, gardez la boîte manuelle si votre métier impose des véhicules mécaniques, si vous prévoyez d'acheter une occasion ancienne, ou si vous conduirez régulièrement des véhicules que vous n'aurez pas choisis.</p>
+<h2>Automatique ou manuelle : notre comparatif complet</h2>
+<p>Ce choix mérite d'être fait en connaissance de cause plutôt que par défaut ou par crainte. Nous détaillons l'arbitrage cas par cas dans notre article <a href="/blog/permis-boite-automatique-ou-manuelle-choisir">boîte automatique ou manuelle : que choisir ?</a>, et les formules intensives en automatique sont présentées sur notre <a href="/permis-accelere">page permis accéléré</a>.</p>
+<h2>Auto-école boîte automatique à Nanterre</h2>
+<p>Nous formons en boîte automatique comme en boîte manuelle, avec des véhicules dédiés et des moniteurs diplômés d'État, au 375 avenue de la République à Nanterre. Si vous hésitez encore, l'heure d'évaluation tranche souvent la question en une séance : certains élèves découvrent qu'ils sont parfaitement à l'aise en manuelle, d'autres comprennent en trente minutes que l'automatique leur fera gagner des semaines. <a href="/s-inscrire">Laissez-nous votre numéro</a> et nous en parlons sous 24 h ouvrées.</p>`,
+    featured_image: '/blog3.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ["permis boîte automatique", "permis B automatique", "permis automatique prix", "auto école automatique", "passerelle 7h"],
+    published_at: '2026-10-05',
+    views_count: 0
+  },
+  {
     id: '30',
     title: 'Vérifications intérieures du permis : les questions et les réponses',
     slug: 'questions-verifications-interieures-permis',
@@ -784,7 +953,7 @@ export const blogPosts: BlogPost[] = [
 <ul><li>vous avez une <strong>embauche ou une mutation</strong> conditionnée au permis&nbsp;;</li><li>vous disposez d'une <strong>période réellement libre</strong> — congés, entre deux contrats, vacances universitaires&nbsp;;</li><li>vous avez déjà le code, ce qui supprime une étape entière&nbsp;;</li><li>vous choisissez la <strong>boîte automatique</strong>, dont le minimum légal est de 13 heures contre 20 — voir <a href="/blog/permis-boite-automatique-ou-manuelle-choisir">boîte auto ou manuelle</a>.</li></ul>
 <p>Elle convient mal si vous débutez totalement, si vous êtes anxieux au volant, ou si vous ne pouvez dégager que deux heures par semaine — dans ces cas, l'intensité produit surtout de la fatigue.</p>
 <h2>Le coût d'un permis rapide</h2>
-<p>Une formule accélérée n'est pas nécessairement plus chère à l'heure, mais elle laisse moins de marge&nbsp;: si le compte d'heures ne suffit pas, les heures supplémentaires s'ajoutent au tarif normal. Chez nous, la formule accélérée 20 heures est affichée à <strong>1 559 €</strong> en boîte manuelle et <strong>1 199 €</strong> en boîte automatique 13h, code intensif compris&nbsp;; le détail du format et des forfaits est sur notre <a href="/permis-accelere">page permis accéléré</a>, et la grille complète sur notre <a href="/tarifs">page tarifs à Nanterre</a>.</p>
+<p>Une formule accélérée n'est pas nécessairement plus chère à l'heure, mais elle laisse moins de marge&nbsp;: si le compte d'heures ne suffit pas, les heures supplémentaires s'ajoutent au tarif normal. Chez nous, la formule accélérée 20 heures est affichée à <strong>1 559 €</strong> en boîte manuelle et <strong>1 199 €</strong> en boîte automatique 13h, code intensif compris&nbsp;; le détail du format et des forfaits est sur notre <a href="/permis-accelere">page permis accéléré</a>, et la grille complète sur notre <a href="/tarifs">page tarifs à Nanterre</a>.</p><p>Pour aller plus loin&nbsp;: <a href="/blog/permis-accelere-comment-obtenir-rapidement">comment obtenir son permis accéléré étape par étape</a>, <a href="/blog/prix-permis-accelere-combien-ca-coute">ce que coûte réellement un permis accéléré</a>, et <a href="/blog/permis-5-jours-1-semaine-2-semaines-possible">ce qui est faisable en 5 jours, 1 semaine ou 2 semaines</a>.</p>
 <p>Le calcul à faire avant de comparer deux devis est détaillé dans notre article sur <a href="/blog/prix-permis-conduire-nanterre">le prix du permis à Nanterre</a>.</p>
 <h2>Conclusion</h2>
 <p>La formation en 10 jours est une excellente option pour les candidats qui peuvent supporter l'intensité. Évaluez votre profil et vos disponibilités avant de vous engager.</p>`,
