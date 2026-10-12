@@ -49,7 +49,7 @@ export const blogPosts: BlogPost[] = [
 <p>Nous sommes au <strong>375 avenue de la République à Nanterre (92)</strong>, avec plus de 300 avis Google à 4,9/5 et 451 permis obtenus depuis 2021. Nos élèves s'entraînent sur les routes des Hauts-de-Seine où se déroulent les examens du secteur, avec un moniteur attitré du premier cours au jour J.</p>
 <p>Nous accueillons les candidats des communes voisines — <a href="/auto-ecole-colombes">Colombes</a>, <a href="/auto-ecole-courbevoie">Courbevoie</a>, <a href="/auto-ecole-rueil-malmaison">Rueil-Malmaison</a>, <a href="/auto-ecole-puteaux">Puteaux</a>, <a href="/auto-ecole-bezons">Bezons</a> et une dizaine d'autres — ainsi que les étudiants de <a href="/auto-ecole-universite-nanterre">l'université Paris Nanterre</a> et les actifs de <a href="/auto-ecole-la-defense">La Défense</a>.</p>
 <p>Le plus simple reste de nous poser directement les quatre questions ci-dessus : <a href="/s-inscrire">laissez-nous votre numéro</a> et nous y répondrons franchement, chiffres à l'appui.</p>`,
-    featured_image: '/blog1.jpeg',
+    featured_image: '/blog/choisir-auto-ecole.webp',
     author_name: 'Julien Moreau',
     category: 'Conseils',
     tags: ["auto école autour de moi", "auto école à proximité", "auto école près de chez moi", "meilleure auto école", "choisir son auto école"],
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Nos tarifs à Nanterre</h2>
 <p>Pour situer ces conseils sur des chiffres réels : nos forfaits démarrent à <strong>799 €</strong> en boîte automatique 13h et <strong>899 €</strong> en boîte manuelle 20h, frais de dossier, démarches préfecture et code de la route collectif illimité pendant un an inclus. Tout est payable en 2 fois sans frais, sans organisme de crédit. La grille complète est sur notre <a href="/tarifs">page tarifs</a>.</p>
 <p>Si vous voulez un chiffrage honnête pour votre situation — avec le volume d'heures réellement probable, pas le minimum légal affiché — <a href="/s-inscrire">laissez-nous votre numéro</a> : un conseiller vous rappelle sous 24 h ouvrées.</p>`,
-    featured_image: '/blog5.jpeg',
+    featured_image: '/blog/permis-pas-cher.webp',
     author_name: 'Julien Moreau',
     category: 'Conseils',
     tags: ["permis pas cher", "auto école pas cher", "permis de conduire pas cher", "heure de conduite pas cher", "économiser permis"],
@@ -135,7 +135,7 @@ export const blogPosts: BlogPost[] = [
 <p>Notre pré-inscription en ligne prend trente secondes : nom, téléphone, boîte souhaitée. Un conseiller vous rappelle sous 24 h ouvrées pour faire le point sur votre situation, vous indiquer les pièces à réunir et programmer l'évaluation. Nous ouvrons et suivons votre dossier ANTS — c'est compris dans les frais de constitution.</p>
 <p>Nos forfaits démarrent à <strong>799 €</strong> en boîte automatique 13h et <strong>899 €</strong> en boîte manuelle 20h, code de la route collectif illimité pendant un an inclus, payables en 2 fois sans frais. La grille complète est sur notre <a href="/tarifs">page tarifs</a>, et si votre permis presse, nos <a href="/permis-accelere">formules accélérées</a> concentrent la formation sur quelques semaines.</p>
 <p><a href="/s-inscrire">Démarrez votre pré-inscription</a> ou passez nous voir au 375 avenue de la République — le devis se fait sur place en quelques minutes.</p>`,
-    featured_image: '/blog1.jpeg',
+    featured_image: '/blog/inscription-auto-ecole.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ["inscription auto école", "documents inscription permis", "devis auto école", "forfait auto école", "contrat auto école"],
@@ -182,7 +182,7 @@ export const blogPosts: BlogPost[] = [
 <p>Une formation accélérée n'est pas nécessairement plus chère à l'heure, mais elle laisse moins de marge : si le compte d'heures ne suffit pas, les heures supplémentaires s'ajoutent au tarif normal. Chez nous, les forfaits accélérés démarrent à <strong>1 199 €</strong> en boîte automatique 13h et <strong>1 559 €</strong> en boîte manuelle 20h, code intensif compris. Le détail est sur notre <a href="/permis-accelere">page permis accéléré</a>, et nous décortiquons la structure des prix dans <a href="/blog/prix-permis-accelere-combien-ca-coute">prix du permis accéléré : combien ça coûte vraiment ?</a>.</p>
 <h2>Passer son permis en accéléré à Nanterre</h2>
 <p>Nous organisons des formations intensives au 375 avenue de la République à Nanterre, pour les candidats des Hauts-de-Seine et de l'ouest parisien. Le planning est construit avec vous dès l'évaluation, les dates sont connues d'avance, et la présentation à l'examen est réservée dès que votre niveau le permet. <a href="/s-inscrire">Demandez un rappel</a> ou appelez-nous pour en parler : nous vous dirons franchement si l'accéléré est adapté à votre situation — ou si une formule classique vous servira mieux.</p>`,
-    featured_image: '/permisaccimages/PERMISACC1.jpeg',
+    featured_image: '/blog/permis-accelere-2026.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ["permis accéléré", "permis en accéléré", "permis de conduire accéléré", "auto école accéléré", "formation intensive"],
@@ -224,7 +224,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Permis accéléré pas cher : la vraie question à poser</h2>
 <p>Plutôt que « combien coûte votre forfait ? », posez ces trois questions à l'auto-école que vous envisagez : <strong>quel est le prix de l'heure supplémentaire</strong>, <strong>combien de places d'examen obtenez-vous par mois</strong>, et <strong>quel est votre taux de réussite</strong> ? Un forfait à 1 200 € suivi de huit heures supplémentaires coûte plus cher qu'un forfait à 1 550 € correctement calibré — et un permis obtenu six mois plus tard coûte encore davantage, en temps comme en argent.</p>
 <p>Pour un devis chiffré après évaluation, <a href="/s-inscrire">laissez-nous votre numéro</a> : nous vous rappelons sous 24 h ouvrées et nous vous dirons honnêtement quel volume d'heures prévoir.</p>`,
-    featured_image: '/blog2.jpeg',
+    featured_image: '/blog/prix-permis-accelere.webp',
     author_name: 'Julien Moreau',
     category: 'Conseils',
     tags: ["prix permis accéléré", "permis accéléré pas cher", "code et permis accéléré", "permis automatique accéléré", "tarifs"],
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
 <h2>Notre approche à Nanterre</h2>
 <p>Nous ne vendons pas de durée avant d'avoir évalué votre niveau. Après l'heure d'évaluation, nous vous annonçons un volume d'heures et une échéance réaliste, puis la date d'examen est réservée dès que votre niveau est validé. Nos formules accélérées démarrent à 1 199 € en boîte automatique — détail sur notre <a href="/permis-accelere">page permis accéléré</a>, structure des prix dans <a href="/blog/prix-permis-accelere-combien-ca-coute">prix du permis accéléré</a>, et fonctionnement complet dans <a href="/blog/permis-accelere-comment-obtenir-rapidement">comment obtenir son permis accéléré</a>.</p>
 <p>Pour savoir ce qui est faisable dans votre cas précis, <a href="/s-inscrire">laissez-nous votre numéro</a> : un conseiller vous rappelle sous 24 h ouvrées.</p>`,
-    featured_image: '/blog4.jpeg',
+    featured_image: '/blog/permis-5-jours.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ["permis accéléré 5 jours", "permis accéléré 1 semaine", "permis en 1 semaine", "permis accéléré 2 semaines", "auto école rapide"],
@@ -304,7 +304,7 @@ export const blogPosts: BlogPost[] = [
 <p>Ce choix mérite d'être fait en connaissance de cause plutôt que par défaut ou par crainte. Nous détaillons l'arbitrage cas par cas dans notre article <a href="/blog/permis-boite-automatique-ou-manuelle-choisir">boîte automatique ou manuelle : que choisir ?</a>, et les formules intensives en automatique sont présentées sur notre <a href="/permis-accelere">page permis accéléré</a>.</p>
 <h2>Auto-école boîte automatique à Nanterre</h2>
 <p>Nous formons en boîte automatique comme en boîte manuelle, avec des véhicules dédiés et des moniteurs diplômés d'État, au 375 avenue de la République à Nanterre. Si vous hésitez encore, l'heure d'évaluation tranche souvent la question en une séance : certains élèves découvrent qu'ils sont parfaitement à l'aise en manuelle, d'autres comprennent en trente minutes que l'automatique leur fera gagner des semaines. <a href="/s-inscrire">Laissez-nous votre numéro</a> et nous en parlons sous 24 h ouvrées.</p>`,
-    featured_image: '/blog3.jpeg',
+    featured_image: '/blog/permis-boite-automatique.webp',
     author_name: 'Julien Moreau',
     category: 'Permis',
     tags: ["permis boîte automatique", "permis B automatique", "permis automatique prix", "auto école automatique", "passerelle 7h"],
