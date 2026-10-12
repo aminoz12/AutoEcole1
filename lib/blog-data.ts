@@ -14,6 +14,135 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: '37',
+    title: "Comment choisir la meilleure auto-école près de chez vous ?",
+    slug: 'choisir-meilleure-auto-ecole-pres-de-chez-vous',
+    excerpt: "La plus proche n'est pas toujours la meilleure : le critère qui pèse le plus est le centre d'examen, pas l'adresse de l'agence. Comment chercher, lire les avis et poser les quatre questions qui font le tri.",
+    content: `<p>« Auto-école autour de moi », « auto-école près de chez moi » : c'est le premier réflexe, et il est logique. Vous allez faire ce trajet vingt à trente fois. Mais la proximité la plus utile n'est pas toujours celle à laquelle on pense — et une agence à cinq minutes peut vous coûter des mois si elle n'a pas de places d'examen. Voici comment arbitrer.</p>
+<h2>La proximité qui compte vraiment n'est pas celle de l'agence</h2>
+<p>Commençons par le contre-intuitif. Ce qui pèse le plus sur votre réussite, ce n'est pas la distance entre votre domicile et le bureau de l'auto-école : c'est le <strong>centre d'examen</strong> auquel elle est rattachée, et les parcours sur lesquels vous allez vous entraîner.</p>
+<p>Un élève formé sur les routes où se déroule réellement son examen arrive le jour J en terrain connu — il a déjà négocié ces giratoires, cette insertion, cette zone 30. Un élève formé à quinze kilomètres de là découvre l'itinéraire pendant l'épreuve. À niveau égal, l'écart est considérable.</p>
+<p><strong>La bonne question</strong> n'est donc pas « quelle auto-école est la plus proche ? » mais « dans quel centre d'examen cette auto-école présente-t-elle ses élèves, et m'entraînera-t-elle sur ces routes ? ».</p>
+<h2>Près de chez vous, du travail ou des études ?</h2>
+<p>Le deuxième arbitrage est pratique. Trois options, trois logiques :</p>
+<ul><li><strong>Près du domicile</strong> — idéal si vous conduisez le soir ou le week-end. C'est le choix par défaut pour les lycéens et les personnes en recherche d'emploi.</li><li><strong>Près du lieu de travail ou d'études</strong> — souvent sous-estimé, et pourtant très efficace : une leçon à 18h30 en sortant du bureau, ou entre deux cours, s'intègre sans sacrifier une soirée ou un samedi. C'est le schéma de beaucoup de nos élèves de La Défense et de l'université de Nanterre.</li><li><strong>Près du centre d'examen</strong> — le choix des candidats qui ont déjà échoué une fois et veulent maximiser leurs chances.</li></ul>
+<p>Dans tous les cas, regardez le trajet aux heures où vous prendrez réellement vos leçons, pas à l'heure creuse où vous faites la recherche.</p>
+<h2>Comment chercher efficacement</h2>
+<h3>Google Maps, mais correctement</h3>
+<p>La recherche « auto école » sur Maps affiche les établissements par proximité et notoriété. Deux réflexes utiles : triez mentalement par <strong>nombre</strong> d'avis autant que par note — une école à 5,0 avec 7 avis est moins informative qu'une école à 4,8 avec 300 — et ouvrez la fiche pour vérifier que les horaires, le téléphone et le site sont à jour. Une fiche abandonnée trahit souvent une gestion approximative.</p>
+<h3>Vérifier l'agrément préfectoral</h3>
+<p>Toute auto-école doit détenir un <strong>agrément préfectoral</strong>, dont le numéro doit être affiché dans les locaux et figurer sur le contrat. C'est le minimum vérifiable, et cela exclut d'emblée les structures informelles. De même, les enseignants doivent être titulaires d'un diplôme d'État (BEPECASER ou titre professionnel ECSR).</p>
+<h3>Lire les avis sans se faire piéger</h3>
+<p>Les avis sont utiles si on les lit correctement :</p>
+<ul><li>Ignorez les deux extrêmes et lisez les avis <strong>3 et 4 étoiles</strong> : ce sont les plus nuancés et les plus informatifs.</li><li>Cherchez les <strong>motifs récurrents</strong>. Un avis négatif isolé ne dit rien ; cinq avis mentionnant des annulations de leçons ou des moniteurs changeants décrivent un fonctionnement.</li><li>Regardez les <strong>dates</strong>. Une école peut avoir changé d'équipe ou de direction en deux ans.</li><li>Méfiez-vous d'une salve d'avis cinq étoiles publiés la même semaine.</li></ul>
+<h2>La visite sur place : ce qu'il faut regarder</h2>
+<p>Passez au bureau avant de signer, idéalement en fin de journée quand l'activité est réelle. Observez :</p>
+<ul><li>L'état des <strong>véhicules</strong> — c'est votre futur poste de travail, et celui de l'examen.</li><li>L'affichage obligatoire des <strong>tarifs</strong> et du numéro d'agrément.</li><li>La façon dont on répond à une question gênante (« quel est votre taux de réussite ? »). Une réponse chiffrée vaut mieux qu'un sourire.</li><li>La possibilité de <strong>rencontrer un moniteur</strong>, et pas seulement un commercial.</li></ul>
+<h2>Les quatre questions qui font le tri</h2>
+<ol><li><strong>Quel est votre taux de réussite en première présentation ?</strong> Un chiffre réel, pas un slogan.</li><li><strong>Combien de places d'examen obtenez-vous par mois ?</strong> C'est ce qui détermine votre délai réel.</li><li><strong>Combien coûte l'heure supplémentaire ?</strong> Le poste qui fait déraper les budgets.</li><li><strong>Aurai-je le même moniteur du début à la fin ?</strong> La continuité pédagogique vaut des heures économisées.</li></ol>
+<p>Nos six critères détaillés — moniteurs, tarifs, flexibilité, matériel — sont développés dans <a href="/blog/comment-choisir-auto-ecole-criteres-essentiels">comment choisir son auto-école : les critères essentiels</a>.</p>
+<h2>Les signaux qui doivent alerter</h2>
+<ul><li>Un <strong>refus de communiquer le taux de réussite</strong> ou le prix des heures supplémentaires.</li><li>Une <strong>pression à signer immédiatement</strong>, surtout avec une « offre valable aujourd'hui ».</li><li>Un forfait <strong>anormalement bas</strong> qui exclut la présentation à l'examen.</li><li>L'absence d'<strong>évaluation de départ</strong> avant de vous vendre un volume d'heures.</li><li>Aucune <strong>adresse physique</strong> vérifiable.</li></ul>
+<h2>Faut-il préférer une auto-école en ligne ?</h2>
+<p>Les plateformes en ligne affichent des tarifs attractifs et une grande souplesse. Elles conviennent aux profils autonomes et déjà à l'aise. En revanche, le suivi pédagogique y est plus distant, les moniteurs changent plus souvent, et les places d'examen restent soumises aux mêmes quotas. Pour un débutant complet ou un candidat qui a déjà échoué, l'accompagnement d'une structure locale reste généralement plus efficace.</p>
+<h2>Notre agence à Nanterre</h2>
+<p>Nous sommes au <strong>375 avenue de la République à Nanterre (92)</strong>, avec plus de 300 avis Google à 4,9/5 et 451 permis obtenus depuis 2021. Nos élèves s'entraînent sur les routes des Hauts-de-Seine où se déroulent les examens du secteur, avec un moniteur attitré du premier cours au jour J.</p>
+<p>Nous accueillons les candidats des communes voisines — <a href="/auto-ecole-colombes">Colombes</a>, <a href="/auto-ecole-courbevoie">Courbevoie</a>, <a href="/auto-ecole-rueil-malmaison">Rueil-Malmaison</a>, <a href="/auto-ecole-puteaux">Puteaux</a>, <a href="/auto-ecole-bezons">Bezons</a> et une dizaine d'autres — ainsi que les étudiants de <a href="/auto-ecole-universite-nanterre">l'université Paris Nanterre</a> et les actifs de <a href="/auto-ecole-la-defense">La Défense</a>.</p>
+<p>Le plus simple reste de nous poser directement les quatre questions ci-dessus : <a href="/s-inscrire">laissez-nous votre numéro</a> et nous y répondrons franchement, chiffres à l'appui.</p>`,
+    featured_image: '/blog1.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Conseils',
+    tags: ["auto école autour de moi", "auto école à proximité", "auto école près de chez moi", "meilleure auto école", "choisir son auto école"],
+    published_at: '2026-10-11',
+    views_count: 0
+  },
+  {
+    id: '36',
+    title: "Comment passer son permis pas cher : 10 astuces pour économiser",
+    slug: 'permis-pas-cher-10-astuces-economiser',
+    excerpt: "L'essentiel des économies ne se joue pas sur le forfait affiché mais sur dix décisions prises avant et pendant la formation. Les leviers réels, et le piège des offres trop basses.",
+    content: `<p>Le permis représente souvent la première dépense importante d'un jeune adulte, et la facture finale dépasse fréquemment le forfait affiché. Bonne nouvelle : l'essentiel des économies ne se joue pas sur le prix du forfait, mais sur une poignée de décisions prises avant et pendant la formation. Voici les dix leviers qui font réellement baisser le total.</p>
+<h2>1. Choisir la boîte automatique si votre usage le permet</h2>
+<p>C'est l'économie la plus immédiate. Le minimum légal est de <strong>13 heures</strong> en boîte automatique contre <strong>20 heures</strong> en manuelle : sept heures de moins à payer, et un apprentissage plus court puisqu'il n'y a ni embrayage ni passage de rapports à maîtriser.</p>
+<p>L'objection habituelle ne tient plus : depuis mars 2024, la passerelle de 7 heures vers la boîte manuelle se fait <strong>sans délai d'attente</strong>. Vous pouvez donc commencer en automatique et lever la restriction plus tard si le besoin apparaît. Le détail est dans notre article sur le <a href="/blog/permis-boite-automatique-prix-duree-avantages">permis boîte automatique</a>.</p>
+<h2>2. Ne pas surdimensionner son forfait</h2>
+<p>Beaucoup de candidats prennent un forfait 30 ou 40 heures « par précaution ». C'est souvent de l'argent immobilisé inutilement. L'<strong>évaluation de départ</strong> — une heure au volant, obligatoire — sert précisément à estimer le volume réel dont vous avez besoin. Prenez le forfait qu'elle indique, pas le plus gros du catalogue.</p>
+<h2>3. Vérifier le prix de l'heure supplémentaire avant de signer</h2>
+<p>C'est le poste qui fait exploser les budgets, et celui que personne ne regarde. Un forfait à 899 € avec des heures supplémentaires à 70 € coûte plus cher, au total, qu'un forfait à 1 000 € avec des heures à 50 € dès que vous dépassez de cinq heures — ce qui arrive très souvent, puisque la moyenne nationale réelle tourne autour de 30 à 35 heures pour un débutant.</p>
+<p><strong>Demandez ce tarif par écrit</strong> avant de vous engager. Une auto-école qui esquive la question vous répondra plus tard, facture à l'appui.</p>
+<h2>4. Mobiliser son CPF</h2>
+<p>Le permis B est finançable par le compte personnel de formation selon votre situation et les règles en vigueur. Beaucoup de salariés et d'alternants ignorent qu'ils disposent d'un solde suffisant pour couvrir une grande partie de la formation. Vérifiez le vôtre sur <a href="https://www.moncompteformation.gouv.fr" target="_blank" rel="noopener noreferrer">moncompteformation.gouv.fr</a> — c'est gratuit et cela prend deux minutes.</p>
+<h2>5. Cumuler les aides existantes</h2>
+<p>Elles sont nombreuses et largement sous-utilisées : permis à 1 € par jour selon l'âge, aides de France Travail pour les demandeurs d'emploi, dispositifs régionaux et départementaux, aides des missions locales, et parfois du comité d'entreprise. Plusieurs sont cumulables entre elles. Notre guide des <a href="/blog/aides-financement-permis-conduire-2026">aides au financement du permis</a> les recense avec les conditions de chacune.</p>
+<h2>6. Envisager la conduite accompagnée</h2>
+<p>Si vous avez 15 ans ou que vous conseillez un adolescent, l'<strong>AAC</strong> est le meilleur rapport coût/résultat du système français. Le forfait de départ est plus élevé, mais les kilomètres parcourus avec un accompagnateur ne coûtent rien, le taux de réussite est nettement supérieur, et la période probatoire est réduite à deux ans au lieu de trois — avec un impact direct sur le prix de l'assurance. Notre <a href="/blog/conduite-accompagnee-aac-guide-complet">guide complet de la conduite accompagnée</a> détaille le dispositif.</p>
+<h2>7. Réviser le code en ligne plutôt qu'en forfait coûteux</h2>
+<p>L'entraînement au code n'a aucune raison de coûter cher. Un accès en ligne illimité se trouve autour de 30 € — notre Pack Web est à 29 € en accès illimité, 10 € pour un mois. Si votre auto-école facture la préparation au code plusieurs centaines d'euros en supplément, la question mérite d'être posée.</p>
+<h2>8. Être régulier : les trous coûtent des heures</h2>
+<p>C'est l'économie invisible, et sans doute la plus importante. Un élève qui prend une leçon tous les quinze jours passe les vingt premières minutes de chaque séance à retrouver ses repères — et paie ces vingt minutes au tarif horaire. Sur une formation complète, cela représente facilement trois à cinq heures perdues, soit 150 à 350 €.</p>
+<p>Deux séances par semaine coûtent exactement le même prix horaire qu'une séance tous les quinze jours, mais demandent moins d'heures au total. C'est le principe même des <a href="/permis-accelere">formules accélérées</a>, mais il s'applique à n'importe quel rythme soutenu.</p>
+<h2>9. Ne pas payer deux fois le même service</h2>
+<p>Vérifiez que les postes suivants figurent bien dans le forfait et ne sont pas refacturés : frais de constitution de dossier, démarches préfecture (ouverture ANTS), fourniture du livret d'apprentissage, et <strong>présentation à l'examen</strong>. Ce dernier point est le plus fréquemment facturé en supplément, parfois 80 à 120 €.</p>
+<h2>10. Comparer le coût total, jamais le prix affiché</h2>
+<p>La seule comparaison qui a du sens additionne : forfait + heures supplémentaires probables + frais de présentation + éventuelle seconde présentation. Une auto-école transparente acceptera de faire ce calcul avec vous. Notre article sur le <a href="/blog/prix-permis-conduire-nanterre">prix du permis à Nanterre</a> détaille poste par poste ce que recouvre un budget réaliste.</p>
+<h2>Le piège du permis trop pas cher</h2>
+<p>Un avertissement nécessaire. Certaines offres très basses reposent sur des pratiques qui finissent par coûter cher :</p>
+<ul><li><strong>Des forfaits sans présentation à l'examen</strong>, où l'école vous laisse chercher une place vous-même.</li><li><strong>Des délais d'attente considérables</strong> pour les places d'examen, parce que l'école vend plus de forfaits qu'elle n'a de créneaux.</li><li><strong>Des moniteurs qui changent à chaque leçon</strong>, ce qui allonge mécaniquement le nombre d'heures nécessaires.</li><li><strong>Des écoles qui cessent leur activité</strong> en laissant les élèves récupérer un dossier bloqué — un risque réel dans ce secteur.</li></ul>
+<p>Le bon réflexe : demander le taux de réussite, le nombre de places d'examen obtenues par mois, et vérifier que l'établissement est bien agréé par la préfecture. Nos critères complets sont dans <a href="/blog/comment-choisir-auto-ecole-criteres-essentiels">comment choisir son auto-école</a>.</p>
+<h2>Nos tarifs à Nanterre</h2>
+<p>Pour situer ces conseils sur des chiffres réels : nos forfaits démarrent à <strong>799 €</strong> en boîte automatique 13h et <strong>899 €</strong> en boîte manuelle 20h, frais de dossier, démarches préfecture et code de la route collectif illimité pendant un an inclus. Tout est payable en 2 fois sans frais, sans organisme de crédit. La grille complète est sur notre <a href="/tarifs">page tarifs</a>.</p>
+<p>Si vous voulez un chiffrage honnête pour votre situation — avec le volume d'heures réellement probable, pas le minimum légal affiché — <a href="/s-inscrire">laissez-nous votre numéro</a> : un conseiller vous rappelle sous 24 h ouvrées.</p>`,
+    featured_image: '/blog5.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Conseils',
+    tags: ["permis pas cher", "auto école pas cher", "permis de conduire pas cher", "heure de conduite pas cher", "économiser permis"],
+    published_at: '2026-10-10',
+    views_count: 0
+  },
+  {
+    id: '35',
+    title: "Inscription en auto-école : documents nécessaires et étapes clés",
+    slug: 'inscription-auto-ecole-etapes-documents',
+    excerpt: "Devis, contrat, évaluation, dossier ANTS : le parcours complet entre le premier appel et la première leçon — avec les clauses à vérifier et le cas de ceux qui ont déjà le code.",
+    content: `<p>Entre le premier appel et votre première leçon, il y a une suite d'étapes que personne ne vous explique vraiment : le devis, le contrat, l'évaluation, l'ouverture du dossier. Comprendre cet enchaînement évite les mauvaises surprises — et permet de repérer les auto-écoles qui prennent des libertés avec les règles. Voici le parcours complet.</p>
+<h2>Étape 1 : demander un devis détaillé</h2>
+<p>Avant toute signature, demandez un <strong>devis écrit</strong>. Ce n'est pas une faveur : les tarifs doivent être affichés et le contenu des prestations détaillé. Un devis sérieux fait apparaître ligne par ligne :</p>
+<ul><li>Les <strong>frais de constitution de dossier</strong> et les démarches préfecture.</li><li>La formation au <strong>code de la route</strong> et sa durée d'accès.</li><li>Le <strong>nombre d'heures de conduite</strong> inclus, chiffré.</li><li>Le <strong>prix de l'heure supplémentaire</strong>.</li><li>La <strong>présentation à l'examen</strong> — incluse ou non.</li><li>Les frais éventuels de <strong>transfert de dossier</strong>.</li></ul>
+<p>Demandez-en deux ou trois, dans des écoles différentes. L'écart porte rarement sur le forfait affiché : il porte sur ce qui n'y figure pas.</p>
+<h2>Étape 2 : comparer les forfaits sur le bon critère</h2>
+<p>Un forfait auto-école n'est pas un prix, c'est un périmètre. Deux offres à 899 € peuvent recouvrir des prestations très différentes. La comparaison utile additionne le forfait, les heures supplémentaires probables et les frais de présentation — pas le chiffre en gros sur la vitrine.</p>
+<p>Attention particulière au <strong>volume d'heures</strong> : 20 heures en boîte manuelle et 13 en automatique sont des minimums réglementaires, pas des moyennes. Un débutant en prend souvent 30 à 35. Un forfait calibré au minimum légal n'est donc pas une bonne affaire s'il s'accompagne d'heures supplémentaires chères. Nos dix leviers d'économie sont détaillés dans <a href="/blog/permis-pas-cher-10-astuces-economiser">comment passer son permis pas cher</a>.</p>
+<h2>Étape 3 : réunir les documents</h2>
+<p>Le dossier d'inscription repose sur un <strong>numéro NEPH</strong>, délivré après une demande sur le site de l'ANTS — c'est ce numéro qui vous rattache administrativement au parcours du permis. La plupart des auto-écoles, dont la nôtre, s'en chargent pour vous.</p>
+<p>Les pièces demandées à tout le monde : une <strong>pièce d'identité</strong> en cours de validité, une <strong>photo-signature numérique</strong> (réalisée dans une cabine agréée ou chez un photographe), un <strong>justificatif de domicile</strong> de moins de six mois, et selon votre âge l'<strong>ASSR 2</strong> ou l'ASR, ainsi que l'attestation de <strong>Journée Défense et Citoyenneté</strong>.</p>
+<p>La liste exhaustive, avec les cas particuliers qui bloquent le plus souvent — hébergement chez un tiers, ASSR perdue, ressortissant étranger — est détaillée dans notre article sur <a href="/blog/papiers-inscription-permis-conduire-liste">les papiers d'inscription au permis</a>.</p>
+<h2>Étape 4 : lire le contrat de formation</h2>
+<p>L'inscription donne lieu à un <strong>contrat écrit</strong>, et c'est le document qui compte le jour où quelque chose se passe mal. Vérifiez qu'y figurent bien :</p>
+<ul><li>Le <strong>numéro d'agrément préfectoral</strong> de l'établissement.</li><li>Le <strong>détail des prestations</strong> et leur prix unitaire.</li><li>Les <strong>modalités de paiement</strong> et l'échéancier.</li><li>Les <strong>conditions de résiliation</strong> et de remboursement des heures non consommées.</li><li>Les frais de <strong>transfert de dossier</strong> en cas de départ.</li></ul>
+<p>Ce dernier point mérite votre attention : des frais de transfert excessifs sont une façon de retenir les élèves mécontents. Et si vous signez à distance ou hors établissement, un délai de rétractation de 14 jours s'applique — ce qui n'est pas le cas d'une signature au bureau.</p>
+<h2>Étape 5 : l'évaluation de départ</h2>
+<p>Une heure au volant, obligatoire avant la vente d'un forfait. Elle mesure votre niveau réel — expérience antérieure, aisance, perception des distances — et détermine le volume d'heures à prévoir.</p>
+<p>C'est aussi un bon test pour l'auto-école : une école qui vous vend un forfait <strong>avant</strong> de vous avoir vu conduire vend un produit standard, pas une formation. Exigez cette évaluation, et demandez qu'on vous en commente le résultat.</p>
+<h2>S'inscrire quand on a déjà le code</h2>
+<p>C'est une situation fréquente et mal expliquée. Votre code reste valable <strong>5 ans</strong> et couvre jusqu'à <strong>5 présentations</strong> à l'épreuve pratique. Tant que vous êtes dans ces limites, vous n'avez rien à repasser.</p>
+<p>Concrètement : demandez une <strong>formule conduite seule</strong>, sans la partie théorique. L'économie représente généralement 200 à 400 € par rapport à un forfait complet. Munissez-vous de votre numéro NEPH et, si vous l'avez, de votre livret d'apprentissage — il permet de reprendre la formation au bon niveau plutôt qu'au début.</p>
+<h2>Changer d'auto-école en cours de route</h2>
+<p>C'est votre droit, à tout moment. La procédure passe par un <strong>transfert de dossier</strong> : votre ancienne école restitue le dossier et le livret, la nouvelle le reprend. Deux points de vigilance : les frais de transfert, qui doivent être prévus au contrat, et le remboursement des heures payées mais non consommées.</p>
+<p>Nous accueillons régulièrement des élèves venus d'autres établissements, souvent après des délais d'examen à rallonge ou un échec mal accompagné. Dans ce cas, l'évaluation sert à repartir du bon niveau, pas à revendre une formation complète.</p>
+<h2>Combien de temps prend l'inscription ?</h2>
+<p>L'inscription elle-même se règle en une visite d'une vingtaine de minutes si votre dossier est complet. Ce qui prend du temps ensuite, c'est l'<strong>enregistrement administratif</strong> et l'obtention du numéro NEPH — comptez généralement quelques jours à quelques semaines selon les périodes. D'où l'intérêt de lancer le dossier tôt, même si vous ne comptez commencer à conduire que plus tard : rien n'oblige à enchaîner immédiatement.</p>
+<h2>S'inscrire chez nous à Nanterre</h2>
+<p>Notre pré-inscription en ligne prend trente secondes : nom, téléphone, boîte souhaitée. Un conseiller vous rappelle sous 24 h ouvrées pour faire le point sur votre situation, vous indiquer les pièces à réunir et programmer l'évaluation. Nous ouvrons et suivons votre dossier ANTS — c'est compris dans les frais de constitution.</p>
+<p>Nos forfaits démarrent à <strong>799 €</strong> en boîte automatique 13h et <strong>899 €</strong> en boîte manuelle 20h, code de la route collectif illimité pendant un an inclus, payables en 2 fois sans frais. La grille complète est sur notre <a href="/tarifs">page tarifs</a>, et si votre permis presse, nos <a href="/permis-accelere">formules accélérées</a> concentrent la formation sur quelques semaines.</p>
+<p><a href="/s-inscrire">Démarrez votre pré-inscription</a> ou passez nous voir au 375 avenue de la République — le devis se fait sur place en quelques minutes.</p>`,
+    featured_image: '/blog1.jpeg',
+    author_name: 'Julien Moreau',
+    category: 'Permis',
+    tags: ["inscription auto école", "documents inscription permis", "devis auto école", "forfait auto école", "contrat auto école"],
+    published_at: '2026-10-09',
+    views_count: 0
+  },
+  {
     id: '34',
     title: "Permis accéléré : comment l'obtenir rapidement en 2026 ?",
     slug: 'permis-accelere-comment-obtenir-rapidement',
@@ -545,7 +674,7 @@ export const blogPosts: BlogPost[] = [
     title: "Quels papiers pour s'inscrire au permis de conduire ? La liste complète",
     slug: 'papiers-inscription-permis-conduire-liste',
     excerpt: "Pièce d'identité, e-photo, ASSR, JDC, justificatif de domicile : la liste exacte des documents à réunir pour ouvrir votre dossier de permis, avec les cas particuliers qui bloquent le plus souvent.",
-    content: `<p>Un dossier incomplet, c'est plusieurs semaines perdues avant même la première leçon. Pourtant, la liste des pièces n'a rien de compliqué dès lors qu'on l'a sous les yeux. La voici, avec les cas particuliers qui posent le plus de problèmes.</p>
+    content: `<p>Un dossier incomplet, c'est plusieurs semaines perdues avant même la première leçon. Pourtant, la liste des pièces n'a rien de compliqué dès lors qu'on l'a sous les yeux. La voici, avec les cas particuliers qui posent le plus de problèmes.</p><p>Pour le déroulé complet de l'inscription — devis, contrat, évaluation de départ — voyez notre article <a href="/blog/inscription-auto-ecole-etapes-documents">inscription en auto-école : les étapes clés</a>.</p>
 <h2>Le point de départ : le numéro NEPH</h2>
 <p>Avant toute chose, il faut un <strong>numéro NEPH</strong> — le numéro d'enregistrement préparatoire à l'examen, délivré après une demande sur le site de l'ANTS. C'est lui qui vous rattache administrativement au parcours du permis.</p>
 <p>Bonne nouvelle : <strong>votre auto-école peut effectuer cette démarche pour vous</strong>, et c'est ce que nous faisons systématiquement. Vous n'avez qu'à fournir les pièces ci-dessous.</p>
@@ -668,7 +797,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'prix-permis-conduire-nanterre',
     excerpt: "Prix des forfaits, frais annexes que personne ne mentionne, écart avec Paris, aides mobilisables : le point complet et chiffré sur le budget réel d'un permis B à Nanterre.",
     content: `<p>« Combien ça coûte ? » est la première question posée au téléphone, et c'est légitime : le permis représente un budget important. Le problème, c'est que les prix affichés recouvrent rarement les mêmes prestations d'une école à l'autre. Voici comment lire une grille tarifaire, et ce que cela donne concrètement à Nanterre.</p>
-<h2>Ce que contient — ou non — un forfait</h2>
+<h2>Ce que contient — ou non — un forfait</h2><p>Et pour réduire la facture une fois le budget compris, nos dix leviers concrets sont réunis dans <a href="/blog/permis-pas-cher-10-astuces-economiser">comment passer son permis pas cher</a>.</p>
 <p>Un forfait sérieux doit préciser au minimum :</p>
 <ul><li>le <strong>nombre d'heures de conduite</strong> incluses ;</li><li>si l'<strong>accès au code</strong> (en ligne et/ou en salle) est compris ;</li><li>les <strong>frais de dossier</strong> et l'enregistrement de votre demande de permis ;</li><li>la <strong>présentation à l'examen</strong> pratique — et si une seconde présentation est facturée ;</li><li>le <strong>prix de l'heure supplémentaire</strong>, car c'est là que les budgets dérapent.</li></ul>
 <p>Un forfait très bas assorti d'heures supplémentaires chères revient souvent plus cher qu'un forfait complet. C'est le calcul à faire avant de comparer deux devis.</p>
@@ -882,7 +1011,7 @@ export const blogPosts: BlogPost[] = [
     title: 'Comment choisir son auto-école : 6 critères',
     slug: 'comment-choisir-auto-ecole-criteres-essentiels',
     excerpt: "Forfait affiché, prix des heures supplémentaires, taux de réussite, disponibilité des moniteurs : les 6 critères à vérifier avant de signer — et le piège du forfait trop bas.",
-    content: `<p>Choisir la bonne <a href="/tarifs">auto-école</a> est une décision importante qui peut influencer votre réussite au permis de conduire. Voici les critères essentiels à considérer.</p>
+    content: `<p>Choisir la bonne <a href="/tarifs">auto-école</a> est une décision importante qui peut influencer votre réussite au permis de conduire. Voici les critères essentiels à considérer.</p><p>Si vous cherchez d’abord une école <em>proche de chez vous</em>, commencez plutôt par notre guide <a href="/blog/choisir-meilleure-auto-ecole-pres-de-chez-vous">comment choisir la meilleure auto-école près de chez vous</a> : il explique pourquoi le centre d’examen compte davantage que l’adresse de l’agence.</p>
 <h2>1. Le taux de réussite</h2>
 <p>Renseignez-vous sur le taux de réussite de l'auto-école. Un bon taux (supérieur à 70%) indique généralement une qualité d'enseignement. N'hésitez pas à demander ces chiffres.</p>
 <h2>2. La qualité des moniteurs</h2>
