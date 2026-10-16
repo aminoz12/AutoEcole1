@@ -38,11 +38,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
-      <head>
-        {/* Les traceurs (GTM, GA4, Meta Pixel, Ahrefs) ne sont plus charges ici :
-            ils sont injectes par ConsentBanner uniquement apres consentement,
-            conformement aux regles CNIL sur la mesure d'audience. */}
-      </head>
       <body className="antialiased">
         {/* Site-wide business + website entity so every page (tarifs, contact, blog…)
             carries the LocalBusiness/DrivingSchool graph, not just the homepage. */}

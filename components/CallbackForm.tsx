@@ -13,6 +13,8 @@ interface CallbackFormProps {
   compact?: boolean
   title?: string
   subtitle?: string
+  /** Photo popup: the surrounding dialog supplies its heading and copy. */
+  variant?: 'default' | 'popup'
 }
 
 // Mini-formulaire « on vous rappelle » : 2 champs seulement, pensé pour
@@ -23,7 +25,12 @@ export default function CallbackForm({
   compact = false,
   title = 'On vous rappelle gratuitement',
   subtitle = 'Laissez votre numéro — un conseiller vous rappelle sous 24 h ouvrées pour répondre à vos questions.',
+  variant = 'default',
 }: CallbackFormProps) {
+  const isPopup = variant === 'popup'
+  const inputClass = isPopup
+    ? 'w-full rounded-full border border-white/25 bg-white/10 py-3.5 pl-9 pr-4 text-base text-white placeholder-gray-300 outline-none backdrop-blur-md focus:border-purple-300 focus:ring-2 focus:ring-purple-400/50'
+    : 'w-full rounded-full border border-white/15 bg-[#0B0F19] py-3 pl-9 pr-4 text-sm text-white placeholder-gray-500 focus:border-transparent focus:ring-2 focus:ring-purple-500'
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
   const [loading, setLoading] = useState(false)
@@ -63,7 +70,7 @@ export default function CallbackForm({
 
   if (success) {
     return (
-      <div className="rounded-2xl border border-green-500/30 bg-green-500/10 p-6 text-center">
+      <div role="status" className="rounded-2xl border border-green-500/30 bg-[#10251f]/95 p-6 text-center">
         <CheckCircle className="mx-auto mb-3 h-8 w-8 text-green-400" />
         <p className="font-poppins font-semibold text-white">Demande bien reçue !</p>
         <p className="mt-1 text-sm text-gray-300">
@@ -77,7 +84,8 @@ export default function CallbackForm({
   }
 
   return (
-    <div className={`rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#151b2e] to-[#1a1030] ${compact ? 'p-5' : 'p-6 sm:p-8'}`}>
+    <div className={isPopup ? '' : `rounded-2xl border border-purple-500/30 bg-gradient-to-br from-[#151b2e] to-[#1a1030] ${compact ? 'p-5' : 'p-6 sm:p-8'}`}>
+      {!isPopup && <>
       <h3 className={`font-poppins font-bold text-white ${compact ? 'text-lg' : 'text-xl sm:text-2xl'}`}>
         {title}
       </h3>
@@ -99,57 +107,74 @@ export default function CallbackForm({
           451 permis obtenus
         </span>
       </div>
+      </>}
 
       {error && (
-        <p className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
+        <p role="alert" className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
           {error}
         </p>
       )}
 
-      <form onSubmit={handleSubmit} className={`mt-4 gap-3 ${compact ? 'flex flex-col' : 'flex flex-col sm:flex-row sm:items-stretch'}`}>
+      <form onSubmit={handleSubmit} className={`gap-3 ${isPopup ? 'grid grid-cols-1 sm:grid-cols-2' : `mt-4 ${compact ? 'flex flex-col' : 'flex flex-col sm:flex-row sm:items-stretch'}`}`}>
         <div className="relative flex-1">
           <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
           <input
             type="text"
+            aria-label="Votre prénom"
+            name="fullName"
+            required
+            maxLength={100}
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             placeholder="Votre prénom"
             autoComplete="name"
-            className="w-full rounded-full border border-white/15 bg-[#0B0F19] py-3 pl-9 pr-4 text-sm text-white placeholder-gray-500 focus:border-transparent focus:ring-2 focus:ring-purple-500"
+            className={inputClass}
           />
         </div>
         <div className="relative flex-1">
           <PhoneIcon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
           <input
             type="tel"
+            aria-label="Votre téléphone"
+            name="phone"
+            required
+            maxLength={25}
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="06 12 34 56 78"
             autoComplete="tel"
             inputMode="tel"
-            className="w-full rounded-full border border-white/15 bg-[#0B0F19] py-3 pl-9 pr-4 text-sm text-white placeholder-gray-500 focus:border-transparent focus:ring-2 focus:ring-purple-500"
+            className={inputClass}
           />
         </div>
         <button
           type="submit"
           disabled={loading}
-          className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-6 py-3 font-poppins text-sm font-semibold text-white shadow-lg shadow-pink-500/25 transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+          aria-busy={loading}
+          className={`flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-poppins text-sm font-semibold shadow-lg transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300 disabled:cursor-not-allowed disabled:opacity-50 ${isPopup ? 'sm:col-span-2 bg-white text-[#172033] shadow-black/10' : 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-pink-500/25'}`}
         >
           {loading ? (
-            <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+            <><span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> Envoi en cours…</>
           ) : (
             <>
-              Être rappelé(e)
+              {isPopup ? 'Être rappelé gratuitement' : 'Être rappelé(e)'}
               <ArrowRight className="h-4 w-4" />
             </>
           )}
         </button>
       </form>
 
+      {isPopup ? <p className="mt-4 text-center text-xs leading-relaxed text-gray-300">
+        Sans engagement · Rappel sous 24 h ouvrées
+        <span className="mt-1 block text-gray-400">Vos coordonnées servent à vous recontacter.{' '}
+          <a href="/mentions-legales" className="underline underline-offset-2 hover:text-white">Confidentialité</a>
+        </span>
+      </p> : <>
       <p className="mt-3 text-xs text-gray-500">
         Gratuit et sans engagement · Aucune carte bancaire · Vos coordonnées ne sont jamais partagées.
       </p>
-      <p className="mt-2 text-xs text-gray-500">
+      </>}
+      <p className={`mt-2 text-xs ${isPopup ? 'text-center text-gray-300' : 'text-gray-500'}`}>
         Vous préférez appeler ?{' '}
         <a
           href={`tel:${siteConfig.phoneTel}`}

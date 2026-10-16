@@ -6,6 +6,8 @@
 //   whatsapp_click  — the WhatsApp CTA was tapped (params: location)
 //   cta_click       — a notable CTA was clicked (params: location, target)
 
+import { markLeadSubmitted } from '@/lib/popup-session'
+
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
@@ -39,5 +41,6 @@ export function trackEvent(event: string, params: Record<string, unknown> = {}) 
 }
 
 export function trackLead(form: string, params: Record<string, unknown> = {}) {
+  if (typeof window !== 'undefined') markLeadSubmitted()
   trackEvent('generate_lead', { form, ...params })
 }
