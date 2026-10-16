@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { User, Phone as PhoneIcon, Mail, ArrowRight, Star, ShieldCheck, Clock, Lock } from 'lucide-react'
 import { trackLead } from '@/lib/analytics'
+import { isValidFrenchPhone, formatPhone } from '@/lib/phone'
 
 // Le formulaire ne demande que l'essentiel pour déclencher un rappel :
 // nom + téléphone + formule (email facultatif). Adresse, date de naissance et
@@ -55,7 +56,7 @@ export default function RegistrationForm() {
       return false
     }
 
-    if (!/^(\+33|0)[1-9]([ .-]?\d{2}){4}$/.test(formData.phone.trim())) {
+    if (!isValidFrenchPhone(formData.phone)) {
       setError('Numéro de téléphone invalide (ex : 06 12 34 56 78)')
       return false
     }
@@ -87,7 +88,7 @@ export default function RegistrationForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           fullName: formData.fullName.trim(),
-          phone: formData.phone.trim(),
+          phone: formatPhone(formData.phone),
           email: formData.email.trim(),
           licenseType: packName
             ? `${formData.licenseType} — ${packName}`

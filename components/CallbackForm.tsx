@@ -1,8 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Phone as PhoneIcon, User, CheckCircle, ArrowRight } from 'lucide-react'
-import { trackLead } from '@/lib/analytics'
+import { Phone as PhoneIcon, User, CheckCircle, ArrowRight, Star, ShieldCheck } from 'lucide-react'
+import { trackLead, trackEvent } from '@/lib/analytics'
+import { siteConfig } from '@/lib/seo/site-config'
+import { isValidFrenchPhone, formatPhone } from '@/lib/phone'
 
 interface CallbackFormProps {
   /** Where the form is embedded, e.g. "city:argenteuil" or "blog" — sent in the email + analytics */
@@ -36,7 +38,7 @@ export default function CallbackForm({
       setError('Votre prénom ou nom est requis')
       return
     }
-    if (!/^(\+33|0)[1-9]([ .-]?\d{2}){4}$/.test(phone.trim())) {
+    if (!isValidFrenchPhone(phone)) {
       setError('Numéro de téléphone invalide (ex : 06 12 34 56 78)')
       return
     }
@@ -46,7 +48,7 @@ export default function CallbackForm({
       const response = await fetch('/api/callback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fullName: fullName.trim(), phone: phone.trim(), source }),
+        body: JSON.stringify({ fullName: fullName.trim(), phone: formatPhone(phone), source }),
       })
       const data = await response.json()
       if (!response.ok) throw new Error(data.error || "Erreur lors de l'envoi")
@@ -65,7 +67,10 @@ export default function CallbackForm({
         <CheckCircle className="mx-auto mb-3 h-8 w-8 text-green-400" />
         <p className="font-poppins font-semibold text-white">Demande bien reçue !</p>
         <p className="mt-1 text-sm text-gray-300">
-          Un conseiller vous rappelle sous 24 h ouvrées.
+          Un conseiller vous rappelle sous 24 h ouvrées, depuis le {siteConfig.phone}.
+        </p>
+        <p className="mt-3 text-xs text-gray-400">
+          Besoin d’une réponse tout de suite ? Appelez-nous directement.
         </p>
       </div>
     )
@@ -77,6 +82,23 @@ export default function CallbackForm({
         {title}
       </h3>
       <p className="mt-2 text-sm text-gray-400">{subtitle}</p>
+
+      {/* Preuve sociale juste au-dessus des champs : c'est l’endroit
+          où le visiteur décide de donner son numéro ou non. */}
+      <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-gray-400">
+        <span className="inline-flex items-center gap-1.5">
+          <span className="flex gap-0.5">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="h-3.5 w-3.5 fill-[#FBBC05] text-[#FBBC05]" />
+            ))}
+          </span>
+          <strong className="text-white">4,9/5</strong> sur +300 avis Google
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <ShieldCheck className="h-3.5 w-3.5 text-green-400" />
+          451 permis obtenus
+        </span>
+      </div>
 
       {error && (
         <p className="mt-3 rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-300">
@@ -125,7 +147,17 @@ export default function CallbackForm({
       </form>
 
       <p className="mt-3 text-xs text-gray-500">
-        Gratuit et sans engagement. Vos coordonnées ne sont jamais partagées.
+        Gratuit et sans engagement · Aucune carte bancaire · Vos coordonnées ne sont jamais partagées.
+      </p>
+      <p className="mt-2 text-xs text-gray-500">
+        Vous préférez appeler ?{' '}
+        <a
+          href={`tel:${siteConfig.phoneTel}`}
+          onClick={() => trackEvent('phone_click', { location: `callback:${source}` })}
+          className="font-semibold text-purple-300 underline-offset-4 hover:text-white hover:underline"
+        >
+          {siteConfig.phone}
+        </a>
       </p>
     </div>
   )
