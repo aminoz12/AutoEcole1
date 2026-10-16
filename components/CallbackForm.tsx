@@ -29,7 +29,7 @@ export default function CallbackForm({
 }: CallbackFormProps) {
   const isPopup = variant === 'popup'
   const inputClass = isPopup
-    ? 'w-full rounded-full border border-white/25 bg-white/10 py-3.5 pl-9 pr-4 text-base text-white placeholder-gray-300 outline-none backdrop-blur-md focus:border-purple-300 focus:ring-2 focus:ring-purple-400/50'
+    ? 'w-full rounded-full border border-white/30 bg-[#0B0F19]/80 py-3.5 pl-9 pr-4 text-base text-white placeholder-gray-400 outline-none backdrop-blur-md focus:border-purple-300 focus:ring-2 focus:ring-purple-400/50'
     : 'w-full rounded-full border border-white/15 bg-[#0B0F19] py-3 pl-9 pr-4 text-sm text-white placeholder-gray-500 focus:border-transparent focus:ring-2 focus:ring-purple-500'
   const [fullName, setFullName] = useState('')
   const [phone, setPhone] = useState('')
@@ -151,7 +151,7 @@ export default function CallbackForm({
           type="submit"
           disabled={loading}
           aria-busy={loading}
-          className={`flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-poppins text-sm font-semibold shadow-lg transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300 disabled:cursor-not-allowed disabled:opacity-50 ${isPopup ? 'sm:col-span-2 bg-white text-[#172033] shadow-black/10' : 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-pink-500/25'}`}
+          className={`flex items-center justify-center gap-2 rounded-full px-6 py-3.5 font-poppins text-sm font-semibold shadow-lg transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300 disabled:cursor-not-allowed disabled:opacity-50 ${isPopup ? 'sm:col-span-2 bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-pink-500/40 ring-1 ring-white/20' : 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-pink-500/25'}`}
         >
           {loading ? (
             <><span className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" /> Envoi en cours…</>

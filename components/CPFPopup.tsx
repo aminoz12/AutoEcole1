@@ -148,7 +148,7 @@ export default function CPFPopup() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#101520] via-transparent to-black/10 md:bg-none" />
               <div className="absolute inset-0 hidden bg-[linear-gradient(90deg,rgba(9,14,24,0.96)_0%,rgba(9,14,24,0.88)_32%,rgba(9,14,24,0.60)_52%,rgba(9,14,24,0.08)_76%,rgba(9,14,24,0.02)_100%)] md:block" />
             </div>
-            <button type="button" onClick={close} aria-label="Fermer la fenêtre" className="absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#172033] shadow-lg transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300 md:right-5 md:top-5">
+            <button type="button" onClick={close} aria-label="Fermer la fenêtre" className="absolute right-3 top-3 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#0B0F19]/70 text-white ring-1 ring-white/30 shadow-lg backdrop-blur-md transition hover:bg-[#0B0F19]/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple-300 md:right-5 md:top-5">
               <X className="h-5 w-5" />
             </button>
             <div className="relative z-10 -mt-5 px-5 pb-6 sm:px-8 md:mt-0 md:flex md:min-h-[580px] md:w-[59%] md:flex-col md:justify-center md:px-10 md:py-12 lg:px-12">
