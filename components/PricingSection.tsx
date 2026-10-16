@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Check, Map, Users, CalendarCheck, Phone, X, AlertCircle } from 'lucide-react'
 import { siteConfig } from '@/lib/seo/site-config'
@@ -210,27 +210,49 @@ export default function PricingSection({
             viewport={{ once: true }}
             className="mb-12 flex justify-center px-4"
           >
-            <div className="grid w-full max-w-md grid-cols-2 gap-2 rounded-2xl border border-white/20 bg-[#151b2e] p-2 shadow-lg md:inline-flex md:w-auto md:max-w-none md:gap-0 md:rounded-full">
-              {tabs.map((tab, index) => (
-                <Fragment key={tab.key}>
-                  {index > 0 && <span aria-hidden="true" className="hidden md:block h-8 w-px shrink-0 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />}
-                  <button
-                    onClick={() => setActiveTab(tab.key)}
-                    className={`relative w-full md:w-auto px-3 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-sm font-bold tracking-wide leading-tight transition-all whitespace-normal md:whitespace-nowrap ${
-                      activeTab === tab.key ? 'text-gray-900' : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
-                  >
-                    {activeTab === tab.key && (
-                      <motion.span
-                        layoutId="pack-tab-pill"
-                        className="absolute inset-0 bg-white rounded-full shadow-lg"
-                        transition={{ type: 'spring', stiffness: 350, damping: 30 }}
-                      />
-                    )}
-                    <span className="relative z-10">{tab.label}</span>
-                  </button>
-                </Fragment>
-              ))}
+            <div className="w-full max-w-xl">
+              <p className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-gray-500">
+                Choisissez votre boîte
+              </p>
+              {/* role=tablist + aria-selected : l'etat actif doit etre annonce,
+                  pas seulement visible. Le survol ne s'applique qu'aux appareils
+                  qui le gerent (hoverOnlyWhenSupported, tailwind.config.js) :
+                  sinon un hover reste "colle" apres le tap sur mobile. */}
+              <div
+                role="tablist"
+                aria-label="Type de boîte de vitesses"
+                className="grid grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-[#151b2e] p-2 shadow-lg"
+              >
+                {tabs.map((tab) => {
+                  const isActive = activeTab === tab.key
+                  return (
+                    <button
+                      key={tab.key}
+                      role="tab"
+                      type="button"
+                      aria-selected={isActive}
+                      onClick={() => setActiveTab(tab.key)}
+                      className={`relative flex w-full items-center justify-center gap-2 rounded-xl px-3 py-3.5 text-sm font-bold leading-tight tracking-wide transition-colors sm:px-6 sm:text-base ${
+                        isActive
+                          ? 'text-white'
+                          : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.span
+                          layoutId="pack-tab-pill"
+                          className="absolute inset-0 rounded-xl bg-gradient-to-r from-pink-500 to-purple-600 shadow-lg shadow-pink-500/30 ring-2 ring-white/20"
+                          transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                        />
+                      )}
+                      <span className="relative z-10 flex items-center gap-1.5">
+                        {isActive && <Check className="h-4 w-4 shrink-0" strokeWidth={3} />}
+                        {tab.label}
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
             </div>
           </motion.div>
         )}

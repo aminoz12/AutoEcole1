@@ -1,5 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  // Sur mobile, un `hover:` reste applique apres le tap : deux onglets
+  // paraissaient alors selectionnes en meme temps. Ce reglage encadre tous
+  // les utilitaires hover dans @media (hover: hover).
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
