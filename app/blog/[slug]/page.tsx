@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const review = articleReviewsBySlug[post.slug]
 
   return createPageMetadata({
-    title: post.title,
+    title: post.seoTitle || post.title,
     description: post.excerpt,
     path: `/blog/${post.slug}`,
     keywords: post.tags,

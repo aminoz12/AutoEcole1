@@ -5,9 +5,9 @@ import { blogPosts, blogCategories } from '@/lib/blog-data'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata = createPageMetadata({
-  title: 'Blog permis de conduire — conseils et guides',
+  title: 'Blog permis de conduire — guides 2026',
   description:
-    'Guides pratiques pour réussir le code et le permis : prix du permis à Nanterre, boîte auto ou manuelle, conduite accompagnée, CPF, examen dans les Hauts-de-Seine.',
+    'Nos guides pour réussir le code et le permis : prix 2026, permis accéléré, boîte auto ou manuelle, aides au financement et conseils d’examen. Par des moniteurs.',
   path: '/blog',
   keywords: ['conseils permis de conduire', 'réussir le code de la route', 'guide permis Nanterre', 'examen permis 92'],
 })

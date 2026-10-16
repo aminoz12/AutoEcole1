@@ -7,9 +7,9 @@ import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Inscription au permis à Nanterre — en ligne',
+  title: 'Inscription en ligne — rappel sous 24 h',
   description:
-    'Inscrivez-vous au permis de conduire à Nanterre en quelques minutes : permis B boîte manuelle ou automatique et formule accélérée. CPF selon éligibilité. Nous ouvrons votre dossier ANTS.',
+    'Pré-inscription au permis en 30 secondes : nom, téléphone, formule. Un conseiller vous rappelle sous 24 h ouvrées. Sans engagement, à partir de 799 €.',
   path: '/s-inscrire',
   keywords: ['inscription auto-école Nanterre', 'inscription permis en ligne', 's’inscrire permis de conduire 92'],
 })

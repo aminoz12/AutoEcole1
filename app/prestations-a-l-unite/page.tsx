@@ -6,9 +6,9 @@ import Footer from '@/components/Footer'
 import { createPageMetadata } from '@/lib/seo/metadata'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Code de la route en ligne — Pack Web',
+  title: 'Code de la route en ligne dès 10 €',
   description:
-    'Révisez le code de la route en ligne depuis Nanterre : cours, séries de questions et tests d’entraînement accessibles sur smartphone, tablette et ordinateur, en accès illimité.',
+    'Révisez le code où vous voulez : plus de 2 000 questions, tests d’entraînement et cours en ligne. 10 € le mois ou 29 € en accès illimité, sans date limite.',
   path: '/prestations-a-l-unite',
   keywords: ['code de la route en ligne', 'réviser le code Nanterre', 'entraînement code de la route', 'pack web code'],
 })

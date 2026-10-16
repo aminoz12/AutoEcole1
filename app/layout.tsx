@@ -24,9 +24,9 @@ const inter = Inter({
 // Cible la requête principale « auto-école Nanterre ». Le mot-clé est placé en
 // tête de title et de description, la marque en fin.
 export const metadata: Metadata = createPageMetadata({
-  title: 'Auto-école à Nanterre — Permis B dès 799 €',
+  title: 'Auto-école à Nanterre — permis dès 799 €, noté 4,9/5',
   description:
-    'Permis B à Nanterre : boîte auto dès 799 €, manuelle 20 h dès 899 €, code de la route inclus, formation accélérée et paiement en 2 fois. CPF selon éligibilité.',
+    'Permis B à Nanterre dès 799 € : boîte auto ou manuelle, code de la route inclus 1 an, paiement en 2 fois. 4,9/5 sur +300 avis. Rappel sous 24 h.',
   path: '/',
   keywords: ['auto-école Nanterre', 'permis accéléré Nanterre', 'auto-école CPF Nanterre', 'permis B 92'],
 })

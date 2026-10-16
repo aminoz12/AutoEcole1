@@ -19,9 +19,9 @@ import {
 // Page pilier « permis accéléré » — cible les requêtes permis rapide /
 // permis en accéléré / stage intensif, et sert de lien annexe Google Ads.
 export const metadata: Metadata = createPageMetadata({
-  title: 'Permis accéléré à Nanterre — permis rapide dès 1 199 €',
+  title: 'Permis accéléré à Nanterre — dès 1 199 €',
   description:
-    'Passez votre permis en accéléré à Nanterre : stage intensif code + conduite, boîte auto dès 1 199 €, manuelle 1 559 €, date d’examen prioritaire. Paiement 2×.',
+    'Permis en accéléré à Nanterre : stage intensif code + conduite dès 1 199 €, date d’examen prioritaire, paiement en 2 fois. Rappel sous 24 h ouvrées.',
   path: '/permis-accelere',
   keywords: [
     'permis accéléré',

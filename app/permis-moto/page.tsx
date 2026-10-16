@@ -11,9 +11,9 @@ import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 import { motoLicences, motoFaqs } from '@/lib/content/moto-data'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Permis moto à Nanterre — A1, A2 et BSR',
+  title: 'Permis moto Nanterre — A1, A2, 125 et BSR',
   description:
-    'Moto-école à Nanterre (92) : permis A1, A2, passerelle A, BSR/permis AM et formation 125 pour les titulaires du permis B. Plateau et circulation dans les Hauts-de-Seine.',
+    'Moto-école à Nanterre (92) : permis A1, A2, passerelle A, BSR/AM et formation 125 pour les titulaires du permis B. Plateau et circulation. Devis gratuit.',
   path: '/permis-moto',
   image: '/blog/permis-moto.webp',
   keywords: [

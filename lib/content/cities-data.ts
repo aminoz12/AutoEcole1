@@ -52,7 +52,7 @@ export function getCity(slug: string): City {
 
 export function cityMetadata(city: City): Metadata {
   return createPageMetadata({
-    title: `Auto-école ${nearCity(city.name)} — Permis B & tarifs`,
+    title: `Auto-école ${nearCity(city.name)} — permis dès 799 €`,
     description: city.metaDescription,
     path: cityPath(city),
     image: city.image,

@@ -1,6 +1,9 @@
 export interface BlogPost {
   id: string
   title: string
+  /** Titre court pour la balise <title> quand le H1 depasse ~60 caracteres
+      (Google tronque au-dela). Le H1 de la page reste `title`. */
+  seoTitle?: string
   slug: string
   excerpt: string
   content: string
@@ -59,6 +62,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '36',
     title: "Comment passer son permis pas cher : 10 astuces pour économiser",
+    seoTitle: "Permis pas cher : 10 astuces pour économiser",
     slug: 'permis-pas-cher-10-astuces-economiser',
     excerpt: "L'essentiel des économies ne se joue pas sur le forfait affiché mais sur dix décisions prises avant et pendant la formation. Les leviers réels, et le piège des offres trop basses.",
     content: `<p>Le permis représente souvent la première dépense importante d'un jeune adulte, et la facture finale dépasse fréquemment le forfait affiché. Bonne nouvelle : l'essentiel des économies ne se joue pas sur le prix du forfait, mais sur une poignée de décisions prises avant et pendant la formation. Voici les dix leviers qui font réellement baisser le total.</p>
@@ -102,6 +106,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '35',
     title: "Inscription en auto-école : documents nécessaires et étapes clés",
+    seoTitle: "Inscription en auto-école : documents et étapes",
     slug: 'inscription-auto-ecole-etapes-documents',
     excerpt: "Devis, contrat, évaluation, dossier ANTS : le parcours complet entre le premier appel et la première leçon — avec les clauses à vérifier et le cas de ceux qui ont déjà le code.",
     content: `<p>Entre le premier appel et votre première leçon, il y a une suite d'étapes que personne ne vous explique vraiment : le devis, le contrat, l'évaluation, l'ouverture du dossier. Comprendre cet enchaînement évite les mauvaises surprises — et permet de repérer les auto-écoles qui prennent des libertés avec les règles. Voici le parcours complet.</p>
@@ -146,7 +151,7 @@ export const blogPosts: BlogPost[] = [
     id: '34',
     title: "Permis accéléré : comment l'obtenir rapidement en 2026 ?",
     slug: 'permis-accelere-comment-obtenir-rapidement',
-    excerpt: "Passer son permis en accéléré, ce n'est pas une formation au rabais : c'est le même programme, compressé. Voici les conditions réelles, les étapes, les délais honnêtes et ce qui ne se compresse jamais.",
+    excerpt: "Même programme, même examen : seule la densité change. Les conditions réelles, les étapes, les délais honnêtes et ce qui ne se compresse jamais. Dès 1 199 €.",
     content: `<p>Une embauche qui démarre dans six semaines, une alternance qui exige la conduite, un déménagement en zone mal desservie : il existe des situations où le permis ne peut pas attendre un an. La formation accélérée répond exactement à ce besoin — à condition de savoir ce qui se compresse réellement et ce qui ne se compressera jamais.</p>
 <h2>Ce qu'est vraiment un permis accéléré</h2>
 <p>Première idée reçue à écarter : le permis en accéléré n'est <strong>pas une formation au rabais</strong>. Le programme est identique à celui d'une formation classique — même référentiel officiel (REMC), mêmes moniteurs diplômés d'État, même examen, même inspecteur. Ce qui change, c'est uniquement la <strong>densité</strong>.</p>
@@ -234,6 +239,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '32',
     title: "Permis en 5 jours, 1 semaine ou 2 semaines : est-ce vraiment possible ?",
+    seoTitle: "Permis en 5 jours ou 1 semaine : vraiment possible ?",
     slug: 'permis-5-jours-1-semaine-2-semaines-possible',
     excerpt: "Ces promesses ne sont pas toutes mensongères, mais elles reposent sur un non-dit. Durée par durée, ce qui est réellement faisable — et les quatre questions qui démasquent une auto-école trop optimiste.",
     content: `<p>« Permis en 5 jours », « permis en 1 semaine », « votre permis en 3 jours » : ces promesses circulent largement, et elles ne sont pas toutes mensongères. Mais elles reposent presque toutes sur un non-dit. Voici, durée par durée, ce qui est réellement faisable et à quelles conditions.</p>
@@ -314,6 +320,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '30',
     title: 'Vérifications intérieures du permis : les questions et les réponses',
+    seoTitle: "Vérifications intérieures du permis : questions et réponses",
     slug: 'questions-verifications-interieures-permis',
     excerpt: "Trois questions orales, 3 points sur 31, et un numéro tiré des deux derniers chiffres du compteur : voici comment fonctionnent les vérifications du permis B et comment y répondre sans hésiter.",
     content: `<p>C'est le moment de l'examen que les candidats préparent le moins, alors qu'il rapporte des points presque gratuitement. Les questions de vérification interviennent en fin d'épreuve, elles sont tirées d'une liste publique, et elles peuvent faire basculer un résultat serré. Voici exactement comment elles fonctionnent.</p>
@@ -468,6 +475,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '26',
     title: 'Notation du permis : les 31 points et les fautes éliminatoires',
+    seoTitle: "Notation du permis : 31 points et fautes éliminatoires",
     slug: 'notation-permis-31-points-fautes-eliminatoires',
     excerpt: "20 points sur 31 pour être reçu, mais une seule faute éliminatoire suffit à tout arrêter. Voici comment l'inspecteur vous note réellement pendant les 32 minutes de l'épreuve.",
     content: `<p>Beaucoup de candidats abordent l'épreuve pratique sans savoir précisément sur quoi ils sont évalués. C'est dommage&nbsp;: la grille de notation est publique, et la comprendre change la façon de conduire le jour J. Décryptage.</p>
@@ -565,6 +573,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '23',
     title: 'Boîte automatique ou boîte manuelle : quel permis choisir en 2026 ?',
+    seoTitle: "Boîte automatique ou manuelle : que choisir en 2026 ?",
     slug: 'permis-boite-automatique-ou-manuelle-choisir',
     excerpt: "13 heures au lieu de 20, un forfait moins cher, mais une mention restrictive sur le permis : le match entre boîte auto et boîte manuelle a changé. Voici comment trancher selon votre situation.",
     content: `<p>C'est la question qui revient à chaque inscription. Longtemps, le permis boîte automatique était vu comme un choix par défaut, réservé à ceux qui n'arrivaient pas à gérer l'embrayage. Ce n'est plus du tout le cas : entre l'électrification du parc automobile et l'assouplissement des règles de passerelle, le calcul a changé. Faisons le point.</p>
@@ -672,6 +681,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '20',
     title: "Quels papiers pour s'inscrire au permis de conduire ? La liste complète",
+    seoTitle: "Papiers pour s'inscrire au permis : la liste complète",
     slug: 'papiers-inscription-permis-conduire-liste',
     excerpt: "Pièce d'identité, e-photo, ASSR, JDC, justificatif de domicile : la liste exacte des documents à réunir pour ouvrir votre dossier de permis, avec les cas particuliers qui bloquent le plus souvent.",
     content: `<p>Un dossier incomplet, c'est plusieurs semaines perdues avant même la première leçon. Pourtant, la liste des pièces n'a rien de compliqué dès lors qu'on l'a sous les yeux. La voici, avec les cas particuliers qui posent le plus de problèmes.</p><p>Pour le déroulé complet de l'inscription — devis, contrat, évaluation de départ — voyez notre article <a href="/blog/inscription-auto-ecole-etapes-documents">inscription en auto-école : les étapes clés</a>.</p>
@@ -705,6 +715,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '19',
     title: 'Apprendre à conduire à Nanterre : les 6 situations qui font vraiment progresser',
+    seoTitle: "Apprendre à conduire à Nanterre : 6 situations clés",
     slug: 'apprendre-conduire-nanterre-situations-cles',
     excerpt: "Giratoires, insertion sur l'A86, zones 30, partage de la voirie avec le tram : Nanterre concentre en quelques kilomètres presque toutes les situations évaluées à l'examen. Voici celles sur lesquelles nos moniteurs insistent le plus.",
     content: `<p>Toutes les villes ne se valent pas pour apprendre à conduire. Certaines n'offrent que des lignes droites, d'autres uniquement des embouteillages. Nanterre, elle, a une particularité rare : en une quinzaine de minutes de voiture, on y traverse presque tous les types de voirie qu'un examinateur des Hauts-de-Seine peut vous demander d'aborder. Voici les six situations que nous travaillons systématiquement avec nos élèves.</p>
@@ -733,6 +744,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '18',
     title: 'Étudiant à Paris Nanterre : décrocher son permis pendant ses études',
+    seoTitle: "Permis étudiant à Paris Nanterre : mode d'emploi",
     slug: 'permis-etudiant-paris-nanterre-universite',
     excerpt: "Emploi du temps morcelé, budget serré, examens à réviser : passer le permis quand on est étudiant à Nanterre semble compliqué. C'est en réalité le meilleur moment — à condition de s'y prendre correctement.",
     content: `<p>Le campus de l'université Paris Nanterre accueille des dizaines de milliers d'étudiants, dont une large majorité n'a pas encore le permis. Pourtant, les années d'études sont objectivement la meilleure fenêtre pour le passer : les emplois du temps comportent des trous, les vacances universitaires sont longues, et un permis en poche change radicalement les possibilités de stage et de premier emploi. Voici comment s'organiser concrètement.</p>
@@ -762,6 +774,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '17',
     title: "L'examen du permis dans les Hauts-de-Seine : déroulé, notation et préparation",
+    seoTitle: "Examen du permis dans les Hauts-de-Seine : le guide",
     slug: 'examen-permis-hauts-de-seine-deroulement',
     excerpt: "Combien de temps dure l'épreuve ? Combien de points faut-il ? Que regarde vraiment l'examinateur ? Le guide complet de l'examen pratique tel qu'il se déroule dans le 92, et la façon dont nous y préparons nos élèves à Nanterre.",
     content: `<p>Beaucoup de candidats arrivent à l'examen pratique sans savoir précisément comment ils vont être notés. C'est une source de stress inutile — et parfois d'échec. Voici, étape par étape, ce qui vous attend le jour J dans les Hauts-de-Seine.</p>
@@ -863,6 +876,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '14',
     title: 'Habiter Paris 8ᵉ, 16ᵉ ou 17ᵉ et passer son permis en banlieue : bonne idée ?',
+    seoTitle: "Permis en banlieue quand on habite Paris 8ᵉ, 16ᵉ, 17ᵉ",
     slug: 'passer-permis-banlieue-paris-ouest-8-16-17',
     excerpt: "Tarifs élevés, délais longs, conduite en accordéon : passer son permis dans l'Ouest parisien décourage plus d'un candidat. Voici pourquoi de plus en plus de Parisiens franchissent le périphérique pour se former à Nanterre.",
     content: `<p>Dans les 8ᵉ, 16ᵉ et 17ᵉ arrondissements, le permis de conduire coûte cher : les forfaits y figurent parmi les plus élevés de France, et les délais pour obtenir une place d'examen s'allongent. Résultat : de plus en plus de Parisiens de l'Ouest choisissent une auto-école en proche banlieue. Bonne ou mauvaise idée ? Éléments de réponse.</p>
@@ -887,6 +901,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '13',
     title: 'Passer son permis près de La Défense : le guide Courbevoie, Neuilly, Rueil',
+    seoTitle: "Permis près de La Défense : Courbevoie, Neuilly, Rueil",
     slug: 'permis-pres-la-defense-courbevoie-neuilly-rueil',
     excerpt: "Vous vivez ou travaillez autour de La Défense ? Voici comment organiser votre permis de conduire depuis Courbevoie, Neuilly-sur-Seine ou Rueil-Malmaison — sans y laisser votre budget ni vos soirées.",
     content: `<p>Le quartier d'affaires de La Défense concentre des dizaines de milliers d'actifs venus de Courbevoie, Neuilly-sur-Seine, Rueil-Malmaison et au-delà. Pour eux, passer le permis pose deux problèmes très concrets : des tarifs locaux élevés et des emplois du temps chargés. Voici comment les contourner.</p>
@@ -911,6 +926,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: '12',
     title: 'Permis à Bezons, Colombes ou La Garenne-Colombes : pourquoi traverser la Seine',
+    seoTitle: "Permis à Bezons, Colombes ou La Garenne-Colombes",
     slug: 'permis-conduire-bezons-colombes-la-garenne-colombes',
     excerpt: "Peu d'auto-écoles, des délais qui s'allongent : dans la boucle nord des Hauts-de-Seine, trouver une place pour passer son permis n'est pas simple. La solution est souvent juste de l'autre côté du pont.",
     content: `<p>Entre Bezons, Colombes et La Garenne-Colombes, des dizaines de milliers d'habitants se partagent une offre d'auto-écoles limitée. Conséquence : des listes d'attente pour commencer la conduite et des délais de présentation à l'examen qui s'étirent. Pourtant, à quelques minutes de là, la situation est bien différente.</p>

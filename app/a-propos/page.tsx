@@ -9,9 +9,9 @@ import { createPageMetadata } from '@/lib/seo/metadata'
 import { siteConfig, absoluteUrl } from '@/lib/seo/site-config'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'À propos — Notre auto-école à Nanterre',
+  title: 'À propos — 451 permis obtenus, 4,9/5',
   description:
-    'Auto Ecole Des Paquerettes à Nanterre : équipe pédagogique experte, moniteurs diplômés d’État, agrément préfectoral E 2209200030, certification Qualiopi et 451 permis délivrés. Découvrez notre école et notre approche.',
+    'Auto-école agréée à Nanterre depuis 2021 : moniteurs diplômés d’État, certification Qualiopi, 451 permis obtenus et 4,9/5 sur plus de 300 avis Google.',
   path: '/a-propos',
   keywords: ['auto-école Nanterre', 'à propos auto-école', 'agrément Qualiopi', 'moniteurs diplômés Nanterre'],
 })

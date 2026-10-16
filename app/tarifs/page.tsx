@@ -13,9 +13,9 @@ import { webPlans } from '@/lib/content/pricing-data'
 import { pricingFaqs } from '@/lib/content/faq-data'
 
 export const metadata: Metadata = createPageMetadata({
-  title: 'Tarifs permis B à Nanterre — dès 799 €',
+  title: 'Prix du permis 2026 à Nanterre — dès 799 €',
   description:
-    'Permis B à Nanterre : boîte auto 13 h dès 799 €, manuelle 20 h dès 899 €, code et paiement en 2 fois sans frais. CPF selon éligibilité.',
+    'Tous nos prix 2026 : boîte auto 13 h dès 799 €, manuelle 20 h dès 899 €, code de la route inclus 1 an, paiement en 2 fois sans frais. Devis gratuit.',
   path: '/tarifs',
   keywords: ['prix permis de conduire Nanterre', 'tarifs auto-école Nanterre', 'permis pas cher 92', 'forfait permis B'],
 })
