@@ -8,6 +8,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json()
     const { fullName, phone, source } = body
+    const telHref = String(phone).replace(/[^0-9+]/g, '')
 
     if (!fullName || !phone) {
       return NextResponse.json(
@@ -26,12 +27,18 @@ export async function POST(request: Request) {
     const mailOptions = {
       from,
       to: LEADS_INBOX,
-      subject: '📞 Demande de rappel — Auto Ecole Des Paquerettes',
+      subject: `📞 RAPPEL — ${fullName} — ${phone}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #333; border-bottom: 2px solid #ec4899; padding-bottom: 10px;">
             Demande de rappel
           </h2>
+          <div style="text-align:center;margin:24px 0;">
+            <a href="tel:${telHref}" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;font-size:18px;font-weight:bold;padding:16px 32px;border-radius:999px;">
+              ☎️ Appeler ${fullName} maintenant
+            </a>
+            <p style="margin:10px 0 0;color:#666;font-size:13px;">${phone}</p>
+          </div>
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 10px 0;"><strong>Nom:</strong> ${fullName}</p>
             <p style="margin: 10px 0;"><strong>Téléphone:</strong> ${phone}</p>
@@ -39,8 +46,8 @@ export async function POST(request: Request) {
             <p style="margin: 10px 0;"><strong>Envoyée le:</strong> ${submittedAt}</p>
           </div>
           <p style="color: #666; font-size: 14px;">
-            Ce prospect attend un rappel — le contacter le plus vite possible augmente
-            fortement les chances de conversion.
+            <strong>Rappelez dans l’heure si possible.</strong> Au-delà de quelques heures,
+            les chances de joindre le prospect chutent fortement.
           </p>
         </div>
       `,

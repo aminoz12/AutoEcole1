@@ -8,6 +8,7 @@ export async function POST(request: Request) {
     // ville et date de naissance sont collectées au téléphone (les anciens
     // champs restent acceptés s'ils sont envoyés).
     const { fullName, email, phone, address, city, dateOfBirth, licenseType } = body
+    const telHref = String(phone).replace(/[^0-9+]/g, '')
 
     if (!fullName || !phone) {
       return NextResponse.json(
@@ -26,13 +27,19 @@ export async function POST(request: Request) {
     const mailOptions = {
       from,
       to: LEADS_INBOX,
-      subject: 'Nouvelle demande d\'inscription — Auto Ecole Des Paquerettes',
+      subject: `🎯 INSCRIPTION — ${fullName} — ${phone}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #333; border-bottom: 2px solid #ec4899; padding-bottom: 10px;">
             Nouvelle demande d'inscription
           </h2>
           
+          <div style="text-align:center;margin:24px 0;">
+            <a href="tel:${telHref}" style="display:inline-block;background:#16a34a;color:#ffffff;text-decoration:none;font-size:18px;font-weight:bold;padding:16px 32px;border-radius:999px;">
+              ☎️ Appeler ${fullName} maintenant
+            </a>
+            <p style="margin:10px 0 0;color:#666;font-size:13px;">${phone}</p>
+          </div>
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <p style="margin: 10px 0;"><strong>Nom complet:</strong> ${fullName}</p>
             <p style="margin: 10px 0;"><strong>Téléphone:</strong> ${phone}</p>
@@ -44,7 +51,8 @@ export async function POST(request: Request) {
           </div>
 
           <p style="color: #666; font-size: 14px;">
-            Veuillez contacter ce candidat sous 24h pour finaliser son inscription.
+            <strong>Rappelez dans l’heure si possible.</strong> Ce candidat vient de laisser
+            ses coordonnées : c’est le moment où il est le plus réceptif.
           </p>
         </div>
       `,

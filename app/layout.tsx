@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { Poppins, Inter } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
 import { Toaster } from 'react-hot-toast'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StickyMobileCTA from '@/components/StickyMobileCTA'
+import ConsentBanner from '@/components/ConsentBanner'
 import { OrganizationJsonLd, WebSiteJsonLd } from '@/components/seo/JsonLd'
 import { createPageMetadata } from '@/lib/seo/metadata'
 import { siteConfig } from '@/lib/seo/site-config'
@@ -39,75 +39,11 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${poppins.variable} ${inter.variable}`}>
       <head>
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5X3WZNWF');
-          `}
-        </Script>
-
-        {/* Google tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-4PRT0D2ZX6"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-4PRT0D2ZX6');
-          `}
-        </Script>
-
-        {/* Meta Pixel */}
-        <Script id="meta-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1738889900556313');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-
-        {/* Ahrefs Analytics */}
-        <Script
-          src="https://analytics.ahrefs.com/analytics.js"
-          data-key="+X78nAL97Jv1QUgZW6I5xQ"
-          strategy="afterInteractive"
-        />
+        {/* Les traceurs (GTM, GA4, Meta Pixel, Ahrefs) ne sont plus charges ici :
+            ils sont injectes par ConsentBanner uniquement apres consentement,
+            conformement aux regles CNIL sur la mesure d'audience. */}
       </head>
       <body className="antialiased">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5X3WZNWF"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        {/* Meta Pixel (noscript) */}
-        <noscript>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            height="1"
-            width="1"
-            style={{ display: 'none' }}
-            alt=""
-            src="https://www.facebook.com/tr?id=1738889900556313&ev=PageView&noscript=1"
-          />
-        </noscript>
         {/* Site-wide business + website entity so every page (tarifs, contact, blog…)
             carries the LocalBusiness/DrivingSchool graph, not just the homepage. */}
         <OrganizationJsonLd />
@@ -115,6 +51,7 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <StickyMobileCTA />
+        <ConsentBanner />
         <Toaster
           position="top-right"
           toastOptions={{
