@@ -6,15 +6,12 @@
     "dev": "node --max-old-space-size=8192 node_modules/next/dist/bin/next dev",
     "build": "node --max-old-space-size=8192 node_modules/next/dist/bin/next build",
     "start": "next start",
-    "lint": "next lint",
-    "export": "next build && next export"
+    "lint": "next lint"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.17.10",
-    "@supabase/ssr": "^0.7.0",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
     "framer-motion": "^10.16.16",
     "lucide-react": "^0.294.0",
     "next": "^14.2.35",
@@ -22,7 +19,6 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hot-toast": "^2.6.0",
-    "react-quill": "^2.0.0",
     "sharp": "^0.34.5",
     "tailwind-merge": "^3.6.0",
     "three": "^0.160.1"
@@ -33,7 +29,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "baseline-browser-mapping": "^2.10.38",
     "eslint": "^8",
     "eslint-config-next": "^14.2.35",
     "postcss": "^8",

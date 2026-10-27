@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createMailer, LEADS_INBOX } from '@/lib/mailer'
+import { createMailer, escapeHtml, LEADS_INBOX, toSubjectPart, toTelHref } from '@/lib/mailer'
 
 export async function POST(request: Request) {
   try {
@@ -7,15 +7,23 @@ export async function POST(request: Request) {
     // Formulaire court : seuls nom + téléphone sont obligatoires. Adresse,
     // ville et date de naissance sont collectées au téléphone (les anciens
     // champs restent acceptés s'ils sont envoyés).
-    const { fullName, email, phone, address, city, dateOfBirth, licenseType } = body
-    const telHref = String(phone).replace(/[^0-9+]/g, '')
+    const raw = body as Record<string, unknown>
 
-    if (!fullName || !phone) {
+    if (!raw.fullName || !raw.phone) {
       return NextResponse.json(
         { error: 'Nom et numéro de téléphone requis' },
         { status: 400 }
       )
     }
+
+    const fullName = escapeHtml(raw.fullName)
+    const phone = escapeHtml(raw.phone)
+    const email = raw.email ? escapeHtml(raw.email) : ''
+    const address = raw.address ? escapeHtml(raw.address) : ''
+    const city = raw.city ? escapeHtml(raw.city) : ''
+    const licenseType = raw.licenseType ? escapeHtml(raw.licenseType) : 'Non précisée'
+    const dateOfBirth = typeof raw.dateOfBirth === 'string' ? raw.dateOfBirth : ''
+    const telHref = toTelHref(raw.phone)
 
     const { transporter, from } = createMailer()
 
@@ -27,7 +35,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from,
       to: LEADS_INBOX,
-      subject: `🎯 INSCRIPTION — ${fullName} — ${phone}`,
+      subject: `🎯 INSCRIPTION — ${toSubjectPart(raw.fullName)} — ${toSubjectPart(raw.phone)}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #333; border-bottom: 2px solid #ec4899; padding-bottom: 10px;">

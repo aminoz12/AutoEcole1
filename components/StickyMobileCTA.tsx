@@ -13,13 +13,8 @@ import { trackEvent } from '@/lib/analytics'
 export default function StickyMobileCTA() {
   const pathname = usePathname()
 
-  // Pas de barre sur la page de confirmation ni dans l'admin/dashboard
-  if (
-    pathname === '/merci' ||
-    pathname.startsWith('/admin') ||
-    pathname.startsWith('/dashboard') ||
-    pathname.startsWith('/auth')
-  ) {
+  // Pas de barre sur la page de confirmation : le lead est déjà capturé.
+  if (pathname === '/merci') {
     return null
   }
 

@@ -1,9 +1,52 @@
 'use client'
 
+import { useEffect, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
-import { Globe3D, GlobeMarker } from '@/components/ui/3d-globe'
+import type { GlobeMarker } from '@/components/ui/3d-globe'
+
+// Le globe embarque three.js (~600 ko de JS) : il n'est ni rendu côté serveur
+// ni inclus dans le bundle initial. Son chunk n'est téléchargé que lorsque la
+// section approche de l'écran, pour ne pas pénaliser le premier affichage
+// (et le LCP) de la page d'accueil, surtout sur mobile.
+const Globe3D = dynamic(() => import('@/components/ui/3d-globe').then((m) => m.Globe3D), {
+  ssr: false,
+  loading: () => <GlobePlaceholder />,
+})
+
+function GlobePlaceholder() {
+  return (
+    <div
+      aria-hidden="true"
+      className="h-72 w-72 rounded-full bg-gradient-to-br from-secondary/20 via-primary/10 to-secondary/30 blur-sm md:h-80 md:w-80"
+    />
+  )
+}
 
 export default function WebPackSection() {
+  const globeRef = useRef<HTMLDivElement>(null)
+  const [showGlobe, setShowGlobe] = useState(false)
+
+  useEffect(() => {
+    const el = globeRef.current
+    if (!el) return
+    if (typeof IntersectionObserver === 'undefined') {
+      setShowGlobe(true)
+      return
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowGlobe(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '400px' }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   // Spread people all around the globe (every continent)
   const cities: { lat: number; lng: number; label: string }[] = [
     { lat: 48.8566, lng: 2.3522, label: 'Paris' },
@@ -78,23 +121,25 @@ export default function WebPackSection() {
 
             {/* Right Content - 3D Earth */}
             <motion.div
+              ref={globeRef}
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               className="flex items-center justify-center h-full min-h-96"
             >
-              <Globe3D
-                markers={markers}
-                config={{
-                  bumpScale: 5,
-                  autoRotateSpeed: 1.2,
-                  showAtmosphere: false,
-                }}
-                onMarkerClick={(marker) => {
-                  console.log("Clicked marker:", marker.label);
-                }}
-              />
+              {showGlobe ? (
+                <Globe3D
+                  markers={markers}
+                  config={{
+                    bumpScale: 5,
+                    autoRotateSpeed: 1.2,
+                    showAtmosphere: false,
+                  }}
+                />
+              ) : (
+                <GlobePlaceholder />
+              )}
             </motion.div>
 
             {/* CTA Button — mobile (under the 3D earth) */}

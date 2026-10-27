@@ -1,7 +1,7 @@
 # Vercel Deployment Guide
 
-This is a **Next.js 14 (App Router)** server app with 4 API routes (contact, CPF
-request, registration). Vercel auto-detects Next.js — no `vercel.json` is needed.
+This is a **Next.js 14 (App Router)** server app with 4 API routes (callback,
+contact, CPF request, registration). Vercel auto-detects Next.js — no `vercel.json` is needed.
 Redirects, headers and image optimization are configured in `next.config.js`.
 
 ## 1. Import the project
@@ -24,13 +24,10 @@ Preview). Values live in your local `.env.local` — do **not** commit them.
 | `GMAIL_APP_PASSWORD` | *(Google App Password)* | from your `.env.local` |
 | `NEXT_PUBLIC_SITE_URL` | `https://autoecoledespaquerettes.fr` | canonical/SEO, sitemap, JSON-LD |
 
-### Optional (only if you use the Supabase + Resend registration route)
-The `/api/send-registration` route no-ops gracefully if these are unset.
+### Optional
 | Variable | Used for |
 |---|---|
-| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
-| `SUPABASE_SERVICE_ROLE_KEY` | server-side writes (or `NEXT_PUBLIC_SUPABASE_ANON_KEY`) |
-| `RESEND_API_KEY` | Resend transactional email |
+| `LEADS_INBOX` | override the inbox that receives leads (default in `lib/mailer.ts`) |
 
 ## 3. Domain
 
@@ -62,6 +59,6 @@ vercel --prod        # deploy production
 ```
 
 ## Notes
-- `netlify.toml`, `_redirects` and `dist/` are leftover from the previous Netlify
-  setup. Vercel ignores them; remove them if you no longer deploy to Netlify.
-- Large `*.exe.bak` installers in the repo root are git-ignored and never deployed.
+- There is no database. Every form sends an e-mail through Gmail SMTP; if
+  `GMAIL_USER` / `GMAIL_APP_PASSWORD` are missing the API routes return 500
+  with an explicit error in the Vercel logs.

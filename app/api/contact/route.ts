@@ -1,18 +1,23 @@
 import { NextResponse } from 'next/server'
-import { createMailer, LEADS_INBOX } from '@/lib/mailer'
+import { createMailer, escapeHtml, LEADS_INBOX } from '@/lib/mailer'
 
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { fullName, email, phone, message } = body
+    const { fullName: rawName, email: rawEmail, phone: rawPhone, message: rawMessage } = body
 
     // Validate required fields
-    if (!fullName || !email || !phone || !message) {
+    if (!rawName || !rawEmail || !rawPhone || !rawMessage) {
       return NextResponse.json(
         { error: 'Tous les champs sont requis' },
         { status: 400 }
       )
     }
+
+    const fullName = escapeHtml(rawName)
+    const email = escapeHtml(rawEmail)
+    const phone = escapeHtml(rawPhone)
+    const message = escapeHtml(rawMessage)
 
     const { transporter, from } = createMailer()
 

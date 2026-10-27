@@ -1,15 +1,12 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Star } from 'lucide-react'
-import AuthModal from './auth/AuthModal'
 import { trackEvent } from '@/lib/analytics'
 
 export default function HeroSection() {
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
   const features = [
     {
       icon: '/icon1.png',
@@ -184,7 +181,6 @@ export default function HeroSection() {
       </div>
 
       {/* Auth Modal */}
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
     </section>
   )
 }

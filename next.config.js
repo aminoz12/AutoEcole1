@@ -10,16 +10,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'via.placeholder.com',
       },
-      {
-        protocol: 'https',
-        hostname: '*.supabase.co',
-      },
     ],
     formats: ['image/avif', 'image/webp'],
     unoptimized: false, // Vercel optimizes Next.js images natively
   },
   trailingSlash: false,
-  transpilePackages: ['@supabase/ssr', '@supabase/supabase-js'],
 
   async redirects() {
     return [
@@ -102,7 +97,7 @@ const nextConfig = {
   },
   
   // Optimize webpack for better memory usage
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     // Reduce memory pressure
     config.optimization = {
       ...config.optimization,
@@ -116,17 +111,12 @@ const nextConfig = {
       config.cache.compression = false
     }
 
-    // Don't bundle react-quill on server side
-    if (isServer) {
-      config.externals = [...(config.externals || []), 'react-quill']
-    }
-
     return config
   },
   
   // Experimental features for better performance
   experimental: {
-    optimizePackageImports: ['react-quill', 'lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 }
 

@@ -1,185 +1,84 @@
-# AutoEcole Pro - Driving School Website
+# Auto École des Pâquerettes — site web
 
-A modern, responsive driving school website built with Next.js, Tailwind CSS, and Framer Motion. Inspired by Ornikar's design with a clean, professional interface and smooth animations.
+Site vitrine et de génération de leads de l'auto-école des Pâquerettes
+(375 avenue de la République, 92000 Nanterre), en ligne sur
+[autoecoledespaquerettes.fr](https://autoecoledespaquerettes.fr).
 
-## 🚗 Features
+Le site n'a pas de base de données : tout le contenu est versionné dans le
+dépôt, et chaque formulaire envoie un e-mail à l'équipe via Gmail.
 
-- **Modern Design**: Clean, minimalist interface with orange/blue accent colors
-- **Responsive**: Mobile-first design that works on all devices
-- **Animations**: Smooth Framer Motion animations throughout the site
-- **Components**: Modular, reusable React components
-- **Performance**: Optimized with Next.js Image component and lazy loading
-- **Accessibility**: Semantic HTML and proper ARIA labels
+## Stack
 
-## 🛠️ Tech Stack
+- **Next.js 14** (App Router, TypeScript), déployé sur **Vercel**
+- **Tailwind CSS** + Framer Motion, icônes Lucide
+- **Nodemailer** (SMTP Gmail) pour les leads
+- three.js pour le globe décoratif de la section « pack web » (chargé à la demande)
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **Font**: Inter (Google Fonts)
-
-## 📁 Project Structure
-
-```
-autoecole/
-├── app/
-│   ├── globals.css          # Global styles and Tailwind imports
-│   ├── layout.tsx           # Root layout component
-│   └── page.tsx             # Homepage
-├── components/
-│   ├── Header.tsx           # Navigation header
-│   ├── PromoBanner.tsx      # Promotional banner with countdown
-│   ├── HeroSection.tsx      # Main hero section
-│   ├── FeaturesSection.tsx  # Features and benefits
-│   ├── PricingSection.tsx   # Pricing plans
-│   ├── TrustSection.tsx     # Testimonials and reviews
-│   ├── InstructorsPreview.tsx # Instructor cards
-│   ├── FAQSection.tsx       # FAQ accordion
-│   ├── CTASection.tsx       # Call-to-action section
-│   └── Footer.tsx           # Footer with links
-├── tailwind.config.js       # Tailwind configuration
-├── next.config.js           # Next.js configuration
-├── tsconfig.json            # TypeScript configuration
-└── package.json             # Dependencies
-```
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. **Clone or download the project**
-   ```bash
-   cd autoecole
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-### Build for Production
+## Démarrer
 
 ```bash
-npm run build
-npm start
+npm install
+cp .env.example .env.local   # puis renseigner GMAIL_USER / GMAIL_APP_PASSWORD
+npm run dev                  # http://localhost:3000
 ```
 
-## 🎨 Design System
+`npm run build` reproduit le build Vercel. `npm run lint` lance ESLint.
 
-### Colors
-- **Primary**: #FF6B00 (Orange)
-- **Secondary**: #0055FF (Blue)
-- **Neutral**: #F8F9FB (Light Gray)
-- **Background**: White with subtle gradients
+## Organisation du code
 
-### Typography
-- **Font Family**: Inter (Google Fonts)
-- **Headings**: Bold, large sizes (text-4xl to text-6xl)
-- **Body**: Regular weight, good line height
+```
+app/
+  page.tsx                     Accueil
+  tarifs/ s-inscrire/ contact/ permis-moto/ prestations-a-l-unite/ a-propos/
+  permis-accelere/             Page pilier + /permis-accelere/[ville] (16 villes)
+  auto-ecole-<ville>/          20 pages locales (une ligne chacune, données dans lib/content)
+  blog/ blog/[slug]/           46 articles, contenu dans lib/blog-data.ts
+  merci/                       Confirmation après envoi d'un formulaire (noindex)
+  cgv/ mentions-legales/
+  api/callback | contact | cpf-request | submit-registration
+                               Routes d'e-mail (voir lib/mailer.ts)
+  sitemap.ts robots.ts         Générés à partir des données de contenu
 
-### Spacing
-- **Section Padding**: py-16 md:py-24
-- **Container**: max-w-7xl, centered
-- **Card Padding**: p-6 to p-8
+components/
+  Header, Footer, HeroSection, PricingSection, CallbackForm, RegistrationForm…
+  city/CityLandingPage         Gabarit des pages villes
+  accelere/                    Gabarit des pages permis accéléré
+  blog/                        Liste et article
+  seo/JsonLd                   Schémas Organization, FAQ, Breadcrumb, Offer, BlogPosting, HowTo
+  ConsentBanner                Bandeau cookies : GTM, GA4, Meta Pixel et Ahrefs
+                               ne se chargent qu'après acceptation
 
-### Border Radius
-- **Cards**: rounded-2xl (1.5rem)
-- **Buttons**: rounded-xl (1rem)
-- **Images**: rounded-xl to rounded-2xl
-
-## 🎭 Animations
-
-The website includes various Framer Motion animations:
-
-- **Page Load**: Fade-in and slide-up effects
-- **Staggered Cards**: Features, pricing, and instructor cards
-- **Hover Effects**: Scale and lift animations
-- **Scroll Animations**: Elements animate into view
-- **Interactive Elements**: Button presses and form interactions
-- **Continuous Animations**: Logo carousel and promotional banners
-
-## 📱 Responsive Design
-
-- **Mobile**: Stacked layout, centered text, touch-friendly buttons
-- **Tablet**: 2-column grids, adjusted spacing
-- **Desktop**: 3-4 column grids, side-by-side layouts
-- **Large Screens**: Maximum width containers with generous spacing
-
-## 🔧 Customization
-
-### Adding New Sections
-1. Create a new component in `/components/`
-2. Import and add to `app/page.tsx`
-3. Follow the existing animation patterns
-
-### Modifying Colors
-Update the color palette in `tailwind.config.js`:
-```javascript
-colors: {
-  primary: '#FF6B00',
-  secondary: '#0055FF',
-  neutral: '#F8F9FB',
-}
+lib/
+  seo/site-config.ts           Identité de l'entreprise : adresse, horaires, SIREN, réseaux
+  seo/metadata.ts              createPageMetadata() — budgets title/description
+  content/                     Villes, tarifs, FAQ, HowTo, moto, données éditoriales
+  blog-data.ts                 Articles (HTML dans des chaînes)
+  mailer.ts                    Transport Gmail partagé + échappement HTML
+  analytics.ts                 trackEvent / trackLead (GA4 + dataLayer + Meta)
+  phone.ts                     Validation et formatage des numéros français
 ```
 
-### Adding Content
-- Replace placeholder text with real content
-- Update images with actual photos
-- Modify pricing and contact information
-- Add real testimonials and reviews
+## Règles de contenu
 
-## 📞 Contact Information
+- **Tarifs** : une seule source, `lib/content/pricing-data.ts`. Elle alimente
+  l'interface ET le JSON-LD Offer, pour que les deux ne divergent jamais.
+- **Titres** : `createPageMetadata` tronque le suffixe de marque au-delà de
+  60 caractères et la description à 158, pour éviter la coupe dans Google.
+- **Nouvelle ville** : ajouter l'entrée dans `lib/content/cities-data.ts`, créer
+  `app/auto-ecole-<slug>/page.tsx` sur le modèle des autres, le sitemap suit.
+- **Nouvel article** : ajouter l'objet dans `lib/blog-data.ts` avec un visuel
+  WebP dans `public/blog/`. Les anciennes URLs sont redirigées dans
+  `next.config.js`, qui porte aussi les 301 héritées de l'ancien site.
 
-Update the contact details in the components:
-- Phone: 01 23 45 67 89
-- Email: autoecoledespaquerettes@hotmail.com
-- Location: Paris & Banlieue
+## Variables d'environnement
 
-## 🚀 Deployment
+| Variable | Obligatoire | Rôle |
+|---|---|---|
+| `GMAIL_USER` | oui | Expéditeur SMTP Gmail |
+| `GMAIL_APP_PASSWORD` | oui | Mot de passe d'application Google |
+| `NEXT_PUBLIC_SITE_URL` | oui | URL canonique (metadata, sitemap, JSON-LD) |
+| `LEADS_INBOX` | non | Boîte de réception des leads (défaut dans `lib/mailer.ts`) |
 
-### Vercel (Recommended)
-1. Push code to GitHub
-2. Connect repository to Vercel
-3. Deploy automatically
+## Déploiement
 
-### Other Platforms
-- Netlify
-- AWS Amplify
-- Railway
-- DigitalOcean App Platform
-
-## 📄 License
-
-This project is for educational and commercial use. Feel free to modify and use for your driving school business.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-For questions or support, please contact the development team or create an issue in the repository.
-
----
-
-**Built with ❤️ for driving schools everywhere**
-
+Voir [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md).

@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createMailer, LEADS_INBOX } from '@/lib/mailer'
+import { createMailer, escapeHtml, LEADS_INBOX, toSubjectPart, toTelHref } from '@/lib/mailer'
 
 // Demande de rappel : formulaire court (nom + téléphone) affiché sur les pages
 // villes, les articles de blog et la popup. Le but est de générer un appel
@@ -7,15 +7,19 @@ import { createMailer, LEADS_INBOX } from '@/lib/mailer'
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { fullName, phone, source } = body
-    const telHref = String(phone).replace(/[^0-9+]/g, '')
+    const { fullName: rawName, phone: rawPhone, source: rawSource } = body
 
-    if (!fullName || !phone) {
+    if (!rawName || !rawPhone) {
       return NextResponse.json(
         { error: 'Nom et numéro de téléphone requis' },
         { status: 400 }
       )
     }
+
+    const fullName = escapeHtml(rawName)
+    const phone = escapeHtml(rawPhone)
+    const source = rawSource ? escapeHtml(rawSource) : ''
+    const telHref = toTelHref(rawPhone)
 
     const { transporter, from } = createMailer()
 
@@ -27,7 +31,7 @@ export async function POST(request: Request) {
     const mailOptions = {
       from,
       to: LEADS_INBOX,
-      subject: `📞 RAPPEL — ${fullName} — ${phone}`,
+      subject: `📞 RAPPEL — ${toSubjectPart(rawName)} — ${toSubjectPart(rawPhone)}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
           <h2 style="color: #333; border-bottom: 2px solid #ec4899; padding-bottom: 10px;">
